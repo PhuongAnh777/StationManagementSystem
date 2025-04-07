@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StationManagementSystem.Models
+{
+    public class Employee
+    {
+        [Key]
+        public Guid EmployeeID { get; set; }  // Khóa chính
+
+        public string FullName { get; set; } // NVARCHAR(50)
+        public string Phone { get; set; } // NVARCHAR(10)
+        public string Address { get; set; } // NVARCHAR(100)
+        public string Email { get; set; } // NVARCHAR(100)
+        public DateTime BirthDate { get; set; } // DateTime
+        public string Department { get; set; } // NVARCHAR(50)
+        public string Position { get; set; } // NVARCHAR(50)
+        public float Salary { get; set; } // Float
+
+        public virtual Account Account { get; set; }
+        public virtual ICollection<DepartureOrder> Orders { get; set; } = new List<DepartureOrder>(); // Mối quan hệ với bảng Order
+        public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>(); // Mối quan hệ với bảng Ticket
+        public virtual ICollection<TicketIssuance> TicketIssuances { get; set; } = new List<TicketIssuance>();
+        public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
+    }
+}
