@@ -156,3 +156,5 @@ C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManage
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.VehicleDetailMain.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.VehicleList.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Transactions.Check.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Transactions.Payment.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.sourcelink.json
