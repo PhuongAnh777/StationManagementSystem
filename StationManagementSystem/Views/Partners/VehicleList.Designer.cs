@@ -48,25 +48,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnFooter = new Panel();
             labelPageInfo = new Label();
             lblPage = new Label();
             btnSau = new Guna.UI2.WinForms.Guna2Button();
             btnTruoc = new Guna.UI2.WinForms.Guna2Button();
             gridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            SupplierName = new DataGridViewTextBoxColumn();
-            ID = new DataGridViewTextBoxColumn();
-            PhoneNumber = new DataGridViewTextBoxColumn();
-            Email = new DataGridViewTextBoxColumn();
-            Address = new DataGridViewTextBoxColumn();
-            Active = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
             pnHeader = new Panel();
-            cbxTuyen = new Guna.UI2.WinForms.Guna2ComboBox();
-            cbxBienSo = new Guna.UI2.WinForms.Guna2ComboBox();
-            lblTuyen = new Label();
+            tbxBienSo = new Guna.UI2.WinForms.Guna2TextBox();
             lblBienSo = new Label();
             lblDVVT = new Label();
             cbxDVVT = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -177,7 +166,6 @@
             gridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridView.ColumnHeadersHeight = 24;
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            gridView.Columns.AddRange(new DataGridViewColumn[] { SupplierName, ID, PhoneNumber, Email, Address, Active, Amount });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -226,66 +214,9 @@
             gridView.CellContentClick += gridView_CellContentClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
-            // SupplierName
-            // 
-            SupplierName.DataPropertyName = "Name";
-            SupplierName.HeaderText = "Tên nhà cung cấp";
-            SupplierName.MinimumWidth = 6;
-            SupplierName.Name = "SupplierName";
-            SupplierName.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 6;
-            ID.Name = "ID";
-            // 
-            // PhoneNumber
-            // 
-            PhoneNumber.DataPropertyName = "PhoneNumber";
-            PhoneNumber.HeaderText = "Điện thoại";
-            PhoneNumber.MinimumWidth = 6;
-            PhoneNumber.Name = "PhoneNumber";
-            PhoneNumber.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Email
-            // 
-            Email.DataPropertyName = "Email";
-            Email.HeaderText = "Email";
-            Email.MinimumWidth = 6;
-            Email.Name = "Email";
-            Email.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Address
-            // 
-            Address.DataPropertyName = "Address";
-            Address.HeaderText = "Địa chỉ";
-            Address.MinimumWidth = 6;
-            Address.Name = "Address";
-            Address.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Active
-            // 
-            Active.DataPropertyName = "Active";
-            Active.HeaderText = "Trạng thái";
-            Active.MinimumWidth = 6;
-            Active.Name = "Active";
-            Active.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Amount
-            // 
-            Amount.DataPropertyName = "Amount";
-            Amount.HeaderText = "Tổng mua";
-            Amount.MinimumWidth = 6;
-            Amount.Name = "Amount";
-            Amount.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
             // pnHeader
             // 
-            pnHeader.Controls.Add(cbxTuyen);
-            pnHeader.Controls.Add(cbxBienSo);
-            pnHeader.Controls.Add(lblTuyen);
+            pnHeader.Controls.Add(tbxBienSo);
             pnHeader.Controls.Add(lblBienSo);
             pnHeader.Controls.Add(lblDVVT);
             pnHeader.Controls.Add(cbxDVVT);
@@ -294,53 +225,31 @@
             pnHeader.Size = new Size(1337, 50);
             pnHeader.TabIndex = 9;
             // 
-            // cbxTuyen
+            // tbxBienSo
             // 
-            cbxTuyen.BackColor = Color.Transparent;
-            cbxTuyen.CustomizableEdges = customizableEdges5;
-            cbxTuyen.DrawMode = DrawMode.OwnerDrawFixed;
-            cbxTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxTuyen.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbxTuyen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbxTuyen.Font = new Font("Segoe UI", 10F);
-            cbxTuyen.ForeColor = Color.FromArgb(68, 88, 112);
-            cbxTuyen.ItemHeight = 30;
-            cbxTuyen.Location = new Point(957, 8);
-            cbxTuyen.Name = "cbxTuyen";
-            cbxTuyen.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            cbxTuyen.Size = new Size(377, 36);
-            cbxTuyen.TabIndex = 9;
-            // 
-            // cbxBienSo
-            // 
-            cbxBienSo.BackColor = Color.Transparent;
-            cbxBienSo.CustomizableEdges = customizableEdges7;
-            cbxBienSo.DrawMode = DrawMode.OwnerDrawFixed;
-            cbxBienSo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxBienSo.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbxBienSo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbxBienSo.Font = new Font("Segoe UI", 10F);
-            cbxBienSo.ForeColor = Color.FromArgb(68, 88, 112);
-            cbxBienSo.ItemHeight = 30;
-            cbxBienSo.Location = new Point(639, 8);
-            cbxBienSo.Name = "cbxBienSo";
-            cbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            cbxBienSo.Size = new Size(241, 36);
-            cbxBienSo.TabIndex = 8;
-            // 
-            // lblTuyen
-            // 
-            lblTuyen.AutoSize = true;
-            lblTuyen.Location = new Point(894, 16);
-            lblTuyen.Name = "lblTuyen";
-            lblTuyen.Size = new Size(57, 22);
-            lblTuyen.TabIndex = 7;
-            lblTuyen.Text = "Tuyến";
+            tbxBienSo.CustomizableEdges = customizableEdges5;
+            tbxBienSo.DefaultText = "";
+            tbxBienSo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxBienSo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxBienSo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxBienSo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxBienSo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxBienSo.Font = new Font("Segoe UI", 9F);
+            tbxBienSo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxBienSo.Location = new Point(863, 8);
+            tbxBienSo.Margin = new Padding(3, 4, 3, 4);
+            tbxBienSo.Name = "tbxBienSo";
+            tbxBienSo.PlaceholderText = "";
+            tbxBienSo.SelectedText = "";
+            tbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            tbxBienSo.Size = new Size(440, 36);
+            tbxBienSo.TabIndex = 139;
+            tbxBienSo.TextChanged += tbxBienSo_TextChanged;
             // 
             // lblBienSo
             // 
             lblBienSo.AutoSize = true;
-            lblBienSo.Location = new Point(540, 16);
+            lblBienSo.Location = new Point(764, 16);
             lblBienSo.Name = "lblBienSo";
             lblBienSo.Size = new Size(93, 22);
             lblBienSo.TabIndex = 6;
@@ -358,7 +267,7 @@
             // cbxDVVT
             // 
             cbxDVVT.BackColor = Color.Transparent;
-            cbxDVVT.CustomizableEdges = customizableEdges9;
+            cbxDVVT.CustomizableEdges = customizableEdges7;
             cbxDVVT.DrawMode = DrawMode.OwnerDrawFixed;
             cbxDVVT.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxDVVT.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -368,9 +277,10 @@
             cbxDVVT.ItemHeight = 30;
             cbxDVVT.Location = new Point(158, 8);
             cbxDVVT.Name = "cbxDVVT";
-            cbxDVVT.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            cbxDVVT.Size = new Size(363, 36);
+            cbxDVVT.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbxDVVT.Size = new Size(460, 36);
             cbxDVVT.TabIndex = 2;
+            cbxDVVT.SelectedIndexChanged += cbxDVVT_SelectedIndexChanged;
             // 
             // panel1
             // 
@@ -386,7 +296,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.CustomizableEdges = customizableEdges11;
+            btnAdd.CustomizableEdges = customizableEdges9;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -396,7 +306,7 @@
             btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(746, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnAdd.Size = new Size(177, 42);
             btnAdd.TabIndex = 5;
             btnAdd.Text = "Thêm xe";
@@ -404,7 +314,7 @@
             // 
             // btnXuatFile
             // 
-            btnXuatFile.CustomizableEdges = customizableEdges13;
+            btnXuatFile.CustomizableEdges = customizableEdges11;
             btnXuatFile.DisabledState.BorderColor = Color.DarkGray;
             btnXuatFile.DisabledState.CustomBorderColor = Color.DarkGray;
             btnXuatFile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -414,14 +324,14 @@
             btnXuatFile.ForeColor = Color.White;
             btnXuatFile.Location = new Point(1112, 3);
             btnXuatFile.Name = "btnXuatFile";
-            btnXuatFile.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnXuatFile.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnXuatFile.Size = new Size(177, 42);
             btnXuatFile.TabIndex = 4;
             btnXuatFile.Text = "Xuất file";
             // 
             // btnImport
             // 
-            btnImport.CustomizableEdges = customizableEdges15;
+            btnImport.CustomizableEdges = customizableEdges13;
             btnImport.DisabledState.BorderColor = Color.DarkGray;
             btnImport.DisabledState.CustomBorderColor = Color.DarkGray;
             btnImport.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -431,14 +341,14 @@
             btnImport.ForeColor = Color.White;
             btnImport.Location = new Point(929, 3);
             btnImport.Name = "btnImport";
-            btnImport.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnImport.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnImport.Size = new Size(177, 42);
             btnImport.TabIndex = 3;
             btnImport.Text = "Import";
             // 
             // tbxSearch
             // 
-            tbxSearch.CustomizableEdges = customizableEdges17;
+            tbxSearch.CustomizableEdges = customizableEdges15;
             tbxSearch.DefaultText = "";
             tbxSearch.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxSearch.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -452,7 +362,7 @@
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Theo mã, tên, số điện thoại";
             tbxSearch.SelectedText = "";
-            tbxSearch.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            tbxSearch.ShadowDecoration.CustomizableEdges = customizableEdges16;
             tbxSearch.Size = new Size(343, 42);
             tbxSearch.TabIndex = 1;
             // 
@@ -480,7 +390,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "VehicleList";
             Text = "Supplier";
-            Load += Supplier_Load;
+            Load += VehicleList_Load;
             pnFooter.ResumeLayout(false);
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
@@ -501,16 +411,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView gridView;
         private Panel pnHeader;
         private Guna.UI2.WinForms.Guna2Button btnXuatFile;
-        private DataGridViewTextBoxColumn SupplierName;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn PhoneNumber;
-        private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn Address;
-        private DataGridViewTextBoxColumn Active;
-        private DataGridViewTextBoxColumn Amount;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxTuyen;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxBienSo;
-        private Label lblTuyen;
         private Label lblBienSo;
         private Label lblDVVT;
         private Guna.UI2.WinForms.Guna2ComboBox cbxDVVT;
@@ -521,5 +421,6 @@
         private Label lblHeader;
         private Guna.UI2.WinForms.Guna2Button btnImport;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2TextBox tbxBienSo;
     }
 }

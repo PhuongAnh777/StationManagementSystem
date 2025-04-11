@@ -98,6 +98,7 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.Email).HasColumnType("NVARCHAR(100)").IsRequired();
                 entity.Property(e => e.BirthDate).HasColumnType("datetime");
                 entity.Property(e => e.Gender).HasColumnType("BIT").IsRequired();
+                entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
             });
 
             // Invoice
@@ -145,7 +146,6 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.Phone).HasColumnType("NVARCHAR(100)").IsRequired();
                 entity.Property(e => e.Address).HasColumnType("NVARCHAR(100)");
                 entity.Property(e => e.Email).HasColumnType("NVARCHAR(100)");
-                entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
                 entity.Property(e => e.Company).HasColumnType("NVARCHAR(100)").IsRequired();
                 entity.Property(e => e.DrivingLicense).HasColumnType("NVARCHAR(100)");
             });
@@ -191,6 +191,7 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.DeparturePoint).HasColumnType("NVARCHAR(20)").IsRequired();
                 entity.Property(e => e.ArrivalPoint).HasColumnType("NVARCHAR(20)").IsRequired();
                 entity.Property(e => e.Distance).HasColumnType("FLOAT").IsRequired();
+                entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
             });
 
             // Ticket
@@ -268,6 +269,7 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.InspectionExpiryDate).HasColumnType("datetime");
                 entity.Property(e => e.ImpoundmentDate).HasColumnType("datetime");
                 entity.Property(e => e.ReleaseDate).HasColumnType("datetime");
+                entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
 
                 entity.HasOne(d => d.Owner)
                     .WithMany(o => o.Vehicles)

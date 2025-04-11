@@ -28,40 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnFooter = new Panel();
             btnBoQua = new Guna.UI2.WinForms.Guna2Button();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             pnContainer = new Panel();
-            panel2 = new Panel();
-            tbxMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
-            panel1 = new Panel();
-            tbxTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
-            lblMatKhau = new Label();
-            lblTaiKhoan = new Label();
             dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblNgaySinh = new Label();
             pnLine3 = new Panel();
             tbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             pnLine2 = new Panel();
-            lblTaoTaiKhoan = new Label();
             tbxSoDienThoai = new Guna.UI2.WinForms.Guna2TextBox();
             lblEmail = new Label();
             lblSoDienThoai = new Label();
@@ -74,8 +65,13 @@
             pnHeader = new Panel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             lblHeader = new Label();
+            lblDiaChi = new Label();
+            tbxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
             pnFooter.SuspendLayout();
             pnContainer.SuspendLayout();
+            pnLine2.SuspendLayout();
             pnHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -83,14 +79,14 @@
             // 
             pnFooter.Controls.Add(btnBoQua);
             pnFooter.Controls.Add(btnLuu);
-            pnFooter.Location = new Point(3, 454);
+            pnFooter.Location = new Point(7, 322);
             pnFooter.Name = "pnFooter";
             pnFooter.Size = new Size(1093, 68);
             pnFooter.TabIndex = 5;
             // 
             // btnBoQua
             // 
-            btnBoQua.CustomizableEdges = customizableEdges1;
+            btnBoQua.CustomizableEdges = customizableEdges17;
             btnBoQua.DisabledState.BorderColor = Color.DarkGray;
             btnBoQua.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBoQua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -100,14 +96,14 @@
             btnBoQua.ForeColor = Color.White;
             btnBoQua.Location = new Point(905, 17);
             btnBoQua.Name = "btnBoQua";
-            btnBoQua.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnBoQua.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnBoQua.Size = new Size(177, 42);
             btnBoQua.TabIndex = 6;
             btnBoQua.Text = "Bỏ qua";
             // 
             // btnLuu
             // 
-            btnLuu.CustomizableEdges = customizableEdges3;
+            btnLuu.CustomizableEdges = customizableEdges19;
             btnLuu.DisabledState.BorderColor = Color.DarkGray;
             btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -117,7 +113,7 @@
             btnLuu.ForeColor = Color.White;
             btnLuu.Location = new Point(696, 17);
             btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnLuu.Size = new Size(177, 42);
             btnLuu.TabIndex = 4;
             btnLuu.Text = "Lưu";
@@ -126,17 +122,13 @@
             // pnContainer
             // 
             pnContainer.Controls.Add(panel2);
-            pnContainer.Controls.Add(tbxMatKhau);
-            pnContainer.Controls.Add(panel1);
-            pnContainer.Controls.Add(tbxTaiKhoan);
-            pnContainer.Controls.Add(lblMatKhau);
-            pnContainer.Controls.Add(lblTaiKhoan);
+            pnContainer.Controls.Add(tbxDiaChi);
+            pnContainer.Controls.Add(lblDiaChi);
             pnContainer.Controls.Add(dateTime);
             pnContainer.Controls.Add(lblNgaySinh);
             pnContainer.Controls.Add(pnLine3);
             pnContainer.Controls.Add(tbxEmail);
             pnContainer.Controls.Add(pnLine2);
-            pnContainer.Controls.Add(lblTaoTaiKhoan);
             pnContainer.Controls.Add(tbxSoDienThoai);
             pnContainer.Controls.Add(lblEmail);
             pnContainer.Controls.Add(lblSoDienThoai);
@@ -148,101 +140,21 @@
             pnContainer.Controls.Add(lblTenNhanVien);
             pnContainer.Location = new Point(4, 80);
             pnContainer.Name = "pnContainer";
-            pnContainer.Size = new Size(1091, 368);
+            pnContainer.Size = new Size(1091, 236);
             pnContainer.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Silver;
-            panel2.Location = new Point(710, 308);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(375, 1);
-            panel2.TabIndex = 26;
-            // 
-            // tbxMatKhau
-            // 
-            tbxMatKhau.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxMatKhau.BorderThickness = 0;
-            tbxMatKhau.CustomizableEdges = customizableEdges5;
-            tbxMatKhau.DefaultText = "";
-            tbxMatKhau.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxMatKhau.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxMatKhau.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxMatKhau.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxMatKhau.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxMatKhau.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxMatKhau.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxMatKhau.Location = new Point(711, 265);
-            tbxMatKhau.Margin = new Padding(4);
-            tbxMatKhau.Name = "tbxMatKhau";
-            tbxMatKhau.PlaceholderText = "";
-            tbxMatKhau.SelectedText = "";
-            tbxMatKhau.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            tbxMatKhau.Size = new Size(375, 40);
-            tbxMatKhau.TabIndex = 25;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Silver;
-            panel1.Location = new Point(711, 217);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(375, 1);
-            panel1.TabIndex = 24;
-            // 
-            // tbxTaiKhoan
-            // 
-            tbxTaiKhoan.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxTaiKhoan.BorderThickness = 0;
-            tbxTaiKhoan.CustomizableEdges = customizableEdges7;
-            tbxTaiKhoan.DefaultText = "";
-            tbxTaiKhoan.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxTaiKhoan.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxTaiKhoan.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxTaiKhoan.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxTaiKhoan.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxTaiKhoan.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxTaiKhoan.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxTaiKhoan.Location = new Point(706, 170);
-            tbxTaiKhoan.Margin = new Padding(4);
-            tbxTaiKhoan.Name = "tbxTaiKhoan";
-            tbxTaiKhoan.PlaceholderText = "";
-            tbxTaiKhoan.SelectedText = "";
-            tbxTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            tbxTaiKhoan.Size = new Size(375, 40);
-            tbxTaiKhoan.TabIndex = 23;
-            // 
-            // lblMatKhau
-            // 
-            lblMatKhau.AutoSize = true;
-            lblMatKhau.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMatKhau.Location = new Point(587, 284);
-            lblMatKhau.Name = "lblMatKhau";
-            lblMatKhau.Size = new Size(111, 25);
-            lblMatKhau.TabIndex = 22;
-            lblMatKhau.Text = "Mật khẩu";
-            // 
-            // lblTaiKhoan
-            // 
-            lblTaiKhoan.AutoSize = true;
-            lblTaiKhoan.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTaiKhoan.Location = new Point(587, 193);
-            lblTaiKhoan.Name = "lblTaiKhoan";
-            lblTaiKhoan.Size = new Size(112, 25);
-            lblTaiKhoan.TabIndex = 21;
-            lblTaiKhoan.Text = "Tài khoản";
             // 
             // dateTime
             // 
             dateTime.Checked = true;
-            dateTime.CustomizableEdges = customizableEdges9;
+            dateTime.CustomizableEdges = customizableEdges23;
             dateTime.FillColor = Color.FromArgb(192, 192, 255);
             dateTime.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTime.Format = DateTimePickerFormat.Long;
-            dateTime.Location = new Point(170, 260);
+            dateTime.Location = new Point(709, 169);
             dateTime.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dateTime.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dateTime.Name = "dateTime";
-            dateTime.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dateTime.ShadowDecoration.CustomizableEdges = customizableEdges24;
             dateTime.ShowCheckBox = true;
             dateTime.Size = new Size(375, 45);
             dateTime.TabIndex = 20;
@@ -252,7 +164,7 @@
             // 
             lblNgaySinh.AutoSize = true;
             lblNgaySinh.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNgaySinh.Location = new Point(33, 280);
+            lblNgaySinh.Location = new Point(570, 189);
             lblNgaySinh.Name = "lblNgaySinh";
             lblNgaySinh.Size = new Size(110, 25);
             lblNgaySinh.TabIndex = 17;
@@ -270,7 +182,7 @@
             // 
             tbxEmail.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             tbxEmail.BorderThickness = 0;
-            tbxEmail.CustomizableEdges = customizableEdges11;
+            tbxEmail.CustomizableEdges = customizableEdges25;
             tbxEmail.DefaultText = "";
             tbxEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -284,33 +196,24 @@
             tbxEmail.Name = "tbxEmail";
             tbxEmail.PlaceholderText = "";
             tbxEmail.SelectedText = "";
-            tbxEmail.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            tbxEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
             tbxEmail.Size = new Size(375, 40);
             tbxEmail.TabIndex = 10;
             // 
             // pnLine2
             // 
             pnLine2.BackColor = Color.Silver;
+            pnLine2.Controls.Add(panel1);
             pnLine2.Location = new Point(170, 213);
             pnLine2.Name = "pnLine2";
             pnLine2.Size = new Size(375, 1);
             pnLine2.TabIndex = 6;
             // 
-            // lblTaoTaiKhoan
-            // 
-            lblTaoTaiKhoan.AutoSize = true;
-            lblTaoTaiKhoan.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTaoTaiKhoan.Location = new Point(560, 103);
-            lblTaoTaiKhoan.Name = "lblTaoTaiKhoan";
-            lblTaoTaiKhoan.Size = new Size(150, 25);
-            lblTaoTaiKhoan.TabIndex = 9;
-            lblTaoTaiKhoan.Text = "Tạo tài khoản";
-            // 
             // tbxSoDienThoai
             // 
             tbxSoDienThoai.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             tbxSoDienThoai.BorderThickness = 0;
-            tbxSoDienThoai.CustomizableEdges = customizableEdges13;
+            tbxSoDienThoai.CustomizableEdges = customizableEdges27;
             tbxSoDienThoai.DefaultText = "";
             tbxSoDienThoai.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxSoDienThoai.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -324,7 +227,7 @@
             tbxSoDienThoai.Name = "tbxSoDienThoai";
             tbxSoDienThoai.PlaceholderText = "";
             tbxSoDienThoai.SelectedText = "";
-            tbxSoDienThoai.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tbxSoDienThoai.ShadowDecoration.CustomizableEdges = customizableEdges28;
             tbxSoDienThoai.Size = new Size(375, 40);
             tbxSoDienThoai.TabIndex = 5;
             // 
@@ -382,7 +285,7 @@
             // 
             tbxTenNhanVien.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             tbxTenNhanVien.BorderThickness = 0;
-            tbxTenNhanVien.CustomizableEdges = customizableEdges15;
+            tbxTenNhanVien.CustomizableEdges = customizableEdges29;
             tbxTenNhanVien.DefaultText = "";
             tbxTenNhanVien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxTenNhanVien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -396,7 +299,7 @@
             tbxTenNhanVien.Name = "tbxTenNhanVien";
             tbxTenNhanVien.PlaceholderText = "";
             tbxTenNhanVien.SelectedText = "";
-            tbxTenNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tbxTenNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges30;
             tbxTenNhanVien.Size = new Size(375, 40);
             tbxTenNhanVien.TabIndex = 2;
             // 
@@ -431,7 +334,7 @@
             // 
             // btnExit
             // 
-            btnExit.CustomizableEdges = customizableEdges17;
+            btnExit.CustomizableEdges = customizableEdges31;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -442,7 +345,7 @@
             btnExit.ForeColor = Color.Silver;
             btnExit.Location = new Point(1036, 10);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
@@ -458,12 +361,60 @@
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Thêm nhân viên";
             // 
+            // lblDiaChi
+            // 
+            lblDiaChi.AutoSize = true;
+            lblDiaChi.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDiaChi.Location = new Point(598, 102);
+            lblDiaChi.Name = "lblDiaChi";
+            lblDiaChi.Size = new Size(82, 25);
+            lblDiaChi.TabIndex = 21;
+            lblDiaChi.Text = "Địa chỉ";
+            // 
+            // tbxDiaChi
+            // 
+            tbxDiaChi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            tbxDiaChi.BorderThickness = 0;
+            tbxDiaChi.CustomizableEdges = customizableEdges21;
+            tbxDiaChi.DefaultText = "";
+            tbxDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxDiaChi.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxDiaChi.Location = new Point(705, 88);
+            tbxDiaChi.Margin = new Padding(4);
+            tbxDiaChi.Name = "tbxDiaChi";
+            tbxDiaChi.PlaceholderText = "";
+            tbxDiaChi.SelectedText = "";
+            tbxDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            tbxDiaChi.Size = new Size(375, 40);
+            tbxDiaChi.TabIndex = 22;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Silver;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(375, 1);
+            panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Silver;
+            panel2.Location = new Point(706, 126);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(375, 1);
+            panel2.TabIndex = 23;
+            // 
             // EmployeeAdd
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1100, 525);
+            ClientSize = new Size(1100, 400);
             Controls.Add(pnFooter);
             Controls.Add(pnContainer);
             Controls.Add(pnHeader);
@@ -475,6 +426,7 @@
             pnFooter.ResumeLayout(false);
             pnContainer.ResumeLayout(false);
             pnContainer.PerformLayout();
+            pnLine2.ResumeLayout(false);
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             ResumeLayout(false);
@@ -493,7 +445,6 @@
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private Label lblHeader;
         private Panel pnLineA1;
-        private Label lblTaoTaiKhoan;
         private Label lblEmail;
         private Label lblSoDienThoai;
         private RadioButton rbtnNu;
@@ -505,11 +456,9 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTime;
         private Panel panel3;
         private Label lblNgaySinh;
-        private Label lblMatKhau;
-        private Label lblTaiKhoan;
+        private Guna.UI2.WinForms.Guna2TextBox tbxDiaChi;
+        private Label lblDiaChi;
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox tbxMatKhau;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox tbxTaiKhoan;
     }
 }

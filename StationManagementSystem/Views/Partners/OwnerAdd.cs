@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.DTO.Owner;
@@ -41,6 +42,16 @@ namespace StationManagementSystem.Views.Partners
             }
             _ownerDto.IDCard = tbxCCCD.Text;
 
+            if (!string.IsNullOrEmpty(tbxSoDienThoai.Text))
+            {
+                string pattern = @"^(0(3|5|7|8|9)[0-9]{8}|01[2|6|8|9][0-9]{8})$";
+                bool isValid = Regex.IsMatch(tbxSoDienThoai.Text, pattern);
+                if (!isValid)
+                {
+                    MessageBox.Show("Số điện thoại chưa đúng định dạng", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
             if (string.IsNullOrEmpty(tbxSoDienThoai.Text))
             {
                 MessageBox.Show("Vui lòng nhập số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -53,6 +64,11 @@ namespace StationManagementSystem.Views.Partners
                 MessageBox.Show("Vui lòng nhập tên đơn vị vận tải", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (await _ownerService.IsTransportUnitExists(tbxDVVT.Text))
+            {
+                MessageBox.Show("Tên đơn vị vận tải đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             _ownerDto.Company = tbxDVVT.Text;
 
             if (string.IsNullOrEmpty(tbxDiaChi.Text))
@@ -61,6 +77,16 @@ namespace StationManagementSystem.Views.Partners
             }
             _ownerDto.Address = tbxDiaChi.Text;
 
+            if (!string.IsNullOrEmpty(tbxEmail.Text))
+            {
+                string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                bool isValid = Regex.IsMatch(tbxEmail.Text, pattern);
+                if (!isValid)
+                {
+                    MessageBox.Show("Email chưa đúng định dạng", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
             if (string.IsNullOrEmpty(tbxEmail.Text))
             {
                 _ownerDto.Email = null;

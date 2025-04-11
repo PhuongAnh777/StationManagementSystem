@@ -16,6 +16,10 @@ namespace StationManagementSystem.Views.Partners
         {
             InitializeComponent();
         }
+        public VehicleDetail(Guid vehicleId)
+        {
+            InitializeComponent();
+        }
         private void CreateFormChild(Form form)
         {
             // Kiểm tra nếu đã có form nào khác trong pnChild

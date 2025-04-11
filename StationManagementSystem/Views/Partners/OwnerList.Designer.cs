@@ -1,6 +1,6 @@
-﻿namespace StationManagementSystem.Views.Employees
+﻿namespace StationManagementSystem.Views.Partners
 {
-    partial class EmloyeeList
+    partial class OwnerList
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -44,33 +40,120 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            pnFooter = new Panel();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            btnXuatFile = new Guna.UI2.WinForms.Guna2Button();
+            btnImport = new Guna.UI2.WinForms.Guna2Button();
+            btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            lblHeader = new Label();
+            pnHeader = new Panel();
+            tbxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             labelPageInfo = new Label();
             lblPage = new Label();
             btnSau = new Guna.UI2.WinForms.Guna2Button();
             btnTruoc = new Guna.UI2.WinForms.Guna2Button();
+            pnFooter = new Panel();
             gridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            pnHeader = new Panel();
-            btnXuatFile = new Guna.UI2.WinForms.Guna2Button();
-            btnImport = new Guna.UI2.WinForms.Guna2Button();
-            btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            tbxSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            lblHeader = new Label();
+            pnHeader.SuspendLayout();
             pnFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
-            pnHeader.SuspendLayout();
             SuspendLayout();
             // 
-            // pnFooter
+            // btnXuatFile
             // 
-            pnFooter.Controls.Add(labelPageInfo);
-            pnFooter.Controls.Add(lblPage);
-            pnFooter.Controls.Add(btnSau);
-            pnFooter.Controls.Add(btnTruoc);
-            pnFooter.Location = new Point(12, 805);
-            pnFooter.Name = "pnFooter";
-            pnFooter.Size = new Size(1338, 50);
-            pnFooter.TabIndex = 11;
+            btnXuatFile.CustomizableEdges = customizableEdges1;
+            btnXuatFile.DisabledState.BorderColor = Color.DarkGray;
+            btnXuatFile.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnXuatFile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnXuatFile.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnXuatFile.FillColor = Color.FromArgb(78, 169, 90);
+            btnXuatFile.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnXuatFile.ForeColor = Color.White;
+            btnXuatFile.Location = new Point(1112, 3);
+            btnXuatFile.Name = "btnXuatFile";
+            btnXuatFile.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnXuatFile.Size = new Size(177, 42);
+            btnXuatFile.TabIndex = 4;
+            btnXuatFile.Text = "Xuất file";
+            // 
+            // btnImport
+            // 
+            btnImport.CustomizableEdges = customizableEdges3;
+            btnImport.DisabledState.BorderColor = Color.DarkGray;
+            btnImport.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnImport.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnImport.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnImport.FillColor = Color.FromArgb(78, 169, 90);
+            btnImport.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.White;
+            btnImport.Location = new Point(929, 3);
+            btnImport.Name = "btnImport";
+            btnImport.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnImport.Size = new Size(177, 42);
+            btnImport.TabIndex = 3;
+            btnImport.Text = "Import";
+            // 
+            // btnAdd
+            // 
+            btnAdd.CustomizableEdges = customizableEdges5;
+            btnAdd.DisabledState.BorderColor = Color.DarkGray;
+            btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAdd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAdd.FillColor = Color.FromArgb(78, 169, 90);
+            btnAdd.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(746, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAdd.Size = new Size(177, 42);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Thêm mới";
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // lblHeader
+            // 
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHeader.Location = new Point(4, 8);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(99, 32);
+            lblHeader.TabIndex = 0;
+            lblHeader.Text = "Chủ xe";
+            // 
+            // pnHeader
+            // 
+            pnHeader.Controls.Add(btnXuatFile);
+            pnHeader.Controls.Add(btnImport);
+            pnHeader.Controls.Add(btnAdd);
+            pnHeader.Controls.Add(tbxSearch);
+            pnHeader.Controls.Add(lblHeader);
+            pnHeader.Location = new Point(13, 8);
+            pnHeader.Name = "pnHeader";
+            pnHeader.Size = new Size(1337, 50);
+            pnHeader.TabIndex = 12;
+            // 
+            // tbxSearch
+            // 
+            tbxSearch.CustomizableEdges = customizableEdges7;
+            tbxSearch.DefaultText = "";
+            tbxSearch.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxSearch.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxSearch.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxSearch.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxSearch.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxSearch.Location = new Point(321, 4);
+            tbxSearch.Margin = new Padding(4);
+            tbxSearch.Name = "tbxSearch";
+            tbxSearch.PlaceholderText = "Theo mã, tên, số điện thoại";
+            tbxSearch.SelectedText = "";
+            tbxSearch.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tbxSearch.Size = new Size(343, 42);
+            tbxSearch.TabIndex = 1;
             // 
             // labelPageInfo
             // 
@@ -98,7 +181,7 @@
             btnSau.BorderRadius = 20;
             btnSau.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             btnSau.BorderThickness = 1;
-            btnSau.CustomizableEdges = customizableEdges1;
+            btnSau.CustomizableEdges = customizableEdges9;
             btnSau.DisabledState.BorderColor = Color.DarkGray;
             btnSau.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSau.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -108,7 +191,7 @@
             btnSau.ForeColor = Color.RoyalBlue;
             btnSau.Location = new Point(295, 3);
             btnSau.Name = "btnSau";
-            btnSau.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnSau.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSau.Size = new Size(81, 44);
             btnSau.TabIndex = 1;
             btnSau.Text = "Sau";
@@ -121,7 +204,7 @@
             btnTruoc.BorderRadius = 20;
             btnTruoc.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             btnTruoc.BorderThickness = 1;
-            btnTruoc.CustomizableEdges = customizableEdges3;
+            btnTruoc.CustomizableEdges = customizableEdges11;
             btnTruoc.DisabledState.BorderColor = Color.DarkGray;
             btnTruoc.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTruoc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -131,11 +214,22 @@
             btnTruoc.ForeColor = Color.RoyalBlue;
             btnTruoc.Location = new Point(61, 3);
             btnTruoc.Name = "btnTruoc";
-            btnTruoc.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnTruoc.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnTruoc.Size = new Size(81, 44);
             btnTruoc.TabIndex = 0;
             btnTruoc.Text = "Trước";
             btnTruoc.Click += btnTruoc_Click;
+            // 
+            // pnFooter
+            // 
+            pnFooter.Controls.Add(labelPageInfo);
+            pnFooter.Controls.Add(lblPage);
+            pnFooter.Controls.Add(btnSau);
+            pnFooter.Controls.Add(btnTruoc);
+            pnFooter.Location = new Point(12, 808);
+            pnFooter.Name = "pnFooter";
+            pnFooter.Size = new Size(1338, 50);
+            pnFooter.TabIndex = 14;
             // 
             // gridView
             // 
@@ -165,7 +259,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             gridView.DefaultCellStyle = dataGridViewCellStyle3;
             gridView.GridColor = Color.FromArgb(231, 229, 255);
-            gridView.Location = new Point(12, 64);
+            gridView.Location = new Point(12, 67);
             gridView.Name = "gridView";
             gridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -179,7 +273,7 @@
             gridView.RowHeadersVisible = false;
             gridView.RowHeadersWidth = 51;
             gridView.Size = new Size(1338, 735);
-            gridView.TabIndex = 10;
+            gridView.TabIndex = 13;
             gridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             gridView.ThemeStyle.AlternatingRowsStyle.Font = null;
             gridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -201,141 +295,45 @@
             gridView.ThemeStyle.RowsStyle.Height = 29;
             gridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             gridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            gridView.CellClick += gridView_CellClick;
             gridView.CellContentClick += gridView_CellContentClick;
             gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
-            gridView.ColumnHeaderMouseDoubleClick += gridView_ColumnHeaderMouseDoubleClick;
             // 
-            // pnHeader
-            // 
-            pnHeader.Controls.Add(btnXuatFile);
-            pnHeader.Controls.Add(btnImport);
-            pnHeader.Controls.Add(btnAdd);
-            pnHeader.Controls.Add(tbxSearch);
-            pnHeader.Controls.Add(lblHeader);
-            pnHeader.Location = new Point(13, 5);
-            pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(1337, 50);
-            pnHeader.TabIndex = 9;
-            // 
-            // btnXuatFile
-            // 
-            btnXuatFile.CustomizableEdges = customizableEdges5;
-            btnXuatFile.DisabledState.BorderColor = Color.DarkGray;
-            btnXuatFile.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnXuatFile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnXuatFile.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnXuatFile.FillColor = Color.FromArgb(78, 169, 90);
-            btnXuatFile.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnXuatFile.ForeColor = Color.White;
-            btnXuatFile.Location = new Point(1112, 3);
-            btnXuatFile.Name = "btnXuatFile";
-            btnXuatFile.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnXuatFile.Size = new Size(177, 42);
-            btnXuatFile.TabIndex = 4;
-            btnXuatFile.Text = "Xuất file";
-            // 
-            // btnImport
-            // 
-            btnImport.CustomizableEdges = customizableEdges7;
-            btnImport.DisabledState.BorderColor = Color.DarkGray;
-            btnImport.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnImport.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnImport.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnImport.FillColor = Color.FromArgb(78, 169, 90);
-            btnImport.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnImport.ForeColor = Color.White;
-            btnImport.Location = new Point(929, 3);
-            btnImport.Name = "btnImport";
-            btnImport.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnImport.Size = new Size(177, 42);
-            btnImport.TabIndex = 3;
-            btnImport.Text = "Import";
-            // 
-            // btnAdd
-            // 
-            btnAdd.CustomizableEdges = customizableEdges9;
-            btnAdd.DisabledState.BorderColor = Color.DarkGray;
-            btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAdd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAdd.FillColor = Color.FromArgb(78, 169, 90);
-            btnAdd.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(746, 4);
-            btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnAdd.Size = new Size(177, 42);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Thêm mới";
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // tbxSearch
-            // 
-            tbxSearch.CustomizableEdges = customizableEdges11;
-            tbxSearch.DefaultText = "";
-            tbxSearch.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxSearch.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxSearch.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxSearch.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxSearch.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxSearch.Location = new Point(321, 4);
-            tbxSearch.Margin = new Padding(4);
-            tbxSearch.Name = "tbxSearch";
-            tbxSearch.PlaceholderText = "Theo mã, tên, số điện thoại";
-            tbxSearch.SelectedText = "";
-            tbxSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tbxSearch.Size = new Size(343, 42);
-            tbxSearch.TabIndex = 1;
-            // 
-            // lblHeader
-            // 
-            lblHeader.AutoSize = true;
-            lblHeader.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHeader.Location = new Point(4, 8);
-            lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(137, 32);
-            lblHeader.TabIndex = 0;
-            lblHeader.Text = "Nhân viên";
-            // 
-            // EmloyeeList
+            // OwnerList
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1362, 867);
+            Controls.Add(pnHeader);
             Controls.Add(pnFooter);
             Controls.Add(gridView);
-            Controls.Add(pnHeader);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "EmloyeeList";
-            Text = "EmloyeeList";
-            Load += EmloyeeList_Load;
+            Name = "OwnerList";
+            Text = "OwnerList";
+            Load += OwnerList_Load;
+            pnHeader.ResumeLayout(false);
+            pnHeader.PerformLayout();
             pnFooter.ResumeLayout(false);
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
-            pnHeader.ResumeLayout(false);
-            pnHeader.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel pnFooter;
+        private Guna.UI2.WinForms.Guna2Button btnXuatFile;
+        private Guna.UI2.WinForms.Guna2Button btnImport;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Label lblHeader;
+        private Panel pnHeader;
+        private Guna.UI2.WinForms.Guna2TextBox tbxSearch;
         private Label labelPageInfo;
         private Label lblPage;
         private Guna.UI2.WinForms.Guna2Button btnSau;
         private Guna.UI2.WinForms.Guna2Button btnTruoc;
+        private Panel pnFooter;
         private Guna.UI2.WinForms.Guna2DataGridView gridView;
-        private Panel pnHeader;
-        private Guna.UI2.WinForms.Guna2Button btnXuatFile;
-        private Guna.UI2.WinForms.Guna2Button btnImport;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2TextBox tbxSearch;
-        private Label lblHeader;
     }
 }

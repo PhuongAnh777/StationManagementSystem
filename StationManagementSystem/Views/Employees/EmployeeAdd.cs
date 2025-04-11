@@ -8,25 +8,29 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StationManagementSystem.DTO.Employee;
+using StationManagementSystem.Services;
 
 namespace StationManagementSystem.Views.Employees
 {
     public partial class EmployeeAdd : Form
     {
-        //private readonly EmployeeService _employeeService;
+        private readonly EmployeeService _employeeService;
         //private readonly AccountService _accountService;
-        //private EmployeeCreateDto _employeeDto;
+        private EmployeeCreateDto _employeeDto;
         //private AccountCreateDto _accountDto;
         public EmployeeAdd()
         {
             InitializeComponent();
-            //_employeeService = new EmployeeService();
+            _employeeService = new EmployeeService();
             //_accountService = new AccountService();
-            //_employeeDto = new EmployeeCreateDto();
+            _employeeDto = new EmployeeCreateDto();
             //_accountDto = new AccountCreateDto();
             //LoadAccount();
 
             dateTime.Checked = false;
+
+            rbtnNu.Checked = true;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -93,110 +97,85 @@ namespace StationManagementSystem.Views.Employees
         }
         private async void btnLuu_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(tbxTenNhanVien.Text))
-            //{
-            //    MessageBox.Show("Tên nhân viên không được trống", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(tbxTenNhanVien.Text))
+            {
+                MessageBox.Show("Tên nhân viên không được trống", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            //if (rbtnNam.Checked)
-            //{
-            //    _employeeDto.Gender = false;
-            //}
-            //else if (rbtnNu.Checked)
-            //{
-            //    _employeeDto.Gender = true;
-            //}
-            //else
-            //{
-            //    _employeeDto.Gender = null;
-            //}
-            //_employeeDto.Name = tbxTenNhanVien.Text;
-            //if (!string.IsNullOrEmpty(tbxEmail.Text))
-            //{
-            //    string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            //    bool isValid = Regex.IsMatch(tbxEmail.Text, pattern);
-            //    if (!isValid)
-            //    {
-            //        MessageBox.Show("Email chưa đúng định dạng", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-            //}
-            //_employeeDto.Email = string.IsNullOrEmpty(tbxEmail.Text) ? null : tbxEmail.Text;
-            //if (dateTime.Checked)
-            //{
-            //    if (dateTime.Value > DateTime.Now || dateTime.Value.Year < 1925)
-            //    {
-            //        MessageBox.Show("Ngày sinh không hợp lệ", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-            //    _employeeDto.DateOfBirth = dateTime.Value;
-            //}
-            //else
-            //{
-            //    _employeeDto.DateOfBirth = null;
-            //}
-            //// Regex kiểm tra số điện thoại Việt Nam
-            //if (!string.IsNullOrEmpty(tbxSoDienThoai.Text))
-            //{
-            //    string pattern = @"^(0(3|5|7|8|9)[0-9]{8}|01[2|6|8|9][0-9]{8})$";
-            //    bool isValid = Regex.IsMatch(tbxSoDienThoai.Text, pattern);
-            //    if (!isValid)
-            //    {
-            //        MessageBox.Show("Số điện thoại chưa đúng định dạng", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-            //}
-            ////_customerDto.PhoneNumber = tbxSoDienThoai.Text;
-            //_employeeDto.PhoneNumber = string.IsNullOrEmpty(tbxSoDienThoai.Text) ? null : tbxSoDienThoai.Text;
+            if (rbtnNam.Checked)
+            {
+                _employeeDto.Gender = false;
+            }
+            else if (rbtnNu.Checked)
+            {
+                _employeeDto.Gender = true;
+            }
+            _employeeDto.FullName = tbxTenNhanVien.Text;
+            if (!string.IsNullOrEmpty(tbxEmail.Text))
+            {
+                string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                bool isValid = Regex.IsMatch(tbxEmail.Text, pattern);
+                if (!isValid)
+                {
+                    MessageBox.Show("Email chưa đúng định dạng", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            if (string.IsNullOrEmpty(tbxEmail.Text))
+            {
+                MessageBox.Show("Ẹmail không được trống", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _employeeDto.Email = tbxEmail.Text;
+            if (dateTime.Checked)
+            {
+                if (dateTime.Value > DateTime.Now || dateTime.Value.Year < 1925)
+                {
+                    MessageBox.Show("Ngày sinh không hợp lệ", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                _employeeDto.BirthDate = dateTime.Value;
+            }
+            else
+            {
+                _employeeDto.BirthDate = null;
+            }
+            // Regex kiểm tra số điện thoại Việt Nam
+            if (!string.IsNullOrEmpty(tbxSoDienThoai.Text))
+            {
+                string pattern = @"^(0(3|5|7|8|9)[0-9]{8}|01[2|6|8|9][0-9]{8})$";
+                bool isValid = Regex.IsMatch(tbxSoDienThoai.Text, pattern);
+                if (!isValid)
+                {
+                    MessageBox.Show("Số điện thoại chưa đúng định dạng", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            if (string.IsNullOrEmpty(tbxSoDienThoai.Text))
+            {
+                MessageBox.Show("Số điện thoại không được trống", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            //string username = tbxTaiKhoan.Text.Trim();
-            //string password = tbxMatKhau.Text;
+            _employeeDto.Phone =tbxSoDienThoai.Text;
 
-            //// Kiểm tra không được để trống
-            //if (string.IsNullOrEmpty(username))
-            //{
-            //    MessageBox.Show("Tên tài khoản không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(tbxDiaChi.Text))
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _employeeDto.Address = tbxDiaChi.Text;
 
-            //if (string.IsNullOrEmpty(password))
-            //{
-            //    MessageBox.Show("Mật khẩu không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            var respone = await _employeeService.CreateEmployeeAsync(_employeeDto);
 
-            //// Kiểm tra tài khoản đã tồn tại
-            //if (await IsUsernameExists(username))
-            //{
-            //    MessageBox.Show("Tên tài khoản đã tồn tại. Vui lòng chọn tên khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //_accountDto.Username = username;
-            //// Kiểm tra độ phức tạp của mật khẩu
-            //if (!IsValidPassword(password))
-            //{
-            //    MessageBox.Show("Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //_accountDto.Password = password;
+            if (respone != null)
+            {
+                MessageBox.Show($"Thêm thành công! {respone.FullName}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            //var responeAccount = await _accountService.CreateAccountAsync(_accountDto);
-
-
-            //var account = await _accountService.GetUserAccountByIdAsync(responeAccount.AccountID);
-
-            //_employeeDto.AccountID = account.AccountID;
-
-            //var respone = await _employeeService.CreateEmployeeAsync(_employeeDto);
-
-            //if (respone != null)
-            //{
-            //    MessageBox.Show($"Thêm thành công! {respone.Name}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StationManagementSystem.Models
+namespace StationManagementSystem.DTO.Owner
 {
-    public class Owner
+    public class OwnerUpdateDto
     {
-        [Key]
-        public Guid OwnerID { get; set; }  // Khóa chính
-
         public string Name { get; set; } // NVARCHAR(100)
         public string IDCard { get; set; } // NVARCHAR(15)
         public string Phone { get; set; } // NVARCHAR(100)
@@ -19,7 +15,5 @@ namespace StationManagementSystem.Models
         public string? Email { get; set; } // NVARCHAR(100)
         public string Company { get; set; } // NVARCHAR(100)
         public string? DrivingLicense { get; set; } // NVARCHAR(100)
-
-        public virtual ICollection<Vehicle> Vehicles { get; set; } = new List<Vehicle>(); // Mối quan hệ với bảng Vehicles
     }
 }

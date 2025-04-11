@@ -18,7 +18,7 @@ namespace StationManagementSystem.Models
         public string Email { get; set; } // NVARCHAR(100)
         public DateTime? BirthDate { get; set; } // DateTime
         public bool Gender { get; set; } // BIT 0 là nam, 1 là nữ vì phụ nữ luôn true
-
+        public bool IsDiscontinued { get; set; } // Bool
         public virtual Account Account { get; set; }
         public virtual ICollection<DepartureOrder> Orders { get; set; } = new List<DepartureOrder>(); // Mối quan hệ với bảng Order
         public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>(); // Mối quan hệ với bảng Ticket

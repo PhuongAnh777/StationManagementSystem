@@ -19,6 +19,12 @@
     <Compile Update="Views\Partners\OwnerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Partners\OwnerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Partners\OwnerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Partners\VehicleAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,6 +35,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Partners\VehicleDetailMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Partners\VehicleDetailOriginal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Partners\VehicleList.cs">

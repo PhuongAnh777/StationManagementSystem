@@ -8,6 +8,7 @@ namespace StationManagementSystem.DTO.Vehicle
 {
     public class VehicleCreateDto
     {
+        public Guid VehicleID { get; set; }  // Khóa chính
         public string LicensePlate { get; set; } // NVARCHAR(20)
         public string VehicleType { get; set; } // NVARCHAR(50)
         public int SeatTicket { get; set; } // INT

@@ -318,6 +318,7 @@
             btnThemNhanVien.Size = new Size(214, 49);
             btnThemNhanVien.TabIndex = 9;
             btnThemNhanVien.Text = "Thêm nhân viên";
+            btnThemNhanVien.Click += btnThemNhanVien_Click;
             // 
             // btnNhanVien1
             // 

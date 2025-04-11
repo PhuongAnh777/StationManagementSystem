@@ -226,12 +226,17 @@ namespace StationManagementSystem.Views
 
         private void btnChuXe_Click(object sender, EventArgs e)
         {
-
+            CreateFormChild(new OwnerList());
         }
 
         private void btnXe_Click(object sender, EventArgs e)
         {
             CreateFormChild(new VehicleList());
+        }
+
+        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new EmployeeAdd());
         }
     }
 }

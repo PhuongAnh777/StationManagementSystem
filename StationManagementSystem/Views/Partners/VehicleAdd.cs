@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.DTO.Vehicle;
+using StationManagementSystem.Models;
 using StationManagementSystem.Services;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -17,6 +18,7 @@ namespace StationManagementSystem.Views.Partners
     {
         private readonly VehicleService _vehicleService;
         private VehicleCreateDto _vehicleDto;
+        private readonly OwnerService _ownerService;
         private List<string> nhomXe;
         private bool _isPressed;
         public VehicleAdd()
@@ -24,6 +26,7 @@ namespace StationManagementSystem.Views.Partners
             InitializeComponent();
             _vehicleService = new VehicleService();
             _vehicleDto = new VehicleCreateDto();
+            _ownerService = new OwnerService();
 
             nhomXe = new List<string>
             {
@@ -40,6 +43,11 @@ namespace StationManagementSystem.Views.Partners
         {
             cbxNhomXe.DataSource = nhomXe;
             cbxNhomXe.SelectedIndex = 0;
+            var companies = await _ownerService.GetAllOwnersAsync();
+            cbxTaiXe.DataSource = companies;
+            cbxTaiXe.DisplayMember = "Company"; // hoặc tên thuộc tính bạn muốn hiển thị
+            cbxTaiXe.ValueMember = "OwnerID";
+            cbxTaiXe.SelectedIndex = -1; // Đặt giá trị mặc định là không có lựa chọn nào
         }
 
         private void VehicleAdd_Load(object sender, EventArgs e)
@@ -95,14 +103,26 @@ namespace StationManagementSystem.Views.Partners
             _vehicleDto.ImpoundmentDate = DateTimeFromBB.Value;
             _vehicleDto.ReleaseDate = DateTimeToBB.Value;
 
-            _vehicleDto.SeatTicket = (int)numGheNgoi.Value;
-            _vehicleDto.SleeperTicket = (int)numGheNam.Value;
-            _vehicleDto.VehicleType = cbxNhomXe.SelectedValue.ToString();
-            if (_isPressed == false)
+            if (((int)numGheNgoi.Value <= 0) && ((int)numGheNam.Value <= 0))
             {
-                MessageBox.Show("Vui lòng nhập thông tin chủ xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tải trọng xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            _vehicleDto.SeatTicket = (int)numGheNgoi.Value;
+            _vehicleDto.SleeperTicket = (int)numGheNam.Value;
+
+            if ((cbxTaiXe.SelectedValue == null) && (_isPressed == false))
+            {
+                MessageBox.Show("Vui lòng chọn thông tin chủ xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cbxTaiXe.SelectedValue != null)
+            {
+                _vehicleDto.OwnerID = Guid.Parse(cbxTaiXe.SelectedValue.ToString());
+            }
+           
+            _vehicleDto.VehicleType = cbxNhomXe.SelectedValue.ToString();
+
             var respone = await _vehicleService.CreateVehicleAsync(_vehicleDto);
 
             if (respone != null)

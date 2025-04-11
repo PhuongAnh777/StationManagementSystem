@@ -168,3 +168,6 @@ C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManage
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Transactions.VehicleDepartureList.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.InvoiceEmployeeForm.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.OwnerAdd.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.VehicleDetailOriginal.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.OwnerList.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.OwnerDetail.resources

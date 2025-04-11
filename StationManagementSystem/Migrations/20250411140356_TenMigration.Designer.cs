@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StationManagementSystem.Models;
 
@@ -11,9 +12,11 @@ using StationManagementSystem.Models;
 namespace StationManagementSystem.Migrations
 {
     [DbContext(typeof(StationContext))]
-    partial class StationContextModelSnapshot : ModelSnapshot
+    [Migration("20250411140356_TenMigration")]
+    partial class TenMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,9 +123,6 @@ namespace StationManagementSystem.Migrations
                     b.Property<bool>("Gender")
                         .HasColumnType("BIT");
 
-                    b.Property<bool>("IsDiscontinued")
-                        .HasColumnType("BIT");
-
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(10)");
@@ -223,6 +223,9 @@ namespace StationManagementSystem.Migrations
                     b.Property<string>("IDCard")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(15)");
+
+                    b.Property<bool>("IsDiscontinued")
+                        .HasColumnType("BIT");
 
                     b.Property<string>("Name")
                         .IsRequired()

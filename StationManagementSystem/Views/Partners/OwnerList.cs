@@ -9,29 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.Models;
 using StationManagementSystem.Services;
-using StationManagementSystem.Views.Partners;
 
-namespace StationManagementSystem.Views.Employees
+namespace StationManagementSystem.Views.Partners
 {
-    public partial class EmloyeeList : Form
+    public partial class OwnerList : Form
     {
-        private readonly EmployeeService _employeeService;
-
-        private List<Employee> _originalData;
+        private readonly OwnerService _ownerService;
+        private List<Owner> _originalData; // Dữ liệu gốc
         private int _pageSize = 10;                    // Số hàng trên mỗi trang
         private int _currentPage = 1;                 // Trang hiện tại
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
-        public EmloyeeList()
+        public OwnerList()
         {
             InitializeComponent();
-            _employeeService = new EmployeeService();
-            _originalData = new List<Employee>();
+            _ownerService = new OwnerService();
+            _originalData = new List<Owner>();
         }
         public void OpenChildForm(Form childForm)
         {
-            // Đặt vị trí xuất hiện của form con là chính giữa màn hình
+            //Đặt vị trí xuất hiện của form con là chính giữa màn hình
             childForm.StartPosition = FormStartPosition.Manual; // Đặt chế độ thủ công
             var screen = Screen.FromControl(this).WorkingArea; // Lấy kích thước màn hình làm tham chiếu
             childForm.Location = new Point(
@@ -39,7 +37,7 @@ namespace StationManagementSystem.Views.Employees
                 screen.Y + (screen.Height - childForm.Height) / 2
             );
 
-            // Làm mờ form chính
+            //Làm mờ form chính
             this.Opacity = 0.1;
 
             // Hiển thị form con dưới dạng modal
@@ -48,45 +46,42 @@ namespace StationManagementSystem.Views.Employees
             // Khôi phục độ trong suốt của form chính
             this.Opacity = 1.0;
         }
-
-        private void gridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void RenameOwnerGridColumns()
         {
-
-        }
-
-        private void RenameEmployeeGridColumns()
-        {
-            gridView.Columns["EmployeeID"].HeaderText = "Mã nhân viên";
-            gridView.Columns["FullName"].HeaderText = "Họ và tên";
+            gridView.Columns["OwnerID"].HeaderText = "Mã chủ xe";
+            gridView.Columns["Name"].HeaderText = "Họ và tên";
+            gridView.Columns["IDCard"].HeaderText = "CMND/CCCD";
             gridView.Columns["Phone"].HeaderText = "Số điện thoại";
             gridView.Columns["Address"].HeaderText = "Địa chỉ";
             gridView.Columns["Email"].HeaderText = "Email";
-            gridView.Columns["BirthDate"].HeaderText = "Ngày sinh";
-            gridView.Columns["Gender"].HeaderText = "Giới tính"; // Bạn có thể xử lý định dạng lại thành "Nam"/"Nữ" nếu cần
+            gridView.Columns["IsDiscontinued"].HeaderText = "Ngừng hoạt động";
+            gridView.Columns["Company"].HeaderText = "Công ty";
+            gridView.Columns["DrivingLicense"].HeaderText = "Bằng lái";
+
         }
+
         private async void gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.RowIndex >= gridView.Rows.Count)
+                return;
             var selectedRow = gridView.Rows[e.RowIndex];
-            var employeeId = (Guid)selectedRow.Cells["EmployeeID"].Value;
-            var response = await _employeeService.GetEmployeeByIdAsync(employeeId);
+            var ownerId = (Guid)selectedRow.Cells["OwnerID"].Value;
+            var response = await _ownerService.GetOwnerByIdAsync(ownerId);
 
             if (response != null)
             {
-                OpenChildForm(new EmployeeEdit(response));
-                await LoadEmployee(); // Cập nhật lại dữ liệu trong DataGridView
-
+                OpenChildForm(new OwnerDetail(response));
             }
             else
             {
-                MessageBox.Show("Failed to retrieve category details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to retrieve customer details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-        private async Task LoadEmployee()
+        private async Task LoadOwner()
         {
             try
             {
-                var owners = await _employeeService.GetAllEmployeesAsync();
+                var owners = await _ownerService.GetAllOwnersAsync();
 
                 if (owners != null)
                 {
@@ -94,7 +89,7 @@ namespace StationManagementSystem.Views.Employees
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize);
                     DisplayPage(_currentPage);
-                    RenameEmployeeGridColumns();
+                    RenameOwnerGridColumns();
                 }
                 else
                 {
@@ -164,17 +159,8 @@ namespace StationManagementSystem.Views.Employees
             }
         }
 
-        private void gridView_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
         private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //if (gridView.Columns[e.ColumnIndex].Name == "Image" || (gridView.Columns[e.ColumnIndex].Name == "Remove"))
-            //{
-            //    return;
-            //}
             string columnName = gridView.Columns[e.ColumnIndex].DataPropertyName;
 
             if (_sortedColumn == columnName)
@@ -190,20 +176,17 @@ namespace StationManagementSystem.Views.Employees
             SortData(columnName, _isAscending);
 
             UpdateColumnHeaders();
-
-        }
-
-        private async void EmloyeeList_Load(object sender, EventArgs e)
-        {
-            await LoadEmployee();
-
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EmployeeAdd());
-            await LoadEmployee();
+            OpenChildForm(new OwnerAdd());
+            await LoadOwner();
+        }
 
+        private async void OwnerList_Load(object sender, EventArgs e)
+        {
+            await LoadOwner();
         }
     }
 }
