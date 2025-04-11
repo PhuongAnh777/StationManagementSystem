@@ -50,20 +50,22 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblHeader = new Label();
             lblThongTinXe = new Label();
             lblBienSo = new Label();
@@ -109,18 +111,19 @@
             numDoDem = new Guna.UI2.WinForms.Guna2NumericUpDown();
             lblDoCho = new Label();
             panel1 = new Panel();
-            numDoCho = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            lblVeSinh = new Label();
-            numVeSinh = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            lblNhienLieu = new Label();
-            numNhienLieu = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            lblTongTien = new Label();
-            numTongTien = new Guna.UI2.WinForms.Guna2NumericUpDown();
             lblBang = new Label();
+            numTongTien = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            lblTongTien = new Label();
+            numNhienLieu = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            lblNhienLieu = new Label();
+            numVeSinh = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            lblVeSinh = new Label();
+            numDoCho = new Guna.UI2.WinForms.Guna2NumericUpDown();
             label1 = new Label();
             numThanhToan = new Guna.UI2.WinForms.Guna2NumericUpDown();
             btnOk = new Guna.UI2.WinForms.Guna2Button();
             btnCancle = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             grboxVe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGiaNam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numGiaNgoi).BeginInit();
@@ -133,10 +136,10 @@
             ((System.ComponentModel.ISupportInitialize)numHH).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numDoDem).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numDoCho).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numVeSinh).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numNhienLieu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numTongTien).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numNhienLieu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numVeSinh).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numDoCho).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numThanhToan).BeginInit();
             SuspendLayout();
             // 
@@ -641,72 +644,14 @@
             panel1.Size = new Size(1174, 125);
             panel1.TabIndex = 69;
             // 
-            // numDoCho
+            // lblBang
             // 
-            numDoCho.BackColor = Color.Transparent;
-            numDoCho.CustomizableEdges = customizableEdges29;
-            numDoCho.Font = new Font("Segoe UI", 9F);
-            numDoCho.Location = new Point(479, 70);
-            numDoCho.Margin = new Padding(3, 4, 3, 4);
-            numDoCho.Name = "numDoCho";
-            numDoCho.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            numDoCho.Size = new Size(119, 27);
-            numDoCho.TabIndex = 69;
-            numDoCho.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
-            // 
-            // lblVeSinh
-            // 
-            lblVeSinh.AutoSize = true;
-            lblVeSinh.Location = new Point(628, 21);
-            lblVeSinh.Name = "lblVeSinh";
-            lblVeSinh.Size = new Size(92, 22);
-            lblVeSinh.TabIndex = 70;
-            lblVeSinh.Text = "Vệ sinh xe";
-            // 
-            // numVeSinh
-            // 
-            numVeSinh.BackColor = Color.Transparent;
-            numVeSinh.CustomizableEdges = customizableEdges27;
-            numVeSinh.Font = new Font("Segoe UI", 9F);
-            numVeSinh.Location = new Point(628, 70);
-            numVeSinh.Margin = new Padding(3, 4, 3, 4);
-            numVeSinh.Name = "numVeSinh";
-            numVeSinh.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            numVeSinh.Size = new Size(119, 27);
-            numVeSinh.TabIndex = 71;
-            numVeSinh.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
-            // 
-            // lblNhienLieu
-            // 
-            lblNhienLieu.AutoSize = true;
-            lblNhienLieu.Location = new Point(773, 21);
-            lblNhienLieu.Name = "lblNhienLieu";
-            lblNhienLieu.Size = new Size(92, 22);
-            lblNhienLieu.TabIndex = 72;
-            lblNhienLieu.Text = "Nhiên liệu";
-            // 
-            // numNhienLieu
-            // 
-            numNhienLieu.BackColor = Color.Transparent;
-            numNhienLieu.CustomizableEdges = customizableEdges25;
-            numNhienLieu.Font = new Font("Segoe UI", 9F);
-            numNhienLieu.Location = new Point(773, 70);
-            numNhienLieu.Margin = new Padding(3, 4, 3, 4);
-            numNhienLieu.Name = "numNhienLieu";
-            numNhienLieu.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            numNhienLieu.Size = new Size(119, 27);
-            numNhienLieu.TabIndex = 73;
-            numNhienLieu.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
-            // 
-            // lblTongTien
-            // 
-            lblTongTien.AutoSize = true;
-            lblTongTien.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTongTien.Location = new Point(934, 20);
-            lblTongTien.Name = "lblTongTien";
-            lblTongTien.Size = new Size(90, 23);
-            lblTongTien.TabIndex = 74;
-            lblTongTien.Text = "Tổng tiền";
+            lblBang.AutoSize = true;
+            lblBang.Location = new Point(905, 70);
+            lblBang.Name = "lblBang";
+            lblBang.Size = new Size(21, 22);
+            lblBang.TabIndex = 76;
+            lblBang.Text = "=";
             // 
             // numTongTien
             // 
@@ -721,14 +666,72 @@
             numTongTien.TabIndex = 75;
             numTongTien.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
             // 
-            // lblBang
+            // lblTongTien
             // 
-            lblBang.AutoSize = true;
-            lblBang.Location = new Point(905, 70);
-            lblBang.Name = "lblBang";
-            lblBang.Size = new Size(21, 22);
-            lblBang.TabIndex = 76;
-            lblBang.Text = "=";
+            lblTongTien.AutoSize = true;
+            lblTongTien.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTongTien.Location = new Point(934, 20);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(90, 23);
+            lblTongTien.TabIndex = 74;
+            lblTongTien.Text = "Tổng tiền";
+            // 
+            // numNhienLieu
+            // 
+            numNhienLieu.BackColor = Color.Transparent;
+            numNhienLieu.CustomizableEdges = customizableEdges25;
+            numNhienLieu.Font = new Font("Segoe UI", 9F);
+            numNhienLieu.Location = new Point(773, 70);
+            numNhienLieu.Margin = new Padding(3, 4, 3, 4);
+            numNhienLieu.Name = "numNhienLieu";
+            numNhienLieu.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            numNhienLieu.Size = new Size(119, 27);
+            numNhienLieu.TabIndex = 73;
+            numNhienLieu.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
+            // 
+            // lblNhienLieu
+            // 
+            lblNhienLieu.AutoSize = true;
+            lblNhienLieu.Location = new Point(773, 21);
+            lblNhienLieu.Name = "lblNhienLieu";
+            lblNhienLieu.Size = new Size(92, 22);
+            lblNhienLieu.TabIndex = 72;
+            lblNhienLieu.Text = "Nhiên liệu";
+            // 
+            // numVeSinh
+            // 
+            numVeSinh.BackColor = Color.Transparent;
+            numVeSinh.CustomizableEdges = customizableEdges27;
+            numVeSinh.Font = new Font("Segoe UI", 9F);
+            numVeSinh.Location = new Point(628, 70);
+            numVeSinh.Margin = new Padding(3, 4, 3, 4);
+            numVeSinh.Name = "numVeSinh";
+            numVeSinh.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            numVeSinh.Size = new Size(119, 27);
+            numVeSinh.TabIndex = 71;
+            numVeSinh.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
+            // 
+            // lblVeSinh
+            // 
+            lblVeSinh.AutoSize = true;
+            lblVeSinh.Location = new Point(628, 21);
+            lblVeSinh.Name = "lblVeSinh";
+            lblVeSinh.Size = new Size(92, 22);
+            lblVeSinh.TabIndex = 70;
+            lblVeSinh.Text = "Vệ sinh xe";
+            // 
+            // numDoCho
+            // 
+            numDoCho.BackColor = Color.Transparent;
+            numDoCho.CustomizableEdges = customizableEdges29;
+            numDoCho.Font = new Font("Segoe UI", 9F);
+            numDoCho.Location = new Point(479, 70);
+            numDoCho.Margin = new Padding(3, 4, 3, 4);
+            numDoCho.Name = "numDoCho";
+            numDoCho.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            numDoCho.Size = new Size(119, 27);
+            numDoCho.TabIndex = 69;
+            numDoCho.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
             // 
             // label1
             // 
@@ -788,12 +791,31 @@
             btnCancle.TabIndex = 80;
             btnCancle.Text = "Hủy bỏ";
             // 
+            // guna2Button1
+            // 
+            guna2Button1.CustomizableEdges = customizableEdges37;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.White;
+            guna2Button1.FocusedColor = SystemColors.ControlDark;
+            guna2Button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2Button1.ForeColor = Color.Silver;
+            guna2Button1.Location = new Point(1151, 12);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2Button1.Size = new Size(46, 32);
+            guna2Button1.TabIndex = 87;
+            guna2Button1.Text = "X";
+            // 
             // Payment
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1362, 867);
+            ClientSize = new Size(1208, 867);
+            Controls.Add(guna2Button1);
             Controls.Add(btnCancle);
             Controls.Add(btnOk);
             Controls.Add(numThanhToan);
@@ -844,10 +866,10 @@
             ((System.ComponentModel.ISupportInitialize)numDoDem).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numDoCho).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numVeSinh).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numNhienLieu).EndInit();
             ((System.ComponentModel.ISupportInitialize)numTongTien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numNhienLieu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numVeSinh).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numDoCho).EndInit();
             ((System.ComponentModel.ISupportInitialize)numThanhToan).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -912,5 +934,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown numThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnOk;
         private Guna.UI2.WinForms.Guna2Button btnCancle;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

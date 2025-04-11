@@ -106,12 +106,8 @@ namespace StationManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR(100)");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime");
-
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(50)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -121,16 +117,12 @@ namespace StationManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
 
+                    b.Property<bool>("Gender")
+                        .HasColumnType("BIT");
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(10)");
-
-                    b.Property<string>("Position")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(50)");
-
-                    b.Property<double>("Salary")
-                        .HasColumnType("FLOAT");
 
                     b.HasKey("EmployeeID");
 
@@ -216,6 +208,7 @@ namespace StationManagementSystem.Migrations
                         .HasColumnType("NVARCHAR(100)");
 
                     b.Property<string>("Company")
+                        .IsRequired()
                         .HasColumnType("NVARCHAR(100)");
 
                     b.Property<string>("DrivingLicense")
@@ -225,6 +218,7 @@ namespace StationManagementSystem.Migrations
                         .HasColumnType("NVARCHAR(100)");
 
                     b.Property<string>("IDCard")
+                        .IsRequired()
                         .HasColumnType("NVARCHAR(15)");
 
                     b.Property<bool>("IsDiscontinued")
@@ -235,6 +229,7 @@ namespace StationManagementSystem.Migrations
                         .HasColumnType("NVARCHAR(100)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("NVARCHAR(100)");
 
                     b.HasKey("OwnerID");
@@ -439,32 +434,26 @@ namespace StationManagementSystem.Migrations
                     b.Property<DateTime?>("ImpoundmentDate")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("InspectionExpiryDate")
+                    b.Property<DateTime?>("InspectionExpiryDate")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("InspectionStartDate")
+                    b.Property<DateTime?>("InspectionStartDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("Insurance")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR(100)");
 
                     b.Property<string>("LicensePlate")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(20)");
 
-                    b.Property<int>("ManufacturingYear")
+                    b.Property<int?>("ManufacturingYear")
                         .HasColumnType("INT");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(50)");
 
                     b.Property<Guid>("OwnerID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Registration")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR(100)");
 
                     b.Property<DateTime?>("ReleaseDate")

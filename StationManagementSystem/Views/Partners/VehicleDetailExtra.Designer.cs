@@ -193,9 +193,9 @@
             lblTheXe.AutoSize = true;
             lblTheXe.Location = new Point(34, 87);
             lblTheXe.Name = "lblTheXe";
-            lblTheXe.Size = new Size(149, 22);
+            lblTheXe.Size = new Size(63, 22);
             lblTheXe.TabIndex = 50;
-            lblTheXe.Text = "Tuyến vận chuyển";
+            lblTheXe.Text = "Thể xe";
             // 
             // lblNhomXe
             // 

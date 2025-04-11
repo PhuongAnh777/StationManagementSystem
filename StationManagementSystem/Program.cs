@@ -1,3 +1,7 @@
+
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using StationManagementSystem.Services;
 using StationManagementSystem.Views;
 
 namespace StationManagementSystem
@@ -7,13 +11,34 @@ namespace StationManagementSystem
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        public static IServiceProvider ServiceProvider { get; private set; } = null;
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+
+            // Load configuration
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory()) 
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            IConfiguration configuration = builder.Build();
+
+            var services = new ServiceCollection();
+
+            // Configure services and get the service provider
+            ServiceProvider = ServiceConfigurator.ConfigureServices(services, configuration);
+
+            // Resolve MainForm through DI
+            var mainForm = ServiceProvider.GetRequiredService<MainForm>();
+            //var login = ServiceProvider.GetRequiredService<LoginForm>();
+            // Run application
+            Application.Run(mainForm);
+            //Application.Run(new Sell());
+            //Application.Run(login);
         }
     }
 }

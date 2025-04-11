@@ -16,10 +16,8 @@ namespace StationManagementSystem.Models
         public string Phone { get; set; } // NVARCHAR(10)
         public string Address { get; set; } // NVARCHAR(100)
         public string Email { get; set; } // NVARCHAR(100)
-        public DateTime BirthDate { get; set; } // DateTime
-        public string Department { get; set; } // NVARCHAR(50)
-        public string Position { get; set; } // NVARCHAR(50)
-        public float Salary { get; set; } // Float
+        public DateTime? BirthDate { get; set; } // DateTime
+        public bool Gender { get; set; } // BIT 0 là nam, 1 là nữ vì phụ nữ luôn true
 
         public virtual Account Account { get; set; }
         public virtual ICollection<DepartureOrder> Orders { get; set; } = new List<DepartureOrder>(); // Mối quan hệ với bảng Order

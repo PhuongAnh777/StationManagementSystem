@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Views\Employees\EmloyeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Employees\EmployeeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Employees\EmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\InvoiceEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Partners\OwnerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Partners\VehicleAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Partners\VehicleDetail.cs">
@@ -16,10 +34,25 @@
     <Compile Update="Views\Partners\VehicleList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\SellTickets\SellTicketList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Transactions\Check.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Transactions\DepartureOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Transactions\InvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Transactions\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Transactions\TicketIssuanceAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Transactions\VehicleDepartureList.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

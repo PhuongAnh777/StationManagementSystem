@@ -16,12 +16,11 @@ namespace StationManagementSystem.Models
         public string VehicleType { get; set; } // NVARCHAR(50)
         public int SeatTicket { get; set; } // INT
         public int SleeperTicket { get; set; } // INT
-        public int ManufacturingYear { get; set; } // INT
-        public string Model { get; set; } // NVARCHAR(50)
-        public string Registration { get; set; } // NVARCHAR(100)
-        public string Insurance { get; set; } // NVARCHAR(100)
-        public DateTime InspectionStartDate { get; set; } // DateTime
-        public DateTime InspectionExpiryDate { get; set; } // DateTime
+        public int? ManufacturingYear { get; set; } // INT
+        public string? Registration { get; set; } // NVARCHAR(100)
+        public string? Insurance { get; set; } // NVARCHAR(100)
+        public DateTime? InspectionStartDate { get; set; } // DateTime
+        public DateTime? InspectionExpiryDate { get; set; } // DateTime
         public DateTime? ImpoundmentDate { get; set; } // DateTime
         public DateTime? ReleaseDate { get; set; } // DateTime
 

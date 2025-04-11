@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -10,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace StationManagementSystem.Models
 {
-    public class StationContext : Microsoft.EntityFrameworkCore.DbContext
+    public class StationContext : DbContext
     {
         public StationContext()
         {
@@ -97,10 +96,8 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.Phone).HasColumnType("NVARCHAR(10)").IsRequired();
                 entity.Property(e => e.Address).HasColumnType("NVARCHAR(100)").IsRequired();
                 entity.Property(e => e.Email).HasColumnType("NVARCHAR(100)").IsRequired();
-                entity.Property(e => e.BirthDate).HasColumnType("datetime").IsRequired();
-                entity.Property(e => e.Department).HasColumnType("NVARCHAR(50)").IsRequired();
-                entity.Property(e => e.Position).HasColumnType("NVARCHAR(50)").IsRequired();
-                entity.Property(e => e.Salary).HasColumnType("FLOAT").IsRequired();
+                entity.Property(e => e.BirthDate).HasColumnType("datetime");
+                entity.Property(e => e.Gender).HasColumnType("BIT").IsRequired();
             });
 
             // Invoice
@@ -144,12 +141,12 @@ namespace StationManagementSystem.Models
             {
                 entity.HasKey(e => e.OwnerID);
                 entity.Property(e => e.Name).HasColumnType("NVARCHAR(100)").IsRequired();
-                entity.Property(e => e.IDCard).HasColumnType("NVARCHAR(15)");
-                entity.Property(e => e.Phone).HasColumnType("NVARCHAR(100)");
+                entity.Property(e => e.IDCard).HasColumnType("NVARCHAR(15)").IsRequired();
+                entity.Property(e => e.Phone).HasColumnType("NVARCHAR(100)").IsRequired();
                 entity.Property(e => e.Address).HasColumnType("NVARCHAR(100)");
                 entity.Property(e => e.Email).HasColumnType("NVARCHAR(100)");
                 entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
-                entity.Property(e => e.Company).HasColumnType("NVARCHAR(100)");
+                entity.Property(e => e.Company).HasColumnType("NVARCHAR(100)").IsRequired();
                 entity.Property(e => e.DrivingLicense).HasColumnType("NVARCHAR(100)");
             });
 
@@ -264,12 +261,11 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.VehicleType).HasColumnType("NVARCHAR(50)").IsRequired();
                 entity.Property(e => e.SeatTicket).HasColumnType("INT").IsRequired();
                 entity.Property(e => e.SleeperTicket).HasColumnType("INT").IsRequired();
-                entity.Property(e => e.ManufacturingYear).HasColumnType("INT").IsRequired();
-                entity.Property(e => e.Model).HasColumnType("NVARCHAR(50)").IsRequired();
-                entity.Property(e => e.Registration).HasColumnType("NVARCHAR(100)").IsRequired();
-                entity.Property(e => e.Insurance).HasColumnType("NVARCHAR(100)").IsRequired();
-                entity.Property(e => e.InspectionStartDate).HasColumnType("datetime").IsRequired();
-                entity.Property(e => e.InspectionExpiryDate).HasColumnType("datetime").IsRequired();
+                entity.Property(e => e.ManufacturingYear).HasColumnType("INT");
+                entity.Property(e => e.Registration).HasColumnType("NVARCHAR(100)");
+                entity.Property(e => e.Insurance).HasColumnType("NVARCHAR(100)");
+                entity.Property(e => e.InspectionStartDate).HasColumnType("datetime");
+                entity.Property(e => e.InspectionExpiryDate).HasColumnType("datetime");
                 entity.Property(e => e.ImpoundmentDate).HasColumnType("datetime");
                 entity.Property(e => e.ReleaseDate).HasColumnType("datetime");
 

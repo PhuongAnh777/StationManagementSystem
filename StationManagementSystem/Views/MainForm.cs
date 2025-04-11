@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using StationManagementSystem.Views.Employees;
 using StationManagementSystem.Views.Partners;
+using StationManagementSystem.Views.SellTickets;
 using StationManagementSystem.Views.Transactions;
 using Timer = System.Windows.Forms.Timer;
 
@@ -30,6 +32,7 @@ namespace StationManagementSystem.Views
             ConfigureHoverEvents(pnGiaoDich, btnGiaoDich);
             ConfigureHoverEvents(pnDoiTac, btnDoiTac);
             ConfigureHoverEvents(pnNhanVien, btnNhanVien);
+            ConfigureHoverEvents(pnVe, btnVe);
             ConfigureHoverEvents(pnTaiKhoan, btnProFile);
         }
         //public MainForm(UserAccount account, Models.Employee employee, string roleName)
@@ -158,11 +161,8 @@ namespace StationManagementSystem.Views
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            //CreateFormChild(new OrderInvoice());
+            CreateFormChild(new InvoiceList());
         }
-
-
-
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
@@ -203,14 +203,35 @@ namespace StationManagementSystem.Views
             //CreateFormChild(new RevenueReport());
         }
 
-        private void btnXe_Click(object sender, EventArgs e)
-        {
-            CreateFormChild(new VehicleDetail());
-        }
 
         private void btnLenhXuatBen_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new Check());
+            CreateFormChild(new VehicleDepartureList());
+        }
+
+        private void btnPhieuDangTai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhanVien1_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new EmloyeeList());
+        }
+
+        private void btnDSXe_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new SellTicketList());
+        }
+
+        private void btnChuXe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXe_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new VehicleList());
         }
     }
 }

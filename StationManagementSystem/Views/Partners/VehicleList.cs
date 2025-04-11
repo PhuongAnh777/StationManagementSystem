@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StationManagementSystem.DTO.Vehicle;
+using StationManagementSystem.Services;
 
 namespace StationManagementSystem.Views.Partners
 {
     public partial class VehicleList : Form
     {
-        //private readonly SupplierService _supplierService;
-        //private readonly PurchaseService _purchaseService;
-        //private List<SupplierDto> _originalData; // Dữ liệu gốc
+        //private readonly VehicleService _vehicleService;
+        //private VehicleCreateDto _vehicleDto;
+        //private List<VehicleDto> _originalData; // Dữ liệu gốc
         //private int _pageSize = 10;                    // Số hàng trên mỗi trang
         //private int _currentPage = 1;                 // Trang hiện tại
         //private int _totalPages;                      // Tổng số trang
@@ -22,7 +24,7 @@ namespace StationManagementSystem.Views.Partners
         //private string _sortedColumn = "";        // Cột hiện đang sắp xếp
         public VehicleList()
         {
-            //InitializeComponent();
+            InitializeComponent();
             //_supplierService = new SupplierService();
             //_purchaseService = new PurchaseService();
 
@@ -31,22 +33,22 @@ namespace StationManagementSystem.Views.Partners
         }
         public void OpenChildForm(Form childForm)
         {
-            // Đặt vị trí xuất hiện của form con là chính giữa màn hình
-            //childForm.StartPosition = FormStartPosition.Manual; // Đặt chế độ thủ công
-            //var screen = Screen.FromControl(this).WorkingArea; // Lấy kích thước màn hình làm tham chiếu
-            //childForm.Location = new Point(
-            //    screen.X + (screen.Width - childForm.Width) / 2,
-            //    screen.Y + (screen.Height - childForm.Height) / 2
-            //);
+            //Đặt vị trí xuất hiện của form con là chính giữa màn hình
+            childForm.StartPosition = FormStartPosition.Manual; // Đặt chế độ thủ công
+            var screen = Screen.FromControl(this).WorkingArea; // Lấy kích thước màn hình làm tham chiếu
+            childForm.Location = new Point(
+                screen.X + (screen.Width - childForm.Width) / 2,
+                screen.Y + (screen.Height - childForm.Height) / 2
+            );
 
-            // Làm mờ form chính
-            //this.Opacity = 0.1;
+            //Làm mờ form chính
+            this.Opacity = 0.1;
 
-            //// Hiển thị form con dưới dạng modal
-            //childForm.ShowDialog();
+            // Hiển thị form con dưới dạng modal
+            childForm.ShowDialog();
 
-            //// Khôi phục độ trong suốt của form chính
-            //this.Opacity = 1.0;
+            // Khôi phục độ trong suốt của form chính
+            this.Opacity = 1.0;
         }
 
         private async void gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,7 +68,7 @@ namespace StationManagementSystem.Views.Partners
             //    MessageBox.Show("Failed to retrieve customer details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         }
-        private async Task LoadSupplier()
+        private async Task LoadVehicle()
         {
             //try
             //{
@@ -200,8 +202,8 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new VehicleAdd());
-            //await LoadSupplier();
+            OpenChildForm(new VehicleAdd());
+            await LoadVehicle(); 
         }
     }
 }
