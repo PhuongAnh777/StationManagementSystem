@@ -44,10 +44,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -64,8 +64,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             pictureBox1 = new PictureBox();
             btnProFile = new Guna.UI2.WinForms.Guna2Button();
@@ -80,7 +78,6 @@
             btnThemNhanVien = new Guna.UI2.WinForms.Guna2Button();
             btnNhanVien1 = new Guna.UI2.WinForms.Guna2Button();
             pnVe = new Panel();
-            btnBanVe = new Guna.UI2.WinForms.Guna2Button();
             btnDSXe = new Guna.UI2.WinForms.Guna2Button();
             pnGiaoDich = new Panel();
             btnLenhXuatBen = new Guna.UI2.WinForms.Guna2Button();
@@ -343,37 +340,18 @@
             // pnVe
             // 
             pnVe.BackColor = Color.FromArgb(63, 142, 212);
-            pnVe.Controls.Add(btnBanVe);
             pnVe.Controls.Add(btnDSXe);
+            pnVe.Controls.Add(btnTuyen);
             pnVe.Location = new Point(897, 0);
             pnVe.Name = "pnVe";
             pnVe.Size = new Size(217, 121);
             pnVe.TabIndex = 16;
             pnVe.Visible = false;
             // 
-            // btnBanVe
-            // 
-            btnBanVe.BackColor = Color.FromArgb(63, 142, 212);
-            btnBanVe.CustomizableEdges = customizableEdges21;
-            btnBanVe.DisabledState.BorderColor = Color.DarkGray;
-            btnBanVe.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnBanVe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnBanVe.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnBanVe.FillColor = Color.FromArgb(63, 142, 212);
-            btnBanVe.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBanVe.ForeColor = Color.White;
-            btnBanVe.ImageSize = new Size(30, 30);
-            btnBanVe.Location = new Point(0, 69);
-            btnBanVe.Name = "btnBanVe";
-            btnBanVe.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            btnBanVe.Size = new Size(134, 49);
-            btnBanVe.TabIndex = 9;
-            btnBanVe.Text = "Bán vé";
-            // 
             // btnDSXe
             // 
             btnDSXe.BackColor = Color.FromArgb(63, 142, 212);
-            btnDSXe.CustomizableEdges = customizableEdges23;
+            btnDSXe.CustomizableEdges = customizableEdges21;
             btnDSXe.DisabledState.BorderColor = Color.DarkGray;
             btnDSXe.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDSXe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -384,7 +362,7 @@
             btnDSXe.ImageSize = new Size(30, 30);
             btnDSXe.Location = new Point(3, 6);
             btnDSXe.Name = "btnDSXe";
-            btnDSXe.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnDSXe.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnDSXe.Size = new Size(189, 49);
             btnDSXe.TabIndex = 8;
             btnDSXe.Text = "Danh sách xe ";
@@ -394,12 +372,11 @@
             // 
             pnGiaoDich.BackColor = Color.FromArgb(63, 142, 212);
             pnGiaoDich.Controls.Add(btnLenhXuatBen);
-            pnGiaoDich.Controls.Add(btnTuyen);
             pnGiaoDich.Controls.Add(btnPhieuDangTai);
             pnGiaoDich.Controls.Add(btnHoaDon);
             pnGiaoDich.Location = new Point(273, 0);
             pnGiaoDich.Name = "pnGiaoDich";
-            pnGiaoDich.Size = new Size(199, 221);
+            pnGiaoDich.Size = new Size(199, 168);
             pnGiaoDich.TabIndex = 13;
             pnGiaoDich.Visible = false;
             // 
@@ -426,7 +403,7 @@
             // btnTuyen
             // 
             btnTuyen.BackColor = Color.FromArgb(63, 142, 212);
-            btnTuyen.CustomizableEdges = customizableEdges27;
+            btnTuyen.CustomizableEdges = customizableEdges23;
             btnTuyen.DisabledState.BorderColor = Color.DarkGray;
             btnTuyen.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTuyen.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -435,9 +412,9 @@
             btnTuyen.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTuyen.ForeColor = Color.White;
             btnTuyen.ImageSize = new Size(30, 30);
-            btnTuyen.Location = new Point(3, 169);
+            btnTuyen.Location = new Point(3, 72);
             btnTuyen.Name = "btnTuyen";
-            btnTuyen.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnTuyen.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnTuyen.Size = new Size(109, 49);
             btnTuyen.TabIndex = 12;
             btnTuyen.Text = "Tuyến";
@@ -445,7 +422,7 @@
             // btnPhieuDangTai
             // 
             btnPhieuDangTai.BackColor = Color.FromArgb(63, 142, 212);
-            btnPhieuDangTai.CustomizableEdges = customizableEdges29;
+            btnPhieuDangTai.CustomizableEdges = customizableEdges27;
             btnPhieuDangTai.DisabledState.BorderColor = Color.DarkGray;
             btnPhieuDangTai.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPhieuDangTai.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -456,7 +433,7 @@
             btnPhieuDangTai.ImageSize = new Size(30, 30);
             btnPhieuDangTai.Location = new Point(0, 61);
             btnPhieuDangTai.Name = "btnPhieuDangTai";
-            btnPhieuDangTai.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btnPhieuDangTai.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnPhieuDangTai.Size = new Size(192, 49);
             btnPhieuDangTai.TabIndex = 9;
             btnPhieuDangTai.Text = "Phiếu đăng tài";
@@ -465,7 +442,7 @@
             // btnHoaDon
             // 
             btnHoaDon.BackColor = Color.FromArgb(63, 142, 212);
-            btnHoaDon.CustomizableEdges = customizableEdges31;
+            btnHoaDon.CustomizableEdges = customizableEdges29;
             btnHoaDon.DisabledState.BorderColor = Color.DarkGray;
             btnHoaDon.DisabledState.CustomBorderColor = Color.DarkGray;
             btnHoaDon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -476,7 +453,7 @@
             btnHoaDon.ImageSize = new Size(30, 30);
             btnHoaDon.Location = new Point(0, 3);
             btnHoaDon.Name = "btnHoaDon";
-            btnHoaDon.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnHoaDon.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnHoaDon.Size = new Size(150, 49);
             btnHoaDon.TabIndex = 8;
             btnHoaDon.Text = "Hóa đơn";
@@ -496,7 +473,7 @@
             // btnTaiKhoan1
             // 
             btnTaiKhoan1.BackColor = Color.FromArgb(63, 142, 212);
-            btnTaiKhoan1.CustomizableEdges = customizableEdges33;
+            btnTaiKhoan1.CustomizableEdges = customizableEdges31;
             btnTaiKhoan1.DisabledState.BorderColor = Color.DarkGray;
             btnTaiKhoan1.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTaiKhoan1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -507,7 +484,7 @@
             btnTaiKhoan1.ImageSize = new Size(30, 30);
             btnTaiKhoan1.Location = new Point(3, 6);
             btnTaiKhoan1.Name = "btnTaiKhoan1";
-            btnTaiKhoan1.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btnTaiKhoan1.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnTaiKhoan1.Size = new Size(161, 49);
             btnTaiKhoan1.TabIndex = 8;
             btnTaiKhoan1.Text = "Tài khoản";
@@ -515,7 +492,7 @@
             // btnThemTaiKhoan
             // 
             btnThemTaiKhoan.BackColor = Color.FromArgb(63, 142, 212);
-            btnThemTaiKhoan.CustomizableEdges = customizableEdges35;
+            btnThemTaiKhoan.CustomizableEdges = customizableEdges33;
             btnThemTaiKhoan.DisabledState.BorderColor = Color.DarkGray;
             btnThemTaiKhoan.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThemTaiKhoan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -526,7 +503,7 @@
             btnThemTaiKhoan.ImageSize = new Size(30, 30);
             btnThemTaiKhoan.Location = new Point(0, 61);
             btnThemTaiKhoan.Name = "btnThemTaiKhoan";
-            btnThemTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            btnThemTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnThemTaiKhoan.Size = new Size(220, 49);
             btnThemTaiKhoan.TabIndex = 9;
             btnThemTaiKhoan.Text = "Thêm tài khoản";
@@ -559,7 +536,7 @@
             // btnDangXuat
             // 
             btnDangXuat.BackColor = Color.FromArgb(63, 142, 212);
-            btnDangXuat.CustomizableEdges = customizableEdges37;
+            btnDangXuat.CustomizableEdges = customizableEdges35;
             btnDangXuat.DisabledState.BorderColor = Color.DarkGray;
             btnDangXuat.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDangXuat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -570,7 +547,7 @@
             btnDangXuat.ImageSize = new Size(30, 30);
             btnDangXuat.Location = new Point(0, 61);
             btnDangXuat.Name = "btnDangXuat";
-            btnDangXuat.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            btnDangXuat.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnDangXuat.Size = new Size(162, 49);
             btnDangXuat.TabIndex = 9;
             btnDangXuat.Text = "Đăng xuất";
@@ -579,7 +556,7 @@
             // btnTaiKhoanHT
             // 
             btnTaiKhoanHT.BackColor = Color.FromArgb(63, 142, 212);
-            btnTaiKhoanHT.CustomizableEdges = customizableEdges39;
+            btnTaiKhoanHT.CustomizableEdges = customizableEdges37;
             btnTaiKhoanHT.DisabledState.BorderColor = Color.DarkGray;
             btnTaiKhoanHT.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTaiKhoanHT.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -590,7 +567,7 @@
             btnTaiKhoanHT.ImageSize = new Size(30, 30);
             btnTaiKhoanHT.Location = new Point(3, 6);
             btnTaiKhoanHT.Name = "btnTaiKhoanHT";
-            btnTaiKhoanHT.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            btnTaiKhoanHT.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btnTaiKhoanHT.Size = new Size(150, 49);
             btnTaiKhoanHT.TabIndex = 8;
             btnTaiKhoanHT.Text = "Tài khoản";
@@ -609,7 +586,7 @@
             // btnXe
             // 
             btnXe.BackColor = Color.FromArgb(63, 142, 212);
-            btnXe.CustomizableEdges = customizableEdges41;
+            btnXe.CustomizableEdges = customizableEdges39;
             btnXe.DisabledState.BorderColor = Color.DarkGray;
             btnXe.DisabledState.CustomBorderColor = Color.DarkGray;
             btnXe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -620,7 +597,7 @@
             btnXe.ImageSize = new Size(30, 30);
             btnXe.Location = new Point(0, 61);
             btnXe.Name = "btnXe";
-            btnXe.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            btnXe.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btnXe.Size = new Size(96, 49);
             btnXe.TabIndex = 9;
             btnXe.Text = " Xe";
@@ -629,7 +606,7 @@
             // btnChuXe
             // 
             btnChuXe.BackColor = Color.FromArgb(63, 142, 212);
-            btnChuXe.CustomizableEdges = customizableEdges43;
+            btnChuXe.CustomizableEdges = customizableEdges41;
             btnChuXe.DisabledState.BorderColor = Color.DarkGray;
             btnChuXe.DisabledState.CustomBorderColor = Color.DarkGray;
             btnChuXe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -640,7 +617,7 @@
             btnChuXe.ImageSize = new Size(30, 30);
             btnChuXe.Location = new Point(0, 3);
             btnChuXe.Name = "btnChuXe";
-            btnChuXe.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            btnChuXe.ShadowDecoration.CustomizableEdges = customizableEdges42;
             btnChuXe.Size = new Size(135, 49);
             btnChuXe.TabIndex = 8;
             btnChuXe.Text = " Chủ xe";
@@ -702,7 +679,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLenhXuatBen;
         private Guna.UI2.WinForms.Guna2Button btnVe;
         private Panel pnVe;
-        private Guna.UI2.WinForms.Guna2Button btnBanVe;
         private Guna.UI2.WinForms.Guna2Button btnDSXe;
     }
 }

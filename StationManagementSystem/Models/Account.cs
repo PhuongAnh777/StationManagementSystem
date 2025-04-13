@@ -15,7 +15,7 @@ namespace StationManagementSystem.Models
         public string Password { get; set; } // NVARCHAR(100)
         public string Status { get; set; } // NVARCHAR(25)
         public DateTime CreatedAt { get; set; } // DateTime
-
+        public bool IsDiscontinued { get; set; } // Bool
         public Guid RoleID { get; set; } // Khóa ngoại
         public virtual Role Role { get; set; } // Mối quan hệ với bảng Role
         public Guid EmployeeID { get; set; } // Khóa ngoại

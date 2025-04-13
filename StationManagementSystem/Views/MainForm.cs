@@ -211,7 +211,7 @@ namespace StationManagementSystem.Views
 
         private void btnPhieuDangTai_Click(object sender, EventArgs e)
         {
-
+            CreateFormChild(new TicketIssuanceAdd());
         }
 
         private void btnNhanVien1_Click(object sender, EventArgs e)

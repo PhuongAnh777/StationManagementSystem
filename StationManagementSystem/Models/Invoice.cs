@@ -22,7 +22,7 @@ namespace StationManagementSystem.Models
         public float WaitingFee { get; set; } // FLOAT
         public float WashingFee { get; set; } // FLOAT
         public float FuelCost { get; set; } // FLOAT
-
+        public bool IsDiscontinued { get; set; } // Bool
         public Guid EmployeeID { get; set; } // Khóa ngoại
         public virtual Employee Employee { get; set; } // Mối quan hệ với bảng Employee
         public virtual DepartureOrder DepartureOrder { get; set; }

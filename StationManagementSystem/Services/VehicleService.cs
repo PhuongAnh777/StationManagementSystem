@@ -20,6 +20,12 @@ namespace StationManagementSystem.Services
         {
             return await _context.Vehicles.ToListAsync();
         }
+        public async Task<IEnumerable<Vehicle>> GetActiveVehiclesAsync()
+        {
+            return await _context.Vehicles
+                .Where(v => v.IsDiscontinued == false) 
+                .ToListAsync();
+        }
         public async Task<Vehicle> GetVehicleByIdAsync(Guid vehicleId)
         {
             return await _context.Vehicles

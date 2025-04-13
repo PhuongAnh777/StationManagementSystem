@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StationManagementSystem.Models;
 
-namespace StationManagementSystem.Models
+namespace StationManagementSystem.DTO.TicketIssuance
 {
-    public class TicketIssuance
+    public class TicketIssuanceCreateDto
     {
-        [Key]
-        public Guid IssuanceID { get; set; }  // Khóa chính
-
         public DateTime CreatedAt { get; set; } // DateTime
         public DateTime StartDate { get; set; } // DateTime
         public DateTime EndDate { get; set; } // DateTime
@@ -28,16 +25,8 @@ namespace StationManagementSystem.Models
         public DateTime EstimatedArrivalTime { get; set; } // DateTime
         public bool IsDiscontinued { get; set; } // Bool
         public Guid EmployeeID { get; set; } // Khóa ngoại
-        public virtual Employee Employee { get; set; } // Mối quan hệ với bảng Employee
-
         public Guid VehicleID { get; set; } // Khóa ngoại
-        public virtual Vehicle Vehicle { get; set; } // Mối quan hệ với bảng Vehicle
-
         public Guid RouteID { get; set; } // Khóa ngoại
-        public virtual Route Route { get; set; } // Mối quan hệ với bảng Route
         public Guid ItineraryID { get; set; }
-        public virtual Itinerary Itinerary { get; set; }
-        public virtual DepartureOrder DepartureOrder { get; set; }
-        public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }
