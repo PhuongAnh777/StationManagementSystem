@@ -21,10 +21,28 @@ namespace StationManagementSystem.Services
         {
             return await _context.TicketIssuances.ToListAsync();
         }
+        public async Task<IEnumerable<Vehicle>> GetVehiclesDepartingInOneHourAsync()
+        {
+            var now = DateTime.Now;
+            var oneHourLater = now.AddHours(1);
+
+            var vehicles = _context.TicketIssuances
+                .Where(ti => ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= oneHourLater)
+                .Select(ti => ti.Vehicle)
+                .Distinct() // Nếu một xe có nhiều lần phát hành vé gần nhau thì tránh trùng
+                .ToList();
+
+            return vehicles;
+        }
         public async Task<TicketIssuance> GetTicketIssuanceByIdAsync(Guid issuanceID)
         {
             return await _context.TicketIssuances
                 .FirstOrDefaultAsync(v => v.IssuanceID == issuanceID);
+        }
+        public async Task<TicketIssuance> GetTicketIssuanceByVehicleIdAsync(Guid vehicleID)
+        {
+            return await _context.TicketIssuances
+                .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID && ti.Status.ToLower() == "active");
         }
         public async Task<TicketIssuance> CreateTicketIssuancesAsync(TicketIssuanceCreateDto ticketIssuanceDto)
         {
@@ -45,11 +63,8 @@ namespace StationManagementSystem.Services
                 Notes = ticketIssuanceDto.Notes,
                 EstimatedDepartureTime = ticketIssuanceDto.EstimatedDepartureTime,
                 EstimatedArrivalTime = ticketIssuanceDto.EstimatedArrivalTime,
-                IsDiscontinued = ticketIssuanceDto.IsDiscontinued,
                 EmployeeID = ticketIssuanceDto.EmployeeID,
                 VehicleID = ticketIssuanceDto.VehicleID,
-                RouteID = ticketIssuanceDto.RouteID
-
             };
             await _context.TicketIssuances.AddAsync(ticketIssuance);
 

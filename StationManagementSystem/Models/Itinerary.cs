@@ -18,5 +18,6 @@ namespace StationManagementSystem.Models
         public Guid RouteID { get; set; } // Khóa ngoại
         public virtual Route Route { get; set; } // Mối quan hệ với bảng Route
         public virtual TicketIssuance TicketIssuance { get; set; }
+        public virtual ICollection<StopPoint> StopPoints { get; set; } = new List<StopPoint>(); // Mối quan hệ với bảng DepartureOrder
     }
 }

@@ -171,3 +171,6 @@ C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManage
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.VehicleDetailOriginal.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.OwnerList.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Partners.OwnerDetail.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Routes.RouteAdd.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Transactions.VehicleCheckList.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Transactions.VehicleCheckedList.resources

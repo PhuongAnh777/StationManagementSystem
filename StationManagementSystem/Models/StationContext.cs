@@ -75,7 +75,6 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.DepartureOrders).HasColumnType("NVARCHAR(50)").IsRequired();
                 entity.Property(e => e.DepartureTime).HasColumnType("datetime").IsRequired();
                 entity.Property(e => e.Status).HasColumnType("NVARCHAR(20)").IsRequired();
-                entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
 
                 entity.HasOne(d => d.Invoice)
                     .WithOne(i => i.DepartureOrder)
@@ -140,6 +139,21 @@ namespace StationManagementSystem.Models
                     .HasConstraintName("FK_Itineraries_Routes");
             });
 
+            // StopPoint
+            modelBuilder.Entity<StopPoint>(entity =>
+            {
+                entity.HasKey(e => e.StopPointID);
+                entity.Property(e => e.Name).HasColumnType("NVARCHAR(50)").IsRequired();
+                entity.Property(e => e.StoppingTime).HasColumnType("INT");
+                entity.Property(e => e.StopOrder).HasColumnType("INT").IsRequired();
+
+                entity.HasOne(d => d.Itinerary)
+                    .WithMany(r => r.StopPoints)
+                    .HasForeignKey(d => d.ItineraryID)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StopPoints_Itineraries");
+            });
+
             // Owner
             modelBuilder.Entity<Owner>(entity =>
             {
@@ -202,15 +216,7 @@ namespace StationManagementSystem.Models
             {
                 entity.HasKey(e => e.TicketID);
                 entity.Property(e => e.Price).HasColumnType("FLOAT").IsRequired();
-                entity.Property(e => e.SeatNumber).HasColumnType("NVARCHAR(15)").IsRequired();
                 entity.Property(e => e.TicketType).HasColumnType("NVARCHAR(20)").IsRequired();
-                entity.Property(e => e.Status).HasColumnType("NVARCHAR(20)").IsRequired();
-
-                entity.HasOne(d => d.Employee)
-                    .WithMany(p => p.Tickets)
-                    .HasForeignKey(d => d.EmployeeID)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Tickets_Employees");
 
                 entity.HasOne(d => d.TicketIssuance)
                     .WithMany(t => t.Tickets)
@@ -218,7 +224,24 @@ namespace StationManagementSystem.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tickets_TicketIssuances");
             });
+            modelBuilder.Entity<TicketDetail>(entity =>
+            {
+                entity.HasKey(e => e.TicketDetailID);
+                entity.Property(e => e.SeatNumber).HasColumnType("NVARCHAR(15)").IsRequired();
+                entity.Property(e => e.Status).HasColumnType("NVARCHAR(20)").IsRequired();
 
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.TicketDetails)
+                    .HasForeignKey(d => d.EmployeeID)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TicketDetails_Employees");
+
+                entity.HasOne(d => d.Ticket)
+                    .WithMany(t => t.TicketDetails)
+                    .HasForeignKey(d => d.TicketID)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TicketDetails_Tickets");
+            });
             // TicketIssuance
             modelBuilder.Entity<TicketIssuance>(entity =>
             {
@@ -237,7 +260,6 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.Notes).HasColumnType("NVARCHAR(MAX)").IsRequired();
                 entity.Property(e => e.EstimatedDepartureTime).HasColumnType("datetime").IsRequired();
                 entity.Property(e => e.EstimatedArrivalTime).HasColumnType("datetime").IsRequired();
-                entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(e => e.TicketIssuances)
@@ -250,12 +272,6 @@ namespace StationManagementSystem.Models
                     .HasForeignKey(d => d.VehicleID)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_TicketIssuances_Vehicles");
-
-                entity.HasOne(d => d.Route)
-                    .WithMany(r => r.TicketIssuances)
-                    .HasForeignKey(d => d.RouteID)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TicketIssuances_Routes");
 
                 entity.HasOne(d => d.Itinerary)
                     .WithOne(p => p.TicketIssuance)  // Use WithOne instead of WithMany to indicate one-to-one relationship

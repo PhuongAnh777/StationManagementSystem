@@ -21,7 +21,7 @@ namespace StationManagementSystem.Models
         public bool IsDiscontinued { get; set; } // Bool
         public virtual Account Account { get; set; }
         public virtual ICollection<DepartureOrder> Orders { get; set; } = new List<DepartureOrder>(); // Mối quan hệ với bảng Order
-        public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>(); // Mối quan hệ với bảng Ticket
+        public virtual ICollection<TicketDetail> TicketDetails { get; set; } = new List<TicketDetail>(); 
         public virtual ICollection<TicketIssuance> TicketIssuances { get; set; } = new List<TicketIssuance>();
         public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
     }

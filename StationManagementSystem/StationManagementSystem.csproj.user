@@ -43,6 +43,9 @@
     <Compile Update="Views\Partners\VehicleList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Routes\RouteAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\SellTickets\SellTicketList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +62,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Transactions\TicketIssuanceAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Transactions\VehicleCheckedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Transactions\VehicleCheckList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Transactions\VehicleDepartureList.cs">

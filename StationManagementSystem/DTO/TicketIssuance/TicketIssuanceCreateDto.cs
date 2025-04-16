@@ -23,10 +23,8 @@ namespace StationManagementSystem.DTO.TicketIssuance
         public string Notes { get; set; } // NVARCHAR(MAX)
         public DateTime EstimatedDepartureTime { get; set; } // DateTime
         public DateTime EstimatedArrivalTime { get; set; } // DateTime
-        public bool IsDiscontinued { get; set; } // Bool
         public Guid EmployeeID { get; set; } // Khóa ngoại
         public Guid VehicleID { get; set; } // Khóa ngoại
-        public Guid RouteID { get; set; } // Khóa ngoại
         public Guid ItineraryID { get; set; }
     }
 }

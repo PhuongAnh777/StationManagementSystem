@@ -79,9 +79,6 @@ namespace StationManagementSystem.Migrations
                     b.Property<Guid>("InvoiceID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("IsDiscontinued")
-                        .HasColumnType("BIT");
-
                     b.Property<Guid>("IssuanceID")
                         .HasColumnType("uniqueidentifier");
 
@@ -327,13 +324,36 @@ namespace StationManagementSystem.Migrations
                     b.ToTable("Routes");
                 });
 
+            modelBuilder.Entity("StationManagementSystem.Models.StopPoint", b =>
+                {
+                    b.Property<Guid>("StopPointID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ItineraryID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR(50)");
+
+                    b.Property<int>("StopOrder")
+                        .HasColumnType("INT");
+
+                    b.Property<int?>("StoppingTime")
+                        .HasColumnType("INT");
+
+                    b.HasKey("StopPointID");
+
+                    b.HasIndex("ItineraryID");
+
+                    b.ToTable("StopPoint");
+                });
+
             modelBuilder.Entity("StationManagementSystem.Models.Ticket", b =>
                 {
                     b.Property<Guid>("TicketID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("EmployeeID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("IssuanceID")
@@ -341,6 +361,26 @@ namespace StationManagementSystem.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("FLOAT");
+
+                    b.Property<string>("TicketType")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR(20)");
+
+                    b.HasKey("TicketID");
+
+                    b.HasIndex("IssuanceID");
+
+                    b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("StationManagementSystem.Models.TicketDetail", b =>
+                {
+                    b.Property<Guid>("TicketDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("EmployeeID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SeatNumber")
                         .IsRequired()
@@ -350,17 +390,16 @@ namespace StationManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR(20)");
 
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(20)");
+                    b.Property<Guid>("TicketID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("TicketID");
+                    b.HasKey("TicketDetailID");
 
                     b.HasIndex("EmployeeID");
 
-                    b.HasIndex("IssuanceID");
+                    b.HasIndex("TicketID");
 
-                    b.ToTable("Tickets");
+                    b.ToTable("TicketDetail");
                 });
 
             modelBuilder.Entity("StationManagementSystem.Models.TicketIssuance", b =>
@@ -386,9 +425,6 @@ namespace StationManagementSystem.Migrations
                     b.Property<DateTime>("EstimatedDepartureTime")
                         .HasColumnType("datetime");
 
-                    b.Property<bool>("IsDiscontinued")
-                        .HasColumnType("BIT");
-
                     b.Property<Guid>("ItineraryID")
                         .HasColumnType("uniqueidentifier");
 
@@ -407,7 +443,7 @@ namespace StationManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR(100)");
 
-                    b.Property<Guid>("RouteID")
+                    b.Property<Guid?>("RouteID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("SeatTicket")
@@ -583,23 +619,45 @@ namespace StationManagementSystem.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("StationManagementSystem.Models.StopPoint", b =>
+                {
+                    b.HasOne("StationManagementSystem.Models.Itinerary", "Itinerary")
+                        .WithMany("StopPoints")
+                        .HasForeignKey("ItineraryID")
+                        .IsRequired()
+                        .HasConstraintName("FK_StopPoints_Itineraries");
+
+                    b.Navigation("Itinerary");
+                });
+
             modelBuilder.Entity("StationManagementSystem.Models.Ticket", b =>
                 {
-                    b.HasOne("StationManagementSystem.Models.Employee", "Employee")
-                        .WithMany("Tickets")
-                        .HasForeignKey("EmployeeID")
-                        .IsRequired()
-                        .HasConstraintName("FK_Tickets_Employees");
-
                     b.HasOne("StationManagementSystem.Models.TicketIssuance", "TicketIssuance")
                         .WithMany("Tickets")
                         .HasForeignKey("IssuanceID")
                         .IsRequired()
                         .HasConstraintName("FK_Tickets_TicketIssuances");
 
+                    b.Navigation("TicketIssuance");
+                });
+
+            modelBuilder.Entity("StationManagementSystem.Models.TicketDetail", b =>
+                {
+                    b.HasOne("StationManagementSystem.Models.Employee", "Employee")
+                        .WithMany("TicketDetails")
+                        .HasForeignKey("EmployeeID")
+                        .IsRequired()
+                        .HasConstraintName("FK_TicketDetails_Employees");
+
+                    b.HasOne("StationManagementSystem.Models.Ticket", "Ticket")
+                        .WithMany("TicketDetails")
+                        .HasForeignKey("TicketID")
+                        .IsRequired()
+                        .HasConstraintName("FK_TicketDetails_Tickets");
+
                     b.Navigation("Employee");
 
-                    b.Navigation("TicketIssuance");
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("StationManagementSystem.Models.TicketIssuance", b =>
@@ -616,11 +674,9 @@ namespace StationManagementSystem.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_TicketIssuances_Itineraries");
 
-                    b.HasOne("StationManagementSystem.Models.Route", "Route")
+                    b.HasOne("StationManagementSystem.Models.Route", null)
                         .WithMany("TicketIssuances")
-                        .HasForeignKey("RouteID")
-                        .IsRequired()
-                        .HasConstraintName("FK_TicketIssuances_Routes");
+                        .HasForeignKey("RouteID");
 
                     b.HasOne("StationManagementSystem.Models.Vehicle", "Vehicle")
                         .WithMany("TicketIssuances")
@@ -631,8 +687,6 @@ namespace StationManagementSystem.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("Itinerary");
-
-                    b.Navigation("Route");
 
                     b.Navigation("Vehicle");
                 });
@@ -657,9 +711,9 @@ namespace StationManagementSystem.Migrations
 
                     b.Navigation("Orders");
 
-                    b.Navigation("TicketIssuances");
+                    b.Navigation("TicketDetails");
 
-                    b.Navigation("Tickets");
+                    b.Navigation("TicketIssuances");
                 });
 
             modelBuilder.Entity("StationManagementSystem.Models.Invoice", b =>
@@ -670,6 +724,8 @@ namespace StationManagementSystem.Migrations
 
             modelBuilder.Entity("StationManagementSystem.Models.Itinerary", b =>
                 {
+                    b.Navigation("StopPoints");
+
                     b.Navigation("TicketIssuance")
                         .IsRequired();
                 });
@@ -696,6 +752,11 @@ namespace StationManagementSystem.Migrations
                     b.Navigation("Itineraries");
 
                     b.Navigation("TicketIssuances");
+                });
+
+            modelBuilder.Entity("StationManagementSystem.Models.Ticket", b =>
+                {
+                    b.Navigation("TicketDetails");
                 });
 
             modelBuilder.Entity("StationManagementSystem.Models.TicketIssuance", b =>

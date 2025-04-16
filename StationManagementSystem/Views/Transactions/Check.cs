@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StationManagementSystem.Models;
 
 namespace StationManagementSystem.Views.Transactions
 {
@@ -16,6 +17,9 @@ namespace StationManagementSystem.Views.Transactions
         {
             InitializeComponent();
         }
-
+        public Check(TicketIssuance ticketIssuance)
+        {
+            InitializeComponent();
+        }
     }
 }

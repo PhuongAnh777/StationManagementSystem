@@ -15,7 +15,6 @@ namespace StationManagementSystem.Models
         public string DepartureOrders { get; set; } // NVARCHAR(50)
         public DateTime DepartureTime { get; set; } // DateTime
         public string Status { get; set; } // NVARCHAR(20)
-        public bool IsDiscontinued { get; set; } // Bool
         public Guid InvoiceID { get; set; } // Khóa ngoại
         public virtual Invoice Invoice { get; set; } // Mối quan hệ với bảng Invoice
 

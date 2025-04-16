@@ -26,15 +26,11 @@ namespace StationManagementSystem.Models
         public string Notes { get; set; } // NVARCHAR(MAX)
         public DateTime EstimatedDepartureTime { get; set; } // DateTime
         public DateTime EstimatedArrivalTime { get; set; } // DateTime
-        public bool IsDiscontinued { get; set; } // Bool
         public Guid EmployeeID { get; set; } // Khóa ngoại
         public virtual Employee Employee { get; set; } // Mối quan hệ với bảng Employee
 
         public Guid VehicleID { get; set; } // Khóa ngoại
         public virtual Vehicle Vehicle { get; set; } // Mối quan hệ với bảng Vehicle
-
-        public Guid RouteID { get; set; } // Khóa ngoại
-        public virtual Route Route { get; set; } // Mối quan hệ với bảng Route
         public Guid ItineraryID { get; set; }
         public virtual Itinerary Itinerary { get; set; }
         public virtual DepartureOrder DepartureOrder { get; set; }
