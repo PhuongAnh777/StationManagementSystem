@@ -102,6 +102,7 @@ namespace StationManagementSystem.Views.Employees
                 MessageBox.Show("Tên nhân viên không được trống", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            _employeeDto.FullName = tbxTenNhanVien.Text;
 
             if (rbtnNam.Checked)
             {
@@ -111,7 +112,6 @@ namespace StationManagementSystem.Views.Employees
             {
                 _employeeDto.Gender = true;
             }
-            _employeeDto.FullName = tbxTenNhanVien.Text;
             if (!string.IsNullOrEmpty(tbxEmail.Text))
             {
                 string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";

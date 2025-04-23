@@ -19,7 +19,6 @@ namespace StationManagementSystem.DTO.TicketIssuance
         public float TicketSalesCommission { get; set; } // Float
         public int SeatTicket { get; set; } // INT
         public int SleeperTicket { get; set; } // INT
-        public string Status { get; set; } // NVARCHAR(20)
         public string Notes { get; set; } // NVARCHAR(MAX)
         public DateTime EstimatedDepartureTime { get; set; } // DateTime
         public DateTime EstimatedArrivalTime { get; set; } // DateTime

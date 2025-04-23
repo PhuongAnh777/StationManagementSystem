@@ -79,7 +79,7 @@ namespace StationManagementSystem.Views.Transactions
             {
                 var vehicles = await _ticketIssuanceService.GetVehiclesDepartingInOneHourAsync();
 
-                if (vehicles != null)
+                if (vehicles != null && vehicles.Any())
                 {
                     _originalData = vehicles.ToList();
 
@@ -89,7 +89,10 @@ namespace StationManagementSystem.Views.Transactions
                 }
                 else
                 {
-                    MessageBox.Show("Không thể tải dữ liệu danh mục.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gridView.DataSource = new List<Vehicle>(); // Gán một danh sách rỗng cho DataSource
+                    lblPage.Text = "0/0";
+                    labelPageInfo.Text = "Hiển thị 0 - 0 / Tổng số 0 hàng hóa";
+                    MessageBox.Show("Không có dữ liệu xe.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

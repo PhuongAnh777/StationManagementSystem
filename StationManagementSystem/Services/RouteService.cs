@@ -47,49 +47,56 @@ namespace StationManagementSystem.Services
             await _context.SaveChangesAsync();
             return route;
         }
-        //public async Task<Vehicle> UpdateVehicleAsync(Guid vehicleId, VehicleUpdateDto vehicleDto)
-        //{
-        //    if (vehicleDto == null)
-        //        throw new ArgumentNullException(nameof(vehicleDto), "vehicle data is required.");
+        public async Task<Route> UpdateRouteAsync(Guid routeId, RouteUpdateDto routeDto)
+        {
+            if (routeDto == null)
+                throw new ArgumentNullException(nameof(routeDto), "route data is required.");
 
-        //    var vehicle = await _context.Vehicles.FirstOrDefaultAsync(p => p.VehicleID == vehicleId);
+            var route = await _context.Routes.FirstOrDefaultAsync(p => p.RouteID == routeId);
 
-        //    if (vehicle == null)
-        //        throw new KeyNotFoundException($"Employee with ID {vehicleId} not found.");
+            if (route == null)
+                throw new KeyNotFoundException($"Route with ID {routeId} not found.");
 
-        //    // Update product properties
+            // Update product properties
 
-        //    vehicle.InspectionExpiryDate = vehicleDto.InspectionExpiryDate;
-        //    vehicle.InspectionStartDate = vehicleDto.InspectionStartDate;
-        //    vehicle.ImpoundmentDate = vehicleDto.ImpoundmentDate;
-        //    vehicle.ReleaseDate = vehicleDto.ReleaseDate;
-        //    vehicle.Registration = vehicleDto.Registration;
-        //    vehicle.Insurance = vehicleDto.Insurance;
-        //    vehicle.LicensePlate = vehicleDto.LicensePlate;
-        //    vehicle.ManufacturingYear = vehicleDto.ManufacturingYear;
-        //    vehicle.SeatTicket = vehicleDto.SeatTicket;
-        //    vehicle.SleeperTicket = vehicleDto.SleeperTicket;
-        //    vehicle.VehicleType = vehicleDto.VehicleType;
+            route.DeparturePoint = routeDto.DeparturePoint;
+            route.ArrivalPoint = routeDto.ArrivalPoint;
+            route.Distance = routeDto.Distance;
 
-        //    // Save changes to the database, this will automatically check the RowVersion
-        //    await _context.SaveChangesAsync();
+            // Save changes to the database, this will automatically check the RowVersion
+            await _context.SaveChangesAsync();
 
-        //    return vehicle;
+            return route;
+        }
+        public async Task<Route> UpdateRouteStatusAsync(Guid routeId)
+        {
+            var route = await _context.Routes.FirstOrDefaultAsync(p => p.RouteID == routeId);
 
-        //}
+            if (route == null)
+                throw new KeyNotFoundException($"Route with ID {routeId} not found.");
 
-        //public async Task<bool> DeleteVehicleAsync(Guid id)
-        //{
-        //    var vehicle = await _context.Vehicles.FindAsync(id);
-        //    if (vehicle == null)
-        //    {
-        //        return false;
-        //    }
+            // Update product properties
 
-        //    _context.Vehicles.Remove(vehicle);
-        //    await _context.SaveChangesAsync();
+            route.IsDiscontinued = true;
 
-        //    return true;
-        //}
+            // Save changes to the database, this will automatically check the RowVersion
+            await _context.SaveChangesAsync();
+
+            return route;
+
+        }
+        public async Task<bool> DeleteRouteAsync(Guid id)
+        {
+            var route = await _context.Routes.FindAsync(id);
+            if (route == null)
+            {
+                return false;
+            }
+
+            _context.Routes.Remove(route);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

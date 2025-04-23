@@ -12,6 +12,7 @@ namespace StationManagementSystem.Views.Transactions
 {
     public partial class VehicleCheckedList : Form
     {
+
         public VehicleCheckedList()
         {
             InitializeComponent();

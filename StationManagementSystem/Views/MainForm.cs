@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using StationManagementSystem.Views.Employees;
 using StationManagementSystem.Views.Partners;
+using StationManagementSystem.Views.Routes;
 using StationManagementSystem.Views.SellTickets;
 using StationManagementSystem.Views.Transactions;
 using Timer = System.Windows.Forms.Timer;
@@ -28,9 +29,10 @@ namespace StationManagementSystem.Views
             this.StartPosition = FormStartPosition.CenterScreen; // Đặt form ở giữa màn hình
 
             //Show drop down list
-            ConfigureHoverEvents(pnHangHoa, btnTaiKhoan);
+            ConfigureHoverEvents(pnXe, btnXeMain);
             ConfigureHoverEvents(pnGiaoDich, btnGiaoDich);
             ConfigureHoverEvents(pnDoiTac, btnDoiTac);
+            ConfigureHoverEvents(pnTuyen, btnTuyen);
             ConfigureHoverEvents(pnNhanVien, btnNhanVien);
             ConfigureHoverEvents(pnVe, btnVe);
             ConfigureHoverEvents(pnTaiKhoan, btnProFile);
@@ -237,6 +239,26 @@ namespace StationManagementSystem.Views
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
             CreateFormChild(new EmployeeAdd());
+        }
+
+        private void btnXeCheck_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new VehicleCheckList());
+        }
+
+        private void btnXeChecked_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new VehicleCheckedList());
+        }
+
+        private void btnXeAparture_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new VehicleDepartureList());
+        }
+
+        private void btnTuyenDuong_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new RouteList());
         }
     }
 }

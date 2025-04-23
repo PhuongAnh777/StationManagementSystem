@@ -43,7 +43,16 @@
     <Compile Update="Views\Partners\VehicleList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Routes\ItineraryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Routes\RouteAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Routes\RouteEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Routes\RouteList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\SellTickets\SellTicketList.cs">

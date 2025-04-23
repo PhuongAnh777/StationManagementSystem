@@ -297,6 +297,7 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.ReleaseDate).HasColumnType("datetime");
                 entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
 
+
                 entity.HasOne(d => d.Owner)
                     .WithMany(o => o.Vehicles)
                     .HasForeignKey(d => d.OwnerID)

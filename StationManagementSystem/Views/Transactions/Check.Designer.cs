@@ -66,16 +66,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblHeader = new Label();
             grboxThongTin = new Guna.UI2.WinForms.Guna2GroupBox();
+            lblXuatBen = new Label();
+            tbxHinhThuc = new Guna.UI2.WinForms.Guna2TextBox();
             DateTimeTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblDenNgay = new Label();
             DateTimeFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            cbxHinhThuc = new Guna.UI2.WinForms.Guna2ComboBox();
             lblTuyenV = new Label();
             lblDVVTV = new Label();
             lblBienSoV = new Label();
@@ -88,9 +85,9 @@
             lblBienSo = new Label();
             pnCheck = new Panel();
             DateTimeToBB = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            DateTimeToKD = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblDenNgay1 = new Label();
             DateTimeFromBB = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            tbxBienBan = new Guna.UI2.WinForms.Guna2TextBox();
             lblTuNgay1 = new Label();
             lblBienBan = new Label();
             tbxTaiXe = new Guna.UI2.WinForms.Guna2TextBox();
@@ -99,7 +96,6 @@
             lblDenNgay2 = new Label();
             DateTimeFromKD = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblTuNgay = new Label();
-            tbxKiemDinh = new Guna.UI2.WinForms.Guna2TextBox();
             lblKiemDinh = new Label();
             tbxBaoHiem = new Guna.UI2.WinForms.Guna2TextBox();
             lblBaoHiem = new Label();
@@ -111,7 +107,6 @@
             checkBH = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             checkDK = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             label2 = new Label();
-            DateTimeToKD = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             grboxThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numTime).BeginInit();
@@ -131,10 +126,11 @@
             // grboxThongTin
             // 
             grboxThongTin.BorderColor = Color.FromArgb(192, 192, 255);
+            grboxThongTin.Controls.Add(lblXuatBen);
+            grboxThongTin.Controls.Add(tbxHinhThuc);
             grboxThongTin.Controls.Add(DateTimeTo);
             grboxThongTin.Controls.Add(lblDenNgay);
             grboxThongTin.Controls.Add(DateTimeFrom);
-            grboxThongTin.Controls.Add(cbxHinhThuc);
             grboxThongTin.Controls.Add(lblTuyenV);
             grboxThongTin.Controls.Add(lblDVVTV);
             grboxThongTin.Controls.Add(lblBienSoV);
@@ -156,10 +152,41 @@
             grboxThongTin.TabIndex = 30;
             grboxThongTin.Text = "Thông tin xe";
             // 
+            // lblXuatBen
+            // 
+            lblXuatBen.AutoSize = true;
+            lblXuatBen.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblXuatBen.ForeColor = Color.Black;
+            lblXuatBen.Location = new Point(382, 369);
+            lblXuatBen.Name = "lblXuatBen";
+            lblXuatBen.Size = new Size(184, 23);
+            lblXuatBen.TabIndex = 110;
+            lblXuatBen.Text = "Công ty Phương Anh";
+            // 
+            // tbxHinhThuc
+            // 
+            tbxHinhThuc.CustomizableEdges = customizableEdges1;
+            tbxHinhThuc.DefaultText = "";
+            tbxHinhThuc.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxHinhThuc.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxHinhThuc.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxHinhThuc.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxHinhThuc.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxHinhThuc.Font = new Font("Segoe UI", 9F);
+            tbxHinhThuc.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxHinhThuc.Location = new Point(219, 228);
+            tbxHinhThuc.Margin = new Padding(3, 4, 3, 4);
+            tbxHinhThuc.Name = "tbxHinhThuc";
+            tbxHinhThuc.PlaceholderText = "";
+            tbxHinhThuc.SelectedText = "";
+            tbxHinhThuc.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tbxHinhThuc.Size = new Size(730, 36);
+            tbxHinhThuc.TabIndex = 109;
+            // 
             // DateTimeTo
             // 
             DateTimeTo.Checked = true;
-            DateTimeTo.CustomizableEdges = customizableEdges1;
+            DateTimeTo.CustomizableEdges = customizableEdges3;
             DateTimeTo.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeTo.Font = new Font("Segoe UI", 9F);
             DateTimeTo.Format = DateTimePickerFormat.Long;
@@ -167,7 +194,7 @@
             DateTimeTo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeTo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeTo.Name = "DateTimeTo";
-            DateTimeTo.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            DateTimeTo.ShadowDecoration.CustomizableEdges = customizableEdges4;
             DateTimeTo.Size = new Size(229, 31);
             DateTimeTo.TabIndex = 68;
             DateTimeTo.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
@@ -184,7 +211,7 @@
             // DateTimeFrom
             // 
             DateTimeFrom.Checked = true;
-            DateTimeFrom.CustomizableEdges = customizableEdges3;
+            DateTimeFrom.CustomizableEdges = customizableEdges5;
             DateTimeFrom.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFrom.Font = new Font("Segoe UI", 9F);
             DateTimeFrom.Format = DateTimePickerFormat.Long;
@@ -192,27 +219,10 @@
             DateTimeFrom.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFrom.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFrom.Name = "DateTimeFrom";
-            DateTimeFrom.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            DateTimeFrom.ShadowDecoration.CustomizableEdges = customizableEdges6;
             DateTimeFrom.Size = new Size(229, 31);
             DateTimeFrom.TabIndex = 31;
             DateTimeFrom.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
-            // 
-            // cbxHinhThuc
-            // 
-            cbxHinhThuc.BackColor = Color.Transparent;
-            cbxHinhThuc.CustomizableEdges = customizableEdges5;
-            cbxHinhThuc.DrawMode = DrawMode.OwnerDrawFixed;
-            cbxHinhThuc.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxHinhThuc.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbxHinhThuc.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbxHinhThuc.Font = new Font("Segoe UI", 10F);
-            cbxHinhThuc.ForeColor = Color.FromArgb(68, 88, 112);
-            cbxHinhThuc.ItemHeight = 30;
-            cbxHinhThuc.Location = new Point(219, 228);
-            cbxHinhThuc.Name = "cbxHinhThuc";
-            cbxHinhThuc.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            cbxHinhThuc.Size = new Size(761, 36);
-            cbxHinhThuc.TabIndex = 66;
             // 
             // lblTuyenV
             // 
@@ -319,9 +329,9 @@
             // pnCheck
             // 
             pnCheck.Controls.Add(DateTimeToBB);
+            pnCheck.Controls.Add(DateTimeToKD);
             pnCheck.Controls.Add(lblDenNgay1);
             pnCheck.Controls.Add(DateTimeFromBB);
-            pnCheck.Controls.Add(tbxBienBan);
             pnCheck.Controls.Add(lblTuNgay1);
             pnCheck.Controls.Add(lblBienBan);
             pnCheck.Controls.Add(tbxTaiXe);
@@ -330,7 +340,6 @@
             pnCheck.Controls.Add(lblDenNgay2);
             pnCheck.Controls.Add(DateTimeFromKD);
             pnCheck.Controls.Add(lblTuNgay);
-            pnCheck.Controls.Add(tbxKiemDinh);
             pnCheck.Controls.Add(lblKiemDinh);
             pnCheck.Controls.Add(tbxBaoHiem);
             pnCheck.Controls.Add(lblBaoHiem);
@@ -354,19 +363,35 @@
             DateTimeToBB.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeToBB.Font = new Font("Segoe UI", 9F);
             DateTimeToBB.Format = DateTimePickerFormat.Long;
-            DateTimeToBB.Location = new Point(771, 287);
+            DateTimeToBB.Location = new Point(645, 281);
             DateTimeToBB.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeToBB.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeToBB.Name = "DateTimeToBB";
             DateTimeToBB.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            DateTimeToBB.Size = new Size(206, 31);
+            DateTimeToBB.Size = new Size(241, 31);
             DateTimeToBB.TabIndex = 108;
             DateTimeToBB.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
+            // 
+            // DateTimeToKD
+            // 
+            DateTimeToKD.Checked = true;
+            DateTimeToKD.CustomizableEdges = customizableEdges13;
+            DateTimeToKD.FillColor = Color.FromArgb(192, 192, 255);
+            DateTimeToKD.Font = new Font("Segoe UI", 9F);
+            DateTimeToKD.Format = DateTimePickerFormat.Long;
+            DateTimeToKD.Location = new Point(645, 165);
+            DateTimeToKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            DateTimeToKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            DateTimeToKD.Name = "DateTimeToKD";
+            DateTimeToKD.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            DateTimeToKD.Size = new Size(241, 31);
+            DateTimeToKD.TabIndex = 99;
+            DateTimeToKD.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
             // 
             // lblDenNgay1
             // 
             lblDenNgay1.AutoSize = true;
-            lblDenNgay1.Location = new Point(722, 290);
+            lblDenNgay1.Location = new Point(577, 290);
             lblDenNgay1.Name = "lblDenNgay1";
             lblDenNgay1.Size = new Size(43, 22);
             lblDenNgay1.TabIndex = 107;
@@ -375,43 +400,23 @@
             // DateTimeFromBB
             // 
             DateTimeFromBB.Checked = true;
-            DateTimeFromBB.CustomizableEdges = customizableEdges13;
+            DateTimeFromBB.CustomizableEdges = customizableEdges15;
             DateTimeFromBB.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFromBB.Font = new Font("Segoe UI", 9F);
             DateTimeFromBB.Format = DateTimePickerFormat.Long;
-            DateTimeFromBB.Location = new Point(504, 287);
+            DateTimeFromBB.Location = new Point(315, 281);
             DateTimeFromBB.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFromBB.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFromBB.Name = "DateTimeFromBB";
-            DateTimeFromBB.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            DateTimeFromBB.Size = new Size(201, 31);
+            DateTimeFromBB.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            DateTimeFromBB.Size = new Size(236, 31);
             DateTimeFromBB.TabIndex = 106;
             DateTimeFromBB.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
-            // 
-            // tbxBienBan
-            // 
-            tbxBienBan.CustomizableEdges = customizableEdges15;
-            tbxBienBan.DefaultText = "";
-            tbxBienBan.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxBienBan.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxBienBan.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxBienBan.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxBienBan.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxBienBan.Font = new Font("Segoe UI", 9F);
-            tbxBienBan.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxBienBan.Location = new Point(247, 287);
-            tbxBienBan.Margin = new Padding(3, 4, 3, 4);
-            tbxBienBan.Name = "tbxBienBan";
-            tbxBienBan.PlaceholderText = "";
-            tbxBienBan.SelectedText = "";
-            tbxBienBan.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            tbxBienBan.Size = new Size(214, 36);
-            tbxBienBan.TabIndex = 105;
             // 
             // lblTuNgay1
             // 
             lblTuNgay1.AutoSize = true;
-            lblTuNgay1.Location = new Point(467, 290);
+            lblTuNgay1.Location = new Point(247, 287);
             lblTuNgay1.Name = "lblTuNgay1";
             lblTuNgay1.Size = new Size(31, 22);
             lblTuNgay1.TabIndex = 104;
@@ -477,7 +482,7 @@
             // lblDenNgay2
             // 
             lblDenNgay2.AutoSize = true;
-            lblDenNgay2.Location = new Point(722, 174);
+            lblDenNgay2.Location = new Point(577, 177);
             lblDenNgay2.Name = "lblDenNgay2";
             lblDenNgay2.Size = new Size(43, 22);
             lblDenNgay2.TabIndex = 98;
@@ -490,43 +495,23 @@
             DateTimeFromKD.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFromKD.Font = new Font("Segoe UI", 9F);
             DateTimeFromKD.Format = DateTimePickerFormat.Long;
-            DateTimeFromKD.Location = new Point(504, 168);
+            DateTimeFromKD.Location = new Point(315, 168);
             DateTimeFromKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFromKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFromKD.Name = "DateTimeFromKD";
             DateTimeFromKD.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            DateTimeFromKD.Size = new Size(201, 31);
+            DateTimeFromKD.Size = new Size(236, 31);
             DateTimeFromKD.TabIndex = 93;
             DateTimeFromKD.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
             // 
             // lblTuNgay
             // 
             lblTuNgay.AutoSize = true;
-            lblTuNgay.Location = new Point(467, 177);
+            lblTuNgay.Location = new Point(247, 174);
             lblTuNgay.Name = "lblTuNgay";
             lblTuNgay.Size = new Size(31, 22);
             lblTuNgay.TabIndex = 92;
             lblTuNgay.Text = "từ ";
-            // 
-            // tbxKiemDinh
-            // 
-            tbxKiemDinh.CustomizableEdges = customizableEdges23;
-            tbxKiemDinh.DefaultText = "";
-            tbxKiemDinh.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxKiemDinh.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxKiemDinh.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxKiemDinh.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxKiemDinh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxKiemDinh.Font = new Font("Segoe UI", 9F);
-            tbxKiemDinh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxKiemDinh.Location = new Point(247, 163);
-            tbxKiemDinh.Margin = new Padding(3, 4, 3, 4);
-            tbxKiemDinh.Name = "tbxKiemDinh";
-            tbxKiemDinh.PlaceholderText = "";
-            tbxKiemDinh.SelectedText = "";
-            tbxKiemDinh.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            tbxKiemDinh.Size = new Size(214, 36);
-            tbxKiemDinh.TabIndex = 91;
             // 
             // lblKiemDinh
             // 
@@ -539,7 +524,7 @@
             // 
             // tbxBaoHiem
             // 
-            tbxBaoHiem.CustomizableEdges = customizableEdges25;
+            tbxBaoHiem.CustomizableEdges = customizableEdges23;
             tbxBaoHiem.DefaultText = "";
             tbxBaoHiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxBaoHiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -553,7 +538,7 @@
             tbxBaoHiem.Name = "tbxBaoHiem";
             tbxBaoHiem.PlaceholderText = "";
             tbxBaoHiem.SelectedText = "";
-            tbxBaoHiem.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            tbxBaoHiem.ShadowDecoration.CustomizableEdges = customizableEdges24;
             tbxBaoHiem.Size = new Size(730, 36);
             tbxBaoHiem.TabIndex = 83;
             // 
@@ -568,7 +553,7 @@
             // 
             // tbxDangKyXe
             // 
-            tbxDangKyXe.CustomizableEdges = customizableEdges27;
+            tbxDangKyXe.CustomizableEdges = customizableEdges25;
             tbxDangKyXe.DefaultText = "";
             tbxDangKyXe.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxDangKyXe.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -582,7 +567,7 @@
             tbxDangKyXe.Name = "tbxDangKyXe";
             tbxDangKyXe.PlaceholderText = "";
             tbxDangKyXe.SelectedText = "";
-            tbxDangKyXe.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            tbxDangKyXe.ShadowDecoration.CustomizableEdges = customizableEdges26;
             tbxDangKyXe.Size = new Size(730, 36);
             tbxDangKyXe.TabIndex = 82;
             // 
@@ -602,11 +587,11 @@
             checkBB.CheckedState.BorderRadius = 2;
             checkBB.CheckedState.BorderThickness = 0;
             checkBB.CheckedState.FillColor = Color.FromArgb(192, 192, 255);
-            checkBB.CustomizableEdges = customizableEdges29;
+            checkBB.CustomizableEdges = customizableEdges27;
             checkBB.ForeColor = Color.White;
             checkBB.Location = new Point(34, 287);
             checkBB.Name = "checkBB";
-            checkBB.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            checkBB.ShadowDecoration.CustomizableEdges = customizableEdges28;
             checkBB.Size = new Size(25, 25);
             checkBB.TabIndex = 37;
             checkBB.Text = "guna2CustomCheckBox1";
@@ -622,11 +607,11 @@
             checkBL.CheckedState.BorderRadius = 2;
             checkBL.CheckedState.BorderThickness = 0;
             checkBL.CheckedState.FillColor = Color.FromArgb(192, 192, 255);
-            checkBL.CustomizableEdges = customizableEdges31;
+            checkBL.CustomizableEdges = customizableEdges29;
             checkBL.ForeColor = Color.White;
             checkBL.Location = new Point(34, 230);
             checkBL.Name = "checkBL";
-            checkBL.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            checkBL.ShadowDecoration.CustomizableEdges = customizableEdges30;
             checkBL.Size = new Size(25, 25);
             checkBL.TabIndex = 36;
             checkBL.Text = "guna2CustomCheckBox1";
@@ -642,11 +627,11 @@
             checkKD.CheckedState.BorderRadius = 2;
             checkKD.CheckedState.BorderThickness = 0;
             checkKD.CheckedState.FillColor = Color.FromArgb(192, 192, 255);
-            checkKD.CustomizableEdges = customizableEdges33;
+            checkKD.CustomizableEdges = customizableEdges31;
             checkKD.ForeColor = Color.White;
             checkKD.Location = new Point(34, 174);
             checkKD.Name = "checkKD";
-            checkKD.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            checkKD.ShadowDecoration.CustomizableEdges = customizableEdges32;
             checkKD.Size = new Size(25, 25);
             checkKD.TabIndex = 35;
             checkKD.Text = "guna2CustomCheckBox1";
@@ -662,11 +647,11 @@
             checkBH.CheckedState.BorderRadius = 2;
             checkBH.CheckedState.BorderThickness = 0;
             checkBH.CheckedState.FillColor = Color.FromArgb(192, 192, 255);
-            checkBH.CustomizableEdges = customizableEdges35;
+            checkBH.CustomizableEdges = customizableEdges33;
             checkBH.ForeColor = Color.White;
             checkBH.Location = new Point(34, 117);
             checkBH.Name = "checkBH";
-            checkBH.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            checkBH.ShadowDecoration.CustomizableEdges = customizableEdges34;
             checkBH.Size = new Size(25, 25);
             checkBH.TabIndex = 34;
             checkBH.Text = "guna2CustomCheckBox1";
@@ -682,11 +667,11 @@
             checkDK.CheckedState.BorderRadius = 2;
             checkDK.CheckedState.BorderThickness = 0;
             checkDK.CheckedState.FillColor = Color.FromArgb(192, 192, 255);
-            checkDK.CustomizableEdges = customizableEdges37;
+            checkDK.CustomizableEdges = customizableEdges35;
             checkDK.ForeColor = Color.White;
             checkDK.Location = new Point(34, 58);
             checkDK.Name = "checkDK";
-            checkDK.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            checkDK.ShadowDecoration.CustomizableEdges = customizableEdges36;
             checkDK.Size = new Size(25, 25);
             checkDK.TabIndex = 33;
             checkDK.Text = "guna2CustomCheckBox1";
@@ -706,25 +691,9 @@
             label2.TabIndex = 32;
             label2.Text = "Các giấy tờ kiểm tra";
             // 
-            // DateTimeToKD
-            // 
-            DateTimeToKD.Checked = true;
-            DateTimeToKD.CustomizableEdges = customizableEdges39;
-            DateTimeToKD.FillColor = Color.FromArgb(192, 192, 255);
-            DateTimeToKD.Font = new Font("Segoe UI", 9F);
-            DateTimeToKD.Format = DateTimePickerFormat.Long;
-            DateTimeToKD.Location = new Point(801, 630);
-            DateTimeToKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateTimeToKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateTimeToKD.Name = "DateTimeToKD";
-            DateTimeToKD.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            DateTimeToKD.Size = new Size(206, 31);
-            DateTimeToKD.TabIndex = 99;
-            DateTimeToKD.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
-            // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges41;
+            guna2Button1.CustomizableEdges = customizableEdges37;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -735,7 +704,7 @@
             guna2Button1.ForeColor = Color.Silver;
             guna2Button1.Location = new Point(961, 9);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges38;
             guna2Button1.Size = new Size(46, 32);
             guna2Button1.TabIndex = 87;
             guna2Button1.Text = "X";
@@ -747,7 +716,6 @@
             BackColor = Color.White;
             ClientSize = new Size(1042, 867);
             Controls.Add(guna2Button1);
-            Controls.Add(DateTimeToKD);
             Controls.Add(pnCheck);
             Controls.Add(grboxThongTin);
             Controls.Add(lblHeader);
@@ -779,7 +747,6 @@
         private Label lblTuyenV;
         private Label lblDVVTV;
         private Label lblBienSoV;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxHinhThuc;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeFrom;
         private Label lblDenNgay;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeTo;
@@ -795,7 +762,6 @@
         private Label lblBaoHiem;
         private Guna.UI2.WinForms.Guna2TextBox tbxBaoHiem;
         private Label lblKiemDinh;
-        private Guna.UI2.WinForms.Guna2TextBox tbxKiemDinh;
         private Label lblTuNgay;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeFromKD;
         private Label lblDenNgay2;
@@ -805,10 +771,11 @@
         private Guna.UI2.WinForms.Guna2TextBox tbxTaiXe;
         private Label lblBienBan;
         private Label lblTuNgay1;
-        private Guna.UI2.WinForms.Guna2TextBox tbxBienBan;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeFromBB;
         private Label lblDenNgay1;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeToBB;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox tbxHinhThuc;
+        private Label lblXuatBen;
     }
 }

@@ -83,7 +83,7 @@ namespace StationManagementSystem.Views.Partners
             {
                 var owners = await _ownerService.GetAllOwnersAsync();
 
-                if (owners != null)
+                if (owners != null && owners.Any())
                 {
                     _originalData = owners.ToList();
 
@@ -93,7 +93,10 @@ namespace StationManagementSystem.Views.Partners
                 }
                 else
                 {
-                    MessageBox.Show("Không thể tải dữ liệu danh mục.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gridView.DataSource = new List<Owner>(); // Gán một danh sách rỗng cho DataSource
+                    lblPage.Text = "0/0";
+                    labelPageInfo.Text = "Hiển thị 0 - 0 / Tổng số 0 hàng hóa";
+                    MessageBox.Show("Không có dữ liệu chủ xe.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

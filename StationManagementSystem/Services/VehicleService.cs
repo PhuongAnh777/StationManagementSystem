@@ -20,12 +20,18 @@ namespace StationManagementSystem.Services
         {
             return await _context.Vehicles.ToListAsync();
         }
-        public async Task<IEnumerable<Vehicle>> GetActiveVehiclesAsync()
+        public async Task<IEnumerable<Vehicle>> GetContinueVehiclesAsync()
         {
             return await _context.Vehicles
                 .Where(v => v.IsDiscontinued == false) 
                 .ToListAsync();
         }
+        //public async Task<IEnumerable<Vehicle>> GetActiveVehiclesAsync()
+        //{
+        //    return await _context.Vehicles
+        //        .Where(v => v.IsDiscontinued == false)
+        //        .ToListAsync();
+        //}
         public async Task<Vehicle> GetVehicleByIdAsync(Guid vehicleId)
         {
             return await _context.Vehicles
@@ -91,7 +97,7 @@ namespace StationManagementSystem.Services
             var vehicle = await _context.Vehicles.FirstOrDefaultAsync(p => p.VehicleID == vehicleId);
 
             if (vehicle == null)
-                throw new KeyNotFoundException($"Employee with ID {vehicleId} not found.");
+                throw new KeyNotFoundException($"Vehicle with ID {vehicleId} not found.");
 
             // Update product properties
             vehicle.IsDiscontinued = true;
@@ -102,6 +108,23 @@ namespace StationManagementSystem.Services
             return vehicle;
 
         }
+        //public async Task<Vehicle> UpdateVehicleActiveAsync(Guid vehicleId)
+        //{
+
+        //    var vehicle = await _context.Vehicles.FirstOrDefaultAsync(p => p.VehicleID == vehicleId);
+
+        //    if (vehicle == null)
+        //        throw new KeyNotFoundException($"Vehicle with ID {vehicleId} not found.");
+
+        //    // Update product properties
+        //    vehicle.IsActived = true;
+
+        //    // Save changes to the database, this will automatically check the RowVersion
+        //    await _context.SaveChangesAsync();
+
+        //    return vehicle;
+
+        //}
         public async Task<bool> DeleteVehicleAsync(Guid id)
         {
             var vehicle = await _context.Vehicles.FindAsync(id);

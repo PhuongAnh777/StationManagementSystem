@@ -380,6 +380,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1362, 867);
             Controls.Add(panel1);
             Controls.Add(pnFooter);

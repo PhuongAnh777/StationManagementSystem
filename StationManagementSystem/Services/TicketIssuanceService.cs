@@ -59,7 +59,7 @@ namespace StationManagementSystem.Services
                 TicketSalesCommission = ticketIssuanceDto.TicketSalesCommission,
                 SeatTicket = ticketIssuanceDto.SeatTicket,
                 SleeperTicket = ticketIssuanceDto.SleeperTicket,
-                Status = ticketIssuanceDto.Status,
+                Status = "Pending",
                 Notes = ticketIssuanceDto.Notes,
                 EstimatedDepartureTime = ticketIssuanceDto.EstimatedDepartureTime,
                 EstimatedArrivalTime = ticketIssuanceDto.EstimatedArrivalTime,

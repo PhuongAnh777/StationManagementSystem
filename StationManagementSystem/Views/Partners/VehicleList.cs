@@ -83,6 +83,7 @@ namespace StationManagementSystem.Views.Partners
             if (response != null)
             {
                 OpenChildForm(new VehicleDetailOriginal(response));
+                await LoadVehicle();
             }
             else
             {
@@ -95,7 +96,7 @@ namespace StationManagementSystem.Views.Partners
             {
                 var vehicles = await _vehicleService.GetAllVehiclesAsync();
 
-                if (vehicles != null)
+                if (vehicles != null && vehicles.Any())
                 {
                     _originalData = vehicles.ToList();
 
@@ -105,7 +106,10 @@ namespace StationManagementSystem.Views.Partners
                 }
                 else
                 {
-                    MessageBox.Show("Không thể tải dữ liệu danh mục.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gridView.DataSource = new List<Vehicle>(); // Gán một danh sách rỗng cho DataSource
+                    lblPage.Text = "0/0";
+                    labelPageInfo.Text = "Hiển thị 0 - 0 / Tổng số 0 hàng hóa";
+                    MessageBox.Show("Không có dữ liệu xe.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -207,7 +211,7 @@ namespace StationManagementSystem.Views.Partners
 
             var companies = await _ownerService.GetAllOwnersAsync();
             cbxDVVT.DataSource = companies;
-            cbxDVVT.DisplayMember = "Company"; // hoặc tên thuộc tính bạn muốn hiển thị
+            cbxDVVT.DisplayMember = "DeparturePoint"; // hoặc tên thuộc tính bạn muốn hiển thị
             cbxDVVT.ValueMember = "OwnerID";
             cbxDVVT.SelectedIndex = -1;
         }

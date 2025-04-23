@@ -9,25 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.Models;
 using StationManagementSystem.Services;
-using StationManagementSystem.Views.Partners;
+using StationManagementSystem.Views.Employees;
+using static Guna.UI2.Native.WinApi;
 
-namespace StationManagementSystem.Views.Employees
+namespace StationManagementSystem.Views.Routes
 {
-    public partial class EmloyeeList : Form
+    public partial class RouteList : Form
     {
-        private readonly EmployeeService _employeeService;
+        private readonly RouteService _routeService;
 
-        private List<Employee> _originalData;
+        private List<Route> _originalData;
         private int _pageSize = 10;                    // Số hàng trên mỗi trang
         private int _currentPage = 1;                 // Trang hiện tại
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
-        public EmloyeeList()
+        public RouteList()
         {
             InitializeComponent();
-            _employeeService = new EmployeeService();
-            _originalData = new List<Employee>();
+            _routeService = new RouteService();
+            _originalData = new List<Route>();
         }
         public void OpenChildForm(Form childForm)
         {
@@ -48,62 +49,53 @@ namespace StationManagementSystem.Views.Employees
             // Khôi phục độ trong suốt của form chính
             this.Opacity = 1.0;
         }
-
-        private void gridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void RenameRouteGridColumns()
         {
-
+            gridView.Columns["RouteID"].HeaderText = "Mã tuyến đường";
+            gridView.Columns["DeparturePoint"].HeaderText = "Điểm đi";
+            gridView.Columns["ArrivalPoint"].HeaderText = "Điểm đến";
+            gridView.Columns["Distance"].HeaderText = "Quãng đường";
+            gridView.Columns["IsDiscontinued"].HeaderText = "Ngừng hoạt động";
         }
 
-        private void RenameEmployeeGridColumns()
-        {
-            gridView.Columns["EmployeeID"].HeaderText = "Mã nhân viên";
-            gridView.Columns["FullName"].HeaderText = "Họ và tên";
-            gridView.Columns["Phone"].HeaderText = "Số điện thoại";
-            gridView.Columns["Address"].HeaderText = "Địa chỉ";
-            gridView.Columns["Email"].HeaderText = "Email";
-            gridView.Columns["BirthDate"].HeaderText = "Ngày sinh";
-            gridView.Columns["Gender"].HeaderText = "Giới tính"; // Bạn có thể xử lý định dạng lại thành "Nam"/"Nữ" nếu cần
-        }
         private async void gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.RowIndex >= gridView.Rows.Count)
                 return;
             var selectedRow = gridView.Rows[e.RowIndex];
-            var employeeId = (Guid)selectedRow.Cells["EmployeeID"].Value;
-            var response = await _employeeService.GetEmployeeByIdAsync(employeeId);
+            var routeID = (Guid)selectedRow.Cells["RouteID"].Value;
+            var response = await _routeService.GetRouteByIdAsync(routeID);
 
             if (response != null)
             {
-                OpenChildForm(new EmployeeEdit(response));
-                await LoadEmployee(); // Cập nhật lại dữ liệu trong DataGridView
-
+                OpenChildForm(new RouteEdit(response));
+                await LoadRoute(); // Cập nhật lại dữ liệu trong DataGridView
             }
             else
             {
                 MessageBox.Show("Failed to retrieve category details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-        private async Task LoadEmployee()
+        private async Task LoadRoute()
         {
             try
             {
-                var employees = await _employeeService.GetAllEmployeesAsync();
+                var routes = await _routeService.GetAllRoutesAsync();
 
-                if (employees != null && employees.Any())
+                if (routes != null && routes.Any())
                 {
-                    _originalData = employees.ToList();
+                    _originalData = routes.ToList();
 
                     _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize);
                     DisplayPage(_currentPage);
-                    RenameEmployeeGridColumns();
+                    RenameRouteGridColumns();
                 }
                 else
                 {
-                    gridView.DataSource = new List<Employee>(); // Gán một danh sách rỗng cho DataSource
+                    gridView.DataSource = new List<Route>(); // Gán một danh sách rỗng cho DataSource
                     lblPage.Text = "0/0";
                     labelPageInfo.Text = "Hiển thị 0 - 0 / Tổng số 0 hàng hóa";
-                    MessageBox.Show("Không có dữ liệu nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không có dữ liệu tuyến đường.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -169,17 +161,8 @@ namespace StationManagementSystem.Views.Employees
             }
         }
 
-        private void gridView_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
         private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //if (gridView.Columns[e.ColumnIndex].Name == "Image" || (gridView.Columns[e.ColumnIndex].Name == "Remove"))
-            //{
-            //    return;
-            //}
             string columnName = gridView.Columns[e.ColumnIndex].DataPropertyName;
 
             if (_sortedColumn == columnName)
@@ -195,20 +178,17 @@ namespace StationManagementSystem.Views.Employees
             SortData(columnName, _isAscending);
 
             UpdateColumnHeaders();
-
         }
 
-        private async void EmloyeeList_Load(object sender, EventArgs e)
+        private async void RouteList_Load(object sender, EventArgs e)
         {
-            await LoadEmployee();
-
+            await LoadRoute();
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EmployeeAdd());
-            await LoadEmployee();
-
+            OpenChildForm(new RouteAdd());
+            await LoadRoute();
         }
     }
 }

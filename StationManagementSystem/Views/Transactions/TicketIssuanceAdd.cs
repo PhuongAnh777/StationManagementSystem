@@ -107,7 +107,7 @@ namespace StationManagementSystem.Views.Transactions
             if (cbXDVVT.SelectedIndex != -1 && cbXDVVT.SelectedValue != null)
             {
                 var selectedOwnerID = (Guid)cbXDVVT.SelectedValue;
-                var allVehicles = await _vehicleService.GetActiveVehiclesAsync();
+                var allVehicles = await _vehicleService.GetContinueVehiclesAsync();
                 // Lọc các xe thuộc chủ sở hữu đã chọn
                 var filteredVehicles = allVehicles
                     .Where(v => v.OwnerID == selectedOwnerID)
