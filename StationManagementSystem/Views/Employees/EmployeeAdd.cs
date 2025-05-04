@@ -8,7 +8,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StationManagementSystem.DTO.Account;
 using StationManagementSystem.DTO.Employee;
+using StationManagementSystem.DTO.Vehicle;
 using StationManagementSystem.Services;
 
 namespace StationManagementSystem.Views.Employees
@@ -16,21 +18,25 @@ namespace StationManagementSystem.Views.Employees
     public partial class EmployeeAdd : Form
     {
         private readonly EmployeeService _employeeService;
-        //private readonly AccountService _accountService;
+        private readonly AccountService _accountService;
+        private readonly RoleService _roleService;
         private EmployeeCreateDto _employeeDto;
-        //private AccountCreateDto _accountDto;
+        private AccountCreateDto _accountDto;
         public EmployeeAdd()
         {
             InitializeComponent();
             _employeeService = new EmployeeService();
-            //_accountService = new AccountService();
+            _accountService = new AccountService();
+            _roleService = new RoleService();
             _employeeDto = new EmployeeCreateDto();
-            //_accountDto = new AccountCreateDto();
+            _accountDto = new AccountCreateDto();
             //LoadAccount();
 
             dateTime.Checked = false;
 
             rbtnNu.Checked = true;
+
+            LoadRole();
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -41,6 +47,14 @@ namespace StationManagementSystem.Views.Employees
             {
                 e.Graphics.DrawRectangle(borderPen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
             }
+        }
+        public async void LoadRole()
+        {
+            var roles = await _roleService.GetAllRolesAsync();
+            cbxRole.DataSource = roles;
+            cbxRole.DisplayMember = "RoleName"; // hoặc tên thuộc tính bạn muốn hiển thị
+            cbxRole.ValueMember = "RoleID";
+            cbxRole.SelectedIndex = -1; // Đặt giá trị mặc định là không có lựa chọn nào
         }
         //public async void LoadAccount()
         //{
@@ -167,9 +181,45 @@ namespace StationManagementSystem.Views.Employees
             }
             _employeeDto.Address = tbxDiaChi.Text;
 
-            var respone = await _employeeService.CreateEmployeeAsync(_employeeDto);
+            // Kiểm tra tài khoản
 
-            if (respone != null)
+            if (string.IsNullOrEmpty(tbxUserName.Text))
+            {
+                MessageBox.Show("Vui lòng tên đăng nhập", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var responeUserName = await _accountService.IsUsernameExistsAsync(tbxUserName.Text);
+            if (responeUserName == true)
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _accountDto.Username = tbxUserName.Text;
+
+            if (string.IsNullOrEmpty(tbxPass.Text))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!IsValidPassword(tbxPass.Text))
+            {
+                MessageBox.Show("Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _accountDto.Password = tbxPass.Text;
+
+            if (cbxRole.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn vai trò", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            _accountDto.RoleID = Guid.Parse(cbxRole.SelectedValue.ToString());
+
+            var respone = await _employeeService.CreateEmployeeAsync(_employeeDto);
+            _accountDto.EmployeeID = respone.EmployeeID;
+            var responeAccount = await _accountService.CreateAccountAsync(_accountDto);
+
+            if (respone != null && responeAccount != null)
             {
                 MessageBox.Show($"Thêm thành công! {respone.FullName}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -181,3 +181,6 @@ C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManage
 C:\Serect\Station\StationManagementSystem\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Routes.ItineraryEdit.resources
 C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Properties.Resources.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Employees.RoleList.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Employees.RoleAdd.resources
+C:\Serect\Station\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.Employees.RoleEdit.resources

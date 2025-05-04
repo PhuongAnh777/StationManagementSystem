@@ -11,9 +11,9 @@ namespace StationManagementSystem.Models
     public class Account
     {
         [Key]
+        public Guid AccountID { get; set; } // Khóa chính
         public string Username { get; set; } // NVARCHAR(50)
         public string Password { get; set; } // NVARCHAR(100)
-        public string Status { get; set; } // NVARCHAR(25)
         public DateTime CreatedAt { get; set; } // DateTime
         public bool IsDiscontinued { get; set; } // Bool
         public Guid RoleID { get; set; } // Khóa ngoại

@@ -34,25 +34,41 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnFooter = new Panel();
             btnXoa = new Guna.UI2.WinForms.Guna2Button();
             btnBoQua = new Guna.UI2.WinForms.Guna2Button();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             pnContainer = new Panel();
+            grTaiKhoan = new Guna.UI2.WinForms.Guna2GroupBox();
+            cbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            lblVaiTro = new Label();
+            lblPass = new Label();
+            tbxPass = new Guna.UI2.WinForms.Guna2TextBox();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            tbxUserName = new Guna.UI2.WinForms.Guna2TextBox();
+            lblTenDangNhap = new Label();
             panel4 = new Panel();
-            tbxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblNgaySinh = new Label();
             panel2 = new Panel();
@@ -72,8 +88,10 @@
             pnHeader = new Panel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             lblHeader = new Label();
+            tbxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             pnFooter.SuspendLayout();
             pnContainer.SuspendLayout();
+            grTaiKhoan.SuspendLayout();
             pnLineA1.SuspendLayout();
             pnHeader.SuspendLayout();
             SuspendLayout();
@@ -83,7 +101,7 @@
             pnFooter.Controls.Add(btnXoa);
             pnFooter.Controls.Add(btnBoQua);
             pnFooter.Controls.Add(btnLuu);
-            pnFooter.Location = new Point(6, 351);
+            pnFooter.Location = new Point(5, 541);
             pnFooter.Name = "pnFooter";
             pnFooter.Size = new Size(1093, 68);
             pnFooter.TabIndex = 8;
@@ -144,8 +162,9 @@
             // 
             // pnContainer
             // 
-            pnContainer.Controls.Add(panel4);
             pnContainer.Controls.Add(tbxDiaChi);
+            pnContainer.Controls.Add(grTaiKhoan);
+            pnContainer.Controls.Add(panel4);
             pnContainer.Controls.Add(dateTime);
             pnContainer.Controls.Add(lblNgaySinh);
             pnContainer.Controls.Add(panel2);
@@ -163,8 +182,138 @@
             pnContainer.Controls.Add(lblTenNhanVien);
             pnContainer.Location = new Point(6, 80);
             pnContainer.Name = "pnContainer";
-            pnContainer.Size = new Size(1091, 265);
+            pnContainer.Size = new Size(1091, 455);
             pnContainer.TabIndex = 7;
+            // 
+            // grTaiKhoan
+            // 
+            grTaiKhoan.BorderColor = Color.FromArgb(192, 192, 255);
+            grTaiKhoan.Controls.Add(cbxRole);
+            grTaiKhoan.Controls.Add(lblVaiTro);
+            grTaiKhoan.Controls.Add(lblPass);
+            grTaiKhoan.Controls.Add(tbxPass);
+            grTaiKhoan.Controls.Add(panel5);
+            grTaiKhoan.Controls.Add(panel6);
+            grTaiKhoan.Controls.Add(tbxUserName);
+            grTaiKhoan.Controls.Add(lblTenDangNhap);
+            grTaiKhoan.CustomBorderColor = Color.FromArgb(192, 192, 255);
+            grTaiKhoan.CustomizableEdges = customizableEdges15;
+            grTaiKhoan.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            grTaiKhoan.ForeColor = Color.Black;
+            grTaiKhoan.Location = new Point(20, 268);
+            grTaiKhoan.Name = "grTaiKhoan";
+            grTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            grTaiKhoan.Size = new Size(1060, 179);
+            grTaiKhoan.TabIndex = 135;
+            grTaiKhoan.Text = "Tài khoản";
+            // 
+            // cbxRole
+            // 
+            cbxRole.BackColor = Color.Transparent;
+            cbxRole.CustomizableEdges = customizableEdges9;
+            cbxRole.DrawMode = DrawMode.OwnerDrawFixed;
+            cbxRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxRole.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxRole.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxRole.Font = new Font("Segoe UI", 10F);
+            cbxRole.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxRole.ItemHeight = 30;
+            cbxRole.Location = new Point(702, 84);
+            cbxRole.Name = "cbxRole";
+            cbxRole.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cbxRole.Size = new Size(316, 36);
+            cbxRole.TabIndex = 141;
+            // 
+            // lblVaiTro
+            // 
+            lblVaiTro.AutoSize = true;
+            lblVaiTro.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblVaiTro.Location = new Point(592, 95);
+            lblVaiTro.Name = "lblVaiTro";
+            lblVaiTro.Size = new Size(79, 25);
+            lblVaiTro.TabIndex = 140;
+            lblVaiTro.Text = "Vai trò";
+            lblVaiTro.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPass
+            // 
+            lblPass.AutoSize = true;
+            lblPass.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPass.Location = new Point(55, 131);
+            lblPass.Name = "lblPass";
+            lblPass.Size = new Size(111, 25);
+            lblPass.TabIndex = 139;
+            lblPass.Text = "Mật khẩu";
+            // 
+            // tbxPass
+            // 
+            tbxPass.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            tbxPass.BorderThickness = 0;
+            tbxPass.CustomizableEdges = customizableEdges11;
+            tbxPass.DefaultText = "";
+            tbxPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxPass.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxPass.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxPass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxPass.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxPass.Location = new Point(173, 116);
+            tbxPass.Margin = new Padding(4);
+            tbxPass.Name = "tbxPass";
+            tbxPass.PlaceholderText = "";
+            tbxPass.SelectedText = "";
+            tbxPass.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            tbxPass.Size = new Size(375, 40);
+            tbxPass.TabIndex = 138;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Silver;
+            panel5.Location = new Point(173, 159);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(375, 1);
+            panel5.TabIndex = 137;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Silver;
+            panel6.Location = new Point(173, 79);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(375, 1);
+            panel6.TabIndex = 8;
+            // 
+            // tbxUserName
+            // 
+            tbxUserName.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            tbxUserName.BorderThickness = 0;
+            tbxUserName.CustomizableEdges = customizableEdges13;
+            tbxUserName.DefaultText = "";
+            tbxUserName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxUserName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxUserName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxUserName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxUserName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxUserName.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxUserName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxUserName.Location = new Point(169, 40);
+            tbxUserName.Margin = new Padding(4);
+            tbxUserName.Name = "tbxUserName";
+            tbxUserName.PlaceholderText = "";
+            tbxUserName.SelectedText = "";
+            tbxUserName.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tbxUserName.Size = new Size(375, 40);
+            tbxUserName.TabIndex = 136;
+            // 
+            // lblTenDangNhap
+            // 
+            lblTenDangNhap.AutoSize = true;
+            lblTenDangNhap.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTenDangNhap.Location = new Point(3, 55);
+            lblTenDangNhap.Name = "lblTenDangNhap";
+            lblTenDangNhap.Size = new Size(163, 25);
+            lblTenDangNhap.TabIndex = 135;
+            lblTenDangNhap.Text = "Tên đăng nhập";
             // 
             // panel4
             // 
@@ -174,33 +323,10 @@
             panel4.Size = new Size(375, 1);
             panel4.TabIndex = 22;
             // 
-            // tbxDiaChi
-            // 
-            tbxDiaChi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxDiaChi.BorderThickness = 0;
-            tbxDiaChi.CustomizableEdges = customizableEdges7;
-            tbxDiaChi.DefaultText = "";
-            tbxDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiaChi.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiaChi.Location = new Point(705, 86);
-            tbxDiaChi.Margin = new Padding(4);
-            tbxDiaChi.Name = "tbxDiaChi";
-            tbxDiaChi.PlaceholderText = "";
-            tbxDiaChi.SelectedText = "";
-            tbxDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            tbxDiaChi.Size = new Size(375, 40);
-            tbxDiaChi.TabIndex = 21;
-            tbxDiaChi.Visible = false;
-            // 
             // dateTime
             // 
             dateTime.Checked = true;
-            dateTime.CustomizableEdges = customizableEdges9;
+            dateTime.CustomizableEdges = customizableEdges17;
             dateTime.FillColor = Color.FromArgb(192, 192, 255);
             dateTime.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTime.Format = DateTimePickerFormat.Long;
@@ -208,7 +334,7 @@
             dateTime.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dateTime.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dateTime.Name = "dateTime";
-            dateTime.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dateTime.ShadowDecoration.CustomizableEdges = customizableEdges18;
             dateTime.ShowCheckBox = true;
             dateTime.Size = new Size(375, 45);
             dateTime.TabIndex = 20;
@@ -236,7 +362,7 @@
             // 
             tbxEmail.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             tbxEmail.BorderThickness = 0;
-            tbxEmail.CustomizableEdges = customizableEdges11;
+            tbxEmail.CustomizableEdges = customizableEdges19;
             tbxEmail.DefaultText = "";
             tbxEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -250,7 +376,7 @@
             tbxEmail.Name = "tbxEmail";
             tbxEmail.PlaceholderText = "";
             tbxEmail.SelectedText = "";
-            tbxEmail.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            tbxEmail.ShadowDecoration.CustomizableEdges = customizableEdges20;
             tbxEmail.Size = new Size(375, 40);
             tbxEmail.TabIndex = 10;
             // 
@@ -276,7 +402,7 @@
             // 
             tbxSoDienThoai.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             tbxSoDienThoai.BorderThickness = 0;
-            tbxSoDienThoai.CustomizableEdges = customizableEdges13;
+            tbxSoDienThoai.CustomizableEdges = customizableEdges21;
             tbxSoDienThoai.DefaultText = "";
             tbxSoDienThoai.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxSoDienThoai.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -290,7 +416,7 @@
             tbxSoDienThoai.Name = "tbxSoDienThoai";
             tbxSoDienThoai.PlaceholderText = "";
             tbxSoDienThoai.SelectedText = "";
-            tbxSoDienThoai.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tbxSoDienThoai.ShadowDecoration.CustomizableEdges = customizableEdges22;
             tbxSoDienThoai.Size = new Size(375, 40);
             tbxSoDienThoai.TabIndex = 5;
             // 
@@ -357,7 +483,7 @@
             // 
             tbxTenNhanVien.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             tbxTenNhanVien.BorderThickness = 0;
-            tbxTenNhanVien.CustomizableEdges = customizableEdges15;
+            tbxTenNhanVien.CustomizableEdges = customizableEdges23;
             tbxTenNhanVien.DefaultText = "";
             tbxTenNhanVien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxTenNhanVien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -371,7 +497,7 @@
             tbxTenNhanVien.Name = "tbxTenNhanVien";
             tbxTenNhanVien.PlaceholderText = "";
             tbxTenNhanVien.SelectedText = "";
-            tbxTenNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tbxTenNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges24;
             tbxTenNhanVien.Size = new Size(375, 40);
             tbxTenNhanVien.TabIndex = 2;
             // 
@@ -406,7 +532,7 @@
             // 
             // btnExit
             // 
-            btnExit.CustomizableEdges = customizableEdges17;
+            btnExit.CustomizableEdges = customizableEdges25;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -417,7 +543,7 @@
             btnExit.ForeColor = Color.Silver;
             btnExit.Location = new Point(1036, 10);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
@@ -432,12 +558,34 @@
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Sửa nhân viên";
             // 
+            // tbxDiaChi
+            // 
+            tbxDiaChi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            tbxDiaChi.BorderThickness = 0;
+            tbxDiaChi.CustomizableEdges = customizableEdges7;
+            tbxDiaChi.DefaultText = "";
+            tbxDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxDiaChi.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxDiaChi.Location = new Point(705, 82);
+            tbxDiaChi.Margin = new Padding(4);
+            tbxDiaChi.Name = "tbxDiaChi";
+            tbxDiaChi.PlaceholderText = "";
+            tbxDiaChi.SelectedText = "";
+            tbxDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tbxDiaChi.Size = new Size(375, 40);
+            tbxDiaChi.TabIndex = 142;
+            // 
             // EmployeeEdit
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1100, 424);
+            ClientSize = new Size(1100, 614);
             Controls.Add(pnFooter);
             Controls.Add(pnContainer);
             Controls.Add(pnHeader);
@@ -449,6 +597,8 @@
             pnFooter.ResumeLayout(false);
             pnContainer.ResumeLayout(false);
             pnContainer.PerformLayout();
+            grTaiKhoan.ResumeLayout(false);
+            grTaiKhoan.PerformLayout();
             pnLineA1.ResumeLayout(false);
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
@@ -480,9 +630,18 @@
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private Label lblHeader;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
-        private Guna.UI2.WinForms.Guna2TextBox tbxDiaChi;
         private Panel panel4;
         private Label lblDiaChi;
         private Panel panel3;
+        private Guna.UI2.WinForms.Guna2GroupBox grTaiKhoan;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxRole;
+        private Label lblVaiTro;
+        private Label lblPass;
+        private Guna.UI2.WinForms.Guna2TextBox tbxPass;
+        private Panel panel5;
+        private Panel panel6;
+        private Guna.UI2.WinForms.Guna2TextBox tbxUserName;
+        private Label lblTenDangNhap;
+        private Guna.UI2.WinForms.Guna2TextBox tbxDiaChi;
     }
 }

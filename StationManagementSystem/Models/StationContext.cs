@@ -48,10 +48,9 @@ namespace StationManagementSystem.Models
             // Account
             modelBuilder.Entity<Account>(entity =>
             {
-                entity.HasKey(e => e.Username);
+                entity.HasKey(e => e.AccountID);
                 entity.Property(e => e.Username).HasColumnType("NVARCHAR(50)").IsRequired();
                 entity.Property(e => e.Password).HasColumnType("NVARCHAR(100)").IsRequired();
-                entity.Property(e => e.Status).HasColumnType("NVARCHAR(25)").IsRequired();
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime").HasDefaultValueSql("GETDATE()");
                 entity.Property(e => e.IsDiscontinued).HasColumnType("BIT").IsRequired();
 

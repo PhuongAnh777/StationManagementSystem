@@ -81,7 +81,7 @@
             btnGiaoDich = new Guna.UI2.WinForms.Guna2Button();
             btnTongQuan = new Guna.UI2.WinForms.Guna2Button();
             pnNhanVien = new Panel();
-            btnTaiKhoan1 = new Guna.UI2.WinForms.Guna2Button();
+            btnVaiTro = new Guna.UI2.WinForms.Guna2Button();
             btnNhanVien1 = new Guna.UI2.WinForms.Guna2Button();
             pnVe = new Panel();
             btnDSXe = new Guna.UI2.WinForms.Guna2Button();
@@ -317,7 +317,7 @@
             // pnNhanVien
             // 
             pnNhanVien.BackColor = Color.FromArgb(63, 142, 212);
-            pnNhanVien.Controls.Add(btnTaiKhoan1);
+            pnNhanVien.Controls.Add(btnVaiTro);
             pnNhanVien.Controls.Add(btnNhanVien1);
             pnNhanVien.Location = new Point(730, 0);
             pnNhanVien.Name = "pnNhanVien";
@@ -325,25 +325,26 @@
             pnNhanVien.TabIndex = 15;
             pnNhanVien.Visible = false;
             // 
-            // btnTaiKhoan1
+            // btnVaiTro
             // 
-            btnTaiKhoan1.BackColor = Color.FromArgb(63, 142, 212);
-            btnTaiKhoan1.CustomizableEdges = customizableEdges19;
-            btnTaiKhoan1.DisabledState.BorderColor = Color.DarkGray;
-            btnTaiKhoan1.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTaiKhoan1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTaiKhoan1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTaiKhoan1.FillColor = Color.FromArgb(63, 142, 212);
-            btnTaiKhoan1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTaiKhoan1.ForeColor = Color.White;
-            btnTaiKhoan1.Image = Properties.Resources.verified_account;
-            btnTaiKhoan1.ImageSize = new Size(30, 30);
-            btnTaiKhoan1.Location = new Point(3, 65);
-            btnTaiKhoan1.Name = "btnTaiKhoan1";
-            btnTaiKhoan1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnTaiKhoan1.Size = new Size(161, 49);
-            btnTaiKhoan1.TabIndex = 8;
-            btnTaiKhoan1.Text = "Tài khoản";
+            btnVaiTro.BackColor = Color.FromArgb(63, 142, 212);
+            btnVaiTro.CustomizableEdges = customizableEdges19;
+            btnVaiTro.DisabledState.BorderColor = Color.DarkGray;
+            btnVaiTro.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnVaiTro.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnVaiTro.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnVaiTro.FillColor = Color.FromArgb(63, 142, 212);
+            btnVaiTro.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVaiTro.ForeColor = Color.White;
+            btnVaiTro.Image = Properties.Resources.verified_account;
+            btnVaiTro.ImageSize = new Size(30, 30);
+            btnVaiTro.Location = new Point(3, 58);
+            btnVaiTro.Name = "btnVaiTro";
+            btnVaiTro.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnVaiTro.Size = new Size(118, 49);
+            btnVaiTro.TabIndex = 8;
+            btnVaiTro.Text = "Vai trò";
+            btnVaiTro.Click += btnVaiTro_Click;
             // 
             // btnNhanVien1
             // 
@@ -567,7 +568,7 @@
             pnTuyen.Controls.Add(btnTuyenDuong);
             pnTuyen.Location = new Point(480, 0);
             pnTuyen.Name = "pnTuyen";
-            pnTuyen.Size = new Size(164, 121);
+            pnTuyen.Size = new Size(172, 121);
             pnTuyen.TabIndex = 17;
             pnTuyen.Visible = false;
             // 
@@ -751,7 +752,7 @@
         private Panel pnChild;
         private Guna.UI2.WinForms.Guna2Button btnTongQuan;
         private Guna.UI2.WinForms.Guna2Button btnXeMain;
-        private Guna.UI2.WinForms.Guna2Button btnTaiKhoan1;
+        private Guna.UI2.WinForms.Guna2Button btnVaiTro;
         private Guna.UI2.WinForms.Guna2Button btnTuyen;
         private Guna.UI2.WinForms.Guna2Button btnGiaoDich;
         private Panel pnGiaoDich;
