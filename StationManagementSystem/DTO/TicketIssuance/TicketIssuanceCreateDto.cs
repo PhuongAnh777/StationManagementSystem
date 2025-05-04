@@ -21,7 +21,6 @@ namespace StationManagementSystem.DTO.TicketIssuance
         public int SleeperTicket { get; set; } // INT
         public string Notes { get; set; } // NVARCHAR(MAX)
         public DateTime EstimatedDepartureTime { get; set; } // DateTime
-        public DateTime EstimatedArrivalTime { get; set; } // DateTime
         public Guid EmployeeID { get; set; } // Khóa ngoại
         public Guid VehicleID { get; set; } // Khóa ngoại
         public Guid ItineraryID { get; set; }

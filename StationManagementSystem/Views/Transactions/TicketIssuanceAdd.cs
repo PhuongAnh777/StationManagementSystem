@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.DTO.TicketIssuance;
+using StationManagementSystem.Models;
 using StationManagementSystem.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -21,6 +22,8 @@ namespace StationManagementSystem.Views.Transactions
         private readonly VehicleService _vehicleService;
         private readonly RouteService _routeService;
         private readonly ItineraryService _itineraryService;
+
+        private readonly Employee _employee;
         public TicketIssuanceAdd()
         {
             InitializeComponent();
@@ -35,7 +38,21 @@ namespace StationManagementSystem.Views.Transactions
             //cbxLoTrinh.Enabled = false;
             LoadTicketIssuance();
         }
+        public TicketIssuanceAdd(Employee employee)
+        {
+            InitializeComponent();
 
+            _ticketIssuanceDto = new TicketIssuanceCreateDto();
+            _ticketIssuanceService = new TicketIssuanceService();
+            _ownerService = new OwnerService();
+            _vehicleService = new VehicleService();
+            _routeService = new RouteService();
+            _itineraryService = new ItineraryService();
+
+            _employee = employee;
+            //cbxLoTrinh.Enabled = false;
+            LoadTicketIssuance();
+        }
         public async void LoadTicketIssuance()
         {
             var companies = await _ownerService.GetAllOwnersAsync();
@@ -67,6 +84,23 @@ namespace StationManagementSystem.Views.Transactions
             //var allItineraries = await _itineraryService.GetAllItinerariesAsync();
             cbxLoTrinh.Enabled = false; // Vô hiệu hoá ban đầu
             cbxBienSo.Enabled = false;
+
+            cbxHinhThucChay.DataSource = new List<string>
+            {
+                "Chạy theo ngày",
+                "Cả tháng",
+                "Giới hạn ngày dương",
+                "Giới hạn ngày âm"
+            };
+            cbxHinhThucChay.SelectedIndex = -1;
+
+            cbxHinhThuc.DataSource = new List<string>
+            {
+                "1. Dịch vụ bến theo ngày, hoa hồng bán vé theo ngày",
+                "2. Dịch vụ bến theo tháng, hoa hồng bán vé theo tháng"
+            };
+            cbxHinhThuc.SelectedIndex = -1; // Đặt giá trị mặc định là không có lựa chọn nào
+
         }
         private async void TicketIssuanceAdd_Load(object sender, EventArgs e)
         {
@@ -75,7 +109,7 @@ namespace StationManagementSystem.Views.Transactions
 
         private async void cbxLoTrinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private async void cbxBienSo_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +153,52 @@ namespace StationManagementSystem.Views.Transactions
                 cbxBienSo.DataSource = filteredVehicles;
                 cbxBienSo.Enabled = true; // Cho phép chọn
             }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (DateTimeFrom.Value.Year <= 1990 || DateTimeFrom.Value > DateTime.Now)
+            {
+                MessageBox.Show("Vui lòng nhập ngày bắt đầu hoạt động hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (DateTimeTo.Value.Year <= 1990 || DateTimeTo.Value > DateTime.Now)
+            {
+                MessageBox.Show("Vui lòng nhập ngày kết thúc hoạt động hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (DateTimeTo.Value <= DateTimeFrom.Value)
+            {
+                MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            _ticketIssuanceDto.StartDate = DateTimeFrom.Value;
+            _ticketIssuanceDto.EndDate = DateTimeTo.Value;
+
+            if (cbxHinhThucChay.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn hình thức chạy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            _ticketIssuanceDto.OperatingSchedule = cbxHinhThucChay.SelectedValue.ToString();
+
+            _ticketIssuanceDto.MonthlyFrequency = (int)numTanSuat.Value;
+
+            if (DateTimeXuatBen.Value.TimeOfDay > DateTime.Now.TimeOfDay)
+            {
+                MessageBox.Show("Vui lòng nhập giờ xuất bến hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            _ticketIssuanceDto.EstimatedDepartureTime = DateTimeXuatBen.Value;
+
+            _ticketIssuanceDto.PaymentMethod = cbxHinhThuc.SelectedValue.ToString();
+
+            _ticketIssuanceDto.ServiceFee = (float)numPhi.Value;
+
+            _ticketIssuanceDto.TicketSalesCommission = (float)numHoaHong.Value;
+
+            _ticketIssuanceDto.SeatTicket = (int)numVeNgoi.Value;
+            _ticketIssuanceDto.SleeperTicket = (int)numVeNam.Value;
         }
     }
 }

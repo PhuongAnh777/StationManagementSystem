@@ -25,7 +25,6 @@ namespace StationManagementSystem.Models
         public string Status { get; set; } // NVARCHAR(20)
         public string Notes { get; set; } // NVARCHAR(MAX)
         public DateTime EstimatedDepartureTime { get; set; } // DateTime
-        public DateTime EstimatedArrivalTime { get; set; } // DateTime
         public Guid EmployeeID { get; set; } // Khóa ngoại
         public virtual Employee Employee { get; set; } // Mối quan hệ với bảng Employee
 

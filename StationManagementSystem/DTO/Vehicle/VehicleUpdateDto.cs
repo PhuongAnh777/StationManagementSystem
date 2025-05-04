@@ -19,5 +19,6 @@ namespace StationManagementSystem.DTO.Vehicle
         public DateTime? InspectionExpiryDate { get; set; } // DateTime
         public DateTime? ImpoundmentDate { get; set; } // DateTime
         public DateTime? ReleaseDate { get; set; } // DateTime
+        public Guid OwnerID { get; set; } // Khóa ngoại
     }
 }

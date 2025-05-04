@@ -87,5 +87,86 @@ namespace StationManagementSystem.Views.Transactions
             }
 
         }
+
+        private void btnDu_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(tbxDangKyXe.Text)))
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra đăng ký xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!(string.IsNullOrEmpty(tbxBaoHiem.Text)))
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra bảo hiểm xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!(string.IsNullOrEmpty(tbxBangLai.Text)))
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra bằng lái", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (DateTimeToKD.Value > DateTimeFromKD.Value)
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra kiểm định", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (DateTimeToBB.Value > DateTimeFromBB.Value)
+            {
+                MessageBox.Show("Vui lòng bỏ chọn đã kiểm tra biển bản tạm giữ giấy tờ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (checkDK.Checked && checkBH.Checked && checkBL.Checked && checkKD.Checked && !checkBB.Checked)
+            {
+                MessageBox.Show($"Lên nốt thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ticketIssuance.Status = "checked";
+                return;
+            }
+        }
+
+        private async void btnKhongDu_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(tbxDangKyXe.Text)))
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra đăng ký xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!(string.IsNullOrEmpty(tbxBaoHiem.Text)))
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra bảo hiểm xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!(string.IsNullOrEmpty(tbxBangLai.Text)))
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra bằng lái", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (DateTimeToKD.Value > DateTimeFromKD.Value)
+            {
+                MessageBox.Show("Vui lòng chọn đã kiểm tra kiểm định", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (DateTimeToBB.Value > DateTimeFromBB.Value)
+            {
+                MessageBox.Show("Vui lòng bỏ chọn đã kiểm tra biển bản tạm giữ giấy tờ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var confirmResult = MessageBox.Show("Ban có chắc chắn muốn hủy bỏ điều kiện lên nốt của xe này?",
+                                               "Xác nhận hủy",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Warning);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                var respone = await _ticketIssuanceService.DeleteTicketIssuancesAsync(_ticketIssuance.IssuanceID);
+
+                if (respone != null)
+                {
+                    MessageBox.Show($"Hủy thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }

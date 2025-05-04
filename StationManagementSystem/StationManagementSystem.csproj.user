@@ -19,6 +19,9 @@
     <Compile Update="Views\Employees\EmployeeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Home\MyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\InvoiceEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -35,15 +38,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Partners\VehicleAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\Partners\VehicleDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\Partners\VehicleDetailExtra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\Partners\VehicleDetailMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Partners\VehicleDetailOriginal.cs">

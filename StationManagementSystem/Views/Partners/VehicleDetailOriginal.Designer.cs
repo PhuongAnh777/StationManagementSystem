@@ -60,6 +60,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             numGheNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
             numGheNgoi = new Guna.UI2.WinForms.Guna2NumericUpDown();
             lblGheNam = new Label();
@@ -95,7 +97,7 @@
             lblDangKyXe = new Label();
             lblNhomXe = new Label();
             btnCancle = new Guna.UI2.WinForms.Guna2Button();
-            lblDVVTV = new Label();
+            cbxTaiXe = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)numGheNam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numGheNgoi).BeginInit();
             grboxVe.SuspendLayout();
@@ -547,16 +549,22 @@
             btnCancle.Text = "Xóa";
             btnCancle.Click += btnCancle_Click;
             // 
-            // lblDVVTV
+            // cbxTaiXe
             // 
-            lblDVVTV.AutoSize = true;
-            lblDVVTV.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDVVTV.ForeColor = Color.Blue;
-            lblDVVTV.Location = new Point(221, 557);
-            lblDVVTV.Name = "lblDVVTV";
-            lblDVVTV.Size = new Size(184, 23);
-            lblDVVTV.TabIndex = 167;
-            lblDVVTV.Text = "Công ty Phương Anh";
+            cbxTaiXe.BackColor = Color.Transparent;
+            cbxTaiXe.CustomizableEdges = customizableEdges33;
+            cbxTaiXe.DrawMode = DrawMode.OwnerDrawFixed;
+            cbxTaiXe.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxTaiXe.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxTaiXe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxTaiXe.Font = new Font("Segoe UI", 10F);
+            cbxTaiXe.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxTaiXe.ItemHeight = 30;
+            cbxTaiXe.Location = new Point(209, 544);
+            cbxTaiXe.Name = "cbxTaiXe";
+            cbxTaiXe.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            cbxTaiXe.Size = new Size(503, 36);
+            cbxTaiXe.TabIndex = 168;
             // 
             // VehicleDetailOriginal
             // 
@@ -564,7 +572,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1358, 733);
-            Controls.Add(lblDVVTV);
+            Controls.Add(cbxTaiXe);
             Controls.Add(btnCancle);
             Controls.Add(grboxVe);
             Controls.Add(label2);
@@ -647,6 +655,6 @@
         private Label lblDangKyXe;
         private Label lblNhomXe;
         private Guna.UI2.WinForms.Guna2Button btnCancle;
-        private Label lblDVVTV;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxTaiXe;
     }
 }

@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using StationManagementSystem.Services;
 using StationManagementSystem.Views.Employees;
+using StationManagementSystem.Views.Home;
 using StationManagementSystem.Views.Partners;
 using StationManagementSystem.Views.Routes;
 using StationManagementSystem.Views.SellTickets;
@@ -21,10 +23,13 @@ namespace StationManagementSystem.Views
     {
         //private UserAccount _account;
         //private Models.Employee _employee;
+        private readonly EmployeeService _employeeService;
         private string _roleName;
         public MainForm()
         {
             InitializeComponent();
+
+            _employeeService = new EmployeeService();
 
             this.StartPosition = FormStartPosition.CenterScreen; // Đặt form ở giữa màn hình
 
@@ -211,9 +216,13 @@ namespace StationManagementSystem.Views
             CreateFormChild(new VehicleDepartureList());
         }
 
-        private void btnPhieuDangTai_Click(object sender, EventArgs e)
+        private async void btnPhieuDangTai_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new TicketIssuanceAdd());
+            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("8764D727-4970-459B-B41D-08DD8B19EED4"));
+            if (respone != null)
+            {
+                CreateFormChild(new TicketIssuanceAdd(respone));
+            }
         }
 
         private void btnNhanVien1_Click(object sender, EventArgs e)
@@ -269,6 +278,15 @@ namespace StationManagementSystem.Views
         private void btnVaiTro_Click(object sender, EventArgs e)
         {
             CreateFormChild(new RoleList());
+        }
+
+        private async void btnTaiKhoanHT_Click(object sender, EventArgs e)
+        {
+            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("8764D727-4970-459B-B41D-08DD8B19EED4"));
+            if (respone != null)
+            {
+                OpenChildForm(new MyAccount(respone));
+            }
         }
     }
 }

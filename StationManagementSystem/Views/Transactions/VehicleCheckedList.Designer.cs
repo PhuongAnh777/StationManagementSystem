@@ -112,6 +112,7 @@
             btnSau.Size = new Size(81, 44);
             btnSau.TabIndex = 1;
             btnSau.Text = "Sau";
+            btnSau.Click += btnSau_Click;
             // 
             // btnTruoc
             // 
@@ -134,6 +135,7 @@
             btnTruoc.Size = new Size(81, 44);
             btnTruoc.TabIndex = 0;
             btnTruoc.Text = "Trước";
+            btnTruoc.Click += btnTruoc_Click;
             // 
             // gridView
             // 
@@ -199,6 +201,8 @@
             gridView.ThemeStyle.RowsStyle.Height = 29;
             gridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             gridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            gridView.CellContentClick += gridView_CellContentClick;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
             // pnHeader
             // 
@@ -307,6 +311,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "VehicleCheckedList";
             Text = "VehicleCheckedList";
+            Load += VehicleCheckedList_Load;
             pnFooter.ResumeLayout(false);
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();

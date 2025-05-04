@@ -502,7 +502,7 @@
             btnXeAparture.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnXeAparture.Size = new Size(227, 49);
             btnXeAparture.TabIndex = 12;
-            btnXeAparture.Text = "DS xe sắp khởi hành";
+            btnXeAparture.Text = "DS xe đã xuất bến";
             btnXeAparture.Click += btnXeAparture_Click;
             // 
             // btnXeChecked
@@ -666,6 +666,7 @@
             btnTaiKhoanHT.Size = new Size(150, 49);
             btnTaiKhoanHT.TabIndex = 8;
             btnTaiKhoanHT.Text = "Tài khoản";
+            btnTaiKhoanHT.Click += btnTaiKhoanHT_Click;
             // 
             // pnDoiTac
             // 

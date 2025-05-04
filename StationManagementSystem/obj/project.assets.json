@@ -5142,11 +5142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Serect\\Station\\StationManagementSystem\\StationManagementSystem.csproj",
+      "projectUniqueName": "C:\\Serect\\Station_official\\StationManagementSystem\\StationManagementSystem\\StationManagementSystem.csproj",
       "projectName": "StationManagementSystem",
-      "projectPath": "C:\\Serect\\Station\\StationManagementSystem\\StationManagementSystem.csproj",
+      "projectPath": "C:\\Serect\\Station_official\\StationManagementSystem\\StationManagementSystem\\StationManagementSystem.csproj",
       "packagesPath": "C:\\Users\\VivoBook\\.nuget\\packages\\",
-      "outputPath": "C:\\Serect\\Station\\StationManagementSystem\\obj\\",
+      "outputPath": "C:\\Serect\\Station_official\\StationManagementSystem\\StationManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

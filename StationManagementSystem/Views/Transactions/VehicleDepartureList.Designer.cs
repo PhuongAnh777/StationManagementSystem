@@ -289,9 +289,9 @@
             lblHeader.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHeader.Location = new Point(4, 8);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(284, 32);
+            lblHeader.Size = new Size(321, 32);
             lblHeader.TabIndex = 0;
-            lblHeader.Text = "Danh sách xe xuất bến";
+            lblHeader.Text = "Danh sách xe đã xuất bến";
             // 
             // VehicleDepartureList
             // 

@@ -44,6 +44,37 @@ namespace StationManagementSystem.Services
             return await _context.TicketIssuances
                 .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID && ti.Status.ToLower() == "active");
         }
+        public async Task<IEnumerable<Vehicle>> GetCheckedOrDepartingVehiclesAsync()
+        {
+            var now = DateTime.Now;
+            var oneHourLater = now.AddHours(1);
+
+            // Handle the case when oneHourLater wraps past midnight
+            var vehicles = await _context.TicketIssuances
+                .Where(ti => ti.Status == "Checked" ||
+                            (oneHourLater > now
+                                ? (ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= oneHourLater)
+                                : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= oneHourLater)))
+                .Select(ti => ti.Vehicle)
+                .Distinct()
+                .ToListAsync();
+
+            return vehicles;
+        }
+
+        public async Task<IEnumerable<Vehicle>> GetVehiclesWithTicketCreatedTodayAsync()
+        {
+            var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
+
+            var vehicles = await _context.TicketIssuances
+                .Where(ti => ti.CreatedAt >= today && ti.CreatedAt < tomorrow)
+                .Select(ti => ti.Vehicle)
+                .Distinct()
+                .ToListAsync();
+
+            return vehicles;
+        }
         public async Task<TicketIssuance> CreateTicketIssuancesAsync(TicketIssuanceCreateDto ticketIssuanceDto)
         {
             var ticketIssuance = new TicketIssuance
@@ -62,7 +93,6 @@ namespace StationManagementSystem.Services
                 Status = "Pending",
                 Notes = ticketIssuanceDto.Notes,
                 EstimatedDepartureTime = ticketIssuanceDto.EstimatedDepartureTime,
-                EstimatedArrivalTime = ticketIssuanceDto.EstimatedArrivalTime,
                 EmployeeID = ticketIssuanceDto.EmployeeID,
                 VehicleID = ticketIssuanceDto.VehicleID,
             };
@@ -119,18 +149,19 @@ namespace StationManagementSystem.Services
         //    return vehicle;
 
         //}
-        //public async Task<bool> DeleteVehicleAsync(Guid id)
-        //{
-        //    var vehicle = await _context.Vehicles.FindAsync(id);
-        //    if (vehicle == null)
-        //    {
-        //        return false;
-        //    }
 
-        //    _context.Vehicles.Remove(vehicle);
-        //    await _context.SaveChangesAsync();
+        public async Task<bool> DeleteTicketIssuancesAsync(Guid id)
+        {
+            var ticketIssuances = await _context.TicketIssuances.FindAsync(id);
+            if (ticketIssuances == null)
+            {
+                return false;
+            }
 
-        //    return true;
-        //}
+            _context.TicketIssuances.Remove(ticketIssuances);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace StationManagementSystem.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=LAPTOP-APUENFVC\\SQLEXPRESS;Database=Station;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer("Server=LAPTOP-APUENFVC\\SQLEXPRESS;Database=BenXe;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
             }
         }
         public Microsoft.EntityFrameworkCore.DbSet<Account> Accounts { get; set; }
@@ -259,7 +259,6 @@ namespace StationManagementSystem.Models
                 entity.Property(e => e.Status).HasColumnType("NVARCHAR(20)").IsRequired();
                 entity.Property(e => e.Notes).HasColumnType("NVARCHAR(MAX)").IsRequired();
                 entity.Property(e => e.EstimatedDepartureTime).HasColumnType("datetime").IsRequired();
-                entity.Property(e => e.EstimatedArrivalTime).HasColumnType("datetime").IsRequired();
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(e => e.TicketIssuances)

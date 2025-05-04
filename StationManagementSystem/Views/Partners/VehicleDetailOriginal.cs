@@ -25,6 +25,7 @@ namespace StationManagementSystem.Views.Partners
             InitializeComponent();
 
             _vehicleService = new VehicleService();
+            _ownerService = new OwnerService();
             _vehicleDto = new VehicleUpdateDto();
 
             nhomXe = new List<string>
@@ -41,6 +42,7 @@ namespace StationManagementSystem.Views.Partners
             InitializeComponent();
 
             _vehicleService = new VehicleService();
+            _ownerService = new OwnerService();
             _vehicleDto = new VehicleUpdateDto();
             _vehicle = vehicle;
 
@@ -80,23 +82,11 @@ namespace StationManagementSystem.Views.Partners
                 DateTimeToBB.Value = _vehicle.ReleaseDate.Value;
             }
 
-            //if (_vehicle != null)
-            //{
-            //    var respone = await _ownerService.GetOwnerByIdAsync(_vehicle.OwnerID);
-
-            //    if (respone != null)
-            //    {
-            //        lblDVVTV.Text = respone.Company ?? "Không có tên công ty";
-            //    }
-            //    else
-            //    {
-            //        lblDVVTV.Text = "Không tìm thấy chủ xe";
-            //    }
-            //}
-            //else
-            //{
-            //    lblDVVTV.Text = "Không có dữ liệu xe";
-            //}
+            var companies = await _ownerService.GetAllOwnersAsync();
+            cbxTaiXe.DataSource = companies;
+            cbxTaiXe.DisplayMember = "Company"; // hoặc tên thuộc tính bạn muốn hiển thị
+            cbxTaiXe.ValueMember = "OwnerID";
+            cbxTaiXe.SelectedValue = _vehicle.OwnerID;
         }
 
         private void VehicleDetailOriginal_Load(object sender, EventArgs e)
@@ -156,6 +146,16 @@ namespace StationManagementSystem.Views.Partners
             _vehicleDto.SleeperTicket = (int)numGheNam.Value;
 
             _vehicleDto.VehicleType = cbxNhomXe.SelectedValue.ToString();
+
+            if (cbxTaiXe.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn thông tin chủ xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cbxTaiXe.SelectedValue != null)
+            {
+                _vehicleDto.OwnerID = Guid.Parse(cbxTaiXe.SelectedValue.ToString());
+            }
 
             var respone = await _vehicleService.UpdateVehicleAsync(_vehicle.VehicleID, _vehicleDto);
 

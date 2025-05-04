@@ -66,6 +66,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblHeader = new Label();
             grboxThongTin = new Guna.UI2.WinForms.Guna2GroupBox();
             lblXuatBen = new Label();
@@ -108,6 +112,8 @@
             checkDK = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             label2 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnKhongDu = new Guna.UI2.WinForms.Guna2Button();
+            btnDu = new Guna.UI2.WinForms.Guna2Button();
             grboxThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numTime).BeginInit();
             pnCheck.SuspendLayout();
@@ -709,12 +715,50 @@
             guna2Button1.TabIndex = 87;
             guna2Button1.Text = "X";
             // 
+            // btnKhongDu
+            // 
+            btnKhongDu.CustomizableEdges = customizableEdges39;
+            btnKhongDu.DisabledState.BorderColor = Color.DarkGray;
+            btnKhongDu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnKhongDu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnKhongDu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnKhongDu.FillColor = Color.FromArgb(202, 88, 103);
+            btnKhongDu.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnKhongDu.ForeColor = Color.White;
+            btnKhongDu.Location = new Point(631, 813);
+            btnKhongDu.Name = "btnKhongDu";
+            btnKhongDu.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            btnKhongDu.Size = new Size(210, 42);
+            btnKhongDu.TabIndex = 167;
+            btnKhongDu.Text = "Không đủ điều kiện";
+            btnKhongDu.Click += btnKhongDu_Click;
+            // 
+            // btnDu
+            // 
+            btnDu.CustomizableEdges = customizableEdges41;
+            btnDu.DisabledState.BorderColor = Color.DarkGray;
+            btnDu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDu.FillColor = Color.FromArgb(78, 169, 90);
+            btnDu.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDu.ForeColor = Color.White;
+            btnDu.Location = new Point(265, 813);
+            btnDu.Name = "btnDu";
+            btnDu.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            btnDu.Size = new Size(177, 42);
+            btnDu.TabIndex = 166;
+            btnDu.Text = " Đủ điều kiện";
+            btnDu.Click += btnDu_Click;
+            // 
             // Check
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1042, 867);
+            Controls.Add(btnKhongDu);
+            Controls.Add(btnDu);
             Controls.Add(guna2Button1);
             Controls.Add(pnCheck);
             Controls.Add(grboxThongTin);
@@ -777,5 +821,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox tbxHinhThuc;
         private Label lblXuatBen;
+        private Guna.UI2.WinForms.Guna2Button btnKhongDu;
+        private Guna.UI2.WinForms.Guna2Button btnDu;
     }
 }
