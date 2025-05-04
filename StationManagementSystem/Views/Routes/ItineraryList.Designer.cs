@@ -338,6 +338,7 @@
             cbxTuyen.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cbxTuyen.Size = new Size(664, 36);
             cbxTuyen.TabIndex = 2;
+            cbxTuyen.SelectedIndexChanged += cbxTuyen_SelectedIndexChanged;
             // 
             // ItineraryList
             // 

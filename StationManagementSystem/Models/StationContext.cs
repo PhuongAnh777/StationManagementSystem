@@ -31,6 +31,7 @@ namespace StationManagementSystem.Models
         public Microsoft.EntityFrameworkCore.DbSet<Employee> Employees { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Invoice> Invoices { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Itinerary> Itineraries { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<StopPoint> StopPoints { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Owner> Owners { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Permission> Permissions { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Role> Roles { get; set; }

@@ -40,14 +40,12 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblHeader = new Label();
             grboxThongTin = new Guna.UI2.WinForms.Guna2GroupBox();
             btnPayment = new Guna.UI2.WinForms.Guna2Button();
@@ -85,7 +83,6 @@
             label2 = new Label();
             cbxBienSo = new Guna.UI2.WinForms.Guna2ComboBox();
             label1 = new Label();
-            btnExit = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             grboxThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
@@ -514,18 +511,17 @@
             // grboxTimKiem
             // 
             grboxTimKiem.BorderColor = Color.FromArgb(192, 192, 255);
-            grboxTimKiem.Controls.Add(btnExit);
             grboxTimKiem.Controls.Add(label2);
             grboxTimKiem.Controls.Add(cbxBienSo);
             grboxTimKiem.Controls.Add(label1);
             grboxTimKiem.CustomBorderColor = Color.FromArgb(192, 192, 255);
             grboxTimKiem.CustomBorderThickness = new Padding(0, 30, 0, 0);
-            grboxTimKiem.CustomizableEdges = customizableEdges13;
+            grboxTimKiem.CustomizableEdges = customizableEdges11;
             grboxTimKiem.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grboxTimKiem.ForeColor = Color.Black;
             grboxTimKiem.Location = new Point(12, 782);
             grboxTimKiem.Name = "grboxTimKiem";
-            grboxTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            grboxTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges12;
             grboxTimKiem.Size = new Size(1338, 73);
             grboxTimKiem.TabIndex = 85;
             grboxTimKiem.Text = "Tìm kiếm";
@@ -542,7 +538,7 @@
             // cbxBienSo
             // 
             cbxBienSo.BackColor = Color.Transparent;
-            cbxBienSo.CustomizableEdges = customizableEdges11;
+            cbxBienSo.CustomizableEdges = customizableEdges9;
             cbxBienSo.DrawMode = DrawMode.OwnerDrawFixed;
             cbxBienSo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxBienSo.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -552,7 +548,7 @@
             cbxBienSo.ItemHeight = 30;
             cbxBienSo.Location = new Point(131, 33);
             cbxBienSo.Name = "cbxBienSo";
-            cbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cbxBienSo.Size = new Size(241, 36);
             cbxBienSo.TabIndex = 9;
             // 
@@ -565,27 +561,9 @@
             label1.TabIndex = 7;
             label1.Text = "Biển số xe";
             // 
-            // btnExit
-            // 
-            btnExit.CustomizableEdges = customizableEdges9;
-            btnExit.DisabledState.BorderColor = Color.DarkGray;
-            btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnExit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnExit.FillColor = Color.White;
-            btnExit.FocusedColor = SystemColors.ControlDark;
-            btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExit.ForeColor = Color.Silver;
-            btnExit.Location = new Point(646, 8);
-            btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnExit.Size = new Size(46, 56);
-            btnExit.TabIndex = 11;
-            btnExit.Text = "X";
-            // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges15;
+            guna2Button1.CustomizableEdges = customizableEdges13;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -596,7 +574,7 @@
             guna2Button1.ForeColor = Color.Silver;
             guna2Button1.Location = new Point(1304, 6);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Button1.Size = new Size(46, 32);
             guna2Button1.TabIndex = 86;
             guna2Button1.Text = "X";
@@ -665,7 +643,6 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cbxBienSo;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

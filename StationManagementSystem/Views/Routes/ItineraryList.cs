@@ -23,6 +23,7 @@ namespace StationManagementSystem.Views.Routes
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
+        private string _selectedItineraryUnit = "";
         public ItineraryList()
         {
             InitializeComponent();
@@ -67,8 +68,8 @@ namespace StationManagementSystem.Views.Routes
 
             if (response != null)
             {
-                //OpenChildForm(new RouteEdit(response));
-                //await LoadRoute(); // Cập nhật lại dữ liệu trong DataGridView
+                OpenChildForm(new ItineraryEdit(response));
+                await LoadItinerary(); // Cập nhật lại dữ liệu trong DataGridView
             }
             else
             {
@@ -183,17 +184,52 @@ namespace StationManagementSystem.Views.Routes
         {
             await LoadItinerary();
 
-            //var routes = await _routeService.GetAllRoutesAsync();
-            //cbxTuyen.DataSource = routes;
-            //cbxTuyen.DisplayMember = "T"; // hoặc tên thuộc tính bạn muốn hiển thị
-            //cbxTuyen.ValueMember = "OwnerID";
-            //cbxTuyen.SelectedIndex = -1;
+            var routes = await _routeService.GetActiveRoutesAsync();
+            var routeDisplayList = routes.Select(r => new
+            {
+                r.RouteID,
+                DisplayRoute = $"{r.DeparturePoint} - {r.ArrivalPoint}"
+            }).ToList();
+
+            cbxTuyen.DisplayMember = "DisplayRoute";
+            cbxTuyen.ValueMember = "RouteID";
+            cbxTuyen.DataSource = routeDisplayList;
+            cbxTuyen.SelectedIndex = -1;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new RouteAdd());
-            //await LoadRoute();
+            OpenChildForm(new ItineraryAdd());
+            await LoadItinerary();
+        }
+        private void FilterAndDisplayData()
+        {
+            List<Itinerary> filteredData = _originalData;
+
+            if (!string.IsNullOrEmpty(_selectedItineraryUnit))
+            {
+                // Giả sử vehicle có thuộc tính OwnerName hoặc TransportUnit
+                filteredData = filteredData.Where(v => v.RouteID.ToString() == _selectedItineraryUnit).ToList();
+            }
+
+            // Cập nhật dữ liệu hiển thị
+            _currentPage = 1;
+            _totalPages = (int)Math.Ceiling((double)filteredData.Count / _pageSize);
+
+            // Hiển thị dữ liệu đã lọc
+            gridView.DataSource = filteredData.Skip((_currentPage - 1) * _pageSize).Take(_pageSize).ToList();
+
+            // Cập nhật thông tin phân trang
+            lblPage.Text = $"{_currentPage}/{_totalPages}";
+            labelPageInfo.Text = $"Hiển thị {Math.Min(_pageSize * (_currentPage - 1) + 1, filteredData.Count)} - {Math.Min(_currentPage * _pageSize, filteredData.Count)} / Tổng số {filteredData.Count} phương tiện";
+        }
+
+        private void cbxTuyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _selectedItineraryUnit = cbxTuyen.SelectedValue?.ToString() ?? "";
+
+            // Lọc và hiển thị dữ liệu
+            FilterAndDisplayData();
         }
     }
 }

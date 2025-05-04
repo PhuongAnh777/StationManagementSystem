@@ -347,7 +347,7 @@ namespace StationManagementSystem.Migrations
 
                     b.HasIndex("ItineraryID");
 
-                    b.ToTable("StopPoint");
+                    b.ToTable("StopPoints");
                 });
 
             modelBuilder.Entity("StationManagementSystem.Models.Ticket", b =>

@@ -142,11 +142,12 @@
             btnProFile.FillColor = Color.FromArgb(63, 142, 212);
             btnProFile.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProFile.ForeColor = Color.White;
+            btnProFile.Image = Properties.Resources.house;
             btnProFile.ImageSize = new Size(30, 30);
-            btnProFile.Location = new Point(1231, -1);
+            btnProFile.Location = new Point(1295, 0);
             btnProFile.Name = "btnProFile";
             btnProFile.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnProFile.Size = new Size(133, 56);
+            btnProFile.Size = new Size(69, 56);
             btnProFile.TabIndex = 13;
             btnProFile.Click += btnProFile_Click;
             // 
@@ -161,6 +162,7 @@
             btnTuyen.FillColor = Color.FromArgb(63, 142, 212);
             btnTuyen.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTuyen.ForeColor = Color.White;
+            btnTuyen.Image = Properties.Resources.gps;
             btnTuyen.ImageSize = new Size(30, 30);
             btnTuyen.Location = new Point(480, 3);
             btnTuyen.Name = "btnTuyen";
@@ -180,6 +182,7 @@
             btnVe.FillColor = Color.FromArgb(63, 142, 212);
             btnVe.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVe.ForeColor = Color.White;
+            btnVe.Image = Properties.Resources.bus_ticket;
             btnVe.ImageSize = new Size(30, 30);
             btnVe.Location = new Point(897, 0);
             btnVe.Name = "btnVe";
@@ -200,8 +203,9 @@
             btnBaoCao.FillColor = Color.FromArgb(63, 142, 212);
             btnBaoCao.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBaoCao.ForeColor = Color.White;
+            btnBaoCao.Image = Properties.Resources.report;
             btnBaoCao.ImageSize = new Size(30, 30);
-            btnBaoCao.Location = new Point(1064, 0);
+            btnBaoCao.Location = new Point(1078, -1);
             btnBaoCao.Name = "btnBaoCao";
             btnBaoCao.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBaoCao.Size = new Size(161, 56);
@@ -220,6 +224,7 @@
             btnNhanVien.FillColor = Color.FromArgb(63, 142, 212);
             btnNhanVien.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNhanVien.ForeColor = Color.White;
+            btnNhanVien.Image = Properties.Resources.division;
             btnNhanVien.ImageSize = new Size(30, 30);
             btnNhanVien.Location = new Point(730, 0);
             btnNhanVien.Name = "btnNhanVien";
@@ -239,6 +244,7 @@
             btnXeMain.FillColor = Color.FromArgb(63, 142, 212);
             btnXeMain.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnXeMain.ForeColor = Color.White;
+            btnXeMain.Image = Properties.Resources.bus__1_;
             btnXeMain.ImageSize = new Size(30, 30);
             btnXeMain.Location = new Point(606, 0);
             btnXeMain.Name = "btnXeMain";
@@ -258,6 +264,7 @@
             btnDoiTac.FillColor = Color.FromArgb(63, 142, 212);
             btnDoiTac.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDoiTac.ForeColor = Color.White;
+            btnDoiTac.Image = Properties.Resources.deal;
             btnDoiTac.ImageSize = new Size(30, 30);
             btnDoiTac.Location = new Point(337, 0);
             btnDoiTac.Name = "btnDoiTac";
@@ -277,6 +284,7 @@
             btnGiaoDich.FillColor = Color.FromArgb(63, 142, 212);
             btnGiaoDich.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGiaoDich.ForeColor = Color.White;
+            btnGiaoDich.Image = Properties.Resources.transaction_history;
             btnGiaoDich.ImageSize = new Size(30, 30);
             btnGiaoDich.Location = new Point(170, 0);
             btnGiaoDich.Name = "btnGiaoDich";
@@ -296,6 +304,7 @@
             btnTongQuan.FillColor = Color.FromArgb(63, 142, 212);
             btnTongQuan.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTongQuan.ForeColor = Color.White;
+            btnTongQuan.Image = Properties.Resources.analysis;
             btnTongQuan.ImageSize = new Size(30, 30);
             btnTongQuan.Location = new Point(3, 0);
             btnTongQuan.Name = "btnTongQuan";
@@ -312,7 +321,7 @@
             pnNhanVien.Controls.Add(btnNhanVien1);
             pnNhanVien.Location = new Point(730, 0);
             pnNhanVien.Name = "pnNhanVien";
-            pnNhanVien.Size = new Size(217, 121);
+            pnNhanVien.Size = new Size(164, 121);
             pnNhanVien.TabIndex = 15;
             pnNhanVien.Visible = false;
             // 
@@ -327,6 +336,7 @@
             btnTaiKhoan1.FillColor = Color.FromArgb(63, 142, 212);
             btnTaiKhoan1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTaiKhoan1.ForeColor = Color.White;
+            btnTaiKhoan1.Image = Properties.Resources.verified_account;
             btnTaiKhoan1.ImageSize = new Size(30, 30);
             btnTaiKhoan1.Location = new Point(3, 65);
             btnTaiKhoan1.Name = "btnTaiKhoan1";
@@ -346,6 +356,7 @@
             btnNhanVien1.FillColor = Color.FromArgb(63, 142, 212);
             btnNhanVien1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNhanVien1.ForeColor = Color.White;
+            btnNhanVien1.Image = Properties.Resources.recruitment;
             btnNhanVien1.ImageSize = new Size(30, 30);
             btnNhanVien1.Location = new Point(3, 6);
             btnNhanVien1.Name = "btnNhanVien1";
@@ -408,6 +419,7 @@
             btnLenhXuatBen.FillColor = Color.FromArgb(63, 142, 212);
             btnLenhXuatBen.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLenhXuatBen.ForeColor = Color.White;
+            btnLenhXuatBen.Image = Properties.Resources.departure;
             btnLenhXuatBen.ImageSize = new Size(30, 30);
             btnLenhXuatBen.Location = new Point(0, 119);
             btnLenhXuatBen.Name = "btnLenhXuatBen";
@@ -428,6 +440,7 @@
             btnPhieuDangTai.FillColor = Color.FromArgb(63, 142, 212);
             btnPhieuDangTai.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPhieuDangTai.ForeColor = Color.White;
+            btnPhieuDangTai.Image = Properties.Resources.electronic_ticket;
             btnPhieuDangTai.ImageSize = new Size(30, 30);
             btnPhieuDangTai.Location = new Point(0, 61);
             btnPhieuDangTai.Name = "btnPhieuDangTai";
@@ -448,6 +461,7 @@
             btnHoaDon.FillColor = Color.FromArgb(63, 142, 212);
             btnHoaDon.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHoaDon.ForeColor = Color.White;
+            btnHoaDon.Image = Properties.Resources.bill;
             btnHoaDon.ImageSize = new Size(30, 30);
             btnHoaDon.Location = new Point(0, 3);
             btnHoaDon.Name = "btnHoaDon";
@@ -480,11 +494,12 @@
             btnXeAparture.FillColor = Color.FromArgb(63, 142, 212);
             btnXeAparture.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnXeAparture.ForeColor = Color.White;
+            btnXeAparture.Image = Properties.Resources.bus_stop;
             btnXeAparture.ImageSize = new Size(30, 30);
             btnXeAparture.Location = new Point(5, 116);
             btnXeAparture.Name = "btnXeAparture";
             btnXeAparture.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            btnXeAparture.Size = new Size(253, 49);
+            btnXeAparture.Size = new Size(227, 49);
             btnXeAparture.TabIndex = 12;
             btnXeAparture.Text = "DS xe sắp khởi hành";
             btnXeAparture.Click += btnXeAparture_Click;
@@ -500,6 +515,7 @@
             btnXeChecked.FillColor = Color.FromArgb(63, 142, 212);
             btnXeChecked.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnXeChecked.ForeColor = Color.White;
+            btnXeChecked.Image = Properties.Resources.bus_stop__1_;
             btnXeChecked.ImageSize = new Size(30, 30);
             btnXeChecked.Location = new Point(5, 58);
             btnXeChecked.Name = "btnXeChecked";
@@ -520,6 +536,7 @@
             btnXeCheck.FillColor = Color.FromArgb(63, 142, 212);
             btnXeCheck.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnXeCheck.ForeColor = Color.White;
+            btnXeCheck.Image = Properties.Resources.mobile_app;
             btnXeCheck.ImageSize = new Size(30, 30);
             btnXeCheck.Location = new Point(3, 3);
             btnXeCheck.Name = "btnXeCheck";
@@ -565,6 +582,7 @@
             btnLoTrinh.FillColor = Color.FromArgb(63, 142, 212);
             btnLoTrinh.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLoTrinh.ForeColor = Color.White;
+            btnLoTrinh.Image = Properties.Resources.destination;
             btnLoTrinh.ImageSize = new Size(30, 30);
             btnLoTrinh.Location = new Point(3, 65);
             btnLoTrinh.Name = "btnLoTrinh";
@@ -572,6 +590,7 @@
             btnLoTrinh.Size = new Size(122, 49);
             btnLoTrinh.TabIndex = 15;
             btnLoTrinh.Text = "Lộ trình";
+            btnLoTrinh.Click += btnLoTrinh_Click;
             // 
             // btnTuyenDuong
             // 
@@ -584,6 +603,7 @@
             btnTuyenDuong.FillColor = Color.FromArgb(63, 142, 212);
             btnTuyenDuong.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTuyenDuong.ForeColor = Color.White;
+            btnTuyenDuong.Image = Properties.Resources.indoor;
             btnTuyenDuong.ImageSize = new Size(30, 30);
             btnTuyenDuong.Location = new Point(3, 3);
             btnTuyenDuong.Name = "btnTuyenDuong";
@@ -616,6 +636,7 @@
             btnDangXuat.FillColor = Color.White;
             btnDangXuat.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDangXuat.ForeColor = Color.Black;
+            btnDangXuat.Image = Properties.Resources.logout;
             btnDangXuat.ImageSize = new Size(30, 30);
             btnDangXuat.Location = new Point(0, 61);
             btnDangXuat.Name = "btnDangXuat";
@@ -636,6 +657,7 @@
             btnTaiKhoanHT.FillColor = Color.White;
             btnTaiKhoanHT.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTaiKhoanHT.ForeColor = Color.Black;
+            btnTaiKhoanHT.Image = Properties.Resources.user;
             btnTaiKhoanHT.ImageSize = new Size(30, 30);
             btnTaiKhoanHT.Location = new Point(3, 6);
             btnTaiKhoanHT.Name = "btnTaiKhoanHT";
@@ -666,6 +688,7 @@
             btnXe.FillColor = Color.FromArgb(63, 142, 212);
             btnXe.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnXe.ForeColor = Color.White;
+            btnXe.Image = Properties.Resources.bus;
             btnXe.ImageSize = new Size(30, 30);
             btnXe.Location = new Point(0, 61);
             btnXe.Name = "btnXe";
@@ -686,6 +709,7 @@
             btnChuXe.FillColor = Color.FromArgb(63, 142, 212);
             btnChuXe.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnChuXe.ForeColor = Color.White;
+            btnChuXe.Image = Properties.Resources.owner;
             btnChuXe.ImageSize = new Size(30, 30);
             btnChuXe.Location = new Point(0, 3);
             btnChuXe.Name = "btnChuXe";

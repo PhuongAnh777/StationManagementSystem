@@ -44,15 +44,13 @@
             pnHeader = new Panel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             lblKhoangCach = new Label();
-            pnLineA1 = new Panel();
             lblDiemDi = new Label();
-            panel2 = new Panel();
-            tbxDiemDen = new Guna.UI2.WinForms.Guna2TextBox();
             lblDiemDen = new Label();
-            pnLine3 = new Panel();
-            tbxDiemDi = new Guna.UI2.WinForms.Guna2TextBox();
             pnContainer = new Panel();
-            tbxKhoangCach = new Guna.UI2.WinForms.Guna2TextBox();
+            cbxDiemDen = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbxDiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
+            lblKhoangCachV = new Label();
+            btnTimKC = new Guna.UI2.WinForms.Guna2Button();
             btnBoQua = new Guna.UI2.WinForms.Guna2Button();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             pnFooter = new Panel();
@@ -103,19 +101,11 @@
             // 
             lblKhoangCach.AutoSize = true;
             lblKhoangCach.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblKhoangCach.Location = new Point(553, 19);
+            lblKhoangCach.Location = new Point(609, 18);
             lblKhoangCach.Name = "lblKhoangCach";
             lblKhoangCach.Size = new Size(145, 25);
             lblKhoangCach.TabIndex = 8;
             lblKhoangCach.Text = "Khoảng cách";
-            // 
-            // pnLineA1
-            // 
-            pnLineA1.BackColor = Color.Silver;
-            pnLineA1.Location = new Point(170, 46);
-            pnLineA1.Name = "pnLineA1";
-            pnLineA1.Size = new Size(375, 1);
-            pnLineA1.TabIndex = 4;
             // 
             // lblDiemDi
             // 
@@ -127,36 +117,6 @@
             lblDiemDi.TabIndex = 0;
             lblDiemDi.Text = "Điểm đi";
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Silver;
-            panel2.Location = new Point(170, 127);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(375, 1);
-            panel2.TabIndex = 23;
-            // 
-            // tbxDiemDen
-            // 
-            tbxDiemDen.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxDiemDen.BorderThickness = 0;
-            tbxDiemDen.CustomizableEdges = customizableEdges3;
-            tbxDiemDen.DefaultText = "";
-            tbxDiemDen.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxDiemDen.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxDiemDen.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiemDen.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiemDen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiemDen.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxDiemDen.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiemDen.Location = new Point(170, 84);
-            tbxDiemDen.Margin = new Padding(4);
-            tbxDiemDen.Name = "tbxDiemDen";
-            tbxDiemDen.PlaceholderText = "";
-            tbxDiemDen.SelectedText = "";
-            tbxDiemDen.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tbxDiemDen.Size = new Size(375, 40);
-            tbxDiemDen.TabIndex = 22;
-            // 
             // lblDiemDen
             // 
             lblDiemDen.AutoSize = true;
@@ -167,73 +127,83 @@
             lblDiemDen.TabIndex = 21;
             lblDiemDen.Text = "Điểm đến";
             // 
-            // pnLine3
-            // 
-            pnLine3.BackColor = Color.Silver;
-            pnLine3.Location = new Point(705, 46);
-            pnLine3.Name = "pnLine3";
-            pnLine3.Size = new Size(375, 1);
-            pnLine3.TabIndex = 11;
-            // 
-            // tbxDiemDi
-            // 
-            tbxDiemDi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxDiemDi.BorderThickness = 0;
-            tbxDiemDi.CustomizableEdges = customizableEdges5;
-            tbxDiemDi.DefaultText = "";
-            tbxDiemDi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxDiemDi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxDiemDi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiemDi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiemDi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiemDi.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxDiemDi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiemDi.Location = new Point(170, 3);
-            tbxDiemDi.Margin = new Padding(4);
-            tbxDiemDi.Name = "tbxDiemDi";
-            tbxDiemDi.PlaceholderText = "";
-            tbxDiemDi.SelectedText = "";
-            tbxDiemDi.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            tbxDiemDi.Size = new Size(375, 40);
-            tbxDiemDi.TabIndex = 10;
-            // 
             // pnContainer
             // 
-            pnContainer.Controls.Add(tbxKhoangCach);
-            pnContainer.Controls.Add(panel2);
-            pnContainer.Controls.Add(tbxDiemDen);
+            pnContainer.Controls.Add(cbxDiemDen);
+            pnContainer.Controls.Add(cbxDiemDi);
+            pnContainer.Controls.Add(lblKhoangCachV);
+            pnContainer.Controls.Add(btnTimKC);
             pnContainer.Controls.Add(lblDiemDen);
-            pnContainer.Controls.Add(pnLine3);
-            pnContainer.Controls.Add(tbxDiemDi);
             pnContainer.Controls.Add(lblKhoangCach);
-            pnContainer.Controls.Add(pnLineA1);
             pnContainer.Controls.Add(lblDiemDi);
             pnContainer.Location = new Point(3, 84);
             pnContainer.Name = "pnContainer";
             pnContainer.Size = new Size(1091, 154);
             pnContainer.TabIndex = 7;
             // 
-            // tbxKhoangCach
+            // cbxDiemDen
             // 
-            tbxKhoangCach.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxKhoangCach.BorderThickness = 0;
-            tbxKhoangCach.CustomizableEdges = customizableEdges7;
-            tbxKhoangCach.DefaultText = "";
-            tbxKhoangCach.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxKhoangCach.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxKhoangCach.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxKhoangCach.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxKhoangCach.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxKhoangCach.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxKhoangCach.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxKhoangCach.Location = new Point(705, 4);
-            tbxKhoangCach.Margin = new Padding(4);
-            tbxKhoangCach.Name = "tbxKhoangCach";
-            tbxKhoangCach.PlaceholderText = "";
-            tbxKhoangCach.SelectedText = "";
-            tbxKhoangCach.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            tbxKhoangCach.Size = new Size(375, 40);
-            tbxKhoangCach.TabIndex = 24;
+            cbxDiemDen.BackColor = Color.Transparent;
+            cbxDiemDen.CustomizableEdges = customizableEdges3;
+            cbxDiemDen.DrawMode = DrawMode.OwnerDrawFixed;
+            cbxDiemDen.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxDiemDen.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxDiemDen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxDiemDen.Font = new Font("Segoe UI", 10F);
+            cbxDiemDen.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxDiemDen.ItemHeight = 30;
+            cbxDiemDen.Location = new Point(170, 89);
+            cbxDiemDen.Name = "cbxDiemDen";
+            cbxDiemDen.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cbxDiemDen.Size = new Size(375, 36);
+            cbxDiemDen.TabIndex = 27;
+            cbxDiemDen.SelectedIndexChanged += cbxDiemDen_SelectedIndexChanged;
+            // 
+            // cbxDiemDi
+            // 
+            cbxDiemDi.BackColor = Color.Transparent;
+            cbxDiemDi.CustomizableEdges = customizableEdges5;
+            cbxDiemDi.DrawMode = DrawMode.OwnerDrawFixed;
+            cbxDiemDi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxDiemDi.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbxDiemDi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbxDiemDi.Font = new Font("Segoe UI", 10F);
+            cbxDiemDi.ForeColor = Color.FromArgb(68, 88, 112);
+            cbxDiemDi.ItemHeight = 30;
+            cbxDiemDi.Location = new Point(170, 8);
+            cbxDiemDi.Name = "cbxDiemDi";
+            cbxDiemDi.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbxDiemDi.Size = new Size(375, 36);
+            cbxDiemDi.TabIndex = 26;
+            cbxDiemDi.SelectedIndexChanged += cbxDiemDi_SelectedIndexChanged;
+            // 
+            // lblKhoangCachV
+            // 
+            lblKhoangCachV.AutoSize = true;
+            lblKhoangCachV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblKhoangCachV.Location = new Point(798, 21);
+            lblKhoangCachV.Name = "lblKhoangCachV";
+            lblKhoangCachV.Size = new Size(111, 22);
+            lblKhoangCachV.TabIndex = 25;
+            lblKhoangCachV.Text = "Khoảng cách";
+            // 
+            // btnTimKC
+            // 
+            btnTimKC.CustomizableEdges = customizableEdges7;
+            btnTimKC.DisabledState.BorderColor = Color.DarkGray;
+            btnTimKC.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTimKC.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTimKC.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTimKC.FillColor = Color.FromArgb(128, 128, 255);
+            btnTimKC.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTimKC.ForeColor = Color.White;
+            btnTimKC.Location = new Point(577, 86);
+            btnTimKC.Name = "btnTimKC";
+            btnTimKC.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnTimKC.Size = new Size(177, 42);
+            btnTimKC.TabIndex = 7;
+            btnTimKC.Text = "Tìm khoảng cách";
+            btnTimKC.Click += btnTimKC_Click;
             // 
             // btnBoQua
             // 
@@ -311,23 +281,21 @@
         private Label lblSoDienThoai;
         private RadioButton rbtnNu;
         private RadioButton rbtnNam;
-        private Panel pnLineA1;
         private Guna.UI2.WinForms.Guna2TextBox tbxTenNhanVien;
         private Label lblGioiTinh;
         private Label lblDiemDi;
         private Panel panel1;
-        private Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox tbxDiemDen;
         private Label lblDiemDen;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTime;
         private Label lblNgaySinh;
-        private Panel pnLine3;
-        private Guna.UI2.WinForms.Guna2TextBox tbxDiemDi;
         private Panel pnContainer;
         private Panel pnLine2;
         private Guna.UI2.WinForms.Guna2Button btnBoQua;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Panel pnFooter;
-        private Guna.UI2.WinForms.Guna2TextBox tbxKhoangCach;
+        private Guna.UI2.WinForms.Guna2Button btnTimKC;
+        private Label lblKhoangCachV;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxDiemDi;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxDiemDen;
     }
 }

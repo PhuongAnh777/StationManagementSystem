@@ -260,5 +260,10 @@ namespace StationManagementSystem.Views
         {
             CreateFormChild(new RouteList());
         }
+
+        private void btnLoTrinh_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new ItineraryList());
+        }
     }
 }
