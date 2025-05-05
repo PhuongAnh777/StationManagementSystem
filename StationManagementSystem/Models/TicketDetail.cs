@@ -12,7 +12,6 @@ namespace StationManagementSystem.Models
         [Key]
         public Guid TicketDetailID { get; set; }  // Khóa chính
 
-        public string SeatNumber { get; set; } // NVARCHAR(15)
         public string Status { get; set; } // NVARCHAR(20)
 
         public Guid EmployeeID { get; set; } // Khóa ngoại

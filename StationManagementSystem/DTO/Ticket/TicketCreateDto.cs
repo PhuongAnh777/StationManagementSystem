@@ -10,6 +10,7 @@ namespace StationManagementSystem.DTO.Ticket
     {
         public float Price { get; set; } // Float
         public string TicketType { get; set; } // NVARCHAR(20)
+        public int Amount { get; set; } // INT
 
         public Guid IssuanceID { get; set; } // Khóa ngoại
     }

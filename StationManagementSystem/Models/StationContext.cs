@@ -217,6 +217,7 @@ namespace StationManagementSystem.Models
                 entity.HasKey(e => e.TicketID);
                 entity.Property(e => e.Price).HasColumnType("FLOAT").IsRequired();
                 entity.Property(e => e.TicketType).HasColumnType("NVARCHAR(20)").IsRequired();
+                entity.Property(e => e.Amount).HasColumnType("INT").IsRequired();
 
                 entity.HasOne(d => d.TicketIssuance)
                     .WithMany(t => t.Tickets)
@@ -227,7 +228,6 @@ namespace StationManagementSystem.Models
             modelBuilder.Entity<TicketDetail>(entity =>
             {
                 entity.HasKey(e => e.TicketDetailID);
-                entity.Property(e => e.SeatNumber).HasColumnType("NVARCHAR(15)").IsRequired();
                 entity.Property(e => e.Status).HasColumnType("NVARCHAR(20)").IsRequired();
 
                 entity.HasOne(d => d.Employee)

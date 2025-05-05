@@ -36,6 +36,7 @@ namespace StationManagementSystem.Services
             {
                 Price = ticketDto.Price,
                 TicketType = ticketDto.TicketType,
+                Amount = ticketDto.Amount,
                 IssuanceID = ticketDto.IssuanceID
             };
             await _context.Tickets.AddAsync(ticket);

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.DTO.Route;
+using StationManagementSystem.DTO.Ticket;
 using StationManagementSystem.DTO.TicketIssuance;
 using StationManagementSystem.Models;
 using StationManagementSystem.Services;
@@ -18,11 +19,15 @@ namespace StationManagementSystem.Views.Transactions
     public partial class TicketIssuanceAdd : Form
     {
         private readonly TicketIssuanceService _ticketIssuanceService;
-        private TicketIssuanceCreateDto _ticketIssuanceDto;
+        
         private readonly OwnerService _ownerService;
         private readonly VehicleService _vehicleService;
         private readonly RouteService _routeService;
         private readonly ItineraryService _itineraryService;
+        private readonly TicketService _ticketService;
+
+        private TicketIssuanceCreateDto _ticketIssuanceDto;
+        private TicketCreateDto _ticketCreateDto;
 
         private readonly Employee _employee;
         public TicketIssuanceAdd()
@@ -30,11 +35,14 @@ namespace StationManagementSystem.Views.Transactions
             InitializeComponent();
 
             _ticketIssuanceDto = new TicketIssuanceCreateDto();
+            _ticketCreateDto = new TicketCreateDto();
+
             _ticketIssuanceService = new TicketIssuanceService();
             _ownerService = new OwnerService();
             _vehicleService = new VehicleService();
             _routeService = new RouteService();
             _itineraryService = new ItineraryService();
+            _ticketService = new TicketService();
 
             //cbxLoTrinh.Enabled = false;
             LoadTicketIssuance();
@@ -44,11 +52,14 @@ namespace StationManagementSystem.Views.Transactions
             InitializeComponent();
 
             _ticketIssuanceDto = new TicketIssuanceCreateDto();
+            _ticketCreateDto = new TicketCreateDto();
+
             _ticketIssuanceService = new TicketIssuanceService();
             _ownerService = new OwnerService();
             _vehicleService = new VehicleService();
             _routeService = new RouteService();
             _itineraryService = new ItineraryService();
+            _ticketService = new TicketService();
 
             _employee = employee;
             //cbxLoTrinh.Enabled = false;
@@ -246,12 +257,84 @@ namespace StationManagementSystem.Views.Transactions
 
             _ticketIssuanceDto.EmployeeID = _employee.EmployeeID;
 
+            if(_ticketIssuanceDto.SeatTicket > 0 && string.IsNullOrEmpty(tbxGiaNgoi.Text))
+            {
+                MessageBox.Show("Vui lòng nhập giá vé ngồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (_ticketIssuanceDto.SleeperTicket > 0 && string.IsNullOrEmpty(tbxGiaNam.Text))
+            {
+                MessageBox.Show("Vui lòng nhập giá vé nằm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            if (!(string.IsNullOrEmpty(tbxGiaNgoi.Text)))
+            {
+                if(!(float.TryParse(tbxGiaNgoi.Text, out float giaNgoi)))
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng giá vé ngồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (giaNgoi <= 0)
+                {
+                    MessageBox.Show("Giá vé ngồi phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (_ticketIssuanceDto.SeatTicket <= 0)
+                {
+                    MessageBox.Show("Số lượng vé ngồi phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                _ticketCreateDto.TicketType = "Seat";
+                _ticketCreateDto.Price = giaNgoi;
+                _ticketCreateDto.Amount = _ticketIssuanceDto.SeatTicket;
+            }
+           
+            if (!(string.IsNullOrEmpty(tbxGiaNam.Text)))
+            {
+                if (!(float.TryParse(tbxGiaNam.Text, out float giaNam)))
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng giá vé nằm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (giaNam != 0)
+                {
+                    if (giaNam <= 0)
+                    {
+                        MessageBox.Show("Giá vé nằm phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (_ticketIssuanceDto.SleeperTicket <= 0)
+                    {
+                        MessageBox.Show("Số lượng vé nằm phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    _ticketCreateDto.TicketType = "Sleep";
+                    _ticketCreateDto.Price = giaNam;
+                    _ticketCreateDto.Amount = _ticketIssuanceDto.SleeperTicket;
+                }
+            }
+
             var respone = await _ticketIssuanceService.CreateTicketIssuancesAsync(_ticketIssuanceDto);
 
             if (respone != null)
             {
                 MessageBox.Show($"Thêm thành công! {respone.IssuanceID}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            if (!(string.IsNullOrEmpty(tbxGiaNgoi.Text)) || !(string.IsNullOrEmpty(tbxGiaNam.Text)))
+            {
+                _ticketCreateDto.IssuanceID = respone.IssuanceID;
+
+                var responeTicket = await _ticketService.CreateTicketAsync(_ticketCreateDto);
+                if (responeTicket != null)
+                {
+                    MessageBox.Show($"Thêm thành công! {respone.IssuanceID}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            
+            
 
             this.DialogResult = DialogResult.OK;
             this.Close();

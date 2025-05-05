@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using StationManagementSystem.DTO.Ticket;
 using StationManagementSystem.DTO.TicketIssuance;
 using StationManagementSystem.DTO.Vehicle;
 using StationManagementSystem.Models;
@@ -54,8 +55,8 @@ namespace StationManagementSystem.Services
             var vehicles = await _context.TicketIssuances
                 .Where(ti =>
                     ti.Status.ToLower() == "pending" &&
-                    ti.EstimatedDepartureTime.Date >= today &&
-                    ti.EstimatedDepartureTime.Date < tomorrow &&
+                    ti.CreatedAt.Date >= today &&
+                    ti.CreatedAt.Date < tomorrow &&
                     ti.EstimatedDepartureTime.TimeOfDay > nowTime)
                 .Select(ti => ti.Vehicle)
                 .Distinct()
@@ -85,7 +86,7 @@ namespace StationManagementSystem.Services
 
             return vehicles;
         }
-        public async Task<IEnumerable<TicketIssuance>> GetCheckedSellTicketVehiclesAsync(Guid itineraryId)
+        public async Task<List<TicketDisplayItem>> GetCheckedSellTicketVehiclesAsync(Guid itineraryId)
         {
             var now = DateTime.Now;
             var oneHourLater = now.AddHours(1);
@@ -93,6 +94,9 @@ namespace StationManagementSystem.Services
             var tomorrow = today.AddDays(1);
 
             var ticketIssuances = await _context.TicketIssuances
+                .Include(ti => ti.Vehicle)
+                    .ThenInclude(v => v.Owner)
+                .Include(ti => ti.Tickets)
                 .Where(ti =>
                     ti.CreatedAt >= today && ti.CreatedAt < tomorrow &&
                     ti.ItineraryID == itineraryId &&
@@ -103,6 +107,14 @@ namespace StationManagementSystem.Services
                             : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= oneHourLater))
                     ))
                 .OrderBy(ti => ti.EstimatedDepartureTime)
+                .Select(ti => new TicketDisplayItem
+                {
+                    DepartureTime = ti.EstimatedDepartureTime,
+                    RemainingSeats = ti.Tickets.Sum(t => t.Amount) - ti.Tickets.Sum(t => t.TicketDetails.Count), // Tính số ghế còn lại
+                    TotalSeats = ti.Tickets.Sum(t => t.Amount),
+                    LicensePlate = ti.Vehicle.LicensePlate,
+                    CompanyName = ti.Vehicle.Owner.Company,
+                })
                 .ToListAsync();
 
             return ticketIssuances;

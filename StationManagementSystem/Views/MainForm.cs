@@ -232,7 +232,7 @@ namespace StationManagementSystem.Views
 
         private void btnDSXe_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new SellTicketList());
+            CreateFormChild(new SellTicket());
         }
 
         private void btnChuXe_Click(object sender, EventArgs e)

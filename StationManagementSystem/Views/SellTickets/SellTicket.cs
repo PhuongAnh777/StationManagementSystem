@@ -20,7 +20,7 @@ namespace StationManagementSystem.Views.SellTickets
         private readonly VehicleService _vehicleService;
         private readonly RouteService _routeService;
         private readonly ItineraryService _itineraryService;
-
+        private readonly TicketService _ticketService;
         public SellTicket()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace StationManagementSystem.Views.SellTickets
             _vehicleService = new VehicleService();
             _routeService = new RouteService();
             _itineraryService = new ItineraryService();
+            _ticketService = new TicketService();
 
             LoadSellTicket();
         }
@@ -91,62 +92,63 @@ namespace StationManagementSystem.Views.SellTickets
                 return;
             }
             var selected = (Guid)cbxLoTrinh.SelectedValue;
-            var vehicleTickets = await _ticketIssuanceService.GetCheckedSellTicketVehiclesAsync(selected);
+            var ticketissuances = await _ticketIssuanceService.GetCheckedSellTicketVehiclesAsync(selected);
 
+            
             // Giả sử GetCheckedSellTicketVehiclesAsync trả về danh sách đối tượng có các thông tin cần thiết
-            //var displayTickets = vehicleTickets.Select(v => new TicketDisplayItem
-            //{
-            //    DepartureTime = v.EstimatedDepartureTime,
-            //    RemainingSeats = v.SeatTicket,
-            //    TotalSeats = v.TotalSeats,
-            //    CompanyName = v.CompanyName,
-            //    LicensePlate = v.LicensePlate
-            //}).ToList();
+            var displayTickets = ticketissuances.Select(v => new TicketDisplayItem
+            {
+                DepartureTime = v.DepartureTime,
+                RemainingSeats = v.RemainingSeats,
+                TotalSeats = v.TotalSeats,
+                CompanyName = v.CompanyName,
+                LicensePlate = v.LicensePlate
+            }).ToList();
 
-            //DisplayTickets(displayTickets);
+            DisplayTickets(displayTickets);
         }
-        //private void DisplayTickets(List<TicketDisplayItem> tickets)
-        //{
-        //    tblTickets.Controls.Clear();
-        //    tblTickets.RowStyles.Clear();
-        //    tblTickets.RowCount = 0;
+        private void DisplayTickets(List<TicketDisplayItem> tickets)
+        {
+            tblTickets.Controls.Clear();
+            tblTickets.RowStyles.Clear();
+            tblTickets.RowCount = 0;
 
-        //    int columnCount = tblTickets.ColumnCount;
-        //    int row = 0, column = 0;
+            int columnCount = tblTickets.ColumnCount;
+            int row = 0, column = 0;
 
-        //    foreach (var ticket in tickets)
-        //    {
-        //        var panel = new Panel
-        //        {
-        //            BorderStyle = BorderStyle.FixedSingle,
-        //            Width = 200,
-        //            Height = 80,
-        //            BackColor = Color.White
-        //        };
+            foreach (var ticket in tickets)
+            {
+                var panel = new Panel
+                {
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Width = 200,
+                    Height = 120,
+                    BackColor = Color.White
+                };
 
-        //        var label = new Label
-        //        {
-        //            Text = $"{ticket.DepartureTime:HH:mm}\n{ticket.RemainingSeats}/{ticket.TotalSeats}\n{ticket.CompanyName}\n{ticket.LicensePlate}",
-        //            AutoSize = false,
-        //            TextAlign = ContentAlignment.MiddleCenter,
-        //            Dock = DockStyle.Fill,
-        //            Font = new Font("Segoe UI", 10, FontStyle.Regular)
-        //        };
+                var label = new Label
+                {
+                    Text = $"{ticket.DepartureTime:HH:mm}\n{ticket.RemainingSeats}/{ticket.TotalSeats}\n{ticket.CompanyName}\n{ticket.LicensePlate}",
+                    AutoSize = false,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Dock = DockStyle.Fill,
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular)
+                };
 
-        //        panel.Controls.Add(label);
+                panel.Controls.Add(label);
 
-        //        tblTickets.Controls.Add(panel, column, row);
+                tblTickets.Controls.Add(panel, column, row);
 
-        //        column++;
-        //        if (column >= columnCount)
-        //        {
-        //            column = 0;
-        //            row++;
-        //            tblTickets.RowCount++;
-        //            tblTickets.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        //        }
-        //    }
-        //}
+                column++;
+                if (column >= columnCount)
+                {
+                    column = 0;
+                    row++;
+                    tblTickets.RowCount++;
+                    tblTickets.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+            }
+        }
 
     }
 }
