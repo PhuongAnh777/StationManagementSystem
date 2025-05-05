@@ -42,39 +42,86 @@ namespace StationManagementSystem.Services
         public async Task<TicketIssuance> GetTicketIssuanceByVehicleIdAsync(Guid vehicleID)
         {
             return await _context.TicketIssuances
-                .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID && ti.Status.ToLower() == "active");
+                .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID && ti.Status.ToLower() == "pending");
         }
-        public async Task<IEnumerable<Vehicle>> GetCheckedOrDepartingVehiclesAsync()
+        public async Task<IEnumerable<Vehicle>> GetVehiclesCheckAsync()
+        {
+            var now = DateTime.Now;
+            var today = now.Date;
+            var tomorrow = today.AddDays(1);
+            var nowTime = now.TimeOfDay;
+
+            var vehicles = await _context.TicketIssuances
+                .Where(ti =>
+                    ti.Status.ToLower() == "pending" &&
+                    ti.EstimatedDepartureTime.Date >= today &&
+                    ti.EstimatedDepartureTime.Date < tomorrow &&
+                    ti.EstimatedDepartureTime.TimeOfDay > nowTime)
+                .Select(ti => ti.Vehicle)
+                .Distinct()
+                .ToListAsync();
+
+            return vehicles;
+        }
+        public async Task<IEnumerable<Vehicle>> GetCheckedVehiclesAsync()
         {
             var now = DateTime.Now;
             var oneHourLater = now.AddHours(1);
-
-            // Handle the case when oneHourLater wraps past midnight
-            var vehicles = await _context.TicketIssuances
-                .Where(ti => ti.Status == "Checked" ||
-                            (oneHourLater > now
-                                ? (ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= oneHourLater)
-                                : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= oneHourLater)))
-                .Select(ti => ti.Vehicle)
-                .Distinct()
-                .ToListAsync();
-
-            return vehicles;
-        }
-
-        public async Task<IEnumerable<Vehicle>> GetVehiclesWithTicketCreatedTodayAsync()
-        {
-            var today = DateTime.Today;
+            var today = now.Date;
             var tomorrow = today.AddDays(1);
 
             var vehicles = await _context.TicketIssuances
-                .Where(ti => ti.CreatedAt >= today && ti.CreatedAt < tomorrow)
+                .Where(ti =>
+                    ti.CreatedAt >= today && ti.CreatedAt < tomorrow && // chỉ trong ngày hôm nay
+                    (
+                        ti.Status.ToLower() == "checked" ||
+                        (oneHourLater > now
+                            ? (ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= oneHourLater)
+                            : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= oneHourLater))
+                    ))
                 .Select(ti => ti.Vehicle)
                 .Distinct()
                 .ToListAsync();
 
             return vehicles;
         }
+        public async Task<IEnumerable<TicketIssuance>> GetCheckedSellTicketVehiclesAsync(Guid itineraryId)
+        {
+            var now = DateTime.Now;
+            var oneHourLater = now.AddHours(1);
+            var today = now.Date;
+            var tomorrow = today.AddDays(1);
+
+            var ticketIssuances = await _context.TicketIssuances
+                .Where(ti =>
+                    ti.CreatedAt >= today && ti.CreatedAt < tomorrow &&
+                    ti.ItineraryID == itineraryId &&
+                    (
+                        ti.Status.ToLower() == "checked" ||
+                        (oneHourLater > now
+                            ? (ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= oneHourLater)
+                            : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= oneHourLater))
+                    ))
+                .OrderBy(ti => ti.EstimatedDepartureTime)
+                .ToListAsync();
+
+            return ticketIssuances;
+        }
+
+
+        //public async Task<IEnumerable<Vehicle>> GetVehiclesWithTicketCreatedTodayAsync()
+        //{
+        //    var today = DateTime.Today;
+        //    var tomorrow = today.AddDays(1);
+
+        //    var vehicles = await _context.TicketIssuances
+        //        .Where(ti => ti.CreatedAt >= today && ti.CreatedAt < tomorrow)
+        //        .Select(ti => ti.Vehicle)
+        //        .Distinct()
+        //        .ToListAsync();
+
+        //    return vehicles;
+        //}
         public async Task<TicketIssuance> CreateTicketIssuancesAsync(TicketIssuanceCreateDto ticketIssuanceDto)
         {
             var ticketIssuance = new TicketIssuance
@@ -132,23 +179,23 @@ namespace StationManagementSystem.Services
         //    return vehicle;
 
         //}
-        //public async Task<Vehicle> UpdateVehicleStatusAsync(Guid vehicleId)
-        //{
+        public async Task<TicketIssuance> UpdateTicketIssuancesStatusAsync(Guid issuancesId)
+        {
 
-        //    var vehicle = await _context.Vehicles.FirstOrDefaultAsync(p => p.VehicleID == vehicleId);
+            var ticketIssuance = await _context.TicketIssuances.FirstOrDefaultAsync(p => p.IssuanceID == issuancesId);
 
-        //    if (vehicle == null)
-        //        throw new KeyNotFoundException($"Employee with ID {vehicleId} not found.");
+            if (ticketIssuance == null)
+                throw new KeyNotFoundException($"Ticket inssuances with ID {issuancesId} not found.");
 
-        //    // Update product properties
-        //    vehicle.IsDiscontinued = true;
+            // Update product properties
+            ticketIssuance.Status = "Checked";
 
-        //    // Save changes to the database, this will automatically check the RowVersion
-        //    await _context.SaveChangesAsync();
+            // Save changes to the database, this will automatically check the RowVersion
+            await _context.SaveChangesAsync();
 
-        //    return vehicle;
+            return ticketIssuance;
 
-        //}
+        }
 
         public async Task<bool> DeleteTicketIssuancesAsync(Guid id)
         {

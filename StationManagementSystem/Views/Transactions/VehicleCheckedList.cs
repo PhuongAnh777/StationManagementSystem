@@ -72,7 +72,7 @@ namespace StationManagementSystem.Views.Transactions
         {
             try
             {
-                var vehicles = await _ticketIssuanceService.GetCheckedOrDepartingVehiclesAsync();
+                var vehicles = await _ticketIssuanceService.GetCheckedVehiclesAsync();
 
                 if (vehicles != null && vehicles.Any())
                 {

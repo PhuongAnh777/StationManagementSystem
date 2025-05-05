@@ -64,6 +64,9 @@
     <Compile Update="Views\Routes\RouteList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\SellTickets\SellTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\SellTickets\SellTicketList.cs">
       <SubType>Form</SubType>
     </Compile>

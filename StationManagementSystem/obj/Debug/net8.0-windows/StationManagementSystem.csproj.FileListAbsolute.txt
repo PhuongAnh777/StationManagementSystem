@@ -368,3 +368,4 @@ C:\Serect\Station_official\StationManagementSystem\StationManagementSystem\bin\D
 C:\Serect\Station_official\StationManagementSystem\StationManagementSystem\obj\Debug\net8.0-windows\StationM.97D9A13B.Up2Date
 C:\Serect\Station_official\StationManagementSystem\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.genruntimeconfig.cache
 C:\Serect\Station_official\StationManagementSystem\StationManagementSystem\obj\Debug\net8.0-windows\ref\StationManagementSystem.dll
+C:\Serect\Station_official\StationManagementSystem\StationManagementSystem\obj\Debug\net8.0-windows\StationManagementSystem.Views.SellTickets.SellTicket.resources
