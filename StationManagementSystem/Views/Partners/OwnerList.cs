@@ -54,7 +54,6 @@ namespace StationManagementSystem.Views.Partners
             gridView.Columns["Phone"].HeaderText = "Số điện thoại";
             gridView.Columns["Address"].HeaderText = "Địa chỉ";
             gridView.Columns["Email"].HeaderText = "Email";
-            gridView.Columns["IsDiscontinued"].HeaderText = "Ngừng hoạt động";
             gridView.Columns["Company"].HeaderText = "Công ty";
             gridView.Columns["DrivingLicense"].HeaderText = "Bằng lái";
 

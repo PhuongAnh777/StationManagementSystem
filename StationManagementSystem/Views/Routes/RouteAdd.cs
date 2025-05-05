@@ -40,7 +40,7 @@ namespace StationManagementSystem.Views.Routes
             _routeService = new RouteService();
             _routeDto = new RouteCreateDto();
 
-            cbxDiemDi.DataSource = new List<string>(provinces); 
+            cbxDiemDi.DataSource = new List<string>(provinces);
             cbxDiemDen.DataSource = new List<string>(provinces);
         }
         protected override void OnPaint(PaintEventArgs e)
@@ -97,6 +97,10 @@ namespace StationManagementSystem.Views.Routes
 
         private async void btnTimKC_Click(object sender, EventArgs e)
         {
+
+        }
+        private async Task CalculateAndShowDistanceAsync()
+        {
             try
             {
                 var geocoder = new GeocodingService();
@@ -124,14 +128,13 @@ namespace StationManagementSystem.Views.Routes
 
                 lblKhoangCachV.Text = result.distanceKm.ToString("F1");
 
-                MessageBox.Show($"Khoảng cách: {result.distanceKm:F1} km\nThời gian ước tính: {result.durationHours:F1} giờ");
+                //MessageBox.Show($"Khoảng cách: {result.distanceKm:F1} km\nThời gian ước tính: {result.durationHours:F1} giờ");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
-
         private void cbxDiemDi_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxDiemDi.SelectedIndex != cbxDiemDen.SelectedIndex)
@@ -148,6 +151,12 @@ namespace StationManagementSystem.Views.Routes
                 string selectedCity = cbxDiemDen.SelectedItem.ToString();
                 // Xử lý cho ComboBox Cities
             }
+        }
+
+        private void RouteAdd_Load(object sender, EventArgs e)
+        {
+            cbxDiemDi.SelectedIndexChanged += async (s, e) => await CalculateAndShowDistanceAsync();
+            cbxDiemDen.SelectedIndexChanged += async (s, e) => await CalculateAndShowDistanceAsync();
         }
     }
 }

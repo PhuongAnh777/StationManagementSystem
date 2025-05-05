@@ -34,6 +34,7 @@ namespace StationManagementSystem.Views.Transactions
         {
             InitializeComponent();
             _vehicleService = new VehicleService();
+            _ticketIssuanceService = new TicketIssuanceService();
             _ownerService = new OwnerService();
             _originalData = new List<Vehicle>();
         }

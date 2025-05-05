@@ -30,6 +30,7 @@ namespace StationManagementSystem.Views.Transactions
             InitializeComponent();
             _vehicleService = new VehicleService();
             _ownerService = new OwnerService();
+            _ticketIssuanceService = new TicketIssuanceService();
             _originalData = new List<Vehicle>();
         }
         public void OpenChildForm(Form childForm)

@@ -22,7 +22,10 @@ namespace StationManagementSystem.Services
         }
         public async Task<IEnumerable<Itinerary>> GetAllItinerariesAsync()
         {
-            return await _context.Itineraries.ToListAsync();
+            using (var context = new StationContext())
+            {
+                return await context.Itineraries.ToListAsync();
+            }
         }
         //public async Task<IEnumerable<Itinerary>> GetActivetinerariesAsync()
         //{

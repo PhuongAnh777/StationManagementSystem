@@ -151,7 +151,7 @@
             grboxVe.CustomizableEdges = customizableEdges5;
             grboxVe.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grboxVe.ForeColor = Color.Black;
-            grboxVe.Location = new Point(718, 558);
+            grboxVe.Location = new Point(681, 562);
             grboxVe.Name = "grboxVe";
             grboxVe.ShadowDecoration.CustomizableEdges = customizableEdges6;
             grboxVe.Size = new Size(515, 84);
@@ -171,7 +171,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.IndianRed;
-            label2.Location = new Point(364, 626);
+            label2.Location = new Point(327, 630);
             label2.Name = "label2";
             label2.Size = new Size(264, 22);
             label2.TabIndex = 162;
@@ -181,7 +181,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.IndianRed;
-            label1.Location = new Point(718, 362);
+            label1.Location = new Point(681, 366);
             label1.Name = "label1";
             label1.Size = new Size(380, 22);
             label1.TabIndex = 161;
@@ -197,7 +197,7 @@
             btnNgung.FillColor = Color.DarkGray;
             btnNgung.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNgung.ForeColor = Color.White;
-            btnNgung.Location = new Point(620, 685);
+            btnNgung.Location = new Point(583, 689);
             btnNgung.Name = "btnNgung";
             btnNgung.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnNgung.Size = new Size(177, 42);
@@ -215,7 +215,7 @@
             btnOk.FillColor = Color.FromArgb(78, 169, 90);
             btnOk.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnOk.ForeColor = Color.White;
-            btnOk.Location = new Point(437, 685);
+            btnOk.Location = new Point(400, 689);
             btnOk.Name = "btnOk";
             btnOk.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnOk.Size = new Size(177, 42);
@@ -228,7 +228,7 @@
             numNam.BackColor = Color.Transparent;
             numNam.CustomizableEdges = customizableEdges11;
             numNam.Font = new Font("Segoe UI", 9F);
-            numNam.Location = new Point(221, 621);
+            numNam.Location = new Point(184, 625);
             numNam.Margin = new Padding(3, 4, 3, 4);
             numNam.Name = "numNam";
             numNam.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -239,7 +239,7 @@
             // lblNamSanXuat
             // 
             lblNamSanXuat.AutoSize = true;
-            lblNamSanXuat.Location = new Point(51, 626);
+            lblNamSanXuat.Location = new Point(14, 630);
             lblNamSanXuat.Name = "lblNamSanXuat";
             lblNamSanXuat.Size = new Size(115, 22);
             lblNamSanXuat.TabIndex = 156;
@@ -277,7 +277,7 @@
             // 
             pnHeader.Controls.Add(btnExit);
             pnHeader.Controls.Add(lblHeader);
-            pnHeader.Location = new Point(46, 6);
+            pnHeader.Location = new Point(9, 10);
             pnHeader.Name = "pnHeader";
             pnHeader.Size = new Size(1268, 66);
             pnHeader.TabIndex = 155;
@@ -285,7 +285,7 @@
             // lblDenNgay2
             // 
             lblDenNgay2.AutoSize = true;
-            lblDenNgay2.Location = new Point(718, 326);
+            lblDenNgay2.Location = new Point(681, 330);
             lblDenNgay2.Name = "lblDenNgay2";
             lblDenNgay2.Size = new Size(79, 22);
             lblDenNgay2.TabIndex = 154;
@@ -295,7 +295,7 @@
             // 
             lblNote.AutoSize = true;
             lblNote.ForeColor = Color.IndianRed;
-            lblNote.Location = new Point(718, 512);
+            lblNote.Location = new Point(681, 516);
             lblNote.Name = "lblNote";
             lblNote.Size = new Size(380, 22);
             lblNote.TabIndex = 153;
@@ -304,7 +304,7 @@
             // lblDenNgay1
             // 
             lblDenNgay1.AutoSize = true;
-            lblDenNgay1.Location = new Point(718, 470);
+            lblDenNgay1.Location = new Point(681, 474);
             lblDenNgay1.Name = "lblDenNgay1";
             lblDenNgay1.Size = new Size(79, 22);
             lblDenNgay1.TabIndex = 152;
@@ -313,7 +313,7 @@
             // lblTuNgay1
             // 
             lblTuNgay1.AutoSize = true;
-            lblTuNgay1.Location = new Point(221, 470);
+            lblTuNgay1.Location = new Point(184, 474);
             lblTuNgay1.Name = "lblTuNgay1";
             lblTuNgay1.Size = new Size(67, 22);
             lblTuNgay1.TabIndex = 151;
@@ -321,7 +321,7 @@
             // 
             // lblBienBan
             // 
-            lblBienBan.Location = new Point(44, 452);
+            lblBienBan.Location = new Point(7, 456);
             lblBienBan.Name = "lblBienBan";
             lblBienBan.Size = new Size(145, 49);
             lblBienBan.TabIndex = 150;
@@ -330,7 +330,7 @@
             // lblBienSo
             // 
             lblBienSo.AutoSize = true;
-            lblBienSo.Location = new Point(51, 399);
+            lblBienSo.Location = new Point(14, 403);
             lblBienSo.Name = "lblBienSo";
             lblBienSo.Size = new Size(93, 22);
             lblBienSo.TabIndex = 149;
@@ -339,7 +339,7 @@
             // lblKiemDinh
             // 
             lblKiemDinh.AutoSize = true;
-            lblKiemDinh.Location = new Point(48, 326);
+            lblKiemDinh.Location = new Point(11, 330);
             lblKiemDinh.Name = "lblKiemDinh";
             lblKiemDinh.Size = new Size(120, 22);
             lblKiemDinh.TabIndex = 148;
@@ -352,7 +352,7 @@
             DateTimeToBB.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeToBB.Font = new Font("Segoe UI", 9F);
             DateTimeToBB.Format = DateTimePickerFormat.Long;
-            DateTimeToBB.Location = new Point(822, 461);
+            DateTimeToBB.Location = new Point(785, 465);
             DateTimeToBB.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeToBB.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeToBB.Name = "DateTimeToBB";
@@ -368,7 +368,7 @@
             DateTimeFromBB.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFromBB.Font = new Font("Segoe UI", 9F);
             DateTimeFromBB.Format = DateTimePickerFormat.Long;
-            DateTimeFromBB.Location = new Point(316, 461);
+            DateTimeFromBB.Location = new Point(279, 465);
             DateTimeFromBB.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFromBB.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFromBB.Name = "DateTimeFromBB";
@@ -380,7 +380,7 @@
             // lblTuNgay
             // 
             lblTuNgay.AutoSize = true;
-            lblTuNgay.Location = new Point(221, 326);
+            lblTuNgay.Location = new Point(184, 330);
             lblTuNgay.Name = "lblTuNgay";
             lblTuNgay.Size = new Size(67, 22);
             lblTuNgay.TabIndex = 145;
@@ -397,7 +397,7 @@
             tbxBienSo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbxBienSo.Font = new Font("Segoe UI", 9F);
             tbxBienSo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxBienSo.Location = new Point(209, 385);
+            tbxBienSo.Location = new Point(172, 389);
             tbxBienSo.Margin = new Padding(3, 4, 3, 4);
             tbxBienSo.Name = "tbxBienSo";
             tbxBienSo.PlaceholderText = "";
@@ -417,7 +417,7 @@
             tbxDangKyXe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbxDangKyXe.Font = new Font("Segoe UI", 9F);
             tbxDangKyXe.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDangKyXe.Location = new Point(209, 169);
+            tbxDangKyXe.Location = new Point(172, 173);
             tbxDangKyXe.Margin = new Padding(3, 4, 3, 4);
             tbxDangKyXe.Name = "tbxDangKyXe";
             tbxDangKyXe.PlaceholderText = "";
@@ -437,7 +437,7 @@
             cbxNhomXe.Font = new Font("Segoe UI", 10F);
             cbxNhomXe.ForeColor = Color.FromArgb(68, 88, 112);
             cbxNhomXe.ItemHeight = 30;
-            cbxNhomXe.Location = new Point(209, 90);
+            cbxNhomXe.Location = new Point(172, 94);
             cbxNhomXe.Name = "cbxNhomXe";
             cbxNhomXe.ShadowDecoration.CustomizableEdges = customizableEdges24;
             cbxNhomXe.Size = new Size(1105, 36);
@@ -446,7 +446,7 @@
             // lblTaiXe
             // 
             lblTaiXe.AutoSize = true;
-            lblTaiXe.Location = new Point(47, 558);
+            lblTaiXe.Location = new Point(10, 562);
             lblTaiXe.Name = "lblTaiXe";
             lblTaiXe.Size = new Size(121, 22);
             lblTaiXe.TabIndex = 141;
@@ -459,7 +459,7 @@
             DateTimeToKD.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeToKD.Font = new Font("Segoe UI", 9F);
             DateTimeToKD.Format = DateTimePickerFormat.Long;
-            DateTimeToKD.Location = new Point(822, 317);
+            DateTimeToKD.Location = new Point(785, 321);
             DateTimeToKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeToKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeToKD.Name = "DateTimeToKD";
@@ -475,7 +475,7 @@
             DateTimeFromKD.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFromKD.Font = new Font("Segoe UI", 9F);
             DateTimeFromKD.Format = DateTimePickerFormat.Long;
-            DateTimeFromKD.Location = new Point(316, 317);
+            DateTimeFromKD.Location = new Point(279, 321);
             DateTimeFromKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFromKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFromKD.Name = "DateTimeFromKD";
@@ -495,7 +495,7 @@
             tbxBaoHiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbxBaoHiem.Font = new Font("Segoe UI", 9F);
             tbxBaoHiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxBaoHiem.Location = new Point(209, 244);
+            tbxBaoHiem.Location = new Point(172, 248);
             tbxBaoHiem.Margin = new Padding(3, 4, 3, 4);
             tbxBaoHiem.Name = "tbxBaoHiem";
             tbxBaoHiem.PlaceholderText = "";
@@ -507,7 +507,7 @@
             // lblBaoHiem
             // 
             lblBaoHiem.AutoSize = true;
-            lblBaoHiem.Location = new Point(44, 258);
+            lblBaoHiem.Location = new Point(7, 262);
             lblBaoHiem.Name = "lblBaoHiem";
             lblBaoHiem.Size = new Size(141, 22);
             lblBaoHiem.TabIndex = 137;
@@ -516,7 +516,7 @@
             // lblDangKyXe
             // 
             lblDangKyXe.AutoSize = true;
-            lblDangKyXe.Location = new Point(44, 183);
+            lblDangKyXe.Location = new Point(7, 187);
             lblDangKyXe.Name = "lblDangKyXe";
             lblDangKyXe.Size = new Size(98, 22);
             lblDangKyXe.TabIndex = 136;
@@ -525,7 +525,7 @@
             // lblNhomXe
             // 
             lblNhomXe.AutoSize = true;
-            lblNhomXe.Location = new Point(44, 104);
+            lblNhomXe.Location = new Point(7, 108);
             lblNhomXe.Name = "lblNhomXe";
             lblNhomXe.Size = new Size(80, 22);
             lblNhomXe.TabIndex = 135;
@@ -541,7 +541,7 @@
             btnCancle.FillColor = Color.FromArgb(202, 88, 103);
             btnCancle.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancle.ForeColor = Color.White;
-            btnCancle.Location = new Point(803, 685);
+            btnCancle.Location = new Point(766, 689);
             btnCancle.Name = "btnCancle";
             btnCancle.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnCancle.Size = new Size(177, 42);
@@ -560,7 +560,7 @@
             cbxTaiXe.Font = new Font("Segoe UI", 10F);
             cbxTaiXe.ForeColor = Color.FromArgb(68, 88, 112);
             cbxTaiXe.ItemHeight = 30;
-            cbxTaiXe.Location = new Point(209, 544);
+            cbxTaiXe.Location = new Point(172, 548);
             cbxTaiXe.Name = "cbxTaiXe";
             cbxTaiXe.ShadowDecoration.CustomizableEdges = customizableEdges34;
             cbxTaiXe.Size = new Size(503, 36);
@@ -571,7 +571,7 @@
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1358, 733);
+            ClientSize = new Size(1289, 733);
             Controls.Add(cbxTaiXe);
             Controls.Add(btnCancle);
             Controls.Add(grboxVe);

@@ -78,5 +78,10 @@ namespace StationManagementSystem.Views.Home
             var roles = await _roleService.GetRoleByIdAsync(account.RoleID);
             lblVaiTroV.Text = roles.RoleName;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

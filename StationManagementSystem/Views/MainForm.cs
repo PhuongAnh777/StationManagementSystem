@@ -191,7 +191,7 @@ namespace StationManagementSystem.Views
             //var loginform = new LoginForm();
             //loginform.ShowDialog();
 
-            //this.Close();
+            this.Close();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace StationManagementSystem.Views
 
         private async void btnPhieuDangTai_Click(object sender, EventArgs e)
         {
-            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("8764D727-4970-459B-B41D-08DD8B19EED4"));
+            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648"));
             if (respone != null)
             {
                 CreateFormChild(new TicketIssuanceAdd(respone));
@@ -282,10 +282,10 @@ namespace StationManagementSystem.Views
 
         private async void btnTaiKhoanHT_Click(object sender, EventArgs e)
         {
-            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("8764D727-4970-459B-B41D-08DD8B19EED4"));
+            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648"));
             if (respone != null)
             {
-                OpenChildForm(new MyAccount(respone));
+                CreateFormChild(new MyAccount(respone));
             }
         }
     }

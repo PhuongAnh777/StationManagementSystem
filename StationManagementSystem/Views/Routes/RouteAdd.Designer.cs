@@ -38,8 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblHeader = new Label();
             pnHeader = new Panel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
@@ -50,7 +48,6 @@
             cbxDiemDen = new Guna.UI2.WinForms.Guna2ComboBox();
             cbxDiemDi = new Guna.UI2.WinForms.Guna2ComboBox();
             lblKhoangCachV = new Label();
-            btnTimKC = new Guna.UI2.WinForms.Guna2Button();
             btnBoQua = new Guna.UI2.WinForms.Guna2Button();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             pnFooter = new Panel();
@@ -132,7 +129,6 @@
             pnContainer.Controls.Add(cbxDiemDen);
             pnContainer.Controls.Add(cbxDiemDi);
             pnContainer.Controls.Add(lblKhoangCachV);
-            pnContainer.Controls.Add(btnTimKC);
             pnContainer.Controls.Add(lblDiemDen);
             pnContainer.Controls.Add(lblKhoangCach);
             pnContainer.Controls.Add(lblDiemDi);
@@ -187,27 +183,9 @@
             lblKhoangCachV.TabIndex = 25;
             lblKhoangCachV.Text = "Khoảng cách";
             // 
-            // btnTimKC
-            // 
-            btnTimKC.CustomizableEdges = customizableEdges7;
-            btnTimKC.DisabledState.BorderColor = Color.DarkGray;
-            btnTimKC.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTimKC.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTimKC.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTimKC.FillColor = Color.FromArgb(128, 128, 255);
-            btnTimKC.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTimKC.ForeColor = Color.White;
-            btnTimKC.Location = new Point(577, 86);
-            btnTimKC.Name = "btnTimKC";
-            btnTimKC.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnTimKC.Size = new Size(177, 42);
-            btnTimKC.TabIndex = 7;
-            btnTimKC.Text = "Tìm khoảng cách";
-            btnTimKC.Click += btnTimKC_Click;
-            // 
             // btnBoQua
             // 
-            btnBoQua.CustomizableEdges = customizableEdges9;
+            btnBoQua.CustomizableEdges = customizableEdges7;
             btnBoQua.DisabledState.BorderColor = Color.DarkGray;
             btnBoQua.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBoQua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,14 +195,14 @@
             btnBoQua.ForeColor = Color.White;
             btnBoQua.Location = new Point(905, 17);
             btnBoQua.Name = "btnBoQua";
-            btnBoQua.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnBoQua.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBoQua.Size = new Size(177, 42);
             btnBoQua.TabIndex = 6;
             btnBoQua.Text = "Bỏ qua";
             // 
             // btnLuu
             // 
-            btnLuu.CustomizableEdges = customizableEdges11;
+            btnLuu.CustomizableEdges = customizableEdges9;
             btnLuu.DisabledState.BorderColor = Color.DarkGray;
             btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -234,7 +212,7 @@
             btnLuu.ForeColor = Color.White;
             btnLuu.Location = new Point(696, 17);
             btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnLuu.Size = new Size(177, 42);
             btnLuu.TabIndex = 4;
             btnLuu.Text = "Lưu";
@@ -263,6 +241,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "RouteAdd";
             Text = "RouteAdd";
+            Load += RouteAdd_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContainer.ResumeLayout(false);
@@ -293,7 +272,6 @@
         private Guna.UI2.WinForms.Guna2Button btnBoQua;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Panel pnFooter;
-        private Guna.UI2.WinForms.Guna2Button btnTimKC;
         private Label lblKhoangCachV;
         private Guna.UI2.WinForms.Guna2ComboBox cbxDiemDi;
         private Guna.UI2.WinForms.Guna2ComboBox cbxDiemDen;

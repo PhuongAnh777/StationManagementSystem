@@ -273,8 +273,8 @@ namespace StationManagementSystem.Models
                     .HasConstraintName("FK_TicketIssuances_Vehicles");
 
                 entity.HasOne(d => d.Itinerary)
-                    .WithOne(p => p.TicketIssuance)  // Use WithOne instead of WithMany to indicate one-to-one relationship
-                    .HasForeignKey<TicketIssuance>(d => d.ItineraryID)  // Foreign key is still EmployeeID
+                    .WithMany(p => p.TicketIssuances)  // Use WithOne instead of WithMany to indicate one-to-one relationship
+                    .HasForeignKey(d => d.ItineraryID)  // Foreign key is still EmployeeID
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_TicketIssuances_Itineraries");
             });

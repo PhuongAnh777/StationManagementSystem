@@ -93,7 +93,6 @@
             lblDenNgay = new Label();
             lblHoatDong = new Label();
             lblBenCuoi = new Label();
-            tbxBenCuoi = new Guna.UI2.WinForms.Guna2TextBox();
             lblBienSo = new Label();
             lblLoTrinh = new Label();
             lblTuyen = new Label();
@@ -109,6 +108,9 @@
             btnBoQua = new Guna.UI2.WinForms.Guna2Button();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
+            lblBenCuoiV = new Label();
+            tbxNote = new Guna.UI2.WinForms.Guna2TextBox();
+            lblGhiChu = new Label();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numVeNam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numVeNgoi).BeginInit();
@@ -123,7 +125,7 @@
             lblGia.AutoSize = true;
             lblGia.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblGia.ForeColor = Color.IndianRed;
-            lblGia.Location = new Point(397, 789);
+            lblGia.Location = new Point(397, 774);
             lblGia.Name = "lblGia";
             lblGia.Size = new Size(65, 22);
             lblGia.TabIndex = 79;
@@ -132,7 +134,7 @@
             // lblVND
             // 
             lblVND.AutoSize = true;
-            lblVND.Location = new Point(333, 725);
+            lblVND.Location = new Point(333, 710);
             lblVND.Name = "lblVND";
             lblVND.Size = new Size(51, 22);
             lblVND.TabIndex = 77;
@@ -149,7 +151,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges5;
             guna2GroupBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2GroupBox1.ForeColor = Color.Black;
-            guna2GroupBox1.Location = new Point(690, 694);
+            guna2GroupBox1.Location = new Point(690, 679);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2GroupBox1.Size = new Size(279, 133);
@@ -205,7 +207,7 @@
             numHoaHong.BackColor = Color.Transparent;
             numHoaHong.CustomizableEdges = customizableEdges7;
             numHoaHong.Font = new Font("Segoe UI", 9F);
-            numHoaHong.Location = new Point(211, 784);
+            numHoaHong.Location = new Point(211, 769);
             numHoaHong.Margin = new Padding(3, 4, 3, 4);
             numHoaHong.Name = "numHoaHong";
             numHoaHong.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -216,7 +218,7 @@
             // lblHoaHong
             // 
             lblHoaHong.AutoSize = true;
-            lblHoaHong.Location = new Point(47, 789);
+            lblHoaHong.Location = new Point(47, 774);
             lblHoaHong.Name = "lblHoaHong";
             lblHoaHong.Size = new Size(142, 22);
             lblHoaHong.TabIndex = 75;
@@ -227,7 +229,7 @@
             numPhi.BackColor = Color.Transparent;
             numPhi.CustomizableEdges = customizableEdges9;
             numPhi.Font = new Font("Segoe UI", 9F);
-            numPhi.Location = new Point(211, 725);
+            numPhi.Location = new Point(211, 710);
             numPhi.Margin = new Padding(3, 4, 3, 4);
             numPhi.Name = "numPhi";
             numPhi.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -238,7 +240,7 @@
             // lblPhiDichVu
             // 
             lblPhiDichVu.AutoSize = true;
-            lblPhiDichVu.Location = new Point(47, 730);
+            lblPhiDichVu.Location = new Point(47, 715);
             lblPhiDichVu.Name = "lblPhiDichVu";
             lblPhiDichVu.Size = new Size(132, 22);
             lblPhiDichVu.TabIndex = 73;
@@ -255,7 +257,7 @@
             cbxHinhThuc.Font = new Font("Segoe UI", 10F);
             cbxHinhThuc.ForeColor = Color.FromArgb(68, 88, 112);
             cbxHinhThuc.ItemHeight = 30;
-            cbxHinhThuc.Location = new Point(211, 652);
+            cbxHinhThuc.Location = new Point(211, 637);
             cbxHinhThuc.Name = "cbxHinhThuc";
             cbxHinhThuc.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cbxHinhThuc.Size = new Size(1105, 36);
@@ -264,7 +266,7 @@
             // lblHinhThuc
             // 
             lblHinhThuc.AutoSize = true;
-            lblHinhThuc.Location = new Point(46, 666);
+            lblHinhThuc.Location = new Point(46, 651);
             lblHinhThuc.Name = "lblHinhThuc";
             lblHinhThuc.Size = new Size(151, 22);
             lblHinhThuc.TabIndex = 71;
@@ -275,7 +277,7 @@
             numTanSuat.BackColor = Color.Transparent;
             numTanSuat.CustomizableEdges = customizableEdges13;
             numTanSuat.Font = new Font("Segoe UI", 9F);
-            numTanSuat.Location = new Point(211, 523);
+            numTanSuat.Location = new Point(211, 508);
             numTanSuat.Margin = new Padding(3, 4, 3, 4);
             numTanSuat.Name = "numTanSuat";
             numTanSuat.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -294,7 +296,7 @@
             cbxLoTrinh.Font = new Font("Segoe UI", 10F);
             cbxLoTrinh.ForeColor = Color.FromArgb(68, 88, 112);
             cbxLoTrinh.ItemHeight = 30;
-            cbxLoTrinh.Location = new Point(211, 271);
+            cbxLoTrinh.Location = new Point(211, 256);
             cbxLoTrinh.Name = "cbxLoTrinh";
             cbxLoTrinh.ShadowDecoration.CustomizableEdges = customizableEdges16;
             cbxLoTrinh.Size = new Size(1103, 36);
@@ -312,7 +314,7 @@
             cbxHinhThucChay.Font = new Font("Segoe UI", 10F);
             cbxHinhThucChay.ForeColor = Color.FromArgb(68, 88, 112);
             cbxHinhThucChay.ItemHeight = 30;
-            cbxHinhThucChay.Location = new Point(211, 449);
+            cbxHinhThucChay.Location = new Point(211, 434);
             cbxHinhThucChay.Name = "cbxHinhThucChay";
             cbxHinhThucChay.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cbxHinhThucChay.Size = new Size(1105, 36);
@@ -329,7 +331,7 @@
             cbxTuyen.Font = new Font("Segoe UI", 10F);
             cbxTuyen.ForeColor = Color.FromArgb(68, 88, 112);
             cbxTuyen.ItemHeight = 30;
-            cbxTuyen.Location = new Point(211, 207);
+            cbxTuyen.Location = new Point(211, 192);
             cbxTuyen.Name = "cbxTuyen";
             cbxTuyen.ShadowDecoration.CustomizableEdges = customizableEdges20;
             cbxTuyen.Size = new Size(1105, 36);
@@ -339,7 +341,7 @@
             // lblBang
             // 
             lblBang.AutoSize = true;
-            lblBang.Location = new Point(333, 789);
+            lblBang.Location = new Point(333, 774);
             lblBang.Name = "lblBang";
             lblBang.Size = new Size(58, 22);
             lblBang.TabIndex = 78;
@@ -352,7 +354,7 @@
             DateTimeTo.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeTo.Font = new Font("Segoe UI", 9F);
             DateTimeTo.Format = DateTimePickerFormat.Long;
-            DateTimeTo.Location = new Point(822, 390);
+            DateTimeTo.Location = new Point(822, 375);
             DateTimeTo.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeTo.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeTo.Name = "DateTimeTo";
@@ -368,7 +370,7 @@
             DateTimeFrom.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFrom.Font = new Font("Segoe UI", 9F);
             DateTimeFrom.Format = DateTimePickerFormat.Long;
-            DateTimeFrom.Location = new Point(211, 390);
+            DateTimeFrom.Location = new Point(211, 375);
             DateTimeFrom.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFrom.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFrom.Name = "DateTimeFrom";
@@ -380,7 +382,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 597);
+            label1.Location = new Point(47, 582);
             label1.Name = "label1";
             label1.Size = new Size(111, 22);
             label1.TabIndex = 61;
@@ -389,7 +391,7 @@
             // lblChuyenThang
             // 
             lblChuyenThang.AutoSize = true;
-            lblChuyenThang.Location = new Point(333, 528);
+            lblChuyenThang.Location = new Point(333, 513);
             lblChuyenThang.Name = "lblChuyenThang";
             lblChuyenThang.Size = new Size(136, 22);
             lblChuyenThang.TabIndex = 60;
@@ -398,7 +400,7 @@
             // lblTanSuatThang
             // 
             lblTanSuatThang.AutoSize = true;
-            lblTanSuatThang.Location = new Point(47, 530);
+            lblTanSuatThang.Location = new Point(47, 515);
             lblTanSuatThang.Name = "lblTanSuatThang";
             lblTanSuatThang.Size = new Size(122, 22);
             lblTanSuatThang.TabIndex = 59;
@@ -407,7 +409,7 @@
             // lblHinhThucChay
             // 
             lblHinhThucChay.AutoSize = true;
-            lblHinhThucChay.Location = new Point(47, 463);
+            lblHinhThucChay.Location = new Point(47, 448);
             lblHinhThucChay.Name = "lblHinhThucChay";
             lblHinhThucChay.Size = new Size(128, 22);
             lblHinhThucChay.TabIndex = 58;
@@ -416,7 +418,7 @@
             // lblDenNgay
             // 
             lblDenNgay.AutoSize = true;
-            lblDenNgay.Location = new Point(691, 399);
+            lblDenNgay.Location = new Point(691, 384);
             lblDenNgay.Name = "lblDenNgay";
             lblDenNgay.Size = new Size(79, 22);
             lblDenNgay.TabIndex = 57;
@@ -425,7 +427,7 @@
             // lblHoatDong
             // 
             lblHoatDong.AutoSize = true;
-            lblHoatDong.Location = new Point(47, 399);
+            lblHoatDong.Location = new Point(47, 384);
             lblHoatDong.Name = "lblHoatDong";
             lblHoatDong.Size = new Size(112, 22);
             lblHoatDong.TabIndex = 56;
@@ -434,36 +436,16 @@
             // lblBenCuoi
             // 
             lblBenCuoi.AutoSize = true;
-            lblBenCuoi.Location = new Point(46, 343);
+            lblBenCuoi.Location = new Point(46, 328);
             lblBenCuoi.Name = "lblBenCuoi";
             lblBenCuoi.Size = new Size(80, 22);
             lblBenCuoi.TabIndex = 55;
             lblBenCuoi.Text = "Bến cuối";
             // 
-            // tbxBenCuoi
-            // 
-            tbxBenCuoi.CustomizableEdges = customizableEdges25;
-            tbxBenCuoi.DefaultText = "";
-            tbxBenCuoi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxBenCuoi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxBenCuoi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxBenCuoi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxBenCuoi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxBenCuoi.Font = new Font("Segoe UI", 9F);
-            tbxBenCuoi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxBenCuoi.Location = new Point(211, 329);
-            tbxBenCuoi.Margin = new Padding(3, 4, 3, 4);
-            tbxBenCuoi.Name = "tbxBenCuoi";
-            tbxBenCuoi.PlaceholderText = "";
-            tbxBenCuoi.SelectedText = "";
-            tbxBenCuoi.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            tbxBenCuoi.Size = new Size(318, 36);
-            tbxBenCuoi.TabIndex = 54;
-            // 
             // lblBienSo
             // 
             lblBienSo.AutoSize = true;
-            lblBienSo.Location = new Point(49, 163);
+            lblBienSo.Location = new Point(49, 148);
             lblBienSo.Name = "lblBienSo";
             lblBienSo.Size = new Size(70, 22);
             lblBienSo.TabIndex = 52;
@@ -472,7 +454,7 @@
             // lblLoTrinh
             // 
             lblLoTrinh.AutoSize = true;
-            lblLoTrinh.Location = new Point(47, 285);
+            lblLoTrinh.Location = new Point(47, 270);
             lblLoTrinh.Name = "lblLoTrinh";
             lblLoTrinh.Size = new Size(72, 22);
             lblLoTrinh.TabIndex = 51;
@@ -481,7 +463,7 @@
             // lblTuyen
             // 
             lblTuyen.AutoSize = true;
-            lblTuyen.Location = new Point(46, 221);
+            lblTuyen.Location = new Point(46, 206);
             lblTuyen.Name = "lblTuyen";
             lblTuyen.Size = new Size(149, 22);
             lblTuyen.TabIndex = 50;
@@ -490,7 +472,7 @@
             // lblDVVT
             // 
             lblDVVT.AutoSize = true;
-            lblDVVT.Location = new Point(46, 102);
+            lblDVVT.Location = new Point(46, 87);
             lblDVVT.Name = "lblDVVT";
             lblDVVT.Size = new Size(123, 22);
             lblDVVT.TabIndex = 48;
@@ -500,14 +482,14 @@
             // 
             pnHeader.Controls.Add(btnExit);
             pnHeader.Controls.Add(lblHeader);
-            pnHeader.Location = new Point(46, 3);
+            pnHeader.Location = new Point(46, 1);
             pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(1268, 66);
+            pnHeader.Size = new Size(1268, 50);
             pnHeader.TabIndex = 126;
             // 
             // btnExit
             // 
-            btnExit.CustomizableEdges = customizableEdges27;
+            btnExit.CustomizableEdges = customizableEdges25;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -518,16 +500,17 @@
             btnExit.ForeColor = Color.Silver;
             btnExit.Location = new Point(1209, 3);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
             // 
             // lblHeader
             // 
             lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHeader.Location = new Point(16, 9);
+            lblHeader.Location = new Point(19, 6);
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new Size(253, 35);
             lblHeader.TabIndex = 0;
@@ -536,7 +519,7 @@
             // cbxBienSo
             // 
             cbxBienSo.BackColor = Color.Transparent;
-            cbxBienSo.CustomizableEdges = customizableEdges29;
+            cbxBienSo.CustomizableEdges = customizableEdges27;
             cbxBienSo.DrawMode = DrawMode.OwnerDrawFixed;
             cbxBienSo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxBienSo.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -544,9 +527,9 @@
             cbxBienSo.Font = new Font("Segoe UI", 10F);
             cbxBienSo.ForeColor = Color.FromArgb(68, 88, 112);
             cbxBienSo.ItemHeight = 30;
-            cbxBienSo.Location = new Point(211, 149);
+            cbxBienSo.Location = new Point(211, 134);
             cbxBienSo.Name = "cbxBienSo";
-            cbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            cbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges28;
             cbxBienSo.Size = new Size(436, 36);
             cbxBienSo.TabIndex = 127;
             cbxBienSo.SelectedIndexChanged += cbxBienSo_SelectedIndexChanged;
@@ -554,7 +537,7 @@
             // cbXDVVT
             // 
             cbXDVVT.BackColor = Color.Transparent;
-            cbXDVVT.CustomizableEdges = customizableEdges31;
+            cbXDVVT.CustomizableEdges = customizableEdges29;
             cbXDVVT.DrawMode = DrawMode.OwnerDrawFixed;
             cbXDVVT.DropDownStyle = ComboBoxStyle.DropDownList;
             cbXDVVT.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -562,9 +545,9 @@
             cbXDVVT.Font = new Font("Segoe UI", 10F);
             cbXDVVT.ForeColor = Color.FromArgb(68, 88, 112);
             cbXDVVT.ItemHeight = 30;
-            cbXDVVT.Location = new Point(211, 88);
+            cbXDVVT.Location = new Point(211, 73);
             cbXDVVT.Name = "cbXDVVT";
-            cbXDVVT.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            cbXDVVT.ShadowDecoration.CustomizableEdges = customizableEdges30;
             cbXDVVT.Size = new Size(1105, 36);
             cbXDVVT.TabIndex = 128;
             cbXDVVT.SelectedIndexChanged += cbXDVVT_SelectedIndexChanged;
@@ -574,7 +557,7 @@
             lblNote.AutoSize = true;
             lblNote.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblNote.ForeColor = Color.IndianRed;
-            lblNote.Location = new Point(680, 163);
+            lblNote.Location = new Point(680, 148);
             lblNote.Name = "lblNote";
             lblNote.Size = new Size(289, 22);
             lblNote.TabIndex = 129;
@@ -585,7 +568,7 @@
             lblNote1.AutoSize = true;
             lblNote1.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblNote1.ForeColor = Color.IndianRed;
-            lblNote1.Location = new Point(927, 329);
+            lblNote1.Location = new Point(927, 314);
             lblNote1.Name = "lblNote1";
             lblNote1.Size = new Size(221, 22);
             lblNote1.TabIndex = 130;
@@ -594,15 +577,15 @@
             // DateTimeXuatBen
             // 
             DateTimeXuatBen.Checked = true;
-            DateTimeXuatBen.CustomizableEdges = customizableEdges33;
+            DateTimeXuatBen.CustomizableEdges = customizableEdges31;
             DateTimeXuatBen.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeXuatBen.Font = new Font("Segoe UI", 9F);
             DateTimeXuatBen.Format = DateTimePickerFormat.Time;
-            DateTimeXuatBen.Location = new Point(211, 588);
+            DateTimeXuatBen.Location = new Point(211, 573);
             DateTimeXuatBen.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeXuatBen.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeXuatBen.Name = "DateTimeXuatBen";
-            DateTimeXuatBen.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            DateTimeXuatBen.ShadowDecoration.CustomizableEdges = customizableEdges32;
             DateTimeXuatBen.ShowUpDown = true;
             DateTimeXuatBen.Size = new Size(229, 31);
             DateTimeXuatBen.TabIndex = 131;
@@ -610,7 +593,7 @@
             // 
             // btnBoQua
             // 
-            btnBoQua.CustomizableEdges = customizableEdges35;
+            btnBoQua.CustomizableEdges = customizableEdges33;
             btnBoQua.DisabledState.BorderColor = Color.DarkGray;
             btnBoQua.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBoQua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -618,16 +601,16 @@
             btnBoQua.FillColor = Color.DarkGray;
             btnBoQua.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBoQua.ForeColor = Color.White;
-            btnBoQua.Location = new Point(644, 833);
+            btnBoQua.Location = new Point(644, 818);
             btnBoQua.Name = "btnBoQua";
-            btnBoQua.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            btnBoQua.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnBoQua.Size = new Size(177, 42);
             btnBoQua.TabIndex = 133;
             btnBoQua.Text = "Bỏ qua";
             // 
             // btnLuu
             // 
-            btnLuu.CustomizableEdges = customizableEdges37;
+            btnLuu.CustomizableEdges = customizableEdges35;
             btnLuu.DisabledState.BorderColor = Color.DarkGray;
             btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -635,9 +618,9 @@
             btnLuu.FillColor = Color.FromArgb(78, 169, 90);
             btnLuu.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(432, 833);
+            btnLuu.Location = new Point(432, 818);
             btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnLuu.Size = new Size(177, 42);
             btnLuu.TabIndex = 132;
             btnLuu.Text = "Lưu";
@@ -648,11 +631,54 @@
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.IndianRed;
-            label2.Location = new Point(600, 528);
+            label2.Location = new Point(211, 548);
             label2.Name = "label2";
             label2.Size = new Size(440, 22);
             label2.TabIndex = 134;
             label2.Text = "Nếu hình thức chạy là ngày thì tần suất tháng bằng 0";
+            // 
+            // lblBenCuoiV
+            // 
+            lblBenCuoiV.AutoSize = true;
+            lblBenCuoiV.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBenCuoiV.Location = new Point(220, 328);
+            lblBenCuoiV.Name = "lblBenCuoiV";
+            lblBenCuoiV.Size = new Size(85, 23);
+            lblBenCuoiV.TabIndex = 135;
+            lblBenCuoiV.Text = "đến ngày";
+            // 
+            // tbxNote
+            // 
+            tbxNote.BorderColor = Color.FromArgb(224, 224, 224);
+            tbxNote.BorderRadius = 1;
+            tbxNote.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            tbxNote.CustomizableEdges = customizableEdges37;
+            tbxNote.DefaultText = "";
+            tbxNote.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxNote.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxNote.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxNote.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxNote.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxNote.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxNote.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxNote.Location = new Point(822, 477);
+            tbxNote.Margin = new Padding(4);
+            tbxNote.Multiline = true;
+            tbxNote.Name = "tbxNote";
+            tbxNote.PlaceholderText = "";
+            tbxNote.SelectedText = "";
+            tbxNote.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            tbxNote.Size = new Size(494, 138);
+            tbxNote.TabIndex = 136;
+            // 
+            // lblGhiChu
+            // 
+            lblGhiChu.AutoSize = true;
+            lblGhiChu.Location = new Point(698, 492);
+            lblGhiChu.Name = "lblGhiChu";
+            lblGhiChu.Size = new Size(72, 22);
+            lblGhiChu.TabIndex = 137;
+            lblGhiChu.Text = "Ghi chú";
             // 
             // TicketIssuanceAdd
             // 
@@ -660,6 +686,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1362, 878);
+            Controls.Add(lblGhiChu);
+            Controls.Add(tbxNote);
+            Controls.Add(lblBenCuoiV);
             Controls.Add(label2);
             Controls.Add(btnBoQua);
             Controls.Add(btnLuu);
@@ -692,7 +721,6 @@
             Controls.Add(lblDenNgay);
             Controls.Add(lblHoatDong);
             Controls.Add(lblBenCuoi);
-            Controls.Add(tbxBenCuoi);
             Controls.Add(lblBienSo);
             Controls.Add(lblLoTrinh);
             Controls.Add(lblTuyen);
@@ -745,7 +773,6 @@
         private Label lblDenNgay;
         private Label lblHoatDong;
         private Label lblBenCuoi;
-        private Guna.UI2.WinForms.Guna2TextBox tbxBenCuoi;
         private Label lblBienSo;
         private Label lblLoTrinh;
         private Label lblTuyen;
@@ -761,5 +788,8 @@
         private Guna.UI2.WinForms.Guna2Button btnBoQua;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Label label2;
+        private Label lblBenCuoiV;
+        private Guna.UI2.WinForms.Guna2TextBox tbxNote;
+        private Label lblGhiChu;
     }
 }

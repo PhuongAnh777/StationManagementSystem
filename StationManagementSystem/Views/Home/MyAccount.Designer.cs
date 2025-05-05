@@ -37,24 +37,24 @@
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             lblTenDangNhap = new Label();
             grTaiKhoan = new Guna.UI2.WinForms.Guna2GroupBox();
+            lblTenDangNhapV = new Label();
+            lblMatKhauV = new Label();
+            lblVaiTroV = new Label();
             lblVaiTro = new Label();
             lblPass = new Label();
             lblNgaySinh = new Label();
             lblDiaChi = new Label();
             lblEmail = new Label();
             pnContainer = new Panel();
+            lblNgaySinhV = new Label();
+            lblDiaChiV = new Label();
+            lblEmailV = new Label();
+            lblSoDienThoaiV = new Label();
+            lblGioiTinhV = new Label();
+            tbxTenNhanVien = new Label();
             lblSoDienThoai = new Label();
             lblGioiTinh = new Label();
             lblTenNhanVien = new Label();
-            tbxTenNhanVien = new Label();
-            lblGioiTinhV = new Label();
-            lblSoDienThoaiV = new Label();
-            lblEmailV = new Label();
-            lblDiaChiV = new Label();
-            lblNgaySinhV = new Label();
-            lblTenDangNhapV = new Label();
-            lblMatKhauV = new Label();
-            lblVaiTroV = new Label();
             pnHeader.SuspendLayout();
             grTaiKhoan.SuspendLayout();
             pnContainer.SuspendLayout();
@@ -96,6 +96,7 @@
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
             // 
             // lblTenDangNhap
             // 
@@ -126,6 +127,33 @@
             grTaiKhoan.Size = new Size(1060, 179);
             grTaiKhoan.TabIndex = 135;
             grTaiKhoan.Text = "Tài khoản";
+            // 
+            // lblTenDangNhapV
+            // 
+            lblTenDangNhapV.AutoSize = true;
+            lblTenDangNhapV.Location = new Point(183, 58);
+            lblTenDangNhapV.Name = "lblTenDangNhapV";
+            lblTenDangNhapV.Size = new Size(108, 22);
+            lblTenDangNhapV.TabIndex = 149;
+            lblTenDangNhapV.Text = "lblNgaySinh";
+            // 
+            // lblMatKhauV
+            // 
+            lblMatKhauV.AutoSize = true;
+            lblMatKhauV.Location = new Point(183, 134);
+            lblMatKhauV.Name = "lblMatKhauV";
+            lblMatKhauV.Size = new Size(108, 22);
+            lblMatKhauV.TabIndex = 150;
+            lblMatKhauV.Text = "lblNgaySinh";
+            // 
+            // lblVaiTroV
+            // 
+            lblVaiTroV.AutoSize = true;
+            lblVaiTroV.Location = new Point(688, 58);
+            lblVaiTroV.Name = "lblVaiTroV";
+            lblVaiTroV.Size = new Size(108, 22);
+            lblVaiTroV.TabIndex = 151;
+            lblVaiTroV.Text = "lblNgaySinh";
             // 
             // lblVaiTro
             // 
@@ -198,6 +226,59 @@
             pnContainer.Size = new Size(1091, 455);
             pnContainer.TabIndex = 10;
             // 
+            // lblNgaySinhV
+            // 
+            lblNgaySinhV.AutoSize = true;
+            lblNgaySinhV.Location = new Point(708, 185);
+            lblNgaySinhV.Name = "lblNgaySinhV";
+            lblNgaySinhV.Size = new Size(108, 22);
+            lblNgaySinhV.TabIndex = 148;
+            lblNgaySinhV.Text = "lblNgaySinh";
+            // 
+            // lblDiaChiV
+            // 
+            lblDiaChiV.AutoSize = true;
+            lblDiaChiV.Location = new Point(708, 104);
+            lblDiaChiV.Name = "lblDiaChiV";
+            lblDiaChiV.Size = new Size(31, 22);
+            lblDiaChiV.TabIndex = 147;
+            lblDiaChiV.Text = "từ ";
+            // 
+            // lblEmailV
+            // 
+            lblEmailV.AutoSize = true;
+            lblEmailV.Location = new Point(708, 25);
+            lblEmailV.Name = "lblEmailV";
+            lblEmailV.Size = new Size(31, 22);
+            lblEmailV.TabIndex = 146;
+            lblEmailV.Text = "từ ";
+            // 
+            // lblSoDienThoaiV
+            // 
+            lblSoDienThoaiV.AutoSize = true;
+            lblSoDienThoaiV.Location = new Point(193, 192);
+            lblSoDienThoaiV.Name = "lblSoDienThoaiV";
+            lblSoDienThoaiV.Size = new Size(31, 22);
+            lblSoDienThoaiV.TabIndex = 145;
+            lblSoDienThoaiV.Text = "từ ";
+            // 
+            // lblGioiTinhV
+            // 
+            lblGioiTinhV.AutoSize = true;
+            lblGioiTinhV.Location = new Point(189, 101);
+            lblGioiTinhV.Name = "lblGioiTinhV";
+            lblGioiTinhV.Size = new Size(0, 22);
+            lblGioiTinhV.TabIndex = 144;
+            // 
+            // tbxTenNhanVien
+            // 
+            tbxTenNhanVien.AutoSize = true;
+            tbxTenNhanVien.Location = new Point(189, 25);
+            tbxTenNhanVien.Name = "tbxTenNhanVien";
+            tbxTenNhanVien.Size = new Size(31, 22);
+            tbxTenNhanVien.TabIndex = 143;
+            tbxTenNhanVien.Text = "từ ";
+            // 
             // lblSoDienThoai
             // 
             lblSoDienThoai.AutoSize = true;
@@ -227,86 +308,6 @@
             lblTenNhanVien.Size = new Size(152, 25);
             lblTenNhanVien.TabIndex = 0;
             lblTenNhanVien.Text = "Tên nhân viên";
-            // 
-            // tbxTenNhanVien
-            // 
-            tbxTenNhanVien.AutoSize = true;
-            tbxTenNhanVien.Location = new Point(189, 25);
-            tbxTenNhanVien.Name = "tbxTenNhanVien";
-            tbxTenNhanVien.Size = new Size(31, 22);
-            tbxTenNhanVien.TabIndex = 143;
-            tbxTenNhanVien.Text = "từ ";
-            // 
-            // lblGioiTinhV
-            // 
-            lblGioiTinhV.AutoSize = true;
-            lblGioiTinhV.Location = new Point(189, 101);
-            lblGioiTinhV.Name = "lblGioiTinhV";
-            lblGioiTinhV.Size = new Size(0, 22);
-            lblGioiTinhV.TabIndex = 144;
-            // 
-            // lblSoDienThoaiV
-            // 
-            lblSoDienThoaiV.AutoSize = true;
-            lblSoDienThoaiV.Location = new Point(193, 192);
-            lblSoDienThoaiV.Name = "lblSoDienThoaiV";
-            lblSoDienThoaiV.Size = new Size(31, 22);
-            lblSoDienThoaiV.TabIndex = 145;
-            lblSoDienThoaiV.Text = "từ ";
-            // 
-            // lblEmailV
-            // 
-            lblEmailV.AutoSize = true;
-            lblEmailV.Location = new Point(708, 25);
-            lblEmailV.Name = "lblEmailV";
-            lblEmailV.Size = new Size(31, 22);
-            lblEmailV.TabIndex = 146;
-            lblEmailV.Text = "từ ";
-            // 
-            // lblDiaChiV
-            // 
-            lblDiaChiV.AutoSize = true;
-            lblDiaChiV.Location = new Point(708, 104);
-            lblDiaChiV.Name = "lblDiaChiV";
-            lblDiaChiV.Size = new Size(31, 22);
-            lblDiaChiV.TabIndex = 147;
-            lblDiaChiV.Text = "từ ";
-            // 
-            // lblNgaySinhV
-            // 
-            lblNgaySinhV.AutoSize = true;
-            lblNgaySinhV.Location = new Point(708, 185);
-            lblNgaySinhV.Name = "lblNgaySinhV";
-            lblNgaySinhV.Size = new Size(108, 22);
-            lblNgaySinhV.TabIndex = 148;
-            lblNgaySinhV.Text = "lblNgaySinh";
-            // 
-            // lblTenDangNhapV
-            // 
-            lblTenDangNhapV.AutoSize = true;
-            lblTenDangNhapV.Location = new Point(183, 58);
-            lblTenDangNhapV.Name = "lblTenDangNhapV";
-            lblTenDangNhapV.Size = new Size(108, 22);
-            lblTenDangNhapV.TabIndex = 149;
-            lblTenDangNhapV.Text = "lblNgaySinh";
-            // 
-            // lblMatKhauV
-            // 
-            lblMatKhauV.AutoSize = true;
-            lblMatKhauV.Location = new Point(183, 134);
-            lblMatKhauV.Name = "lblMatKhauV";
-            lblMatKhauV.Size = new Size(108, 22);
-            lblMatKhauV.TabIndex = 150;
-            lblMatKhauV.Text = "lblNgaySinh";
-            // 
-            // lblVaiTroV
-            // 
-            lblVaiTroV.AutoSize = true;
-            lblVaiTroV.Location = new Point(688, 58);
-            lblVaiTroV.Name = "lblVaiTroV";
-            lblVaiTroV.Size = new Size(108, 22);
-            lblVaiTroV.TabIndex = 151;
-            lblVaiTroV.Text = "lblNgaySinh";
             // 
             // MyAccount
             // 
