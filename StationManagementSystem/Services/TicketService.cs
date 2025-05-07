@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using StationManagementSystem.DTO.Ticket;
 using StationManagementSystem.DTO.Vehicle;
 using StationManagementSystem.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using StationManagementSystem.Views.Employees;
 
 namespace StationManagementSystem.Services
 {
@@ -16,6 +19,25 @@ namespace StationManagementSystem.Services
         {
             _context = new StationContext();
         }
+        public async Task<IEnumerable<Ticket>> GetAllTicketsAsync()
+        {
+            return await _context.Tickets.ToListAsync();
+        }
+        public async Task<List<TicketDetail>> GetTicketDetailsByTicketIdAsync(Guid ticketId)
+        {
+            var ticket = await _context.Tickets
+                                       .Include(t => t.TicketDetails)
+                                       .FirstOrDefaultAsync(t => t.TicketID == ticketId);
+
+            return ticket?.TicketDetails.ToList() ?? new List<TicketDetail>();
+        }
+
+        public async Task<Ticket> GetTicketByIdAsync(Guid ticketID)
+        {
+            return await _context.Tickets
+                .FirstOrDefaultAsync(t => t.TicketID == ticketID);
+        }
+
         public float GetTicketPrice_Sit()
         {
             var ticket = _context.Tickets
@@ -44,6 +66,27 @@ namespace StationManagementSystem.Services
 
             await _context.SaveChangesAsync();
             return ticket;
+        }
+        public async Task<TicketDetail> CreateTicketDetailAsync(TicketDetailCreateDto ticketDto)
+        {
+            var ticket = await _context.Tickets
+                           .Include(t => t.TicketDetails)
+                           .FirstOrDefaultAsync(t => t.TicketID == ticketDto.TicketID);
+
+
+            var newDetail = new TicketDetail
+            {
+                EmployeeID = ticketDto.EmployeeID,
+                TicketID = ticketDto.TicketID,
+                Status = ticketDto.Status,
+
+                // TicketID không cần set vì EF sẽ gán khi thêm vào Ticket.TicketDetails
+            };
+
+            ticket.TicketDetails.Add(newDetail);
+
+            await _context.SaveChangesAsync();
+            return newDetail;
         }
     }
 }

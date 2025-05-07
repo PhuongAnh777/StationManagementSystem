@@ -29,8 +29,8 @@ namespace StationManagementSystem.Services
         {
             var invoice = new Invoice
             {
-                InvoiceDate = employeeDto.InvoiceDate,
-                PaymentStatus = employeeDto.PaymentStatus,
+                InvoiceDate = DateTime.Now,
+                PaymentStatus = "active",
                 Amount = employeeDto.Amount,
                 SeatTicket = employeeDto.SeatTicket,
                 SleeperTicket = employeeDto.SleeperTicket,

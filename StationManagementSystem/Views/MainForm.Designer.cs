@@ -480,7 +480,7 @@
             pnXe.Controls.Add(btnXeCheck);
             pnXe.Location = new Point(606, 0);
             pnXe.Name = "pnXe";
-            pnXe.Size = new Size(277, 168);
+            pnXe.Size = new Size(298, 168);
             pnXe.TabIndex = 1;
             pnXe.Visible = false;
             // 
@@ -500,9 +500,9 @@
             btnXeAparture.Location = new Point(5, 116);
             btnXeAparture.Name = "btnXeAparture";
             btnXeAparture.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            btnXeAparture.Size = new Size(227, 49);
+            btnXeAparture.Size = new Size(280, 49);
             btnXeAparture.TabIndex = 12;
-            btnXeAparture.Text = "DS xe đã xuất bến";
+            btnXeAparture.Text = "DS xe được phép xuất bến";
             btnXeAparture.Click += btnXeAparture_Click;
             // 
             // btnXeChecked

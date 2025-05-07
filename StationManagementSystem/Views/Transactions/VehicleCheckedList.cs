@@ -187,7 +187,23 @@ namespace StationManagementSystem.Views.Transactions
 
             if (response != null)
             {
-                //OpenChildForm(new Payment(response));
+                var confirmResult = MessageBox.Show("Bạn có chắc kết thúc phiên bán vé của phương tiện?",
+                                                   "Xác nhận hủy",
+                                                   MessageBoxButtons.YesNo,
+                                                   MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    var respone1 = await _ticketIssuanceService.UpdateTicketIssuancesNotesAsync(response.IssuanceID);
+
+                    if (respone1 != null)
+                    {
+                        MessageBox.Show($"Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
             else
             {

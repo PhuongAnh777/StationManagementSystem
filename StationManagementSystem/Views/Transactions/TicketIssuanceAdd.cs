@@ -232,15 +232,6 @@ namespace StationManagementSystem.Views.Transactions
             _ticketIssuanceDto.SeatTicket = (int)numVeNgoi.Value;
             _ticketIssuanceDto.SleeperTicket = (int)numVeNam.Value;
 
-            if (tbxNote.Text == string.Empty)
-            {
-                _ticketIssuanceDto.Notes = "Done";
-            }
-            else
-            {
-                _ticketIssuanceDto.Notes = tbxNote.Text;
-            }
-
             if (cbxLoTrinh.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn lộ trình", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -321,23 +312,21 @@ namespace StationManagementSystem.Views.Transactions
             if (respone != null)
             {
                 MessageBox.Show($"Thêm thành công! {respone.IssuanceID}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
-            if (!(string.IsNullOrEmpty(tbxGiaNgoi.Text)) || !(string.IsNullOrEmpty(tbxGiaNam.Text)))
-            {
-                _ticketCreateDto.IssuanceID = respone.IssuanceID;
-
-                var responeTicket = await _ticketService.CreateTicketAsync(_ticketCreateDto);
-                if (responeTicket != null)
+                if (!(string.IsNullOrEmpty(tbxGiaNgoi.Text)) || !(string.IsNullOrEmpty(tbxGiaNam.Text)))
                 {
-                    MessageBox.Show($"Thêm thành công! {respone.IssuanceID}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ticketCreateDto.IssuanceID = respone.IssuanceID;
+
+                    var responeTicket = await _ticketService.CreateTicketAsync(_ticketCreateDto);
+                    if (responeTicket != null)
+                    {
+                        MessageBox.Show($"Thêm thành công! {respone.IssuanceID}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             
-            
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

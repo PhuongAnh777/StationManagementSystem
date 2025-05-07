@@ -8,8 +8,8 @@ namespace StationManagementSystem.DTO.Invoice
 {
     public class InvoiceCreateDto
     {
-        public DateTime InvoiceDate { get; set; } // DateTime
-        public string PaymentStatus { get; set; } // NVARCHAR(25)
+        //public DateTime InvoiceDate { get; set; } // DateTime
+        //public string PaymentStatus { get; set; } // NVARCHAR(25)
         public float Amount { get; set; } // FLOAT
 
         public int SeatTicket { get; set; } // INT

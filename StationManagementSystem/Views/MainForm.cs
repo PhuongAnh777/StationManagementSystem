@@ -213,7 +213,7 @@ namespace StationManagementSystem.Views
 
         private void btnLenhXuatBen_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new VehicleDepartureList());
+            //CreateFormChild(new VehicleDepartureList());
         }
 
         private async void btnPhieuDangTai_Click(object sender, EventArgs e)
@@ -232,7 +232,7 @@ namespace StationManagementSystem.Views
 
         private void btnDSXe_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new SellTicket());
+            CreateFormChild(new SellTicket(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648")));
         }
 
         private void btnChuXe_Click(object sender, EventArgs e)
@@ -260,9 +260,13 @@ namespace StationManagementSystem.Views
             CreateFormChild(new VehicleCheckedList());
         }
 
-        private void btnXeAparture_Click(object sender, EventArgs e)
+        private async void btnXeAparture_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new VehicleDepartureList());
+            var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648"));
+            if (respone != null)
+            {
+                CreateFormChild(new VehicleDepartureList(respone));
+            }
         }
 
         private void btnTuyenDuong_Click(object sender, EventArgs e)

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using StationManagementSystem.DTO.Route;
 using StationManagementSystem.DTO.Ticket;
 using StationManagementSystem.Services;
+using StationManagementSystem.Views.Partners;
 
 namespace StationManagementSystem.Views.SellTickets
 {
@@ -21,6 +22,7 @@ namespace StationManagementSystem.Views.SellTickets
         private readonly RouteService _routeService;
         private readonly ItineraryService _itineraryService;
         private readonly TicketService _ticketService;
+        private readonly Guid _employeeID;
         public SellTicket()
         {
             InitializeComponent();
@@ -33,7 +35,40 @@ namespace StationManagementSystem.Views.SellTickets
 
             LoadSellTicket();
         }
-        private async void LoadSellTicket()
+        public SellTicket(Guid employeeID)
+        {
+            InitializeComponent();
+            _ticketIssuanceService = new TicketIssuanceService();
+            _ownerService = new OwnerService();
+            _vehicleService = new VehicleService();
+            _routeService = new RouteService();
+            _itineraryService = new ItineraryService();
+            _ticketService = new TicketService();
+
+            _employeeID = employeeID;
+
+            LoadSellTicket();
+        }
+        public void OpenChildForm(Form childForm)
+        {
+            //Đặt vị trí xuất hiện của form con là chính giữa màn hình
+            childForm.StartPosition = FormStartPosition.Manual; // Đặt chế độ thủ công
+            var screen = Screen.FromControl(this).WorkingArea; // Lấy kích thước màn hình làm tham chiếu
+            childForm.Location = new Point(
+                screen.X + (screen.Width - childForm.Width) / 2,
+                screen.Y + (screen.Height - childForm.Height) / 2
+            );
+
+            //Làm mờ form chính
+            this.Opacity = 0.1;
+
+            // Hiển thị form con dưới dạng modal
+            childForm.ShowDialog();
+
+            // Khôi phục độ trong suốt của form chính
+            this.Opacity = 1.0;
+        }
+        private async Task LoadSellTicket()
         {
             var routes = await _routeService.GetAllRoutesAsync();
 
@@ -47,8 +82,6 @@ namespace StationManagementSystem.Views.SellTickets
             cbxTuyen.SelectedIndex = -1;
 
             cbxLoTrinh.Enabled = false;
-
-
         }
 
         private async void cbxTuyen_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,7 +135,8 @@ namespace StationManagementSystem.Views.SellTickets
                 RemainingSeats = v.RemainingSeats,
                 TotalSeats = v.TotalSeats,
                 CompanyName = v.CompanyName,
-                LicensePlate = v.LicensePlate
+                LicensePlate = v.LicensePlate,
+                TicketIDs = v.TicketIDs
             }).ToList();
 
             DisplayTickets(displayTickets);
@@ -123,8 +157,10 @@ namespace StationManagementSystem.Views.SellTickets
                     BorderStyle = BorderStyle.FixedSingle,
                     Width = 200,
                     Height = 120,
-                    BackColor = Color.White
+                    BackColor = Color.White,
+
                 };
+                
 
                 var label = new Label
                 {
@@ -134,8 +170,12 @@ namespace StationManagementSystem.Views.SellTickets
                     Dock = DockStyle.Fill,
                     Font = new Font("Segoe UI", 10, FontStyle.Regular)
                 };
+                // Gắn sự kiện Click cho cả panel và label
+                panel.Click += (s, e) => Panel_Click(s, e);
+                label.Click += (s, e) => Panel_Click(s, e);
 
                 panel.Controls.Add(label);
+                panel.Tag = ticket;
 
                 tblTickets.Controls.Add(panel, column, row);
 
@@ -146,6 +186,31 @@ namespace StationManagementSystem.Views.SellTickets
                     row++;
                     tblTickets.RowCount++;
                     tblTickets.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+            }
+        }
+        private async void Panel_Click(object sender, EventArgs e)
+        {
+            Control clickedControl = sender as Control;
+            Panel panel = clickedControl as Panel ?? clickedControl.Parent as Panel;
+
+            if (panel != null)
+            {
+                var ticket = panel.Tag as TicketDisplayItem;
+                if (ticket != null)
+                {
+                    //MessageBox.Show("Panel clicked!.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (ticket.RemainingSeats == 0)
+                    {
+                        MessageBox.Show("Vé đã hết chỗ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    OpenChildForm(new SellAdd(ticket, cbxTuyen.Text, cbxLoTrinh.Text, _employeeID));
+                    await LoadSellTicket();
+                }
+                else
+                {
+                    MessageBox.Show("Panel not clicked!.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

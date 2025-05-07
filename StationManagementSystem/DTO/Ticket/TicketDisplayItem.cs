@@ -13,5 +13,6 @@ namespace StationManagementSystem.DTO.Ticket
         public int TotalSeats { get; set; }
         public string CompanyName { get; set; }
         public string LicensePlate { get; set; }
+        public List<Guid> TicketIDs { get; set; }
     }
 }

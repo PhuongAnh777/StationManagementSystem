@@ -125,6 +125,8 @@
             gridView.ThemeStyle.RowsStyle.Height = 29;
             gridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             gridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            gridView.CellContentClick += gridView_CellContentClick;
+            gridView.ColumnHeaderMouseClick += gridView_ColumnHeaderMouseClick;
             // 
             // pnFooter
             // 
@@ -177,6 +179,7 @@
             btnSau.Size = new Size(81, 44);
             btnSau.TabIndex = 1;
             btnSau.Text = "Sau";
+            btnSau.Click += btnSau_Click;
             // 
             // btnTruoc
             // 
@@ -199,6 +202,7 @@
             btnTruoc.Size = new Size(81, 44);
             btnTruoc.TabIndex = 0;
             btnTruoc.Text = "Trước";
+            btnTruoc.Click += btnTruoc_Click;
             // 
             // pnHeader
             // 
@@ -274,13 +278,13 @@
             tbxSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbxSearch.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbxSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxSearch.Location = new Point(321, 4);
+            tbxSearch.Location = new Point(430, 4);
             tbxSearch.Margin = new Padding(4);
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Theo mã, tên, số điện thoại";
             tbxSearch.SelectedText = "";
             tbxSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tbxSearch.Size = new Size(343, 42);
+            tbxSearch.Size = new Size(277, 42);
             tbxSearch.TabIndex = 1;
             // 
             // lblHeader
@@ -289,9 +293,9 @@
             lblHeader.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHeader.Location = new Point(4, 8);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(321, 32);
+            lblHeader.Size = new Size(419, 32);
             lblHeader.TabIndex = 0;
-            lblHeader.Text = "Danh sách xe đã xuất bến";
+            lblHeader.Text = "Danh sách xe được phép xuất bến";
             // 
             // VehicleDepartureList
             // 
@@ -307,6 +311,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "VehicleDepartureList";
             Text = "VehicleDepartureList";
+            Load += VehicleDepartureList_Load;
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             pnFooter.ResumeLayout(false);
             pnFooter.PerformLayout();
