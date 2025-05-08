@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace StationManagementSystem.Views.Transactions
         private readonly VehicleService _vehicleService;
         private readonly OwnerService _ownerService;
         private readonly TicketIssuanceService _ticketIssuanceService;
+        private readonly InvoiceService _invoiceService;
 
         //private VehicleCreateDto _vehicleDto;
         private List<Vehicle> _originalData; // Dữ liệu gốc
@@ -34,6 +36,8 @@ namespace StationManagementSystem.Views.Transactions
             _ticketIssuanceService = new TicketIssuanceService();
             _ownerService = new OwnerService();
             _originalData = new List<Vehicle>();
+            _invoiceService = new InvoiceService();
+
             _employee = employee;
         }
         public void OpenChildForm(Form childForm)
@@ -190,6 +194,8 @@ namespace StationManagementSystem.Views.Transactions
 
             if (response != null)
             {
+                //var invoice = _invoiceService.GetInvoiceByVehicleIdAsync(response.InvoiceID);
+
                 OpenChildForm(new Payment(_employee, response));
             }
             else

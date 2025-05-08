@@ -51,8 +51,13 @@ namespace StationManagementSystem.Services
         public async Task<TicketIssuance> GetTicketIssuanceByVehicleIdAsync(Guid vehicleID)
         {
             return await _context.TicketIssuances
-                .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID && ti.Status.ToLower() == "pending");
+                .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID);
         }
+        //public async Task<TicketIssuance> GetTicketIssuanceByVehicleIdAsync(Guid vehicleID)
+        //{
+        //    return await _context.TicketIssuances
+        //        .FirstOrDefaultAsync(ti => ti.VehicleID == vehicleID && ti.Status.ToLower() == "pending");
+        //}
         public async Task<IEnumerable<Vehicle>> GetVehiclesCheckAsync()
         {
             var now = DateTime.Now;
@@ -94,12 +99,13 @@ namespace StationManagementSystem.Services
 
             // Kiểm tra các phương tiện có vé với TotalSeats > 0
             var filteredVehicles = ticketIssuances
-                .Where(ti => 
-                    (ti.Tickets.Sum(t => t.Amount) > 0) 
-                    //(ti.Tickets.Sum(t => t.Amount) - ti.Tickets.Sum(t => t.TicketDetails.Count) > 0)
+                .Where(ti =>
+                    ti.Notes?.ToLower() != "departured" &&               // 👈 loại bỏ ghi chú "departured"
+                    ti.Tickets.Sum(t => t.Amount) > 0
                 )
                 .Select(ti => ti.Vehicle)
                 .ToList();
+
 
             return filteredVehicles;
         }
@@ -131,8 +137,10 @@ namespace StationManagementSystem.Services
 
             // Lọc những bản ghi có TotalSeats > 0 và xử lý tiếp
             var result = ticketIssuances
-                .Where(ti => ti.Tickets.Sum(t => t.Amount) > 0 
-                ) // 👈 lọc điều kiện này
+                .Where(ti =>
+                    ti.Tickets.Sum(t => t.Amount) > 0 &&
+                    ti.Notes?.ToLower() != "departured" // 👈 loại bỏ ghi chú "departured"
+                )
                 .Select(ti => new TicketDisplayItem
                 {
                     DepartureTime = ti.EstimatedDepartureTime,
@@ -143,6 +151,7 @@ namespace StationManagementSystem.Services
                     TicketIDs = ti.Tickets.Select(t => t.TicketID).ToList()
                 })
                 .ToList();
+
 
             return result;
         }
@@ -173,25 +182,30 @@ namespace StationManagementSystem.Services
 
             var filteredVehicles = ticketIssuances
                 .Where(ti =>
-                    // Tổng số ghế > 0
-                    (ti.Tickets.Sum(t => t.Amount) > 0 &&
+                    // Loại bỏ các ghi chú là "departured"
+                    ti.Notes?.ToLower() != "departured" &&
                     (
-                        // Hết vé
-                        (ti.Tickets.Sum(t => t.Amount) - ti.Tickets.Sum(t => t.TicketDetails.Count) == 0)
-                        ||
-                        // Ghi chú là "departure"
-                        (ti.Notes?.ToLower() == "departure")
-                        ||
-                        // Trước giờ xuất bến dưới 15 phút
-                        (oneHourLater > now
-                            ? (ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= fifteenMinutesLater)
-                            : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= fifteenMinutesLater))
-                    )) ||
-                    (ti.Tickets.Sum(t => t.Amount) == 0)
+                        // Tổng số ghế > 0
+                        (ti.Tickets.Sum(t => t.Amount) > 0 &&
+                        (
+                            // Hết vé
+                            (ti.Tickets.Sum(t => t.Amount) - ti.Tickets.Sum(t => t.TicketDetails.Count) == 0)
+                            ||
+                            // Ghi chú là "departure"
+                            (ti.Notes?.ToLower() == "departure")
+                            ||
+                            // Trước giờ xuất bến dưới 15 phút
+                            (oneHourLater > now
+                                ? (ti.EstimatedDepartureTime >= now && ti.EstimatedDepartureTime <= fifteenMinutesLater)
+                                : (ti.EstimatedDepartureTime >= now || ti.EstimatedDepartureTime <= fifteenMinutesLater))
+                        )) ||
+                        (ti.Tickets.Sum(t => t.Amount) == 0)
+                    )
                 )
                 .Select(ti => ti.Vehicle)
                 .Distinct()
                 .ToList();
+
 
             return filteredVehicles;
         }
@@ -216,7 +230,7 @@ namespace StationManagementSystem.Services
             // Kiểm tra xem phương tiện đã được phân công TicketIssuance nào chưa (chưa xuất bến)
             var existingIssuance = await _context.TicketIssuances
                 .Where(ti => ti.VehicleID == ticketIssuanceDto.VehicleID &&
-                             ti.Status.ToLower() != "departured")
+                             ti.Status.ToLower() != "arrival")
                 .FirstOrDefaultAsync();
 
             if (existingIssuance != null)
@@ -313,6 +327,23 @@ namespace StationManagementSystem.Services
             // Update product properties
 
                 ticketIssuance.Notes = "departure";
+            // Save changes to the database, this will automatically check the RowVersion
+            await _context.SaveChangesAsync();
+
+            return ticketIssuance;
+
+        }
+        public async Task<TicketIssuance> UpdateTicketIssuancesNotesDepartuedAsync(Guid issuancesId)
+        {
+
+            var ticketIssuance = await _context.TicketIssuances.FirstOrDefaultAsync(p => p.IssuanceID == issuancesId);
+
+            if (ticketIssuance == null)
+                throw new KeyNotFoundException($"Ticket inssuances with ID {issuancesId} not found.");
+
+            // Update product properties
+
+            ticketIssuance.Notes = "departured";
             // Save changes to the database, this will automatically check the RowVersion
             await _context.SaveChangesAsync();
 

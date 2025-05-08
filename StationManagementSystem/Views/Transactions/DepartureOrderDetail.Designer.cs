@@ -36,8 +36,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblHeader = new Label();
             lblDVVT = new Label();
             lblDVVTV = new Label();
@@ -58,20 +56,17 @@
             lblTuyenV = new Label();
             lblThongTin = new Label();
             pnThongTinXuatBen = new Panel();
-            numSoKhach = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            lblSoKhach = new Label();
+            tbxLenh = new Guna.UI2.WinForms.Guna2TextBox();
             lblGiaVeV = new Label();
             lblGiaVe = new Label();
             lblSoVeV = new Label();
             lblSoVe = new Label();
             lblLenh = new Label();
-            tbxLenh = new Guna.UI2.WinForms.Guna2TextBox();
             btnOk = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             btnCancle = new Guna.UI2.WinForms.Guna2Button();
             pnThongTinXe.SuspendLayout();
             pnThongTinXuatBen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numSoKhach).BeginInit();
             SuspendLayout();
             // 
             // lblHeader
@@ -279,8 +274,6 @@
             // 
             // pnThongTinXuatBen
             // 
-            pnThongTinXuatBen.Controls.Add(numSoKhach);
-            pnThongTinXuatBen.Controls.Add(lblSoKhach);
             pnThongTinXuatBen.Controls.Add(tbxLenh);
             pnThongTinXuatBen.Controls.Add(lblGiaVeV);
             pnThongTinXuatBen.Controls.Add(lblGiaVe);
@@ -292,27 +285,25 @@
             pnThongTinXuatBen.Size = new Size(696, 174);
             pnThongTinXuatBen.TabIndex = 46;
             // 
-            // numSoKhach
+            // tbxLenh
             // 
-            numSoKhach.BackColor = Color.Transparent;
-            numSoKhach.CustomizableEdges = customizableEdges1;
-            numSoKhach.Font = new Font("Segoe UI", 9F);
-            numSoKhach.Location = new Point(508, 77);
-            numSoKhach.Margin = new Padding(3, 4, 3, 4);
-            numSoKhach.Name = "numSoKhach";
-            numSoKhach.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            numSoKhach.Size = new Size(88, 27);
-            numSoKhach.TabIndex = 67;
-            numSoKhach.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
-            // 
-            // lblSoKhach
-            // 
-            lblSoKhach.AutoSize = true;
-            lblSoKhach.Location = new Point(391, 82);
-            lblSoKhach.Name = "lblSoKhach";
-            lblSoKhach.Size = new Size(81, 22);
-            lblSoKhach.TabIndex = 66;
-            lblSoKhach.Text = "Số khách";
+            tbxLenh.CustomizableEdges = customizableEdges1;
+            tbxLenh.DefaultText = "";
+            tbxLenh.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxLenh.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxLenh.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxLenh.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxLenh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxLenh.Font = new Font("Segoe UI", 9F);
+            tbxLenh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxLenh.Location = new Point(153, 10);
+            tbxLenh.Margin = new Padding(3, 4, 3, 4);
+            tbxLenh.Name = "tbxLenh";
+            tbxLenh.PlaceholderText = "";
+            tbxLenh.SelectedText = "";
+            tbxLenh.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tbxLenh.Size = new Size(540, 36);
+            tbxLenh.TabIndex = 83;
             // 
             // lblGiaVeV
             // 
@@ -363,29 +354,9 @@
             lblLenh.TabIndex = 62;
             lblLenh.Text = "Lệnh xuất bến";
             // 
-            // tbxLenh
-            // 
-            tbxLenh.CustomizableEdges = customizableEdges3;
-            tbxLenh.DefaultText = "";
-            tbxLenh.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxLenh.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxLenh.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxLenh.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxLenh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxLenh.Font = new Font("Segoe UI", 9F);
-            tbxLenh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxLenh.Location = new Point(153, 10);
-            tbxLenh.Margin = new Padding(3, 4, 3, 4);
-            tbxLenh.Name = "tbxLenh";
-            tbxLenh.PlaceholderText = "";
-            tbxLenh.SelectedText = "";
-            tbxLenh.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tbxLenh.Size = new Size(540, 36);
-            tbxLenh.TabIndex = 83;
-            // 
             // btnOk
             // 
-            btnOk.CustomizableEdges = customizableEdges5;
+            btnOk.CustomizableEdges = customizableEdges3;
             btnOk.DisabledState.BorderColor = Color.DarkGray;
             btnOk.DisabledState.CustomBorderColor = Color.DarkGray;
             btnOk.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -395,14 +366,15 @@
             btnOk.ForeColor = Color.White;
             btnOk.Location = new Point(165, 727);
             btnOk.Name = "btnOk";
-            btnOk.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnOk.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnOk.Size = new Size(177, 42);
             btnOk.TabIndex = 80;
             btnOk.Text = "ĐỦ ĐIỀU KIỆN";
+            btnOk.Click += btnOk_Click;
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges7;
+            guna2Button1.CustomizableEdges = customizableEdges5;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -413,14 +385,15 @@
             guna2Button1.ForeColor = Color.Silver;
             guna2Button1.Location = new Point(667, 6);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button1.Size = new Size(46, 32);
             guna2Button1.TabIndex = 87;
             guna2Button1.Text = "X";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // btnCancle
             // 
-            btnCancle.CustomizableEdges = customizableEdges9;
+            btnCancle.CustomizableEdges = customizableEdges7;
             btnCancle.DisabledState.BorderColor = Color.DarkGray;
             btnCancle.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancle.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -430,7 +403,7 @@
             btnCancle.ForeColor = Color.White;
             btnCancle.Location = new Point(384, 727);
             btnCancle.Name = "btnCancle";
-            btnCancle.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnCancle.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnCancle.Size = new Size(177, 42);
             btnCancle.TabIndex = 88;
             btnCancle.Text = "Hủy bỏ";
@@ -453,11 +426,11 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "DepartureOrderDetail";
             Text = "DepartureOrderDetail";
+            Load += DepartureOrderDetail_Load;
             pnThongTinXe.ResumeLayout(false);
             pnThongTinXe.PerformLayout();
             pnThongTinXuatBen.ResumeLayout(false);
             pnThongTinXuatBen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numSoKhach).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -489,9 +462,7 @@
         private Label lblGiaVe;
         private Label lblSoVeV;
         private Label lblSoVe;
-        private Label lblSoKhach;
         private Label lblGiaVeV;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numSoKhach;
         private Guna.UI2.WinForms.Guna2Button btnOk;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnCancle;

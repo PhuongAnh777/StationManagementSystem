@@ -229,8 +229,6 @@ namespace StationManagementSystem.Views.Transactions
 
             _ticketIssuanceDto.TicketSalesCommission = (float)numHoaHong.Value;
 
-            _ticketIssuanceDto.SeatTicket = (int)numVeNgoi.Value;
-            _ticketIssuanceDto.SleeperTicket = (int)numVeNam.Value;
 
             if (cbxLoTrinh.SelectedValue == null)
             {
@@ -245,6 +243,24 @@ namespace StationManagementSystem.Views.Transactions
                 return;
             }
             _ticketIssuanceDto.VehicleID = (Guid)cbxBienSo.SelectedValue;
+
+            var responeVehicles = await _vehicleService.GetVehicleByIdAsync(_ticketIssuanceDto.VehicleID);
+            if (responeVehicles != null)
+            {
+                if ((int)numVeNgoi.Value > responeVehicles.SeatTicket)
+                {
+                    MessageBox.Show("Số lượng vé ngồi không được lớn hơn số ghế ngồi của xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                _ticketIssuanceDto.SeatTicket = (int)numVeNgoi.Value;
+                if ((int)numVeNam.Value > responeVehicles.SleeperTicket)
+                {
+                    MessageBox.Show("Số lượng vé nằm không được lớn hơn số giường nằm của xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                _ticketIssuanceDto.SleeperTicket = (int)numVeNam.Value;
+            }
+            
 
             _ticketIssuanceDto.EmployeeID = _employee.EmployeeID;
 

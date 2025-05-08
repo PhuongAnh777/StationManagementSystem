@@ -28,9 +28,11 @@ namespace StationManagementSystem.Services
             var departureOrder = new DepartureOrder
             {
                 DepartureOrders = departureOrderDto.DepartureOrders,
-                DepartureTime = departureOrderDto.DepartureTime,
+                DepartureTime = DateTime.Now,
                 Status = "Departed",
-                
+                InvoiceID = departureOrderDto.InvoiceID,
+                IssuanceID = departureOrderDto.IssuanceID
+
             };
             await _context.DepartureOrders.AddAsync(departureOrder);
 

@@ -12,6 +12,7 @@ using StationManagementSystem.DTO.Invoice;
 using StationManagementSystem.DTO.Ticket;
 using StationManagementSystem.Models;
 using StationManagementSystem.Services;
+using StationManagementSystem.Views.Partners;
 
 namespace StationManagementSystem.Views.Transactions
 {
@@ -58,6 +59,25 @@ namespace StationManagementSystem.Views.Transactions
 
             LoadPayment();
         }
+        public void OpenChildForm(Form childForm)
+        {
+            //Đặt vị trí xuất hiện của form con là chính giữa màn hình
+            childForm.StartPosition = FormStartPosition.Manual; // Đặt chế độ thủ công
+            var screen = Screen.FromControl(this).WorkingArea; // Lấy kích thước màn hình làm tham chiếu
+            childForm.Location = new Point(
+                screen.X + (screen.Width - childForm.Width) / 2,
+                screen.Y + (screen.Height - childForm.Height) / 2
+            );
+
+            //Làm mờ form chính
+            this.Opacity = 0.1;
+
+            // Hiển thị form con dưới dạng modal
+            childForm.ShowDialog();
+
+            // Khôi phục độ trong suốt của form chính
+            this.Opacity = 1.0;
+        }
         public async Task LoadPayment()
         {
             var vehicles = await _vehicleService.GetVehicleByIdAsync(_ticketIssuance.VehicleID);
@@ -85,16 +105,30 @@ namespace StationManagementSystem.Views.Transactions
             lblDichVuV.Text = _ticketIssuance.ServiceFee.ToString();
             lblHoaHongV.Text = _ticketIssuance.TicketSalesCommission.ToString();
 
-            lblSoVeNamV.Text = _ticketIssuance.Tickets.Count(x => x.TicketType == "Sleeper").ToString();
-            lblSoVeNgoiV.Text = _ticketIssuance.Tickets.Count(x => x.TicketType == "Seat").ToString();
+            lblSoVeNamV.Text = _ticketIssuance.Tickets
+                .Where(t => t.TicketType == "Sleeper" && t.IssuanceID == _ticketIssuance.IssuanceID)
+                .SelectMany(t => t.TicketDetails)
+                .Count()
+                .ToString();
+
+            lblSoVeNgoiV.Text = _ticketIssuance.Tickets
+                .Where(t => t.TicketType == "Seat" && t.IssuanceID == _ticketIssuance.IssuanceID)
+                .SelectMany(t => t.TicketDetails)
+                .Count()
+                .ToString();
+
             lblTienNamV.Text = _ticketIssuance.Tickets
-                        .Where(x => x.TicketType == "Sleeper")
-                        .Select(x => x.Price)
-                        .FirstOrDefault().ToString();
+                .Where(t => t.TicketType == "Sleeper" && t.IssuanceID == _ticketIssuance.IssuanceID)
+                .Select(t => t.Price)
+                .FirstOrDefault()
+                .ToString();
+
             lblTienNgoiV.Text = _ticketIssuance.Tickets
-                        .Where(x => x.TicketType == "Seat")
-                        .Select(x => x.Price)
-                        .FirstOrDefault().ToString();
+                .Where(t => t.TicketType == "Seat" && t.IssuanceID == _ticketIssuance.IssuanceID)
+                .Select(t => t.Price)
+                .FirstOrDefault()
+                .ToString();
+
         }
 
         private void Payment_Load(object sender, EventArgs e)
@@ -192,10 +226,32 @@ namespace StationManagementSystem.Views.Transactions
 
             var respone = await _invoiceService.CreateInvoiceAsync(_invoiceCreateDto);
             if (respone != null)
-            { 
-            
+            {
+
                 MessageBox.Show($"Thêm thành công! {respone.InvoiceID}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                var response = await _ticketIssuanceService.GetTicketIssuanceByVehicleIdAsync(_ticketIssuance.VehicleID);
+
+                if (response != null)
+                {
+                    OpenChildForm(new DepartureOrderDetail(response, respone.InvoiceID));
+                }
+                else
+                {
+                    MessageBox.Show("Failed to retrieve customer details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                this.Close();
             }
+            else
+            {
+                MessageBox.Show("Thêm không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

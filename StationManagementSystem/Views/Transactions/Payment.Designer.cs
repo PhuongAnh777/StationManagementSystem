@@ -75,18 +75,22 @@
             lblNhanVienV = new Label();
             lblThanhToan = new Label();
             grbSoVe = new Guna.UI2.WinForms.Guna2GroupBox();
+            lblHoaHongV = new Label();
             lblTienNamV = new Label();
             lblTienNgoiV = new Label();
             lblSoVeNamV = new Label();
             lblSoVeNgoiV = new Label();
             label4 = new Label();
             lblVeNgoi = new Label();
-            lblDichVuBen = new Label();
             lblHH = new Label();
+            lblDichVuBen = new Label();
             lblDoDem = new Label();
             lblDoCho = new Label();
             panel1 = new Panel();
-            lblHoaHongV = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label3 = new Label();
+            label1 = new Label();
             lblDichVuV = new Label();
             tbxNhienLieu = new Guna.UI2.WinForms.Guna2TextBox();
             tbxVeSinh = new Guna.UI2.WinForms.Guna2TextBox();
@@ -102,10 +106,6 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
             lblTongTienV = new Label();
-            label1 = new Label();
-            label3 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             grboxVe.SuspendLayout();
             grbSoVe.SuspendLayout();
             panel1.SuspendLayout();
@@ -228,9 +228,9 @@
             lblChuyenV.ForeColor = Color.Black;
             lblChuyenV.Location = new Point(191, 367);
             lblChuyenV.Name = "lblChuyenV";
-            lblChuyenV.Size = new Size(30, 23);
+            lblChuyenV.Size = new Size(20, 23);
             lblChuyenV.TabIndex = 49;
-            lblChuyenV.Text = "15";
+            lblChuyenV.Text = "0";
             // 
             // grboxVe
             // 
@@ -257,9 +257,9 @@
             lblGheNamV.ForeColor = Color.Black;
             lblGheNamV.Location = new Point(161, 98);
             lblGheNamV.Name = "lblGheNamV";
-            lblGheNamV.Size = new Size(30, 23);
+            lblGheNamV.Size = new Size(20, 23);
             lblGheNamV.TabIndex = 89;
-            lblGheNamV.Text = "15";
+            lblGheNamV.Text = "0";
             // 
             // lblGheNgoiV
             // 
@@ -268,9 +268,9 @@
             lblGheNgoiV.ForeColor = Color.Black;
             lblGheNgoiV.Location = new Point(161, 52);
             lblGheNgoiV.Name = "lblGheNgoiV";
-            lblGheNgoiV.Size = new Size(30, 23);
+            lblGheNgoiV.Size = new Size(20, 23);
             lblGheNgoiV.TabIndex = 92;
-            lblGheNgoiV.Text = "15";
+            lblGheNgoiV.Text = "0";
             // 
             // lblGheNam
             // 
@@ -423,6 +423,17 @@
             grbSoVe.TabIndex = 62;
             grbSoVe.Text = "Thông tin Bán Vé";
             // 
+            // lblHoaHongV
+            // 
+            lblHoaHongV.AutoSize = true;
+            lblHoaHongV.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHoaHongV.ForeColor = Color.Black;
+            lblHoaHongV.Location = new Point(561, 53);
+            lblHoaHongV.Name = "lblHoaHongV";
+            lblHoaHongV.Size = new Size(20, 23);
+            lblHoaHongV.TabIndex = 96;
+            lblHoaHongV.Text = "0";
+            // 
             // lblTienNamV
             // 
             lblTienNamV.AutoSize = true;
@@ -430,9 +441,9 @@
             lblTienNamV.ForeColor = Color.Black;
             lblTienNamV.Location = new Point(376, 88);
             lblTienNamV.Name = "lblTienNamV";
-            lblTienNamV.Size = new Size(30, 23);
+            lblTienNamV.Size = new Size(20, 23);
             lblTienNamV.TabIndex = 91;
-            lblTienNamV.Text = "15";
+            lblTienNamV.Text = "0";
             // 
             // lblTienNgoiV
             // 
@@ -441,9 +452,9 @@
             lblTienNgoiV.ForeColor = Color.Black;
             lblTienNgoiV.Location = new Point(140, 88);
             lblTienNgoiV.Name = "lblTienNgoiV";
-            lblTienNgoiV.Size = new Size(30, 23);
+            lblTienNgoiV.Size = new Size(20, 23);
             lblTienNgoiV.TabIndex = 90;
-            lblTienNgoiV.Text = "15";
+            lblTienNgoiV.Text = "0";
             // 
             // lblSoVeNamV
             // 
@@ -452,9 +463,9 @@
             lblSoVeNamV.ForeColor = Color.Black;
             lblSoVeNamV.Location = new Point(376, 52);
             lblSoVeNamV.Name = "lblSoVeNamV";
-            lblSoVeNamV.Size = new Size(30, 23);
+            lblSoVeNamV.Size = new Size(20, 23);
             lblSoVeNamV.TabIndex = 89;
-            lblSoVeNamV.Text = "15";
+            lblSoVeNamV.Text = "0";
             // 
             // lblSoVeNgoiV
             // 
@@ -463,9 +474,9 @@
             lblSoVeNgoiV.ForeColor = Color.Black;
             lblSoVeNgoiV.Location = new Point(140, 52);
             lblSoVeNgoiV.Name = "lblSoVeNgoiV";
-            lblSoVeNgoiV.Size = new Size(30, 23);
+            lblSoVeNgoiV.Size = new Size(20, 23);
             lblSoVeNgoiV.TabIndex = 88;
-            lblSoVeNgoiV.Text = "15";
+            lblSoVeNgoiV.Text = "0";
             // 
             // label4
             // 
@@ -485,15 +496,6 @@
             lblVeNgoi.TabIndex = 30;
             lblVeNgoi.Text = "Số vé ngồi";
             // 
-            // lblDichVuBen
-            // 
-            lblDichVuBen.AutoSize = true;
-            lblDichVuBen.Location = new Point(20, 21);
-            lblDichVuBen.Name = "lblDichVuBen";
-            lblDichVuBen.Size = new Size(105, 22);
-            lblDichVuBen.TabIndex = 63;
-            lblDichVuBen.Text = "Dịch vụ bến";
-            // 
             // lblHH
             // 
             lblHH.AutoSize = true;
@@ -502,6 +504,15 @@
             lblHH.Size = new Size(95, 22);
             lblHH.TabIndex = 64;
             lblHH.Text = "HH bán vé";
+            // 
+            // lblDichVuBen
+            // 
+            lblDichVuBen.AutoSize = true;
+            lblDichVuBen.Location = new Point(20, 21);
+            lblDichVuBen.Name = "lblDichVuBen";
+            lblDichVuBen.Size = new Size(105, 22);
+            lblDichVuBen.TabIndex = 63;
+            lblDichVuBen.Text = "Dịch vụ bến";
             // 
             // lblDoDem
             // 
@@ -545,16 +556,49 @@
             panel1.Size = new Size(1174, 125);
             panel1.TabIndex = 69;
             // 
-            // lblHoaHongV
+            // label6
             // 
-            lblHoaHongV.AutoSize = true;
-            lblHoaHongV.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHoaHongV.ForeColor = Color.Black;
-            lblHoaHongV.Location = new Point(561, 53);
-            lblHoaHongV.Name = "lblHoaHongV";
-            lblHoaHongV.Size = new Size(30, 23);
-            lblHoaHongV.TabIndex = 96;
-            lblHoaHongV.Text = "15";
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(704, 62);
+            label6.Name = "label6";
+            label6.Size = new Size(21, 23);
+            label6.TabIndex = 99;
+            label6.Text = "+";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(301, 62);
+            label5.Name = "label5";
+            label5.Size = new Size(21, 23);
+            label5.TabIndex = 98;
+            label5.Text = "+";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(497, 62);
+            label3.Name = "label3";
+            label3.Size = new Size(21, 23);
+            label3.TabIndex = 97;
+            label3.Text = "+";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(121, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(21, 23);
+            label1.TabIndex = 96;
+            label1.Text = "+";
             // 
             // lblDichVuV
             // 
@@ -563,9 +607,9 @@
             lblDichVuV.ForeColor = Color.Black;
             lblDichVuV.Location = new Point(22, 70);
             lblDichVuV.Name = "lblDichVuV";
-            lblDichVuV.Size = new Size(30, 23);
+            lblDichVuV.Size = new Size(20, 23);
             lblDichVuV.TabIndex = 95;
-            lblDichVuV.Text = "15";
+            lblDichVuV.Text = "0";
             // 
             // tbxNhienLieu
             // 
@@ -654,9 +698,9 @@
             lblTongChiPhiV.ForeColor = Color.Black;
             lblTongChiPhiV.Location = new Point(931, 70);
             lblTongChiPhiV.Name = "lblTongChiPhiV";
-            lblTongChiPhiV.Size = new Size(30, 23);
+            lblTongChiPhiV.Size = new Size(20, 23);
             lblTongChiPhiV.TabIndex = 88;
-            lblTongChiPhiV.Text = "15";
+            lblTongChiPhiV.Text = "0";
             // 
             // lblBang
             // 
@@ -747,6 +791,7 @@
             guna2Button1.Size = new Size(46, 32);
             guna2Button1.TabIndex = 87;
             guna2Button1.Text = "X";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // label2
             // 
@@ -765,53 +810,9 @@
             lblTongTienV.ForeColor = Color.IndianRed;
             lblTongTienV.Location = new Point(858, 723);
             lblTongTienV.Name = "lblTongTienV";
-            lblTongTienV.Size = new Size(119, 25);
+            lblTongTienV.Size = new Size(24, 25);
             lblTongTienV.TabIndex = 96;
-            lblTongTienV.Text = "11B-01234";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(121, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(21, 23);
-            label1.TabIndex = 96;
-            label1.Text = "+";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(497, 62);
-            label3.Name = "label3";
-            label3.Size = new Size(21, 23);
-            label3.TabIndex = 97;
-            label3.Text = "+";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(301, 62);
-            label5.Name = "label5";
-            label5.Size = new Size(21, 23);
-            label5.TabIndex = 98;
-            label5.Text = "+";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(704, 62);
-            label6.Name = "label6";
-            label6.Size = new Size(21, 23);
-            label6.TabIndex = 99;
-            label6.Text = "+";
+            lblTongTienV.Text = "0";
             // 
             // Payment
             // 
