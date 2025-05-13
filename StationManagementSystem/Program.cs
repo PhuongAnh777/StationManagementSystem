@@ -33,12 +33,12 @@ namespace StationManagementSystem
             ServiceProvider = ServiceConfigurator.ConfigureServices(services, configuration);
 
             // Resolve MainForm through DI
-            var mainForm = ServiceProvider.GetRequiredService<MainForm>();
-            //var login = ServiceProvider.GetRequiredService<LoginForm>();
+            //var mainForm = ServiceProvider.GetRequiredService<MainForm>();
+            var login = ServiceProvider.GetRequiredService<LoginForm>();
             // Run application
-            Application.Run(mainForm);
+            //Application.Run(mainForm);
             //Application.Run(new Sell());
-            //Application.Run(login);
+            Application.Run(login);
         }
     }
 }

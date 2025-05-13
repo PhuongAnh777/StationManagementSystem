@@ -7,14 +7,192 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StationManagementSystem.Models;
+using StationManagementSystem.Services;
+using StationManagementSystem.Views.Employees;
 
 namespace StationManagementSystem.Views.Transactions
 {
     public partial class InvoiceList : Form
     {
+        private readonly InvoiceService _invoiceService;
+
+        private List<Invoice> _originalData;
+        private int _pageSize = 10;                    // Số hàng trên mỗi trang
+        private int _currentPage = 1;                 // Trang hiện tại
+        private int _totalPages;                      // Tổng số trang
+        private bool _isAscending = true;
+        private string _sortedColumn = "";        // Cột hiện đang sắp xếp
         public InvoiceList()
         {
             InitializeComponent();
+
+            _invoiceService = new InvoiceService();
+            _originalData = new List<Invoice>();
+        }
+        public void OpenChildForm(Form childForm)
+        {
+            // Đặt vị trí xuất hiện của form con là chính giữa màn hình
+            childForm.StartPosition = FormStartPosition.Manual; // Đặt chế độ thủ công
+            var screen = Screen.FromControl(this).WorkingArea; // Lấy kích thước màn hình làm tham chiếu
+            childForm.Location = new Point(
+                screen.X + (screen.Width - childForm.Width) / 2,
+                screen.Y + (screen.Height - childForm.Height) / 2
+            );
+
+            // Làm mờ form chính
+            this.Opacity = 0.1;
+
+            // Hiển thị form con dưới dạng modal
+            childForm.ShowDialog();
+
+            // Khôi phục độ trong suốt của form chính
+            this.Opacity = 1.0;
+        }
+        private void RenameInvoiceGridColumns()
+        {
+            gridView.Columns["InvoiceID"].HeaderText = "Mã hóa đơn";
+            gridView.Columns["InvoiceDate"].HeaderText = "Ngày lập hóa đơn";
+            gridView.Columns["PaymentStatus"].HeaderText = "Trạng thái thanh toán";
+            gridView.Columns["Amount"].HeaderText = "Tổng tiền";
+
+            gridView.Columns["SeatTicket"].HeaderText = "Vé ghế ngồi";
+            gridView.Columns["SleeperTicket"].HeaderText = "Vé giường nằm";
+            gridView.Columns["OvernightParkingFee"].HeaderText = "Phí đậu xe qua đêm";
+            gridView.Columns["WaitingFee"].HeaderText = "Phí chờ";
+            gridView.Columns["WashingFee"].HeaderText = "Phí rửa xe";
+            gridView.Columns["FuelCost"].HeaderText = "Chi phí nhiên liệu";
+            gridView.Columns["IsDiscontinued"].HeaderText = "Ngừng sử dụng";
+            gridView.Columns["EmployeeID"].HeaderText = "Mã nhân viên";
+            // Bạn có thể xử lý định dạng lại thành "Nam"/"Nữ" nếu cần
+        }
+
+        private async void gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex < 0 || e.RowIndex >= gridView.Rows.Count)
+            //    return;
+            //var selectedRow = gridView.Rows[e.RowIndex];
+            //var invoiceId = (Guid)selectedRow.Cells["InvoiceID"].Value;
+            //var response = await _invoiceService.GetInvoiceByIdAsync(invoiceId);
+
+            //if (response != null)
+            //{
+            //    OpenChildForm(new EmployeeEdit(response));
+            //    await LoadEmployee(); // Cập nhật lại dữ liệu trong DataGridView
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Failed to retrieve category details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
+        private async Task LoadInvoice()
+        {
+            try
+            {
+                var invoices = await _invoiceService.GetAllInvoicesAsync();
+
+                if (invoices != null && invoices.Any())
+                {
+                    _originalData = invoices.ToList();
+
+                    _totalPages = (int)Math.Ceiling((double)_originalData.Count / _pageSize);
+                    DisplayPage(_currentPage);
+                    RenameInvoiceGridColumns();
+                }
+                else
+                {
+                    gridView.DataSource = new List<Employee>(); // Gán một danh sách rỗng cho DataSource
+                    lblPage.Text = "0/0";
+                    labelPageInfo.Text = "Hiển thị 0 - 0 / Tổng số 0 hàng hóa";
+                    MessageBox.Show("Không có dữ liệu nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private void DisplayPage(int pageNumber)
+        {
+            if (_originalData == null || !_originalData.Any()) return;
+
+            var pagedData = _originalData.Skip((pageNumber - 1) * _pageSize).Take(_pageSize).ToList();
+
+            gridView.DataSource = pagedData;
+
+            lblPage.Text = $"{_currentPage}/{_pageSize}";
+            labelPageInfo.Text = $"Hiển thị {_pageSize * (_currentPage - 1) + 1} - {_currentPage * _pageSize} / Tổng số 32 hàng hóa";
+        }
+
+        private void btnTruoc_Click(object sender, EventArgs e)
+        {
+            if (_currentPage > 1)
+            {
+                _currentPage--;
+                DisplayPage(_currentPage);
+            }
+        }
+
+        private void btnSau_Click(object sender, EventArgs e)
+        {
+            if (_currentPage < _totalPages)
+            {
+                _currentPage++;
+                DisplayPage(_currentPage);
+            }
+        }
+        private void SortData(string columnName, bool ascending)
+        {
+            if (_originalData == null || !_originalData.Any()) return;
+
+            _originalData = ascending
+                ? _originalData.OrderBy(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList()
+                : _originalData.OrderByDescending(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+
+            _currentPage = 1;
+            DisplayPage(_currentPage);
+        }
+        private void UpdateColumnHeaders()
+        {
+            foreach (DataGridViewColumn column in gridView.Columns)
+            {
+                if (column.DataPropertyName == _sortedColumn)
+                {
+                    column.HeaderText = _isAscending
+                        ? $"{column.HeaderText.TrimEnd('↑', '↓')} ↑"
+                        : $"{column.HeaderText.TrimEnd('↑', '↓')} ↓";
+                }
+                else
+                {
+                    column.HeaderText = column.HeaderText.TrimEnd('↑', '↓');
+                }
+            }
+        }
+
+        private void gridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string columnName = gridView.Columns[e.ColumnIndex].DataPropertyName;
+
+            if (_sortedColumn == columnName)
+            {
+                _isAscending = !_isAscending;
+            }
+            else
+            {
+                _sortedColumn = columnName;
+                _isAscending = true;
+            }
+
+            SortData(columnName, _isAscending);
+
+            UpdateColumnHeaders();
+        }
+
+        private async void InvoiceList_Load(object sender, EventArgs e)
+        {
+            await LoadInvoice();
         }
     }
 }

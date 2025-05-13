@@ -35,8 +35,11 @@ namespace StationManagementSystem.Services
         //}
         public async Task<Itinerary> GetItineraryByIdAsync(Guid itineraryID)
         {
-            return await _context.Itineraries
+            using (var context = new StationContext())
+            {
+                return await _context.Itineraries
                 .FirstOrDefaultAsync(v => v.ItineraryID == itineraryID);
+            }
         }
         public async Task<List<StopPoint>> GetStopPointsByitineraryIdAsync(Guid itineraryID)
         {

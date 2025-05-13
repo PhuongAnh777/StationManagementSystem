@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StationManagementSystem.DTO.Route;
 using StationManagementSystem.DTO.Ticket;
+using StationManagementSystem.Models;
 using StationManagementSystem.Services;
 using StationManagementSystem.Views.Partners;
 
@@ -22,7 +23,7 @@ namespace StationManagementSystem.Views.SellTickets
         private readonly RouteService _routeService;
         private readonly ItineraryService _itineraryService;
         private readonly TicketService _ticketService;
-        private readonly Guid _employeeID;
+        private readonly Employee _employee;
         public SellTicket()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace StationManagementSystem.Views.SellTickets
 
             LoadSellTicket();
         }
-        public SellTicket(Guid employeeID)
+        public SellTicket(Employee employee)
         {
             InitializeComponent();
             _ticketIssuanceService = new TicketIssuanceService();
@@ -45,7 +46,7 @@ namespace StationManagementSystem.Views.SellTickets
             _itineraryService = new ItineraryService();
             _ticketService = new TicketService();
 
-            _employeeID = employeeID;
+            _employee = employee;
 
             LoadSellTicket();
         }
@@ -205,7 +206,7 @@ namespace StationManagementSystem.Views.SellTickets
                         MessageBox.Show("Vé đã hết chỗ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    OpenChildForm(new SellAdd(ticket, cbxTuyen.Text, cbxLoTrinh.Text, _employeeID));
+                    OpenChildForm(new SellAdd(ticket, cbxTuyen.Text, cbxLoTrinh.Text, _employee));
                     await LoadSellTicket();
                 }
                 else

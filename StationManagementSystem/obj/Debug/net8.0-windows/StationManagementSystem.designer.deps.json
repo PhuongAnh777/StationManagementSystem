@@ -41,6 +41,17 @@
           }
         }
       },
+      "Guna.Charts.WinForms/1.1.0": {
+        "dependencies": {
+          "System.Management": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
       "Guna.UI2.WinForms/2.0.4.7": {
         "dependencies": {
           "System.Management": "7.0.0"
@@ -1242,6 +1253,13 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "Guna.Charts.WinForms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qHGw3SusTcgUJFWfB91dQKwMxb0+4YBqPqrsFv7oo6E9Ap1OPsuWLafcJTtOzpxRmf8Umns5++xmcZtgL93q1A==",
+      "path": "guna.charts.winforms/1.1.0",
+      "hashPath": "guna.charts.winforms.1.1.0.nupkg.sha512"
     },
     "Guna.UI2.WinForms/2.0.4.7": {
       "type": "package",

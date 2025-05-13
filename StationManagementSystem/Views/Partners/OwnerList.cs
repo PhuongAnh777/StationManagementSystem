@@ -21,11 +21,20 @@ namespace StationManagementSystem.Views.Partners
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
+        private string _roleName;
         public OwnerList()
         {
             InitializeComponent();
             _ownerService = new OwnerService();
             _originalData = new List<Owner>();
+        }
+        public OwnerList(string roleName)
+        {
+            InitializeComponent();
+            _ownerService = new OwnerService();
+            _originalData = new List<Owner>();
+
+            _roleName = roleName;
         }
         public void OpenChildForm(Form childForm)
         {
@@ -182,6 +191,11 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền thêm chủ xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             OpenChildForm(new OwnerAdd());
             await LoadOwner();
         }

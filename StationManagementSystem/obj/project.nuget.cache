@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JbrXKQHV4dM=",
+  "dgSpecHash": "H8dQwi1bK4s=",
   "success": true,
   "projectFilePath": "C:\\Serect\\Station_official\\StationManagementSystem\\StationManagementSystem\\StationManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VivoBook\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\VivoBook\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\VivoBook\\.nuget\\packages\\guna.charts.winforms\\1.1.0\\guna.charts.winforms.1.1.0.nupkg.sha512",
     "C:\\Users\\VivoBook\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",
     "C:\\Users\\VivoBook\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\VivoBook\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

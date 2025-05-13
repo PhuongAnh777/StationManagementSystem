@@ -27,6 +27,7 @@ namespace StationManagementSystem.Views.Partners
 
         private string _selectedTransportUnit = "";
         private string _licensePlateFilter = "";
+        private string _roleName;
         public VehicleList()
         {
             InitializeComponent();
@@ -35,6 +36,15 @@ namespace StationManagementSystem.Views.Partners
             _originalData = new List<Vehicle>();
             //gridView.AutoGenerateColumns = false;
             //gridView.Columns["ID"].Visible = false;
+        }
+        public VehicleList(string roleName)
+        {
+            InitializeComponent();
+            _vehicleService = new VehicleService();
+            _ownerService = new OwnerService();
+            _originalData = new List<Vehicle>();
+
+            _roleName = roleName;
         }
         public void OpenChildForm(Form childForm)
         {
@@ -201,6 +211,11 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền thêm mới phương tiện.");
+                return;
+            }
             OpenChildForm(new VehicleAdd());
             await LoadVehicle();
         }

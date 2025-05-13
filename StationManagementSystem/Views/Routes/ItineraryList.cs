@@ -24,6 +24,7 @@ namespace StationManagementSystem.Views.Routes
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
         private string _selectedItineraryUnit = "";
+        private string _roleName;
         public ItineraryList()
         {
             InitializeComponent();
@@ -31,6 +32,16 @@ namespace StationManagementSystem.Views.Routes
             _itineraryService = new ItineraryService();
             _routeService = new RouteService();
             _originalData = new List<Itinerary>();
+        }
+        public ItineraryList(string roleName)
+        {
+            InitializeComponent();
+
+            _itineraryService = new ItineraryService();
+            _routeService = new RouteService();
+            _originalData = new List<Itinerary>();
+
+            _roleName = roleName;
         }
         public void OpenChildForm(Form childForm)
         {
@@ -199,6 +210,11 @@ namespace StationManagementSystem.Views.Routes
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền thêm lộ trình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             OpenChildForm(new ItineraryAdd());
             await LoadItinerary();
         }

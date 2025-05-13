@@ -266,6 +266,7 @@
             btnAdd.Size = new Size(177, 42);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Thêm mới";
+            btnAdd.Click += btnAdd_Click;
             // 
             // tbxSearch
             // 

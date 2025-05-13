@@ -21,7 +21,7 @@ namespace StationManagementSystem.Views.SellTickets
         private string _itinerary;
         private Guid _ticketIDSeat;
         private Guid _ticketIDSleeper;
-        private Guid _employeeID;
+        private Employee _employee;
         private TicketDetailCreateDto _ticketDetailCreateDto;
         public SellAdd()
         {
@@ -29,7 +29,7 @@ namespace StationManagementSystem.Views.SellTickets
 
             _ticketService = new TicketService();
         }
-        public SellAdd(TicketDisplayItem ticket, string route, string itinerary, Guid employeeID)
+        public SellAdd(TicketDisplayItem ticket, string route, string itinerary, Employee employee)
         {
             InitializeComponent();
 
@@ -37,7 +37,7 @@ namespace StationManagementSystem.Views.SellTickets
             _ticket = ticket;
             _route = route;
             _itinerary = itinerary;
-            _employeeID = employeeID;
+            _employee = employee;
 
             LoadSellAdd();
         }
@@ -118,7 +118,7 @@ namespace StationManagementSystem.Views.SellTickets
             {
                 _ticketDetailCreateDto = new TicketDetailCreateDto
                 {
-                    EmployeeID = _employeeID, // Thay thế bằng ID nhân viên thực tế
+                    EmployeeID = _employee.EmployeeID, // Thay thế bằng ID nhân viên thực tế
                     TicketID = _ticketIDSleeper,
                     Status = "Ghế nằm",
                 };
@@ -127,7 +127,7 @@ namespace StationManagementSystem.Views.SellTickets
             {
                 _ticketDetailCreateDto = new TicketDetailCreateDto
                 {
-                    EmployeeID = _employeeID, // Thay thế bằng ID nhân viên thực tế
+                    EmployeeID = _employee.EmployeeID, // Thay thế bằng ID nhân viên thực tế
                     TicketID = _ticketIDSeat,
                     Status = "Ghế ngồi",
                 };

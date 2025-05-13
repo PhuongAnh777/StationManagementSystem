@@ -24,11 +24,20 @@ namespace StationManagementSystem.Views.Routes
         private int _totalPages;                      // Tổng số trang
         private bool _isAscending = true;
         private string _sortedColumn = "";        // Cột hiện đang sắp xếp
+        private string _roleName;
         public RouteList()
         {
             InitializeComponent();
             _routeService = new RouteService();
             _originalData = new List<Route>();
+        }
+        public RouteList(string roleName)
+        {
+            InitializeComponent();
+            _routeService = new RouteService();
+            _originalData = new List<Route>();
+
+            _roleName = roleName;
         }
         public void OpenChildForm(Form childForm)
         {
@@ -187,6 +196,11 @@ namespace StationManagementSystem.Views.Routes
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             OpenChildForm(new RouteAdd());
             await LoadRoute();
         }

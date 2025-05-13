@@ -73,6 +73,16 @@ namespace StationManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ben_xe_mien_dong_moi_750x469 {
+            get {
+                object obj = ResourceManager.GetObject("ben-xe-mien-dong-moi-750x469", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bill {
             get {
                 object obj = ResourceManager.GetObject("bill", resourceCulture);
@@ -126,6 +136,16 @@ namespace StationManagementSystem.Properties {
         internal static System.Drawing.Bitmap bus_ticket {
             get {
                 object obj = ResourceManager.GetObject("bus-ticket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_May_8__2025__10_00_30_AM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image May 8, 2025, 10_00_30 AM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

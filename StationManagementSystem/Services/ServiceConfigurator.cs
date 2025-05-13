@@ -26,7 +26,8 @@ namespace StationManagementSystem.Services
 
             // Add other services here if needed
             //services.AddTransient<MainForm>();            // Register MainForm for DI
-            services.AddTransient<MainForm>();
+            //services.AddTransient<MainForm>();
+            services.AddTransient<LoginForm>();
 
             //services.AddScoped<CategoryService>();
 

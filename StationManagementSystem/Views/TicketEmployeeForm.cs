@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using StationManagementSystem.Models;
-using StationManagementSystem.Services;
-using StationManagementSystem.Views.Employees;
 using StationManagementSystem.Views.Home;
 using StationManagementSystem.Views.Partners;
 using StationManagementSystem.Views.Routes;
@@ -20,26 +18,16 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace StationManagementSystem.Views
 {
-    public partial class MainForm : Form
+    public partial class TicketEmployeeForm : Form
     {
         private Account _account;
         private Employee _employee;
         private string _roleName;
-        public MainForm()
+        public TicketEmployeeForm()
         {
             InitializeComponent();
-
-            this.StartPosition = FormStartPosition.CenterScreen; // Đặt form ở giữa màn hình
-
-            //Show drop down list
-            ConfigureHoverEvents(pnXe, btnXeMain);
-            ConfigureHoverEvents(pnGiaoDich, btnGiaoDich);
-            ConfigureHoverEvents(pnDoiTac, btnDoiTac);
-            ConfigureHoverEvents(pnTuyen, btnTuyen);
-            ConfigureHoverEvents(pnNhanVien, btnNhanVien);
-            ConfigureHoverEvents(pnTaiKhoan, btnProFile);
         }
-        public MainForm(Account account, Employee employee, string roleName)
+        public TicketEmployeeForm(Account account, Employee employee, string roleName)
         {
             InitializeComponent();
 
@@ -47,10 +35,8 @@ namespace StationManagementSystem.Views
 
             //Show drop down list
             ConfigureHoverEvents(pnXe, btnXeMain);
-            ConfigureHoverEvents(pnGiaoDich, btnGiaoDich);
             ConfigureHoverEvents(pnDoiTac, btnDoiTac);
             ConfigureHoverEvents(pnTuyen, btnTuyen);
-            ConfigureHoverEvents(pnNhanVien, btnNhanVien);
             ConfigureHoverEvents(pnTaiKhoan, btnProFile);
 
             _account = account;
@@ -153,77 +139,13 @@ namespace StationManagementSystem.Views
             // Khôi phục độ trong suốt của form chính
             this.Opacity = 1.0;
         }
-        // Hàm kiểm tra và ẩn panel
-        //private void CheckPanelVisibility(Guna2Button button, Panel panel)
-        //{
-        //    if (!mouseStates[button] && !mouseStates[panel])
-        //    {
-        //        panel.Visible = false; // Ẩn panel nếu chuột không nằm trên cả button và panel
-        //    }
-        //}
-
-
-
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            CreateFormChild(new InvoiceList());
-        }
-
-        private void btnBanHang_Click(object sender, EventArgs e)
-        {
-
-            CreateFormChild(new SellTicket(_employee));
-        }
-
-        private void btnProFile_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new AccountForm());
-        }
-
-        private void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // Ẩn form hiện tại
-            LoginForm secondForm = new LoginForm();
-            secondForm.ShowDialog(); // Mở form mới dạng modal (chờ đóng xong mới trở lại)
-            this.Show();
-        }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            //CreateFormChild(new RevenueReport());
-        }
-
-        private void btnBaoCao_Click(object sender, EventArgs e)
-        {
-            //CreateFormChild(new RevenueReport());
-        }
-
-
-        private void btnTongQuan_Click(object sender, EventArgs e)
-        {
-            //CreateFormChild(new RevenueReport());
-        }
-
-
-        private void btnLenhXuatBen_Click(object sender, EventArgs e)
-        {
-            //CreateFormChild(new VehicleDepartureList());
-        }
-
-        private async void btnPhieuDangTai_Click(object sender, EventArgs e)
-        {
-            //var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648"));
-            //if (respone != null)
-            //{
-                CreateFormChild(new TicketIssuanceAdd(_employee));
-            //}
-        }
-
-        private void btnNhanVien1_Click(object sender, EventArgs e)
-        {
-            CreateFormChild(new EmloyeeList());
-        }
 
         private void btnDSXe_Click(object sender, EventArgs e)
+        {
+            //CreateFormChild(new SellTicket(_employee));
+        }
+
+        private void btnVe_Click(object sender, EventArgs e)
         {
             CreateFormChild(new SellTicket(_employee));
         }
@@ -238,9 +160,14 @@ namespace StationManagementSystem.Views
             CreateFormChild(new VehicleList(_roleName));
         }
 
-        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        private void btnTuyenDuong_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new EmployeeAdd());
+            CreateFormChild(new RouteList(_roleName));
+        }
+
+        private void btnLoTrinh_Click(object sender, EventArgs e)
+        {
+            CreateFormChild(new ItineraryList(_roleName));
         }
 
         private void btnXeCheck_Click(object sender, EventArgs e)
@@ -253,37 +180,22 @@ namespace StationManagementSystem.Views
             CreateFormChild(new VehicleCheckedList());
         }
 
-        private async void btnXeAparture_Click(object sender, EventArgs e)
+        private void btnXeAparture_Click(object sender, EventArgs e)
         {
-            //var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648"));
-            //if (respone != null)
-            //{
-                CreateFormChild(new VehicleDepartureList(_employee));
-            //}
+            CreateFormChild(new VehicleDepartureList(_employee));
         }
 
-        private void btnTuyenDuong_Click(object sender, EventArgs e)
+        private void btnTaiKhoanHT_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new RouteList(_roleName));
+            CreateFormChild(new MyAccount(_employee));
         }
 
-        private void btnLoTrinh_Click(object sender, EventArgs e)
+        private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            CreateFormChild(new ItineraryList(_roleName));
-        }
-
-        private void btnVaiTro_Click(object sender, EventArgs e)
-        {
-            CreateFormChild(new RoleList());
-        }
-
-        private async void btnTaiKhoanHT_Click(object sender, EventArgs e)
-        {
-            //var respone = await _employeeService.GetEmployeeByIdAsync(Guid.Parse("49CCAEEB-403F-45E6-4A4C-08DD8B7C2648"));
-            //if (respone != null)
-            //{
-                CreateFormChild(new MyAccount(_employee));
-            //}
+            this.Hide(); // Ẩn form hiện tại
+            LoginForm secondForm = new LoginForm();
+            secondForm.ShowDialog(); // Mở form mới dạng modal (chờ đóng xong mới trở lại)
+            this.Show();
         }
     }
 }
