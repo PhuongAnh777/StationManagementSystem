@@ -75,7 +75,15 @@ namespace StationManagementSystem.Views
 
             form.TopLevel = false;
             pnChild.Controls.Add(form);
+            form.BringToFront(); // Đưa form lên trên cùng
             form.Show();
+
+            pnXe.BringToFront(); // Đưa panel lên trên cùng
+            pnGiaoDich.BringToFront(); // Đưa panel lên trên cùng
+            pnDoiTac.BringToFront(); // Đưa panel lên trên cùng
+            pnTuyen.BringToFront(); // Đưa panel lên trên cùng
+            pnNhanVien.BringToFront(); // Đưa panel lên trên cùng
+            pnTaiKhoan.BringToFront(); // Đưa panel lên trên cùng
         }
 
         // Hàm cấu hình sự kiện cho một cặp Button và Panel
@@ -200,7 +208,7 @@ namespace StationManagementSystem.Views
 
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
-            //CreateFormChild(new RevenueReport());
+
         }
 
 

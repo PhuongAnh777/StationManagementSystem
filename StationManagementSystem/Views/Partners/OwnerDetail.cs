@@ -44,7 +44,16 @@ namespace StationManagementSystem.Views.Partners
             tbxDVVT.Text = _owner.Company;
             tbxBangLai.Text = _owner.DrivingLicense;
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
 
+            // Vẽ viền mỏng xung quanh form
+            using (Pen borderPen = new Pen(Color.Black, 1)) // Viền màu đen, dày 1px
+            {
+                e.Graphics.DrawRectangle(borderPen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
+            }
+        }
         private void OwnerDetail_Load(object sender, EventArgs e)
         {
             LoadOwner();
@@ -79,7 +88,7 @@ namespace StationManagementSystem.Views.Partners
                 return;
             }
             if (_owner.Company.ToLower() != tbxDVVT.Text.ToLower())
-            { 
+            {
                 if (await _ownerService.IsTransportUnitExists(tbxDVVT.Text))
                 {
                     MessageBox.Show("Tên đơn vị vận tải đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -148,6 +157,11 @@ namespace StationManagementSystem.Views.Partners
             //    this.DialogResult = DialogResult.OK;
             //    this.Close();
             //}
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

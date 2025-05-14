@@ -409,6 +409,7 @@
             numNam.Font = new Font("Segoe UI", 9F);
             numNam.Location = new Point(184, 614);
             numNam.Margin = new Padding(3, 4, 3, 4);
+            numNam.Maximum = new decimal(new int[] { 2050, 0, 0, 0 });
             numNam.Name = "numNam";
             numNam.ShadowDecoration.CustomizableEdges = customizableEdges20;
             numNam.Size = new Size(88, 27);

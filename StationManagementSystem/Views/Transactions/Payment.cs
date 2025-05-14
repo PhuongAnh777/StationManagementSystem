@@ -59,6 +59,16 @@ namespace StationManagementSystem.Views.Transactions
 
             LoadPayment();
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Vẽ viền mỏng xung quanh form
+            using (Pen borderPen = new Pen(Color.Black, 1)) // Viền màu đen, dày 1px
+            {
+                e.Graphics.DrawRectangle(borderPen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
+            }
+        }
         public void OpenChildForm(Form childForm)
         {
             //Đặt vị trí xuất hiện của form con là chính giữa màn hình

@@ -230,6 +230,7 @@
             numNam.Font = new Font("Segoe UI", 9F);
             numNam.Location = new Point(184, 625);
             numNam.Margin = new Padding(3, 4, 3, 4);
+            numNam.Maximum = new decimal(new int[] { 2050, 0, 0, 0 });
             numNam.Name = "numNam";
             numNam.ShadowDecoration.CustomizableEdges = customizableEdges12;
             numNam.Size = new Size(88, 27);
@@ -262,6 +263,7 @@
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
             // 
             // lblHeader
             // 

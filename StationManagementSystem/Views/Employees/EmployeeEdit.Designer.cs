@@ -34,6 +34,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -52,13 +54,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnFooter = new Panel();
             btnXoa = new Guna.UI2.WinForms.Guna2Button();
             btnBoQua = new Guna.UI2.WinForms.Guna2Button();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             pnContainer = new Panel();
+            tbxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             grTaiKhoan = new Guna.UI2.WinForms.Guna2GroupBox();
             cbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
             lblVaiTro = new Label();
@@ -88,7 +89,6 @@
             pnHeader = new Panel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             lblHeader = new Label();
-            tbxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             pnFooter.SuspendLayout();
             pnContainer.SuspendLayout();
             grTaiKhoan.SuspendLayout();
@@ -184,6 +184,28 @@
             pnContainer.Name = "pnContainer";
             pnContainer.Size = new Size(1091, 455);
             pnContainer.TabIndex = 7;
+            // 
+            // tbxDiaChi
+            // 
+            tbxDiaChi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            tbxDiaChi.BorderThickness = 0;
+            tbxDiaChi.CustomizableEdges = customizableEdges7;
+            tbxDiaChi.DefaultText = "";
+            tbxDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tbxDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tbxDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tbxDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tbxDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxDiaChi.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tbxDiaChi.Location = new Point(705, 82);
+            tbxDiaChi.Margin = new Padding(4);
+            tbxDiaChi.Name = "tbxDiaChi";
+            tbxDiaChi.PlaceholderText = "";
+            tbxDiaChi.SelectedText = "";
+            tbxDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tbxDiaChi.Size = new Size(375, 40);
+            tbxDiaChi.TabIndex = 142;
             // 
             // grTaiKhoan
             // 
@@ -547,6 +569,7 @@
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
             // 
             // lblHeader
             // 
@@ -557,28 +580,6 @@
             lblHeader.Size = new Size(194, 35);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Sửa nhân viên";
-            // 
-            // tbxDiaChi
-            // 
-            tbxDiaChi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            tbxDiaChi.BorderThickness = 0;
-            tbxDiaChi.CustomizableEdges = customizableEdges7;
-            tbxDiaChi.DefaultText = "";
-            tbxDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tbxDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tbxDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tbxDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiaChi.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbxDiaChi.Location = new Point(705, 82);
-            tbxDiaChi.Margin = new Padding(4);
-            tbxDiaChi.Name = "tbxDiaChi";
-            tbxDiaChi.PlaceholderText = "";
-            tbxDiaChi.SelectedText = "";
-            tbxDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            tbxDiaChi.Size = new Size(375, 40);
-            tbxDiaChi.TabIndex = 142;
             // 
             // EmployeeEdit
             // 

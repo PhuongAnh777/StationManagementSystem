@@ -261,7 +261,7 @@ namespace StationManagementSystem.Views.Employees
 
             var respone = await _employeeService.UpdateEmployeeAsync(_employee.EmployeeID, _employeeDto);
 
-            
+
             var responeAccount = await _accountService.UpdateAccountAsync(resopneUser.Username, _accountDto);
 
             if (respone != null && responeAccount != null)
@@ -293,6 +293,11 @@ namespace StationManagementSystem.Views.Employees
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

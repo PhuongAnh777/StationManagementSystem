@@ -84,6 +84,7 @@
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
             // 
             // lblHeader
             // 

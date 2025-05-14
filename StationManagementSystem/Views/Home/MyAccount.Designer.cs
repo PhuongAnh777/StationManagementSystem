@@ -74,7 +74,7 @@
             // 
             pnHeader.Controls.Add(btnExit);
             pnHeader.Controls.Add(lblHeader);
-            pnHeader.Location = new Point(4, 4);
+            pnHeader.Location = new Point(163, 176);
             pnHeader.Name = "pnHeader";
             pnHeader.Size = new Size(1092, 78);
             pnHeader.TabIndex = 9;
@@ -221,7 +221,7 @@
             pnContainer.Controls.Add(lblSoDienThoai);
             pnContainer.Controls.Add(lblGioiTinh);
             pnContainer.Controls.Add(lblTenNhanVien);
-            pnContainer.Location = new Point(5, 82);
+            pnContainer.Location = new Point(164, 254);
             pnContainer.Name = "pnContainer";
             pnContainer.Size = new Size(1091, 455);
             pnContainer.TabIndex = 10;
@@ -314,7 +314,7 @@
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1100, 547);
+            ClientSize = new Size(1362, 867);
             Controls.Add(pnHeader);
             Controls.Add(pnContainer);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);

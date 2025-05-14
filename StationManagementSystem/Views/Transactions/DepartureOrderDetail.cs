@@ -57,6 +57,16 @@ namespace StationManagementSystem.Views.Transactions
 
             LoadDepartureOrder();
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Vẽ viền mỏng xung quanh form
+            using (Pen borderPen = new Pen(Color.Black, 1)) // Viền màu đen, dày 1px
+            {
+                e.Graphics.DrawRectangle(borderPen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
+            }
+        }
         public async Task LoadDepartureOrder()
         {
             var vehicles = await _vehicleService.GetVehicleByIdAsync(_ticketIssuance.VehicleID);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StationManagementSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c1717b2bf393e2f4067392a2bfd60b8353320d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69d60e27ce50c2b0463efcf5ad4c357a99280df6")]
 [assembly: System.Reflection.AssemblyProductAttribute("StationManagementSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StationManagementSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

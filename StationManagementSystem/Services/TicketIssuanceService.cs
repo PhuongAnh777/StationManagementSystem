@@ -230,7 +230,7 @@ namespace StationManagementSystem.Services
             // Kiểm tra xem phương tiện đã được phân công TicketIssuance nào chưa (chưa xuất bến)
             var existingIssuance = await _context.TicketIssuances
                 .Where(ti => ti.VehicleID == ticketIssuanceDto.VehicleID &&
-                             ti.Status.ToLower() != "arrival")
+                             ti.Status.ToLower() != "arrival" && ti.CreatedAt.Date == DateTime.Now.Date)
                 .FirstOrDefaultAsync();
 
             if (existingIssuance != null)

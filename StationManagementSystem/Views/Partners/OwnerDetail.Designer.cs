@@ -499,6 +499,7 @@
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
             // 
             // lblHeader
             // 
@@ -514,9 +515,9 @@
             // 
             pnHeader.Controls.Add(btnExit);
             pnHeader.Controls.Add(lblHeader);
-            pnHeader.Location = new Point(2, 1);
+            pnHeader.Location = new Point(2, -1);
             pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(1092, 78);
+            pnHeader.Size = new Size(1092, 80);
             pnHeader.TabIndex = 9;
             // 
             // OwnerDetail

@@ -37,7 +37,7 @@ namespace StationManagementSystem.Services
         {
             using (var context = new StationContext())
             {
-                return await _context.Itineraries
+                return await context.Itineraries
                 .FirstOrDefaultAsync(v => v.ItineraryID == itineraryID);
             }
         }

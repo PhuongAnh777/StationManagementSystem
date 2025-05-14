@@ -25,7 +25,16 @@ namespace StationManagementSystem.Views.Partners
             _ownerService = new OwnerService();
             _ownerDto = new OwnerCreateDto();
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
 
+            // Vẽ viền mỏng xung quanh form
+            using (Pen borderPen = new Pen(Color.Black, 1)) // Viền màu đen, dày 1px
+            {
+                e.Graphics.DrawRectangle(borderPen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
+            }
+        }
         private async void btnLuu_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbxTen.Text))
@@ -108,6 +117,11 @@ namespace StationManagementSystem.Views.Partners
             }
 
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
