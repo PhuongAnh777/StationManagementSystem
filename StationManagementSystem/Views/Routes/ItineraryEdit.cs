@@ -91,6 +91,7 @@ namespace StationManagementSystem.Views.Routes
             stopPanel.Margin = new Padding(5);
 
             TextBox txtName = new TextBox();
+            txtName.PlaceholderText = "Tên điểm dừng";
             txtName.Text = name;
             txtName.Font = new Font("Times New Roman", 12);
             txtName.BorderStyle = BorderStyle.None;
@@ -100,6 +101,7 @@ namespace StationManagementSystem.Views.Routes
             txtName.Location = new Point(10, 15);
 
             TextBox txtTime = new TextBox();
+            txtTime.PlaceholderText = "Thời gian dừng (phút)";
             txtTime.Text = time.ToString();
             txtTime.Font = new Font("Times New Roman", 12);
             txtTime.BorderStyle = BorderStyle.None;

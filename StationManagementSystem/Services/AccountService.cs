@@ -102,9 +102,9 @@ namespace StationManagementSystem.Services
 
         }
 
-        public async Task<bool> DeleteAccountAsync(String userName)
+        public async Task<bool> DeleteAccountAsync(Guid accountId)
         {
-            var userAccount = await _context.Accounts.FindAsync(userName);
+            var userAccount = await _context.Accounts.FindAsync(accountId);
             if (userAccount == null)
             {
                 return false;

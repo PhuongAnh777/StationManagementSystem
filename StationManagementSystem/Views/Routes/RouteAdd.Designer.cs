@@ -179,9 +179,8 @@
             lblKhoangCachV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblKhoangCachV.Location = new Point(798, 21);
             lblKhoangCachV.Name = "lblKhoangCachV";
-            lblKhoangCachV.Size = new Size(111, 22);
+            lblKhoangCachV.Size = new Size(0, 22);
             lblKhoangCachV.TabIndex = 25;
-            lblKhoangCachV.Text = "Khoảng cách";
             // 
             // btnBoQua
             // 

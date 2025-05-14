@@ -71,7 +71,7 @@ namespace StationManagementSystem.Views.Partners
         {
             tbxBienSo.Text = _vehicle.LicensePlate;
 
-            cbxNhomXe.SelectedValue = _vehicle.VehicleType;
+            lblNhomXeV.Text = _vehicle.VehicleType;
 
             numGheNgoi.Value = _vehicle.SeatTicket;
             numGheNam.Value = _vehicle.SleeperTicket;
@@ -161,7 +161,7 @@ namespace StationManagementSystem.Views.Partners
             _vehicleDto.SeatTicket = (int)numGheNgoi.Value;
             _vehicleDto.SleeperTicket = (int)numGheNam.Value;
 
-            _vehicleDto.VehicleType = cbxNhomXe.SelectedValue.ToString();
+            _vehicleDto.VehicleType = lblNhomXeV.Text;
 
             if (cbxTaiXe.SelectedValue == null)
             {

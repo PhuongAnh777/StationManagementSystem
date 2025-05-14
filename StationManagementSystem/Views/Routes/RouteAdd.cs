@@ -75,6 +75,11 @@ namespace StationManagementSystem.Views.Routes
                 return;
             }
 
+            if (string.IsNullOrEmpty(lblKhoangCachV.Text))
+            {
+                MessageBox.Show("Vui lòng đợi lấy khoảng cách", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             _routeDto.Distance = float.Parse(lblKhoangCachV.Text);
 
 

@@ -28,40 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges61 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges62 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             numGheNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
             numGheNgoi = new Guna.UI2.WinForms.Guna2NumericUpDown();
             lblGheNam = new Label();
@@ -88,7 +86,6 @@
             lblTuNgay = new Label();
             tbxBienSo = new Guna.UI2.WinForms.Guna2TextBox();
             tbxDangKyXe = new Guna.UI2.WinForms.Guna2TextBox();
-            cbxNhomXe = new Guna.UI2.WinForms.Guna2ComboBox();
             lblTaiXe = new Label();
             DateTimeToKD = new Guna.UI2.WinForms.Guna2DateTimePicker();
             DateTimeFromKD = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -98,6 +95,7 @@
             lblNhomXe = new Label();
             btnCancle = new Guna.UI2.WinForms.Guna2Button();
             cbxTaiXe = new Guna.UI2.WinForms.Guna2ComboBox();
+            lblNhomXeV = new Label();
             ((System.ComponentModel.ISupportInitialize)numGheNam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numGheNgoi).BeginInit();
             grboxVe.SuspendLayout();
@@ -108,12 +106,12 @@
             // numGheNam
             // 
             numGheNam.BackColor = Color.Transparent;
-            numGheNam.CustomizableEdges = customizableEdges1;
+            numGheNam.CustomizableEdges = customizableEdges33;
             numGheNam.Font = new Font("Segoe UI", 9F);
             numGheNam.Location = new Point(365, 48);
             numGheNam.Margin = new Padding(3, 4, 3, 4);
             numGheNam.Name = "numGheNam";
-            numGheNam.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            numGheNam.ShadowDecoration.CustomizableEdges = customizableEdges34;
             numGheNam.Size = new Size(88, 27);
             numGheNam.TabIndex = 33;
             numGheNam.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
@@ -121,12 +119,12 @@
             // numGheNgoi
             // 
             numGheNgoi.BackColor = Color.Transparent;
-            numGheNgoi.CustomizableEdges = customizableEdges3;
+            numGheNgoi.CustomizableEdges = customizableEdges35;
             numGheNgoi.Font = new Font("Segoe UI", 9F);
             numGheNgoi.Location = new Point(139, 48);
             numGheNgoi.Margin = new Padding(3, 4, 3, 4);
             numGheNgoi.Name = "numGheNgoi";
-            numGheNgoi.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            numGheNgoi.ShadowDecoration.CustomizableEdges = customizableEdges36;
             numGheNgoi.Size = new Size(88, 27);
             numGheNgoi.TabIndex = 32;
             numGheNgoi.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
@@ -148,12 +146,12 @@
             grboxVe.Controls.Add(lblGheNam);
             grboxVe.Controls.Add(lblGheNgoi);
             grboxVe.CustomBorderColor = Color.FromArgb(192, 192, 255);
-            grboxVe.CustomizableEdges = customizableEdges5;
+            grboxVe.CustomizableEdges = customizableEdges37;
             grboxVe.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grboxVe.ForeColor = Color.Black;
             grboxVe.Location = new Point(681, 562);
             grboxVe.Name = "grboxVe";
-            grboxVe.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            grboxVe.ShadowDecoration.CustomizableEdges = customizableEdges38;
             grboxVe.Size = new Size(515, 84);
             grboxVe.TabIndex = 163;
             grboxVe.Text = "Tải trọng";
@@ -189,7 +187,7 @@
             // 
             // btnNgung
             // 
-            btnNgung.CustomizableEdges = customizableEdges7;
+            btnNgung.CustomizableEdges = customizableEdges39;
             btnNgung.DisabledState.BorderColor = Color.DarkGray;
             btnNgung.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNgung.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -199,7 +197,7 @@
             btnNgung.ForeColor = Color.White;
             btnNgung.Location = new Point(583, 689);
             btnNgung.Name = "btnNgung";
-            btnNgung.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnNgung.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btnNgung.Size = new Size(177, 42);
             btnNgung.TabIndex = 160;
             btnNgung.Text = "Ngừng hoạt động";
@@ -207,7 +205,7 @@
             // 
             // btnOk
             // 
-            btnOk.CustomizableEdges = customizableEdges9;
+            btnOk.CustomizableEdges = customizableEdges41;
             btnOk.DisabledState.BorderColor = Color.DarkGray;
             btnOk.DisabledState.CustomBorderColor = Color.DarkGray;
             btnOk.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,7 +215,7 @@
             btnOk.ForeColor = Color.White;
             btnOk.Location = new Point(400, 689);
             btnOk.Name = "btnOk";
-            btnOk.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnOk.ShadowDecoration.CustomizableEdges = customizableEdges42;
             btnOk.Size = new Size(177, 42);
             btnOk.TabIndex = 158;
             btnOk.Text = "Lưu";
@@ -226,13 +224,13 @@
             // numNam
             // 
             numNam.BackColor = Color.Transparent;
-            numNam.CustomizableEdges = customizableEdges11;
+            numNam.CustomizableEdges = customizableEdges43;
             numNam.Font = new Font("Segoe UI", 9F);
             numNam.Location = new Point(184, 625);
             numNam.Margin = new Padding(3, 4, 3, 4);
             numNam.Maximum = new decimal(new int[] { 2050, 0, 0, 0 });
             numNam.Name = "numNam";
-            numNam.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            numNam.ShadowDecoration.CustomizableEdges = customizableEdges44;
             numNam.Size = new Size(88, 27);
             numNam.TabIndex = 157;
             numNam.UpDownButtonFillColor = Color.FromArgb(192, 192, 255);
@@ -248,7 +246,7 @@
             // 
             // btnExit
             // 
-            btnExit.CustomizableEdges = customizableEdges13;
+            btnExit.CustomizableEdges = customizableEdges45;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -259,7 +257,7 @@
             btnExit.ForeColor = Color.Silver;
             btnExit.Location = new Point(1209, 3);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges46;
             btnExit.Size = new Size(46, 56);
             btnExit.TabIndex = 1;
             btnExit.Text = "X";
@@ -350,7 +348,7 @@
             // DateTimeToBB
             // 
             DateTimeToBB.Checked = true;
-            DateTimeToBB.CustomizableEdges = customizableEdges15;
+            DateTimeToBB.CustomizableEdges = customizableEdges47;
             DateTimeToBB.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeToBB.Font = new Font("Segoe UI", 9F);
             DateTimeToBB.Format = DateTimePickerFormat.Long;
@@ -358,7 +356,7 @@
             DateTimeToBB.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeToBB.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeToBB.Name = "DateTimeToBB";
-            DateTimeToBB.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            DateTimeToBB.ShadowDecoration.CustomizableEdges = customizableEdges48;
             DateTimeToBB.Size = new Size(229, 31);
             DateTimeToBB.TabIndex = 147;
             DateTimeToBB.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
@@ -366,7 +364,7 @@
             // DateTimeFromBB
             // 
             DateTimeFromBB.Checked = true;
-            DateTimeFromBB.CustomizableEdges = customizableEdges17;
+            DateTimeFromBB.CustomizableEdges = customizableEdges49;
             DateTimeFromBB.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFromBB.Font = new Font("Segoe UI", 9F);
             DateTimeFromBB.Format = DateTimePickerFormat.Long;
@@ -374,7 +372,7 @@
             DateTimeFromBB.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFromBB.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFromBB.Name = "DateTimeFromBB";
-            DateTimeFromBB.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            DateTimeFromBB.ShadowDecoration.CustomizableEdges = customizableEdges50;
             DateTimeFromBB.Size = new Size(229, 31);
             DateTimeFromBB.TabIndex = 146;
             DateTimeFromBB.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
@@ -390,7 +388,7 @@
             // 
             // tbxBienSo
             // 
-            tbxBienSo.CustomizableEdges = customizableEdges19;
+            tbxBienSo.CustomizableEdges = customizableEdges51;
             tbxBienSo.DefaultText = "";
             tbxBienSo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxBienSo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -404,13 +402,13 @@
             tbxBienSo.Name = "tbxBienSo";
             tbxBienSo.PlaceholderText = "";
             tbxBienSo.SelectedText = "";
-            tbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            tbxBienSo.ShadowDecoration.CustomizableEdges = customizableEdges52;
             tbxBienSo.Size = new Size(1105, 36);
             tbxBienSo.TabIndex = 144;
             // 
             // tbxDangKyXe
             // 
-            tbxDangKyXe.CustomizableEdges = customizableEdges21;
+            tbxDangKyXe.CustomizableEdges = customizableEdges53;
             tbxDangKyXe.DefaultText = "";
             tbxDangKyXe.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxDangKyXe.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -424,26 +422,9 @@
             tbxDangKyXe.Name = "tbxDangKyXe";
             tbxDangKyXe.PlaceholderText = "";
             tbxDangKyXe.SelectedText = "";
-            tbxDangKyXe.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            tbxDangKyXe.ShadowDecoration.CustomizableEdges = customizableEdges54;
             tbxDangKyXe.Size = new Size(1105, 36);
             tbxDangKyXe.TabIndex = 143;
-            // 
-            // cbxNhomXe
-            // 
-            cbxNhomXe.BackColor = Color.Transparent;
-            cbxNhomXe.CustomizableEdges = customizableEdges23;
-            cbxNhomXe.DrawMode = DrawMode.OwnerDrawFixed;
-            cbxNhomXe.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxNhomXe.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbxNhomXe.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbxNhomXe.Font = new Font("Segoe UI", 10F);
-            cbxNhomXe.ForeColor = Color.FromArgb(68, 88, 112);
-            cbxNhomXe.ItemHeight = 30;
-            cbxNhomXe.Location = new Point(172, 94);
-            cbxNhomXe.Name = "cbxNhomXe";
-            cbxNhomXe.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            cbxNhomXe.Size = new Size(1105, 36);
-            cbxNhomXe.TabIndex = 142;
             // 
             // lblTaiXe
             // 
@@ -457,7 +438,7 @@
             // DateTimeToKD
             // 
             DateTimeToKD.Checked = true;
-            DateTimeToKD.CustomizableEdges = customizableEdges25;
+            DateTimeToKD.CustomizableEdges = customizableEdges55;
             DateTimeToKD.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeToKD.Font = new Font("Segoe UI", 9F);
             DateTimeToKD.Format = DateTimePickerFormat.Long;
@@ -465,7 +446,7 @@
             DateTimeToKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeToKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeToKD.Name = "DateTimeToKD";
-            DateTimeToKD.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            DateTimeToKD.ShadowDecoration.CustomizableEdges = customizableEdges56;
             DateTimeToKD.Size = new Size(229, 31);
             DateTimeToKD.TabIndex = 140;
             DateTimeToKD.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
@@ -473,7 +454,7 @@
             // DateTimeFromKD
             // 
             DateTimeFromKD.Checked = true;
-            DateTimeFromKD.CustomizableEdges = customizableEdges27;
+            DateTimeFromKD.CustomizableEdges = customizableEdges57;
             DateTimeFromKD.FillColor = Color.FromArgb(192, 192, 255);
             DateTimeFromKD.Font = new Font("Segoe UI", 9F);
             DateTimeFromKD.Format = DateTimePickerFormat.Long;
@@ -481,14 +462,14 @@
             DateTimeFromKD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTimeFromKD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTimeFromKD.Name = "DateTimeFromKD";
-            DateTimeFromKD.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            DateTimeFromKD.ShadowDecoration.CustomizableEdges = customizableEdges58;
             DateTimeFromKD.Size = new Size(229, 31);
             DateTimeFromKD.TabIndex = 139;
             DateTimeFromKD.Value = new DateTime(2025, 4, 7, 22, 37, 21, 446);
             // 
             // tbxBaoHiem
             // 
-            tbxBaoHiem.CustomizableEdges = customizableEdges29;
+            tbxBaoHiem.CustomizableEdges = customizableEdges59;
             tbxBaoHiem.DefaultText = "";
             tbxBaoHiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tbxBaoHiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -502,7 +483,7 @@
             tbxBaoHiem.Name = "tbxBaoHiem";
             tbxBaoHiem.PlaceholderText = "";
             tbxBaoHiem.SelectedText = "";
-            tbxBaoHiem.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            tbxBaoHiem.ShadowDecoration.CustomizableEdges = customizableEdges60;
             tbxBaoHiem.Size = new Size(1105, 36);
             tbxBaoHiem.TabIndex = 138;
             // 
@@ -535,7 +516,7 @@
             // 
             // btnCancle
             // 
-            btnCancle.CustomizableEdges = customizableEdges31;
+            btnCancle.CustomizableEdges = customizableEdges61;
             btnCancle.DisabledState.BorderColor = Color.DarkGray;
             btnCancle.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancle.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -545,7 +526,7 @@
             btnCancle.ForeColor = Color.White;
             btnCancle.Location = new Point(766, 689);
             btnCancle.Name = "btnCancle";
-            btnCancle.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnCancle.ShadowDecoration.CustomizableEdges = customizableEdges62;
             btnCancle.Size = new Size(177, 42);
             btnCancle.TabIndex = 165;
             btnCancle.Text = "Xóa";
@@ -554,7 +535,7 @@
             // cbxTaiXe
             // 
             cbxTaiXe.BackColor = Color.Transparent;
-            cbxTaiXe.CustomizableEdges = customizableEdges33;
+            cbxTaiXe.CustomizableEdges = customizableEdges63;
             cbxTaiXe.DrawMode = DrawMode.OwnerDrawFixed;
             cbxTaiXe.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTaiXe.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -564,9 +545,19 @@
             cbxTaiXe.ItemHeight = 30;
             cbxTaiXe.Location = new Point(172, 548);
             cbxTaiXe.Name = "cbxTaiXe";
-            cbxTaiXe.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            cbxTaiXe.ShadowDecoration.CustomizableEdges = customizableEdges64;
             cbxTaiXe.Size = new Size(503, 36);
             cbxTaiXe.TabIndex = 168;
+            // 
+            // lblNhomXeV
+            // 
+            lblNhomXeV.AutoSize = true;
+            lblNhomXeV.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNhomXeV.Location = new Point(184, 108);
+            lblNhomXeV.Name = "lblNhomXeV";
+            lblNhomXeV.Size = new Size(74, 23);
+            lblNhomXeV.TabIndex = 169;
+            lblNhomXeV.Text = "từ ngày";
             // 
             // VehicleDetailOriginal
             // 
@@ -574,6 +565,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1289, 733);
+            Controls.Add(lblNhomXeV);
             Controls.Add(cbxTaiXe);
             Controls.Add(btnCancle);
             Controls.Add(grboxVe);
@@ -596,7 +588,6 @@
             Controls.Add(lblTuNgay);
             Controls.Add(tbxBienSo);
             Controls.Add(tbxDangKyXe);
-            Controls.Add(cbxNhomXe);
             Controls.Add(lblTaiXe);
             Controls.Add(DateTimeToKD);
             Controls.Add(DateTimeFromKD);
@@ -648,7 +639,6 @@
         private Label lblTuNgay;
         private Guna.UI2.WinForms.Guna2TextBox tbxBienSo;
         private Guna.UI2.WinForms.Guna2TextBox tbxDangKyXe;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxNhomXe;
         private Label lblTaiXe;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeToKD;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeFromKD;
@@ -658,5 +648,6 @@
         private Label lblNhomXe;
         private Guna.UI2.WinForms.Guna2Button btnCancle;
         private Guna.UI2.WinForms.Guna2ComboBox cbxTaiXe;
+        private Label lblNhomXeV;
     }
 }

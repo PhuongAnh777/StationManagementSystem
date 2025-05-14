@@ -138,8 +138,10 @@ namespace StationManagementSystem.Views.Employees
             {
 
                 // Gọi hàm xóa từ service
+                var account = await _accountService.GetAccountByEmployeeIdAsync(_employee.EmployeeID);
+
+                var isDeletedAccount = await _accountService.DeleteAccountAsync(account.AccountID);
                 var isDeleted = await _employeeService.DeleteEmployeeAsync(_employee.EmployeeID);
-                var isDeletedAccount = await _accountService.DeleteAccountAsync(_employee.Account.Username);
 
                 if (isDeleted && isDeletedAccount)
                 {
@@ -282,8 +284,8 @@ namespace StationManagementSystem.Views.Employees
 
             if (confirmResult == DialogResult.Yes)
             {
-                var respone = await _employeeService.UpdateEmployeeStatusAsync(_employee.EmployeeID);
                 var responeAccount = await _accountService.UpdateAccountStatusAsync(_employee.Account.Username);
+                var respone = await _employeeService.UpdateEmployeeStatusAsync(_employee.EmployeeID);
 
                 if (respone != null && responeAccount != null)
                 {
