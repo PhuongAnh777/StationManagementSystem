@@ -78,7 +78,7 @@ namespace StationManagementSystem.Views.Partners
 
             if (response != null)
             {
-                OpenChildForm(new OwnerDetail(response));
+                OpenChildForm(new OwnerDetail(response, _roleName));
             }
             else
             {

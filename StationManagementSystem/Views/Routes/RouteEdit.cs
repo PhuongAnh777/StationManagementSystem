@@ -34,6 +34,7 @@ namespace StationManagementSystem.Views.Routes
             "Thanh Hóa", "Thừa Thiên - Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang",
             "Vĩnh Long", "Vĩnh Phúc", "Yên Bái"
         };
+        private string _roleName;
         //public RouteEdit()
         //{
         //    InitializeComponent();
@@ -43,7 +44,7 @@ namespace StationManagementSystem.Views.Routes
         //    _routeService = new RouteService();
         //    _routeDto = new RouteUpdateDto();
         //}
-        public RouteEdit(Route route)
+        public RouteEdit(Route route, string roleName)
         {
             InitializeComponent();
 
@@ -52,6 +53,7 @@ namespace StationManagementSystem.Views.Routes
 
             _routeService = new RouteService();
             _routeDto = new RouteUpdateDto();
+            _roleName = roleName;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -110,6 +112,11 @@ namespace StationManagementSystem.Views.Routes
         }
         private async void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền xóa thông tin tuyến!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var confirmResult = MessageBox.Show("Ban có chắc chắn muốn xóa tuyến này?",
                                                 "Xác nhận xóa",
                                                 MessageBoxButtons.YesNo,
@@ -135,6 +142,11 @@ namespace StationManagementSystem.Views.Routes
 
         private async void btnLuu_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin tuyến!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrEmpty(cbxDiemDi.Text))
             {
                 MessageBox.Show("Điểm đi không được trống", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -170,6 +182,11 @@ namespace StationManagementSystem.Views.Routes
 
         private async void btnBoQua_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền ngừng hoạt động tuyến này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var confirmResult = MessageBox.Show("Ban có chắc chắn muốn ngừng hoạt động tuyến này?",
                                                "Xác nhận xóa",
                                                MessageBoxButtons.YesNo,

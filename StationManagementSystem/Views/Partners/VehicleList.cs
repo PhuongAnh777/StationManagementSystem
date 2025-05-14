@@ -92,7 +92,7 @@ namespace StationManagementSystem.Views.Partners
 
             if (response != null)
             {
-                OpenChildForm(new VehicleDetailOriginal(response));
+                OpenChildForm(new VehicleDetailOriginal(response, _roleName));
                 await LoadVehicle();
             }
             else

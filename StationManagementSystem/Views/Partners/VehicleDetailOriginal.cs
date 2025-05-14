@@ -20,6 +20,7 @@ namespace StationManagementSystem.Views.Partners
         private readonly OwnerService _ownerService;
         private List<string> nhomXe;
         private Vehicle _vehicle;
+        private string _roleName;
         public VehicleDetailOriginal()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace StationManagementSystem.Views.Partners
                 "Xe tải"
             };
         }
-        public VehicleDetailOriginal(Vehicle vehicle)
+        public VehicleDetailOriginal(Vehicle vehicle, string roleName)
         {
             InitializeComponent();
 
@@ -54,6 +55,7 @@ namespace StationManagementSystem.Views.Partners
                 "Xe taxi",
                 "Xe tải"
             };
+            _roleName = roleName;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -105,6 +107,11 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnOk_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin xe này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (numNam.Value == 0)
             {
                 _vehicleDto.ManufacturingYear = null;
@@ -179,6 +186,11 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnNgung_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin xe này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var confirmResult = MessageBox.Show("Ban có chắc chắn muốn ngưng hoạt động xe này?",
                                                "Xác nhận xóa",
                                                MessageBoxButtons.YesNo,
@@ -199,6 +211,11 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnCancle_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin xe này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var confirmResult = MessageBox.Show("Ban có chắc chắn muốn xóa xe này?",
                                                "Xác nhận xóa",
                                                MessageBoxButtons.YesNo,

@@ -77,7 +77,7 @@ namespace StationManagementSystem.Views.Routes
 
             if (response != null)
             {
-                OpenChildForm(new RouteEdit(response));
+                OpenChildForm(new RouteEdit(response, _roleName));
                 await LoadRoute(); // Cập nhật lại dữ liệu trong DataGridView
             }
             else

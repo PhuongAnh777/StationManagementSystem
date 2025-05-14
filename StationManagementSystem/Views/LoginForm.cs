@@ -72,12 +72,12 @@ namespace StationManagementSystem.Views
                 else if (roleName == "Ticket Employee")
                 {
                     var ticketForm = new TicketEmployeeForm(userAccount, employee, roleName);
-                    ticketForm.ShowDialog(); 
+                    ticketForm.ShowDialog();
                 }
                 else if (roleName == "Invoice Employee")
                 {
                     var invoiceForm = new InvoiceEmployeeForm(userAccount, employee, roleName);
-                    invoiceForm.ShowDialog(); 
+                    invoiceForm.ShowDialog();
                 }
 
                 this.Close(); // Đóng form đăng nhập sau khi form mới đóng
@@ -86,6 +86,11 @@ namespace StationManagementSystem.Views
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

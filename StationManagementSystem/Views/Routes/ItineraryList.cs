@@ -79,7 +79,7 @@ namespace StationManagementSystem.Views.Routes
 
             if (response != null)
             {
-                OpenChildForm(new ItineraryEdit(response));
+                OpenChildForm(new ItineraryEdit(response, _roleName));
                 await LoadItinerary(); // Cập nhật lại dữ liệu trong DataGridView
             }
             else

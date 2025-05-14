@@ -20,6 +20,8 @@ namespace StationManagementSystem.Views.Routes
 
         private Itinerary _itinerary;
         private ItineraryUpdateDto _itineraryDto;
+
+        private string _roleName;
         public ItineraryEdit()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace StationManagementSystem.Views.Routes
             LoadEmployee();
         }
 
-        public ItineraryEdit(Itinerary itinerary)
+        public ItineraryEdit(Itinerary itinerary, string roleName)
         {
             InitializeComponent();
 
@@ -42,6 +44,7 @@ namespace StationManagementSystem.Views.Routes
             _itinerary = itinerary;
 
             LoadEmployee();
+            _roleName = roleName;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -126,6 +129,11 @@ namespace StationManagementSystem.Views.Routes
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền thêm điểm dừng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Panel stopPanel = new Panel();
             stopPanel.Width = flowPanelStops.Width - 30;
             stopPanel.Height = 50;
@@ -211,6 +219,11 @@ namespace StationManagementSystem.Views.Routes
         }
         private async void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền xóa lộ trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             //Hiển thị hộp thoại xác nhận xóa
             var confirmResult = MessageBox.Show("Ban có chắc chắn muốn xóa lộ trình này?",
                                                 "Xác nhận xóa",
@@ -237,6 +250,11 @@ namespace StationManagementSystem.Views.Routes
 
         private async void btnLuu_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin lộ trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             _itineraryDto.StopPoints.Clear();
             foreach (Panel stopPanel in flowPanelStops.Controls.OfType<Panel>())
             {

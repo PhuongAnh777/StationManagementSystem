@@ -34,6 +34,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             lblHeader = new Label();
             lblTen = new Label();
@@ -41,6 +43,7 @@
             lblMK = new Label();
             tbxMK = new Guna.UI2.WinForms.Guna2TextBox();
             btnOk = new Guna.UI2.WinForms.Guna2Button();
+            btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -144,12 +147,32 @@
             btnOk.Text = "ĐĂNG NHẬP";
             btnOk.Click += btnOk_Click;
             // 
+            // btnExit
+            // 
+            btnExit.CustomizableEdges = customizableEdges7;
+            btnExit.DisabledState.BorderColor = Color.DarkGray;
+            btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnExit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnExit.FillColor = Color.White;
+            btnExit.FocusedColor = SystemColors.ControlDark;
+            btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.Silver;
+            btnExit.Location = new Point(1302, 12);
+            btnExit.Name = "btnExit";
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnExit.Size = new Size(46, 56);
+            btnExit.TabIndex = 118;
+            btnExit.Text = "X";
+            btnExit.Click += btnExit_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1360, 865);
+            Controls.Add(btnExit);
             Controls.Add(btnOk);
             Controls.Add(tbxMK);
             Controls.Add(lblMK);
@@ -176,5 +199,6 @@
         private Label lblMK;
         private Guna.UI2.WinForms.Guna2TextBox tbxMK;
         private Guna.UI2.WinForms.Guna2Button btnOk;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

@@ -19,6 +19,7 @@ namespace StationManagementSystem.Views.Partners
         private readonly OwnerService _ownerService;
         private OwnerUpdateDto _ownerDto;
         private Owner _owner;
+        private string _roleName;
         public OwnerDetail()
         {
             InitializeComponent();
@@ -26,13 +27,14 @@ namespace StationManagementSystem.Views.Partners
             _ownerService = new OwnerService();
             _ownerDto = new OwnerUpdateDto();
         }
-        public OwnerDetail(Owner owner)
+        public OwnerDetail(Owner owner, string roleName)
         {
             InitializeComponent();
 
             _ownerService = new OwnerService();
             _ownerDto = new OwnerUpdateDto();
             _owner = owner;
+            _roleName = roleName;
         }
         private async void LoadOwner()
         {
@@ -61,6 +63,11 @@ namespace StationManagementSystem.Views.Partners
 
         private async void btnLuu_Click(object sender, EventArgs e)
         {
+            if (_roleName != "Admin")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin chủ xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrEmpty(tbxTen.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên chủ xe", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
